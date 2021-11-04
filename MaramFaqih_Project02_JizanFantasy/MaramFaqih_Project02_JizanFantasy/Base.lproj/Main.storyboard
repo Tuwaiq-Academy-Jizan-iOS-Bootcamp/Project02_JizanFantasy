@@ -203,6 +203,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="V3K-rs-GUZ"/>
                     <connections>
+                        <outlet property="ButtonRollingOutlet" destination="KHM-e9-01c" id="FM3-rz-KTW"/>
                         <outlet property="bossLabelDF" destination="jhY-DG-hBr" id="j3U-PL-jL0"/>
                         <outlet property="bossLabelDP" destination="VMG-7h-vaR" id="wJX-IJ-oYF"/>
                         <outlet property="bossLabelLP" destination="TLz-EE-hEN" id="Hlf-77-zqn"/>
