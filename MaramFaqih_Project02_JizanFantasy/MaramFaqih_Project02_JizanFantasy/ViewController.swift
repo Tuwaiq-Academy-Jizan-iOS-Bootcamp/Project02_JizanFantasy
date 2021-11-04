@@ -126,10 +126,10 @@ class ViewController: UIViewController {
     }
     @IBAction func rollingButton(_ sender: Any) {
         var lPP1 = Int(bossLabelLP.text!)!
-        var lDFP1 = Int(bossLabelLP.text!)!
-        var lDPP1 = Int(bossLabelLP.text!)!
-        var lWDP1 = Int(bossLabelLP.text!)!
-        var lWSC1 = Int(bossLabelLP.text!)!
+        var lDFP1 = Int(bossLabelDF.text!)!
+        var lDPP1 = Int(player2LabelPD.text!)!
+        var lWDP1 = Int(player2LabelWD.text!)!
+        var lWSC1 = Int(player2LabelSC.text!)!
         
         var lPP2 = Int(player2LabelLP.text!)!
         var lDFP2 = Int(player2LabelDF.text!)!
@@ -152,16 +152,31 @@ class ViewController: UIViewController {
         case 1...9 :
            // player2LabelDF.text! = String(Int(player2LabelDF.text!) - 1)
                 if ((lDFP2 - lDPP1) >= 0) {
-                    lPP2 = lPP2 - (lDFP2 - lDPP1)
-           }
-                player2LabelLP.text = String(lPP2)
-                
+                    lPP2 = (lPP2 - (lDFP2 - lDPP1))
            
+                }
+                
+                player2LabelLP.text = String(checkZero(num:lPP2))
+//                if lPP2>=0{
+//                    player2LabelLP.text = String(lPP2)
+//                }else{
+//                    player2LabelLP.text = String(0)
+//                }
+                print("Boss use dp")
+                
         case 10...19 :
                 if ((lDFP2 - lWDP1) >= 0) {
-                    lPP2 = lPP2 - (lDFP2 - lWDP1)
-           }
-                player2LabelLP.text = String(lPP2)
+                    lPP2 = (lPP2 - (lDFP2 - lWDP1))
+                }
+                
+                player2LabelLP.text = String(checkZero(num:lPP2))
+                
+//                if lPP2>=0{
+//                    player2LabelLP.text = String(lPP2)
+//                }else{
+//                    player2LabelLP.text = String(0)
+//                }}
+                print("Boss use wd")
             
             
         default:
@@ -173,30 +188,34 @@ class ViewController: UIViewController {
             }}
         //Turn Hero
         else{
+            turn = 0
            
             switch randomDICE {
             case 1...9 :
                 if ((lDFP1 - lDPP2) >= 0) {
-                    lPP1 = lPP1 - (lDFP1 - lDPP2)
-           }
-                if lPP2>0{
-                bossLabelLP.text = String(lPP2)
-                }else{
-                    bossLabelLP.text = String(0)
+                    lPP1 = (lPP1 - (lDFP1 - lDPP2))
                 }
-                
+                bossLabelLP.text = String(checkZero(num:lPP1))
+//                if lPP1>=0{
+//                bossLabelLP.text = String(lPP1)
+//                }else{
+//                    bossLabelLP.text = String(0)
+//                }}
+                print("Hero use dp")
                 
             case 10...19 :
-                if ((lDFP1 - lWDP2) >= 0) {
-                    lPP1 = lPP1 - (lDFP1 - lWDP2)
-           }
                 
-                     if lPP2>0{
-                     bossLabelLP.text = String(lPP2)
-                     }else{
-                         bossLabelLP.text = String(0)
-                     }
-                     
+                if ((lDFP1 - lWDP2) >= 0) {
+                    lPP1 = (lPP1 - (lDFP1 - lWDP2))
+                }
+                bossLabelLP.text = String(checkZero(num:lPP1))
+//
+//                     if lPP1>=0{
+//                     bossLabelLP.text = String(lPP1)
+//                     }else{
+//                         bossLabelLP.text = String(0)
+//                     }}
+                print("Hero use wd")
                 
             default:
                 print("Error")
@@ -208,9 +227,15 @@ class ViewController: UIViewController {
         if ( turn == 1){
             turnNo += 1
         desccriptionGame.text = "turn \(turnNo)"
-            turn = 0
+            //turn = 0
             
     }
+        func checkZero(num: Int)-> Int{
+            if(num > 0){
+                return num
+            }
+            return 0
+        }
     }
     
     @IBAction func addPlayerButton(_ sender: Any) {
