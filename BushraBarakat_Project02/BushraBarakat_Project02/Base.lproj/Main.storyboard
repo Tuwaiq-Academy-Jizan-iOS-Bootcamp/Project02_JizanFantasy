@@ -60,8 +60,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result Of The Dice :  20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-wE-WvR">
-                                <rect key="frame" x="23" y="758" width="202" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result Of The Dice : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-wE-WvR">
+                                <rect key="frame" x="23" y="758" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -74,7 +74,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Rolling Dice"/>
                                 <connections>
-                                    <action selector="rollingDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vNs-2F-I7R"/>
+                                    <action selector="rollingDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nHI-Li-5fc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqS-km-bG3">
@@ -86,7 +86,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="33"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="uI5-h8-wfD" kind="show" identifier="segue1" id="jNb-Eu-4oN"/>
+                                    <segue destination="uI5-h8-wfD" kind="show" id="PTm-ej-oQX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWq-dW-c41">
@@ -194,6 +194,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPi-Hy-wIb">
+                                <rect key="frame" x="203" y="764" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -203,6 +210,7 @@
                         <outlet property="bossImage" destination="1QH-7J-m9l" id="NA2-xs-82d"/>
                         <outlet property="descripationGame" destination="uF5-t4-zvZ" id="jKz-Qh-wvn"/>
                         <outlet property="heroImage" destination="6Fb-xc-tBe" id="9ta-MO-W5n"/>
+                        <outlet property="heroImage2" destination="6Fb-xc-tBe" id="Aev-Ej-2Nh"/>
                         <outlet property="label1" destination="HWq-dW-c41" id="9P7-4B-liB"/>
                         <outlet property="label2" destination="R77-3d-ElY" id="DBP-88-X1W"/>
                         <outlet property="label3" destination="c6V-d6-Q0v" id="hGD-CH-cZy"/>
@@ -213,6 +221,9 @@
                         <outlet property="labelHero3" destination="Elc-11-4m2" id="dQp-eu-Eud"/>
                         <outlet property="labelHero4" destination="Nzw-Fs-Syg" id="hXm-C9-PXd"/>
                         <outlet property="labelHero5" destination="beH-Kg-X9S" id="Dq5-7C-Val"/>
+                        <outlet property="nameBoss" destination="bVy-ES-eo7" id="89x-FF-S4x"/>
+                        <outlet property="nameHero" destination="ErF-ys-GaN" id="X4C-n3-GD8"/>
+                        <outlet property="resultRollingDice" destination="KPi-Hy-wIb" id="6YX-Y4-awj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -297,36 +308,6 @@
                                     <segue destination="bSd-w1-EOt" kind="unwind" unwindAction="unwindWithSegue:" id="M5N-hT-kaO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JkI-5I-gXU">
-                                <rect key="frame" x="218" y="295" width="176" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CV0-4b-zun">
-                                <rect key="frame" x="218" y="340" width="176" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IlS-V1-twR">
-                                <rect key="frame" x="218" y="383" width="176" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-6Y-ixs">
-                                <rect key="frame" x="218" y="427" width="176" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azR-ue-pyO">
-                                <rect key="frame" x="218" y="469" width="176" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-lI-CsI">
                                 <rect key="frame" x="218" y="117" width="160" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -335,8 +316,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nde-XK-OvT">
-                                <rect key="frame" x="52" y="253" width="101" height="33"/>
+                                <rect key="frame" x="27" y="253" width="154" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New Challenger"/>
                                 <connections>
@@ -357,22 +339,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huv-y7-R3j">
+                                <rect key="frame" x="258" y="295" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mws-UB-bSV">
+                                <rect key="frame" x="258" y="337" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AfQ-LS-fYN">
+                                <rect key="frame" x="258" y="385" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGH-In-CBw">
+                                <rect key="frame" x="258" y="427" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPo-Zl-oP5">
+                                <rect key="frame" x="258" y="469" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9fG-Ev-poX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="AjP-Kp-10d"/>
                     <connections>
-                        <outlet property="nameNewChallenger" destination="qa4-lI-CsI" id="ynC-cr-N7i"/>
-                        <outlet property="newChallengName" destination="qa4-lI-CsI" id="olI-Sz-aVM"/>
                         <outlet property="newChallengeImage" destination="tzV-hf-o0i" id="sbS-F8-XAh"/>
                         <outlet property="newChallenger" destination="nde-XK-OvT" id="QZX-WI-MQa"/>
-                        <outlet property="powint" destination="4dk-dR-azu" id="9OI-C0-qev"/>
-                        <outlet property="textFiled1" destination="JkI-5I-gXU" id="wYK-IT-0gv"/>
-                        <outlet property="textFiled2" destination="CV0-4b-zun" id="9PV-fV-3Qp"/>
-                        <outlet property="textFiled3" destination="IlS-V1-twR" id="DSS-Ar-rAg"/>
-                        <outlet property="textFiled4" destination="vdT-6Y-ixs" id="5c5-fZ-m1z"/>
-                        <outlet property="textFiled5" destination="azR-ue-pyO" id="wfv-be-jee"/>
+                        <outlet property="newChallengerName" destination="qa4-lI-CsI" id="vYs-v9-03C"/>
+                        <outlet property="point" destination="4dk-dR-azu" id="sWH-Wa-JDL"/>
+                        <outlet property="textFiled1" destination="huv-y7-R3j" id="lhX-eT-Qjf"/>
+                        <outlet property="textFiled2" destination="Mws-UB-bSV" id="vGZ-14-ylG"/>
+                        <outlet property="textFiled3" destination="AfQ-LS-fYN" id="fNj-Wq-ggT"/>
+                        <outlet property="textFiled4" destination="OGH-In-CBw" id="eal-po-Gkw"/>
+                        <outlet property="textFiled5" destination="cPo-Zl-oP5" id="Obw-f7-I6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3EE-tC-47C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
