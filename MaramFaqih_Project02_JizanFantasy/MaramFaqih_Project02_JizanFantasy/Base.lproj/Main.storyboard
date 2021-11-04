@@ -209,12 +209,14 @@
                         <outlet property="bossLabelName" destination="BP2-m2-ClZ" id="q1n-vh-tf9"/>
                         <outlet property="bossLabelSC" destination="Ze6-iv-oDp" id="ihW-9a-adM"/>
                         <outlet property="bossLabelWD" destination="e7Y-7X-Tmt" id="XDd-Ox-7xc"/>
+                        <outlet property="desccriptionGame" destination="rBm-6j-w33" id="1ez-Am-9TF"/>
                         <outlet property="player2LabelDF" destination="1P2-jf-kFt" id="aBC-Ms-1SQ"/>
                         <outlet property="player2LabelLP" destination="Q0d-1Y-w8G" id="255-FM-7uV"/>
                         <outlet property="player2LabelName" destination="jOf-Aa-dip" id="ziH-pK-FrG"/>
                         <outlet property="player2LabelPD" destination="qz2-ij-ehJ" id="erJ-lj-4wk"/>
                         <outlet property="player2LabelSC" destination="wmx-oo-XUo" id="MEs-JL-sA7"/>
                         <outlet property="player2LabelWD" destination="WLT-if-2NI" id="dOR-eW-3jP"/>
+                        <outlet property="resultDiceLabel" destination="Hpf-B3-b5k" id="6aK-eH-cFj"/>
                         <segue destination="mbz-ar-3AJ" kind="show" identifier="addPlayer" id="qdz-j3-Yx8"/>
                     </connections>
                 </viewController>
