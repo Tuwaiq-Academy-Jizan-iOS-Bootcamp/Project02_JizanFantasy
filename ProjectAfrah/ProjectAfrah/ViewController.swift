@@ -7,13 +7,14 @@
 
 import UIKit
 
-struct Bosses{
+struct Boss{
     var name : String
     var lifePoint : Int
     var defense : Int
     var PowerDamage : Int
     var weaponDamage : Int
     var specialCapacity : Int
+
 //    var image : String
 }
     
@@ -24,20 +25,18 @@ struct Bosses{
         var PowerDamage : Int?
         var weaponDamage : Int?
         var specialCapacity : Int?
-//        var image: String?
-    }
-
+        }
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var textDescrabtion: UILabel!
     @IBOutlet weak var labelBossPoints: UILabel!
-    @IBOutlet weak var labelBossLD: UILabel!
     @IBOutlet weak var labelBossDF: UILabel!
     @IBOutlet weak var labelBossPD: UILabel!
     @IBOutlet weak var labelBossWD: UILabel!
     @IBOutlet weak var labelBossSC: UILabel!
     
+    @IBOutlet weak var labelBossLP: UILabel!
     @IBOutlet weak var labelHeropoints: UILabel!
     @IBOutlet weak var labelHeroLP: UILabel!
     @IBOutlet weak var labelHeroDF: UILabel!
@@ -45,71 +44,98 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelHeroWD: UILabel!
     @IBOutlet weak var labelHeroSC: UILabel!
     
+//    @IBOutlet weak var numberdice: UILabel!
+//    var i = Int.random(in: 1...20)
+//    numberdice.text = String(i)
+    
     @IBOutlet weak var imageBoss: UIImageView!
     @IBOutlet weak var imageHero: UIImageView!
     
-  
+//
 //    let dices = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-    var boss1 = Bosses(name: "Boss1", lifePoint: 250, defense: 30, PowerDamage: 20, weaponDamage: 45, specialCapacity: 110)
-    var boss2 = Bosses(name: "Boss2", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75)
-    var hero = Hero(name: <#T##String?#>, lifePoint: <#T##Int?#>, defense: <#T##Int?#>, PowerDamage: <#T##Int?#>, weaponDamage: <#T##Int?#>, specialCapacity: <#T##Int?#>)
+    var boss1 = Boss(name: "Boss1", lifePoint: 250, defense: 30, PowerDamage: 20, weaponDamage: 45, specialCapacity: 110)
+        var boss2 = Boss(name: "Boss2", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30,specialCapacity: 75)
+    var hero = Hero(name: "", lifePoint:0, defense: 22, PowerDamage: 0, weaponDamage: 0, specialCapacity: 0)
+
+//    let dices = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+//
+//   var hero = Hero(name: "Knight", lifePoint: 200, defense: 20, PowerDamage: 55, weaponDamage: 20, specialCapacity: 100 , iimage: "Knight")
+//    let bosses = [Boss(name: "boss1", lifePoint: 250, defense: 15, PowerDamage: 33, weaponDamage: 30, specialCapacity: 75, image: "boss1"),Boss(name: "boss2", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75, image: "boss2")]
+   var boss: Boss!
     override func viewDidLoad() {
      
         super.viewDidLoad()
+//        boss = bosses.randomElement()!
+//        imageBoss.image = UIImage(named: "boss1")
+//        labelBossLP.text = String(boss.lifePoint)
+//        labelBossDF.text = String(boss.defense)
+//        labelBossPD.text = String(boss.PowerDamage)
+//        labelDice.text = String(boss.weaponDamage)
+//        labelBossSC.text = String(boss.specialCapacity)
+        bossRandom()
+        rollingDice()
 
     }
     @IBAction func
       RootViewContrller(segue: UIStoryboardSegue) {
     }
+    
+    @IBOutlet weak var labelDice: UILabel!
     @IBAction func buttonAcation(_ sender: Any) {
+        let r = Int.random(in: 1...20)
+        labelDice.text = String(r)
 //        performSegue(withIdentifier: "VC2", sender: self)
-//    }
+   }
 //
     
     
     func rollingDice() {
+//      var lifB = Int(labelBossLD.text!)
+////
         let dice = Int.random(in: 1...20)
         switch dice {
         case 1...9:
-            textDescrabtion.text = "PowerDemage"
+            
+//            numberdice.text = String(dice)
+            labelDice.text = "PowerDemage"
             print("PowerDemage")
         case 10...19:
-            textDescrabtion.text = "WeaponDamage"
+//            numberdice.text = String(dice)
+            labelDice.text = "WeaponDamage"
             print("WeaponDamage")
         case 20:
-            textDescrabtion.text = "speecialcapacity"
+//            numberdice.text = String(dice)
+            labelDice.text = "speecialcapacity"
             print("speecialcapacity")
         default:
-
-            print("Error")
-
-
-
+print("Error")
+            
         }
-        
     }
-       func bossRandom(){
+     func bossRandom(){
+         var boss = Int.random(in: 1...2)
+        switch boss {
+           case 1:
+            imageBoss.image = UIImage(named: "boss2")
+             labelBossLP.text = String(boss1.lifePoint)
+             labelBossDF.text = String(boss1.defense)
+             labelBossPD.text = String(boss1.PowerDamage)
+             labelBossWD.text = String(boss1.weaponDamage)
+             labelBossSC.text = String(boss1.specialCapacity)
 
-            let boss = Int.random(in: 1...2)
-          switch boss {
-            case 1:
-//               boss1.imageBoss = UIImageView(named: boss1)!
-               boss1.lifePoint = Int(labelBossLD.text!)!
-              boss1.defense = Int(labelBossDF.text!)!
-                boss1.PowerDamage = Int(labelBossPD.text!)!
-               boss1.weaponDamage = Int(labelBossWD.text!)!
-                boss1.specialCapacity = Int(labelBossSC.text!)!
            case 2:
-//              boss2.imageBoss = UIImageView(named: boss1)!
-              boss2.lifePoint = Int(labelBossLD.text!)!
-               boss2.defense = Int(labelBossDF.text!)!
-              boss2.PowerDamage = Int(labelBossPD.text!)!
-               boss2.weaponDamage = Int(labelBossWD.text!)!
-               boss2.specialCapacity = Int(labelBossSC.text!)!
-           default:
+              imageBoss.image = UIImage(named: "boss1")
+              labelBossLP.text = String(boss2.lifePoint)
+             labelBossDF.text = String(boss2.defense)
+             labelBossPD.text = String(boss2.PowerDamage)
+              labelBossWD.text = String(boss2.weaponDamage)
+             labelBossSC.text = String(boss2.specialCapacity)
+
+          default:
                print("Error")
-        
-          }
-    }
+         }
+
+     }
+
 }
 

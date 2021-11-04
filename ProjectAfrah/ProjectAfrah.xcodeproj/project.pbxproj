@@ -17,7 +17,6 @@
 		9A4BBA1B2731BBCB00C2BB8D /* ProjectAfrahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA1A2731BBCB00C2BB8D /* ProjectAfrahUITests.swift */; };
 		9A4BBA1D2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA1C2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift */; };
 		9A4BBA2A2731CEF000C2BB8D /* ViewControllerTwo .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */; };
-		9A9E4E892733106B00FF2D12 /* ViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E4E882733106B00FF2D12 /* ViewControllerThree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		9A4BBA1A2731BBCB00C2BB8D /* ProjectAfrahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAfrahUITests.swift; sourceTree = "<group>"; };
 		9A4BBA1C2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAfrahUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerTwo .swift"; sourceTree = "<group>"; };
-		9A9E4E882733106B00FF2D12 /* ViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerThree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				9A4BB9FB2731BBCA00C2BB8D /* SceneDelegate.swift */,
 				9A4BB9FD2731BBCA00C2BB8D /* ViewController.swift */,
 				9A4BB9FF2731BBCA00C2BB8D /* Main.storyboard */,
-				9A9E4E882733106B00FF2D12 /* ViewControllerThree.swift */,
 				9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */,
 				9A4BBA022731BBCB00C2BB8D /* Assets.xcassets */,
 				9A4BBA042731BBCB00C2BB8D /* LaunchScreen.storyboard */,
@@ -264,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9E4E892733106B00FF2D12 /* ViewControllerThree.swift in Sources */,
 				9A4BBA2A2731CEF000C2BB8D /* ViewControllerTwo .swift in Sources */,
 				9A4BB9FE2731BBCA00C2BB8D /* ViewController.swift in Sources */,
 				9A4BB9FA2731BBCA00C2BB8D /* AppDelegate.swift in Sources */,
