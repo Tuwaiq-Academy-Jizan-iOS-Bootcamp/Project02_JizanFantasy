@@ -43,7 +43,7 @@ VC2.specialCapacityOfHero.text = SpecialCapacityOfHero.text
         storyOfHero.text = "The Knight have 250 point and he has big power and powerful weapon and strong defanse you won't regret choosing it "
         nameOfHero.text = "Knight"
     }
-    
+     
     
     @IBAction func wizardAction(_ sender: Any) {
         pointOfHero.text = String(245)
@@ -88,6 +88,10 @@ extension ViewControllerTwo:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+        
     }
     
 }

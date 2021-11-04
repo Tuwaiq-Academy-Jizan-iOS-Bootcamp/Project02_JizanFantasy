@@ -15,14 +15,15 @@ class Hero{
     var powerDamage :Int
     var weaponDamage : Int
     var specialCapacity :Int
-    init(pointOfDispatch : Int,livePoint :Int,defanse : Int,powerDamage :Int,weaponDamage : Int,specialCapacity :Int){
+    var specialCapacityOfLifePoint : Int
+    init(pointOfDispatch : Int,livePoint :Int,defanse : Int,powerDamage :Int,weaponDamage : Int,specialCapacity :Int,specialCapacityOfLifePoint : Int){
         self.pointOfDispatch = pointOfDispatch
         self.livePoint = livePoint
         self.defanse = defanse
         self.powerDamage = powerDamage
         self.weaponDamage = weaponDamage
         self.specialCapacity = specialCapacity
-    
+        self.specialCapacityOfLifePoint = specialCapacityOfLifePoint
     }
 }
 
@@ -33,14 +34,15 @@ class Bosses{
     var powerDamage :Int
     var weaponDamage : Int
     var specialCapacity :Int
-    init(name:String ,livePoint :Int,defanse : Int,powerDamage :Int,weaponDamage : Int,specialCapacity :Int){
+    var specialCapacityOfLifePoint : Int
+    init(name:String ,livePoint :Int,defanse : Int,powerDamage :Int,weaponDamage : Int,specialCapacity :Int,specialCapacityOfLifePoint : Int){
         self.name = name
         self.livePoint = livePoint
         self.defanse = defanse
         self.powerDamage = powerDamage
         self.weaponDamage = weaponDamage
         self.specialCapacity = specialCapacity
-    
+        self.specialCapacityOfLifePoint = specialCapacityOfLifePoint
     }
 }
     
@@ -49,12 +51,13 @@ class Bosses{
 
 class ViewController: UIViewController {
    
-    var boss1=Bosses(name : "Boss1",livePoint: 250, defanse: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110)
-var boss2 = Bosses(name : "Boss2",livePoint: 170, defanse: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75)
+    var boss1=Bosses(name : "Boss1",livePoint: 250, defanse: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110,specialCapacityOfLifePoint: 5)
+var boss2 = Bosses(name : "Boss2",livePoint: 170, defanse: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75,specialCapacityOfLifePoint: 5)
 
-var hero = Hero(pointOfDispatch: 0, livePoint: 0, defanse: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0)
-
-    
+var hero = Hero(pointOfDispatch: 0, livePoint: 0, defanse: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0,specialCapacityOfLifePoint: 5)
+var theturn = false
+ var flag = false
+  var turnNumber = 1
     @IBOutlet weak var nameOfBoss: UILabel!
     @IBOutlet weak var lifePointOfBoss: UILabel!
     @IBOutlet weak var defanseOfBoss: UILabel!
@@ -63,6 +66,7 @@ var hero = Hero(pointOfDispatch: 0, livePoint: 0, defanse: 0, powerDamage: 0, we
     @IBOutlet weak var specialCapacityOfBoss: UILabel!
     @IBOutlet weak var imageBoss: UIImageView!
     
+    @IBOutlet weak var logicOfGame: UILabel!
     
     @IBOutlet weak var nameOfHero: UILabel!
     @IBOutlet weak var LifePointOfHero: UILabel!
@@ -110,27 +114,129 @@ specialCapacityOfBoss.text = String(boss1.specialCapacity)
     
     @IBAction func theGame(_ sender: Any) {
    hero.livePoint = Int(LifePointOfHero.text!)!
-        
+    boss1.livePoint = Int(lifePointOfBoss.text!)!
+    boss2.livePoint = Int(lifePointOfBoss.text!)!
+    
+  print("Turn Number is  \(turnNumber) ")
+        if theturn == true {
+//    boss turn
+            turnNumber += 1
     let dice = Int.random(in: 1...20)
 if dice >= 1 && dice <= 9{
     numberOfDice.text = String(dice)
-    hero.livePoint -= (Int(powerDamageOfBoss.text!)! - Int(defanseOfBoss.text!)!)
+    print("The Boss is start with \(dice)")
+    hero.livePoint -= (Int(powerDamageOfBoss.text!)! - Int(defanseOfHero.text!)!)
     LifePointOfHero.text = String(hero.livePoint)
+    print("life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+    print("life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
 }else if dice >= 10 && dice <= 19{
+    print("The Boss is start with \(dice)")
     numberOfDice.text = String(dice)
-    hero.livePoint -= (Int(weaponDamageOfBoss.text!)! - Int(defanseOfBoss.text!)!)
+    hero.livePoint -= (Int(weaponDamageOfBoss.text!)! - Int(defanseOfHero.text!)!)
     LifePointOfHero.text = String(hero.livePoint)
+  print("life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+   print("life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
 }else if dice == 20{
+    print( "The Boss is start with \(dice)")
+    flag = true
     numberOfDice.text = String(dice)
-    hero.livePoint -= (Int(specialCapacityOfBoss.text!)! - Int(defanseOfBoss.text!)!)
+    hero.livePoint -= (Int(specialCapacityOfBoss.text!)! - Int(defanseOfHero.text!)!)
     LifePointOfHero.text = String(hero.livePoint)
-//   Int(lifePointOfBoss.text) += 5
-           
+    lifePointOfBoss.text! += String(5)
+    if flag{
+        specialCapacity(player: "\(nameOfHero.text!)")
+    }
+    print("life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+    print("life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
 }
+        theturn = false
+            
+            
+        }else if theturn == false{
+        
+// hero turn
+      
+        rollinDiceOfHero ()
+
+}}
+    
+    func specialCapacity (player:String) {
+// parameter of this func is the name label .text
+        if player == "knight"{
+            weaponOfHero.text! += String(10)
+            flag = false
+        }else if player == "Wizard"{
+            powerDamageOfHero.text! += String(10)
+            flag = false
+        }else if player == "Thief"{
+            weaponOfHero.text! += String(35)
+            flag = false
+        }else if player == "Boss1" {
+            weaponDamageOfBoss.text! += String(22)
+            flag = false
+        }else if player == "Boss2"{
+            powerDamageOfBoss.text! += String(32)
+            flag = false
+        }
+    }
+    
+  func rollinDiceOfHero ()
+    {
+        hero.livePoint = Int(LifePointOfHero.text!)!
+        boss1.livePoint = Int(lifePointOfBoss.text!)!
+        boss2.livePoint = Int(lifePointOfBoss.text!)!
+    
+       let dice2 = Int.random(in: 1...20)
+   if dice2 >= 1 && dice2 <= 9{
+        numberOfDice.text = String(dice2)
+       print( "The Hero is start with \(dice2)")
+       if nameOfBoss.text! == "boss1"{
+       boss1.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
+           lifePointOfBoss.text! = String(boss1.livePoint)
+       }else if nameOfBoss.text! == "boss2"{
+           boss2.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
+           lifePointOfBoss.text = String(boss2.livePoint)
+       }
+      print( "life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+       print( "life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
+    }else if dice2 >= 10 && dice2 <= 19{
+       numberOfDice.text = String(dice2)
+       print("The Hero is start with \(dice2)")
+        if nameOfBoss.text! == "boss1"{
+        boss1.livePoint -= (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!)
+            lifePointOfBoss.text! = String(boss1.livePoint)
+        }else if nameOfBoss.text! == "boss2"{
+            boss2.livePoint -= (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!)
+            lifePointOfBoss.text = String(boss2.livePoint)
+        }
+        print( "life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+        print("life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
+ }else if dice2 == 20{
+     numberOfDice.text = String(dice2)
+     print("The Hero is start with \(dice2)")
+     if nameOfBoss.text! == "boss1"{
+         boss1.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!)
+         lifePointOfBoss.text! = String(boss1.livePoint)
+         LifePointOfHero.text! += String(5)
+     }else if nameOfBoss.text! == "boss2"{
+         boss2.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!)
+         lifePointOfBoss.text = String(boss2.livePoint)
+         LifePointOfHero.text! += String(5)
+         if flag{
+             specialCapacity(player: "\(nameOfHero.text!)")
+         }
+     }
+     print( "life Point of \(nameOfHero.text!)  :  \(hero.livePoint)")
+   print("life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)")
+      }
+    theturn = true
+ }
+        
+        
+        
         
     }
     
     
     
-}
 

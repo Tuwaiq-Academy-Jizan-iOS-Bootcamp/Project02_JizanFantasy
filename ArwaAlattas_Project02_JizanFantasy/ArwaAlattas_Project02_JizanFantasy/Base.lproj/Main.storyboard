@@ -150,7 +150,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khD-mD-85r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khD-mD-85r">
                                 <rect key="frame" x="18" y="532" width="374" height="202"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -231,6 +231,7 @@
                         <outlet property="imageBoss" destination="4Gi-QG-biV" id="RQM-68-Y43"/>
                         <outlet property="imageHero" destination="HvR-bd-Fdk" id="ZaW-40-dGT"/>
                         <outlet property="lifePointOfBoss" destination="UET-6X-V78" id="4dN-ZZ-qk2"/>
+                        <outlet property="logicOfGame" destination="khD-mD-85r" id="kvc-BJ-SBc"/>
                         <outlet property="nameOfBoss" destination="3ej-oe-Hkh" id="tIh-Xi-4wd"/>
                         <outlet property="nameOfHero" destination="dG6-Yv-wFp" id="95y-qe-17E"/>
                         <outlet property="numberOfDice" destination="6Um-1s-hoo" id="aoL-Ro-at4"/>
