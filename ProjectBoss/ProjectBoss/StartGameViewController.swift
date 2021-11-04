@@ -51,6 +51,12 @@ class Hero {
     
 }
 class StartGameViewController: UIViewController {
+    
+    var index: Int = 0
+    var myImages2 = ["Wizard","knight"]
+
+    @IBOutlet weak var bootImage: UIImageView!
+    
     var player1 = Boot.init(name: "BootOne", defance: 30, powerDamge: 20, weaponDamge: 45, spscialCapasity: 110,livePoint:250)
     
     var player2 = Boot.init(name: "", defance: 30, powerDamge: 20, weaponDamge: 45, spscialCapasity: 110, livePoint: 250)
@@ -87,7 +93,14 @@ class StartGameViewController: UIViewController {
     
 
     override func viewDidLoad() {
+        
+
     super.viewDidLoad()
+        
+       bootImage.image = UIImage(named: myImages2[Int.random(in: 0...1)])
+
+
+        
     // Do any additional setup after loading the view.
 }
 

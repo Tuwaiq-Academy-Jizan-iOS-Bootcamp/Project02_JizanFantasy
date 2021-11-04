@@ -527,6 +527,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZNj-lC-Sax"/>
                     <connections>
+                        <outlet property="bootImage" destination="oI6-sA-HPn" id="vDg-uf-v4E"/>
                         <outlet property="returnNumber" destination="dz1-fn-SbP" id="mFx-fl-9RM"/>
                     </connections>
                 </viewController>
