@@ -125,39 +125,38 @@ print("Error")
         }
     }
     func bossRandom() {
-    if hero.lifePoint >= 0 && boss.lifePoint >= 0 {
-        bossTurn()
-        heroTurn()
-    }else{
-        if hero.lifePoint <= 0 {
-            print("hero dead")
-        }else if boss.lifePoint <= 0 {
-            print("boss dead")
-        }else{
-            print("Error")
-            
-        }
-    }
-    }
-    func bossTurn() {
-        let diceBoss = dices.randomElement()!
-        
-        print("Dice for boss number is : \(diceBoss)")
-        print("it's the boss turn!")
-        if diceBoss >= 1 && diceBoss <= 9 {
-            if boss.lifePoint - hero.defense > 0 {
-                print("Power Damager")
-                print("hero health \(hero.lifePoint)")
-                hero.lifePoint -= boss.PowerDamage - hero.defense
-            }else{
-                print("defence")
-            }
-        }else if diceBoss == 20 {
-            print("special capacity damage")
-        }
-    }
-    func heroTurn() {
-        
+//    if hero.lifePoint >= 0 && boss.lifePoint >= 0 {
+//        bossTurn()
+//        heroTurn()
+//    }else{
+//        if hero.lifePoint <= 0 {
+//            print("hero dead")
+//        }else if boss.lifePoint <= 0 {
+//            print("boss dead")
+//        }else{
+//            print("Error")
+//
+//        }
+//    }
+//    }
+//    func bossTurn() {
+//        let diceBoss = dices.randomElement()!
+//
+//        print("Dice for boss number is : \(diceBoss)")
+//        print("it's the boss turn!")
+//        if diceBoss >= 1 && diceBoss <= 9 {
+//            if boss.PowerDamage - hero.defense > 0 {
+//                print("Power Damager =  \(boss.PowerDamage - hero.defense)")
+//                print("hero health \(hero.lifePoint)")
+//                hero.lifePoint -= boss.PowerDamage - hero.defense
+//            }else{
+//                print("defence")
+//            }
+//        }else if diceBoss == 20 {
+//            print("special capacity damage")
+//        }
+//    }
+    func heroTurn()  {
     
 //         var boss = Int.random(in: 1...2)
 //        switch boss {
@@ -185,4 +184,5 @@ print("Error")
 //
 //}
     }
+}
 }
