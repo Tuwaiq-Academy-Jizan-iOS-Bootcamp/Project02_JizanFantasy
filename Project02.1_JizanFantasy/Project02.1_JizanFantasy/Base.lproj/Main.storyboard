@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dice = " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEn-Ws-3lz">
-                                <rect key="frame" x="20" y="706" width="374" height="63"/>
+                                <rect key="frame" x="20" y="721" width="374" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -207,14 +207,22 @@
                         <outlet property="bossDF1" destination="dGr-rH-Xzn" id="ejF-9c-ERt"/>
                         <outlet property="bossImage" destination="52Q-Al-NUu" id="DMr-TU-HjN"/>
                         <outlet property="bossLP1" destination="b18-IH-gvf" id="7e4-YL-giZ"/>
+                        <outlet property="bossPD1" destination="5Rx-dn-h8c" id="iKr-24-blu"/>
+                        <outlet property="bossSC1" destination="1z3-Vj-YmO" id="Pix-ik-rTl"/>
+                        <outlet property="bossWD1" destination="0JJ-cx-8P3" id="N0Q-32-Ccn"/>
+                        <outlet property="dfHeroLabel" destination="E5w-kR-VkK" id="5Qo-bM-seC"/>
                         <outlet property="diceLabel" destination="dEn-Ws-3lz" id="fYs-5p-zKZ"/>
                         <outlet property="heroImageinVC1" destination="L3e-SM-Xag" id="OKR-3M-wLp"/>
+                        <outlet property="lpHeroLabel" destination="tLL-wg-Glf" id="4FE-qk-kfP"/>
+                        <outlet property="pdHeroLabel" destination="JjF-kG-Pzd" id="Ro4-T2-LMk"/>
+                        <outlet property="scHeroLabel" destination="LQI-13-iGE" id="N22-Ks-QOc"/>
+                        <outlet property="wdHeroLabel" destination="gx7-pq-Xem" id="o2L-y8-ove"/>
                         <segue destination="DJ1-29-hZB" kind="show" identifier="fromVC1toVC2" id="BvX-KM-GmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="98"/>
+            <point key="canvasLocation" x="721.73913043478262" y="97.767857142857139"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="bx4-l0-2lp">
@@ -306,7 +314,7 @@
                                 <rect key="frame" x="209" y="524" width="185" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defense" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-7B-Xau">
                                 <rect key="frame" x="20" y="566" width="185" height="34"/>
@@ -366,8 +374,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="rek-ne-4Px"/>
                     <connections>
+                        <outlet property="dfTextField" destination="VHh-2Z-3yr" id="Ops-t0-2Ew"/>
                         <outlet property="heroNameLabel" destination="7hg-12-zrX" id="4Hy-6Y-NBp"/>
+                        <outlet property="lpTextField" destination="CL6-u7-vQw" id="FZ5-Ge-RwI"/>
+                        <outlet property="pdTextField" destination="Ufa-uW-eu2" id="yAy-qG-QnW"/>
+                        <outlet property="scTextField" destination="UGv-fy-I4L" id="V5Q-ji-LJi"/>
                         <outlet property="viewImage" destination="n0p-bD-WwD" id="1ev-ff-dCp"/>
+                        <outlet property="wdTextField" destination="lxf-gM-vyR" id="c31-Ik-zCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-gU-ahD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
