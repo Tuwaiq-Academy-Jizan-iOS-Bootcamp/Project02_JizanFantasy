@@ -20,7 +20,7 @@ class Hero{
     }
 
 
-    class Knight: Hero{
+    class Knight:Hero{
         
     }
 class Wizard:Hero{
@@ -43,11 +43,11 @@ struct Boss{
     
 class ViewController:UIViewController{
     
-var knight = Knight(Name: "knight", LifePont: 60, Defense: 20, PowerDamage: 30, WeaponDamage: 40, Specialcapacity: 100)
-var wizard = Wizard(Name: "wizard", LifePont: 90, Defense: 15, PowerDamage: 70, WeaponDamage: 20, Specialcapacity: 50)
-var thief = Thief(Name: "thif", LifePont: 65, Defense: 25, PowerDamage: 15, WeaponDamage: 30, Specialcapacity: 75)
-var boss1 = Boss(Name: "boss1", LifePoint: 250, Defense: 30, PowerDamage: 20, WeaponDamage:45 ,SpecialCapacity: 110)
-var boss2 = Boss(Name: "boss2", LifePoint: 170, Defense: 25, PowerDamage: 15, WeaponDamage: 30 , SpecialCapacity: 75)
+var knight=Knight(Name: "knight", LifePont: 60, Defense: 20, PowerDamage: 30, WeaponDamage: 40,Specialcapacity: 100)
+var wizard = Wizard(Name: "wizard", LifePont: 90, Defense: 15, PowerDamage:70,WeaponDamage: 20,Specialcapacity: 50)
+var thief=Thief(Name: "thif", LifePont: 65, Defense: 25, PowerDamage:15,WeaponDamage: 30,Specialcapacity: 75)
+var boss1=Boss(Name:"boss1", LifePoint:250,Defense: 30, PowerDamage:20,WeaponDamage:45 ,SpecialCapacity:110)
+var boss2 = Boss(Name: "boss2", LifePoint:170,Defense: 25, PowerDamage:15,WeaponDamage: 30 , SpecialCapacity:75)
     
 @IBOutlet weak var DescraptionLabel: UILabel!
 @IBOutlet weak var NumberDice: UILabel!
@@ -57,8 +57,29 @@ var boss2 = Boss(Name: "boss2", LifePoint: 170, Defense: 25, PowerDamage: 15, We
 @IBOutlet weak var powerDamgeBoss: UILabel!
 @IBOutlet weak var weaponDamageBoss: UILabel!
 @IBOutlet weak var specialCapacityBoss: UILabel!
+    
+    
+@IBOutlet weak var Lp: UILabel!
+    
+    
+@IBOutlet weak var DF: UILabel!
+    
+    
+    
+    @IBOutlet weak var PD: UILabel!
+    
+    
+    @IBOutlet weak var WD: UILabel!
+    
+@IBOutlet weak var SC: UILabel!
+   
 @IBAction func Dice(_ sender: Any) {
+    
 Dice()
+    
+    
+    
+    
 }
 override func  viewDidLoad() {
 super.viewDidLoad()
@@ -86,6 +107,7 @@ switch value{
             NumberDice.text = String(value)
             DescraptionLabel.text = "power Damag"
             print("power Damage")
+    
         case 10...19:
             NumberDice.text = String(value)
             DescraptionLabel.text = "weapon Demage"
@@ -98,9 +120,6 @@ switch value{
             print(" the end")
     }
     }
-    
-    
-    
+@IBAction func unmindToRootViewController(segue:UIStoryboardSegue){
 }
-
-
+}

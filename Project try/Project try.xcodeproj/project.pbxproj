@@ -7,21 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1114B0442733D93B0044D459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1114B0432733D93B0044D459 /* Assets.xcassets */; };
 		11836B282731725E002FDE02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B272731725E002FDE02 /* AppDelegate.swift */; };
 		11836B2A2731725E002FDE02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B292731725E002FDE02 /* SceneDelegate.swift */; };
 		11836B2C2731725E002FDE02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B2B2731725E002FDE02 /* ViewController.swift */; };
 		11836B2F2731725E002FDE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11836B2D2731725E002FDE02 /* Main.storyboard */; };
-		11836B3127317260002FDE02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11836B3027317260002FDE02 /* Assets.xcassets */; };
 		11836B3427317260002FDE02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11836B3227317260002FDE02 /* LaunchScreen.storyboard */; };
 		11836B3F27317260002FDE02 /* Project_tryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B3E27317260002FDE02 /* Project_tryTests.swift */; };
 		11836B4927317260002FDE02 /* Project_tryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B4827317260002FDE02 /* Project_tryUITests.swift */; };
 		11836B4B27317260002FDE02 /* Project_tryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B4A27317260002FDE02 /* Project_tryUITestsLaunchTests.swift */; };
 		11836B5827328C0E002FDE02 /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11836B5727328C0D002FDE02 /* ViewControllerTwo.swift */; };
-		11836B602732C1A3002FDE02 /* Knight.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11836B5F2732C1A3002FDE02 /* Knight.jpeg */; };
-		11836B622732C1BE002FDE02 /* wizard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11836B612732C1BE002FDE02 /* wizard.jpeg */; };
-		11836B642732C1C6002FDE02 /* Thief.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11836B632732C1C6002FDE02 /* Thief.jpeg */; };
-		11836B66273308A0002FDE02 /* boss2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11836B65273308A0002FDE02 /* boss2.jpeg */; };
-		11836B68273308AA002FDE02 /* boss1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11836B67273308AA002FDE02 /* boss1.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1114B0432733D93B0044D459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11836B242731725E002FDE02 /* Project try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11836B272731725E002FDE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11836B292731725E002FDE02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		11836B2B2731725E002FDE02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11836B2E2731725E002FDE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		11836B3027317260002FDE02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11836B3327317260002FDE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11836B3527317260002FDE02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11836B3A27317260002FDE02 /* Project tryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project tryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,11 +51,6 @@
 		11836B4827317260002FDE02 /* Project_tryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_tryUITests.swift; sourceTree = "<group>"; };
 		11836B4A27317260002FDE02 /* Project_tryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_tryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11836B5727328C0D002FDE02 /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
-		11836B5F2732C1A3002FDE02 /* Knight.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Knight.jpeg; path = ../../../Knight.jpeg; sourceTree = "<group>"; };
-		11836B612732C1BE002FDE02 /* wizard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wizard.jpeg; path = ../../../wizard.jpeg; sourceTree = "<group>"; };
-		11836B632732C1C6002FDE02 /* Thief.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Thief.jpeg; path = ../../../Thief.jpeg; sourceTree = "<group>"; };
-		11836B65273308A0002FDE02 /* boss2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = boss2.jpeg; path = ../../../boss2.jpeg; sourceTree = "<group>"; };
-		11836B67273308AA002FDE02 /* boss1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = boss1.jpeg; path = ../../../boss1.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +103,9 @@
 				11836B272731725E002FDE02 /* AppDelegate.swift */,
 				11836B292731725E002FDE02 /* SceneDelegate.swift */,
 				11836B2B2731725E002FDE02 /* ViewController.swift */,
+				1114B0432733D93B0044D459 /* Assets.xcassets */,
 				11836B2D2731725E002FDE02 /* Main.storyboard */,
 				11836B5727328C0D002FDE02 /* ViewControllerTwo.swift */,
-				11836B3027317260002FDE02 /* Assets.xcassets */,
-				11836B67273308AA002FDE02 /* boss1.jpeg */,
-				11836B65273308A0002FDE02 /* boss2.jpeg */,
-				11836B612732C1BE002FDE02 /* wizard.jpeg */,
-				11836B5F2732C1A3002FDE02 /* Knight.jpeg */,
-				11836B632732C1C6002FDE02 /* Thief.jpeg */,
 				11836B3D27317260002FDE02 /* Project tryTests */,
 				11836B3227317260002FDE02 /* LaunchScreen.storyboard */,
 				11836B3527317260002FDE02 /* Info.plist */,
@@ -249,13 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11836B602732C1A3002FDE02 /* Knight.jpeg in Resources */,
 				11836B3427317260002FDE02 /* LaunchScreen.storyboard in Resources */,
-				11836B622732C1BE002FDE02 /* wizard.jpeg in Resources */,
-				11836B3127317260002FDE02 /* Assets.xcassets in Resources */,
-				11836B66273308A0002FDE02 /* boss2.jpeg in Resources */,
-				11836B642732C1C6002FDE02 /* Thief.jpeg in Resources */,
-				11836B68273308AA002FDE02 /* boss1.jpeg in Resources */,
+				1114B0442733D93B0044D459 /* Assets.xcassets in Resources */,
 				11836B2F2731725E002FDE02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
