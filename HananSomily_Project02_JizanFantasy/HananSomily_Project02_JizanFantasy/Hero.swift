@@ -16,6 +16,7 @@ struct HeroPlayer{
     var weaponDamage : Int
     var specialCapacity : Int
     var specialLP : Int
+    var specialWD : Int
     var specialPD:Int
     //func lp
     mutating func power (){}}
@@ -30,9 +31,11 @@ struct HeroPlayer{
      @IBOutlet weak var inserDFtextField: UITextField!
      @IBOutlet weak var insertPDtextField: UITextField!
      @IBOutlet weak var insertWDtextField: UITextField!
-     var knight = HeroPlayer(points:250 ,name: "Knight", lifePoint: 60, defense: 20, powerDamage: 30, weaponDamage: 40, specialCapacity: 100, specialLP: 5, specialPD: 10)
-     var wizard = HeroPlayer(points:245 ,name: "Wiza", lifePoint: 90, defense: 15, powerDamage: 70, weaponDamage: 20, specialCapacity: 50, specialLP: 35, specialPD: 10)
-     var thief = HeroPlayer(points:210,name: "Thief", lifePoint: 65, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75, specialLP: 5, specialPD: 35)
+     var knight = HeroPlayer(points:250 ,name: "Knight", lifePoint: 60, defense: 20, powerDamage: 30, weaponDamage: 40, specialCapacity: 100, specialLP: 5, specialWD: 10, specialPD: 0)
+     var wizard = HeroPlayer(points:245 ,name: "Wiza", lifePoint: 90, defense: 15, powerDamage: 70, weaponDamage: 20, specialCapacity: 50, specialLP: 35, specialWD: 0, specialPD: 10)
+     var thief = HeroPlayer(points:210,name: "Thief", lifePoint: 65, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75, specialLP: 5, specialWD: 35, specialPD: 0)
+     var playrSWD = 0
+     var playrSPD = 0
      override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
@@ -72,6 +75,8 @@ struct HeroPlayer{
          insertWDtextField.text
          sender.scOfPlayer2Labl.text =
          capacityPointLabl.text
+         sender.spichalCapacityPD = playrSPD
+         sender.spichalCapacityWD = playrSWD
      }
 }
 extension Hero:UITextFieldDelegate{
@@ -83,15 +88,25 @@ extension Hero:UITextFieldDelegate{
         case "knight" :
             pointOfHeroLabl.text = String(knight.points)
             nameOfHeroLabl.text = String(knight.name)
-            capacityPointLabl.text = " + 5 LP & + 10 WD"
+            capacityPointLabl.text = String(knight.specialCapacity)
+            playrSPD = knight.specialPD
+            playrSWD = knight.specialWD
+            //" + 5 LP & + 10 WD"
         case "wiza" :
             pointOfHeroLabl.text = String(wizard.points)
             nameOfHeroLabl.text = String(wizard.name)
-            capacityPointLabl.text = "+ 35 LP  & + 10 PD"
+            capacityPointLabl.text = String(wizard.specialCapacity)
+            playrSPD = wizard.specialPD
+            playrSWD = wizard.specialWD
+            //"+ 35 LP  & + 10 PD"
         case "thief" :
             pointOfHeroLabl.text = String(thief.points)
             nameOfHeroLabl.text = String(thief.name)
-            capacityPointLabl.text = "+ 5 LP & + 35 WD"       default:
+            capacityPointLabl.text = String(thief.specialCapacity)
+            playrSPD = thief.specialPD
+            playrSWD = thief.specialWD
+            //"+ 5 LP & + 35 WD"
+        default:
             print("error")
         }
         return true
