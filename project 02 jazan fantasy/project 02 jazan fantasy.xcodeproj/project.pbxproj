@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A31E0FF327326342002EC9D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF227326342002EC9D0 /* AppDelegate.swift */; };
+		A31E0FF527326342002EC9D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF427326342002EC9D0 /* SceneDelegate.swift */; };
+		A31E0FF727326342002EC9D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF627326342002EC9D0 /* ViewController.swift */; };
+		A31E0FFA27326342002EC9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FF827326342002EC9D0 /* Main.storyboard */; };
+		A31E0FFC27326343002EC9D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FFB27326343002EC9D0 /* Assets.xcassets */; };
+		A31E0FFF27326343002EC9D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */; };
+		A31E100A27326343002EC9D0 /* project_02_jazan_fantasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */; };
+		A31E101427326344002EC9D0 /* project_02_jazan_fantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */; };
+		A31E101627326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */; };
+		A31E10232732A54A002EC9D0 /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A31E100627326343002EC9D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A31E0FE727326342002EC9D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A31E0FEE27326342002EC9D0;
+			remoteInfo = "project 02 jazan fantasy";
+		};
+		A31E101027326344002EC9D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A31E0FE727326342002EC9D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A31E0FEE27326342002EC9D0;
+			remoteInfo = "project 02 jazan fantasy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project 02 jazan fantasy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31E0FF227326342002EC9D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A31E0FF427326342002EC9D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A31E0FF627326342002EC9D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A31E0FF927326342002EC9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A31E0FFB27326343002EC9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A31E0FFE27326343002EC9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A31E100027326343002EC9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project 02 jazan fantasyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyTests.swift; sourceTree = "<group>"; };
+		A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project 02 jazan fantasyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyUITests.swift; sourceTree = "<group>"; };
+		A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A31E0FEC27326342002EC9D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100227326343002EC9D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100C27326344002EC9D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A31E0FE627326342002EC9D0 = {
+			isa = PBXGroup;
+			children = (
+				A31E0FF127326342002EC9D0 /* project 02 jazan fantasy */,
+				A31E100827326343002EC9D0 /* project 02 jazan fantasyTests */,
+				A31E101227326344002EC9D0 /* project 02 jazan fantasyUITests */,
+				A31E0FF027326342002EC9D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A31E0FF027326342002EC9D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */,
+				A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */,
+				A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A31E0FF127326342002EC9D0 /* project 02 jazan fantasy */ = {
+			isa = PBXGroup;
+			children = (
+				A31E0FF227326342002EC9D0 /* AppDelegate.swift */,
+				A31E0FF427326342002EC9D0 /* SceneDelegate.swift */,
+				A31E0FF627326342002EC9D0 /* ViewController.swift */,
+				A31E0FF827326342002EC9D0 /* Main.storyboard */,
+				A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */,
+				A31E0FFB27326343002EC9D0 /* Assets.xcassets */,
+				A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */,
+				A31E100027326343002EC9D0 /* Info.plist */,
+			);
+			path = "project 02 jazan fantasy";
+			sourceTree = "<group>";
+		};
+		A31E100827326343002EC9D0 /* project 02 jazan fantasyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */,
+			);
+			path = "project 02 jazan fantasyTests";
+			sourceTree = "<group>";
+		};
+		A31E101227326344002EC9D0 /* project 02 jazan fantasyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */,
+				A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */,
+			);
+			path = "project 02 jazan fantasyUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A31E101927326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasy" */;
+			buildPhases = (
+				A31E0FEB27326342002EC9D0 /* Sources */,
+				A31E0FEC27326342002EC9D0 /* Frameworks */,
+				A31E0FED27326342002EC9D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "project 02 jazan fantasy";
+			productName = "project 02 jazan fantasy";
+			productReference = A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A31E100427326343002EC9D0 /* project 02 jazan fantasyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A31E101C27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyTests" */;
+			buildPhases = (
+				A31E100127326343002EC9D0 /* Sources */,
+				A31E100227326343002EC9D0 /* Frameworks */,
+				A31E100327326343002EC9D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A31E100727326343002EC9D0 /* PBXTargetDependency */,
+			);
+			name = "project 02 jazan fantasyTests";
+			productName = "project 02 jazan fantasyTests";
+			productReference = A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A31E100E27326344002EC9D0 /* project 02 jazan fantasyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A31E101F27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyUITests" */;
+			buildPhases = (
+				A31E100B27326344002EC9D0 /* Sources */,
+				A31E100C27326344002EC9D0 /* Frameworks */,
+				A31E100D27326344002EC9D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A31E101127326344002EC9D0 /* PBXTargetDependency */,
+			);
+			name = "project 02 jazan fantasyUITests";
+			productName = "project 02 jazan fantasyUITests";
+			productReference = A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A31E0FE727326342002EC9D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					A31E0FEE27326342002EC9D0 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					A31E100427326343002EC9D0 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A31E0FEE27326342002EC9D0;
+					};
+					A31E100E27326344002EC9D0 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A31E0FEE27326342002EC9D0;
+					};
+				};
+			};
+			buildConfigurationList = A31E0FEA27326342002EC9D0 /* Build configuration list for PBXProject "project 02 jazan fantasy" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A31E0FE627326342002EC9D0;
+			productRefGroup = A31E0FF027326342002EC9D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */,
+				A31E100427326343002EC9D0 /* project 02 jazan fantasyTests */,
+				A31E100E27326344002EC9D0 /* project 02 jazan fantasyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A31E0FED27326342002EC9D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31E0FFF27326343002EC9D0 /* LaunchScreen.storyboard in Resources */,
+				A31E0FFC27326343002EC9D0 /* Assets.xcassets in Resources */,
+				A31E0FFA27326342002EC9D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100327326343002EC9D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100D27326344002EC9D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A31E0FEB27326342002EC9D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31E0FF727326342002EC9D0 /* ViewController.swift in Sources */,
+				A31E0FF327326342002EC9D0 /* AppDelegate.swift in Sources */,
+				A31E0FF527326342002EC9D0 /* SceneDelegate.swift in Sources */,
+				A31E10232732A54A002EC9D0 /* ViewControllerTwo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100127326343002EC9D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31E100A27326343002EC9D0 /* project_02_jazan_fantasyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31E100B27326344002EC9D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31E101627326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift in Sources */,
+				A31E101427326344002EC9D0 /* project_02_jazan_fantasyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A31E100727326343002EC9D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */;
+			targetProxy = A31E100627326343002EC9D0 /* PBXContainerItemProxy */;
+		};
+		A31E101127326344002EC9D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */;
+			targetProxy = A31E101027326344002EC9D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A31E0FF827326342002EC9D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A31E0FF927326342002EC9D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A31E0FFE27326343002EC9D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A31E101727326344002EC9D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A31E101827326344002EC9D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A31E101A27326344002EC9D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "project 02 jazan fantasy/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A31E101B27326344002EC9D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "project 02 jazan fantasy/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A31E101D27326344002EC9D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project 02 jazan fantasy.app/project 02 jazan fantasy";
+			};
+			name = Debug;
+		};
+		A31E101E27326344002EC9D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project 02 jazan fantasy.app/project 02 jazan fantasy";
+			};
+			name = Release;
+		};
+		A31E102027326344002EC9D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "project 02 jazan fantasy";
+			};
+			name = Debug;
+		};
+		A31E102127326344002EC9D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "project 02 jazan fantasy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A31E0FEA27326342002EC9D0 /* Build configuration list for PBXProject "project 02 jazan fantasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31E101727326344002EC9D0 /* Debug */,
+				A31E101827326344002EC9D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A31E101927326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31E101A27326344002EC9D0 /* Debug */,
+				A31E101B27326344002EC9D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A31E101C27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31E101D27326344002EC9D0 /* Debug */,
+				A31E101E27326344002EC9D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A31E101F27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31E102027326344002EC9D0 /* Debug */,
+				A31E102127326344002EC9D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A31E0FE727326342002EC9D0 /* Project object */;
+}
