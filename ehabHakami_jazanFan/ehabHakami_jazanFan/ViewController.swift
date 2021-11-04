@@ -79,6 +79,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var viewPrintFight: UITextView!
     
+    @IBOutlet weak var numDice: UILabel!
+    
+        
     var turn: Int = 0
     var winner = false
     
@@ -109,58 +112,66 @@ class ViewController: UIViewController {
             viewPrintFight.text += ("Game Over ! ")
         
         } else {
-            viewPrintFight.text += ("------- This is the turn N°\(turn)--------")
+            viewPrintFight.text += ("--- This is the turn N°\(turn)----")
             logicOfTheGame()
-            viewPrintFight.text += ("============== This is the end of turn N°\(turn)===============")
+            viewPrintFight.text += ("========= This is the end of turn N°\(turn)======================================================")
         }
     }
 
     func logicOfTheGame() {
 
         switch rollingDice() {
-       
-        case 0:
-            viewPrintFight.text += ("It's kinght Action and he use power damge \(kinght.name) !")
+         case 1...4:
             kinght.attackWithPower()
             boss2.lifePoint -= kinght.powerDamage
-            boss2.lifePoint += boss2.defense
+             boss2.lifePoint += boss2.defense
+           viewPrintFight.text += ("kinght used powerDamage : \(kinght.powerDamage)")
+            viewPrintFight.text += ("Boss2 Live Point : \(boss2.lifePoint)")
+        case 5...9:
+           
+             boss2.attackWithPower()
+             kinght.lifePoint -= boss2.powerDamage
+             kinght.lifePoint += kinght.defense
+            viewPrintFight.text += ("Boss2 used powerDamage : \(boss2.powerDamage)")
+            viewPrintFight.text += ("kinght Live Point : \(kinght.lifePoint)")
+           
+         case 10...14:
             
-        case 1:
-            viewPrintFight.text += ("Tt's boss2 Action and he use the damge \(boss2.name)")
-            boss2.attackWithPower()
-            kinght.lifePoint -= boss2.powerDamage
-            kinght.lifePoint += kinght.defense
-        case 2:
-            viewPrintFight.text += ("It's kinght Action and he use power damge \(kinght.name) !")
             kinght.attackWithPower()
-            boss2.lifePoint -= kinght.powerDamage
-            boss2.lifePoint += boss2.defense
-        case 3:
-            viewPrintFight.text += ("It's kinght Action and he use power damge \(boss2.name) !")
-            boss2.attackWithPower()
-            kinght.lifePoint -= boss2.powerDamage
-            kinght.lifePoint += kinght.defense
-            
-        case 4:
-            viewPrintFight.text += ("It's kinght Action and he use power damge \(kinght.name) !")
-            kinght.attackWithPower()
-            boss2.lifePoint -= kinght.powerDamage
-            boss2.lifePoint += boss2.defense
-            
-        case 5:
-            viewPrintFight.text += ("It's kinght Action and he use power damge \(boss2.name) !")
-            boss2.attackWithPower()
-            kinght.lifePoint -= boss2.powerDamage
-            kinght.lifePoint += kinght.defense
-        default:
-            print("Error")
+             boss2.lifePoint -= kinght.weaponDamage
+             boss2.lifePoint += boss2.defense
+            viewPrintFight.text += ("kinght used weaponDamage : \(kinght.weaponDamage)")
+            viewPrintFight.text += ("Boss2 Live Point : \(boss2.lifePoint)")
+           
+        case 15...19:
+            boss2.attackWithWeapon()
+             kinght.lifePoint -= boss2.weaponDamage
+             kinght.lifePoint += kinght.defense
+            viewPrintFight.text += ("Boss2 used weaponDamage : \(boss2.weaponDamage)")
+            viewPrintFight.text += ("kinght Live Point : \(kinght.lifePoint)")
+           
+           
+         case 21:
+            kinght.specialCapacit00()
+           kinght.lifePoint += 5
+           kinght.weaponDamage += 10
+           viewPrintFight.text += ("the lifepoint of my hero : \(kinght.lifePoint)")
+            ///////////////////000000///////////////////////////////////
+            boss2.specialCapacit00()
+           boss2.lifePoint += 5
+           boss2.powerDamage += 32
+           viewPrintFight.text += ("the lifepoint of boss2 : \(boss2.lifePoint)")
+           
+           print ("get \(boss2.lifePoint) , \(boss2.powerDamage)")
+         default:
+           print("Error")
         }
         theWinnerIs(kinght: kinght, boss2: boss2)
 
         labelVa.text = "\(kinght.lifePoint)"
         
         BossLiveP.text = "\(boss2.lifePoint)"
-        viewPrintFight.text += ("It's kinght Action and he use power damge \(boss2.name) !")
+        
         
             
         
@@ -183,8 +194,8 @@ class ViewController: UIViewController {
 
     func rollingDice() -> Int {
         var dice: Int
-        dice = Int.random(in: 0...5)
-        print("Dice = \(dice)")
+        dice = Int.random(in: 1...21)
+        numDice.text = "Dice : \(dice)"
 
         return dice
     }
