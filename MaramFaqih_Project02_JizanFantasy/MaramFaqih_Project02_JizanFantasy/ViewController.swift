@@ -15,11 +15,20 @@ protocol rollGameBoss{
     var pD:Int {get set}
     var wD:Int {get set}
     var sC:Int {get set}
+    var addLP:Int {get set}
+    var addPD:Int {get set}
+    var addWD:Int {get set}
 
     
 }
 
 class Boss:rollGameBoss{
+    var addLP: Int
+    
+    var addPD: Int
+    
+    var addWD: Int
+    
     var name: String
     var points: Int
     var lP: Int
@@ -27,37 +36,42 @@ class Boss:rollGameBoss{
     var pD: Int
     var wD: Int
     var sC: Int
-    init(name: String,points:Int,lP:Int,dF:Int,pD:Int,wD:Int,sC:Int){
+    init(name: String,points:Int,lP:Int,dF:Int,pD:Int,wD:Int,sC:Int,addLP: Int,addPD: Int,addWD: Int){
         self.name=name
         self.points=points
         self.lP=lP
         self.dF=dF
         self.pD=pD
         self.wD=wD
-        self.sC=sC}
-   
-}
-struct Damage:rollGameBoss{
-    var name: String
-    
-    var points: Int
-    
-    var lP: Int
-    
-    var dF: Int
-    
-    var pD: Int
-    
-    var wD: Int
-    
-    var sC: Int
-    mutating func powerDamage(lP: Int,dF: Int,pD: Int)-> String{
-        self.lP = lP - (pD-dF)
-    return String(lP)
+        self.sC=sC
+        
+        self.addLP=addLP
+        self.addPD=addPD
+        self.addWD=addWD
     }
    
-    
 }
+//struct Damage:rollGameBoss{
+//    var name: String
+//
+//    var points: Int
+//
+//    var lP: Int
+//
+//    var dF: Int
+//
+//    var pD: Int
+//
+//    var wD: Int
+//
+//    var sC: Int
+//    mutating func powerDamage(lP: Int,dF: Int,pD: Int)-> String{
+//        self.lP = lP - (pD-dF)
+//    return String(lP)
+//    }
+//
+//
+//}
 
     
     
@@ -89,11 +103,28 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bossLabelSC: UILabel!
     
-    var boss1 = Boss(name: "Boss1", points: 0, lP: 250, dF: 30, pD: 20, wD: 45, sC: 110)
-    var boss2 = Boss(name: "Boss2", points: 0, lP: 170, dF: 25, pD: 15, wD: 30, sC: 75)
+    var boss1 = Boss(name: "Boss1", points: 0, lP: 250, dF: 30, pD: 20, wD: 45, sC: 110,addLP: 5,addPD: 0,addWD: 22)
+    var boss2 = Boss(name: "Boss2", points: 0, lP: 170, dF: 25, pD: 15, wD: 30, sC: 75,addLP: 5 ,addPD: 32,addWD: 0)
 
     var turn = 0
     var turnNo = 0
+    
+    var addLPP1 = 0
+    var addPDP1 = 0
+    var addWDP1 = 0
+    
+    var addLPP2 = 0
+    var addPDP2 = 0
+    var addWDP2 = 0
+    
+    var tempLP1 = 0
+    var tempPD1 = 0
+    var tempWD1 = 0
+    
+    var tempLP2 = 0
+    var tempPD2 = 0
+    var tempWD2 = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +140,9 @@ class ViewController: UIViewController {
             bossLabelDP.text = String(boss1.pD)
             bossLabelWD.text = String(boss1.wD)
             bossLabelSC.text = String(boss1.sC)
+             addLPP1 = boss1.addLP
+             addPDP1 = boss1.addPD
+             addWDP1 = boss1.addWD
             
             
         default:
@@ -119,6 +153,9 @@ class ViewController: UIViewController {
             bossLabelDP.text = String(boss2.pD)
             bossLabelWD.text = String(boss2.wD)
             bossLabelSC.text = String(boss2.sC)
+             addLPP1 = boss2.addLP
+             addPDP1 = boss2.addPD
+             addWDP1 = boss2.addWD
         
             
         }
@@ -126,16 +163,17 @@ class ViewController: UIViewController {
     }
     @IBAction func rollingButton(_ sender: Any) {
         var lPP1 = Int(bossLabelLP.text!)!
-        var lDFP1 = Int(bossLabelDF.text!)!
-        var lDPP1 = Int(player2LabelPD.text!)!
-        var lWDP1 = Int(player2LabelWD.text!)!
-        var lWSC1 = Int(player2LabelSC.text!)!
+        let lDFP1 = Int(bossLabelDF.text!)!
+        let lDPP1 = Int(player2LabelPD.text!)!
+        let lWDP1 = Int(player2LabelWD.text!)!
+        let lWSC1 = Int(player2LabelSC.text!)!
         
         var lPP2 = Int(player2LabelLP.text!)!
-        var lDFP2 = Int(player2LabelDF.text!)!
-        var lDPP2 = Int(player2LabelPD.text!)!
-        var lWDP2 = Int(player2LabelWD.text!)!
-        var lWSC2 = Int(player2LabelSC.text!)!
+        let lDFP2 = Int(player2LabelDF.text!)!
+        let lDPP2 = Int(player2LabelPD.text!)!
+        let lWDP2 = Int(player2LabelWD.text!)!
+        let lWSC2 = Int(player2LabelSC.text!)!
+        
         
         if(lPP1 != 0 && lPP2 != 0){
         //var lPP2 = Int(player2LabelDF.text!)
@@ -148,12 +186,21 @@ class ViewController: UIViewController {
             turn += 1
       
             switch randomDICE {
-            
+//                var tempLP1 = 0
+//                var tempPD1 = 0
+//                var tempWD1 = 0
+//
+//                var tempLP2 = 0
+//                var tempPD2 = 0
+//                var tempWD2 = 0
         case 1...9 :
            // player2LabelDF.text! = String(Int(player2LabelDF.text!) - 1)
-                if ((lDFP2 - lDPP1) >= 0) {
-                    lPP2 = (lPP2 - (lDFP2 - lDPP1))
+                if ((lDFP2 - lDPP1) <= 0) {
+                    lPP2 = (lPP2 + (lDFP2 - lDPP1))
+                    
            
+                }else{
+                    lPP2 = (lPP2 - 0)
                 }
                 
                 player2LabelLP.text = String(checkZero(num:lPP2))
@@ -165,10 +212,16 @@ class ViewController: UIViewController {
                 print("Boss use dp")
                 
         case 10...19 :
-                if ((lDFP2 - lWDP1) >= 0) {
-                    lPP2 = (lPP2 - (lDFP2 - lWDP1))
-                }
+                lPP1 += addLPP1
+                tempPD1 += addPDP1
+                tempWD1 += addWDP1
                 
+                if ((lDFP2 - lWDP1) <= 0) {
+                    lPP2 = (lPP2 + (lDFP2 - lWDP1))
+                }
+                else{
+                    lPP2 = (lPP2 - 0)
+                }
                 player2LabelLP.text = String(checkZero(num:lPP2))
                 
 //                if lPP2>=0{
@@ -180,6 +233,15 @@ class ViewController: UIViewController {
             
             
         default:
+                if ((lDFP2 - lWSC1) <= 0) {
+                    lPP2 = (lPP2 + (lDFP2 - lWSC1))
+                }
+                else{
+                    lPP2 = (lPP2 - 0)
+                }
+                player2LabelLP.text = String(checkZero(num:lPP2))
+                
+                
             print("Error")
             
                                          
@@ -192,8 +254,11 @@ class ViewController: UIViewController {
            
             switch randomDICE {
             case 1...9 :
-                if ((lDFP1 - lDPP2) >= 0) {
-                    lPP1 = (lPP1 - (lDFP1 - lDPP2))
+                if ((lDFP1 - lDPP2) <= 0) {
+                    lPP1 = (lPP1 + (lDFP1 - lDPP2))
+                }
+                else{
+                    lPP1 = (lPP1 - 0)
                 }
                 bossLabelLP.text = String(checkZero(num:lPP1))
 //                if lPP1>=0{
@@ -205,8 +270,11 @@ class ViewController: UIViewController {
                 
             case 10...19 :
                 
-                if ((lDFP1 - lWDP2) >= 0) {
-                    lPP1 = (lPP1 - (lDFP1 - lWDP2))
+                if ((lDFP1 - lWDP2) <= 0) {
+                    lPP1 = (lPP1 + (lDFP1 - lWDP2))
+                }
+                else{
+                    lPP1 = (lPP1 - 0)
                 }
                 bossLabelLP.text = String(checkZero(num:lPP1))
 //
@@ -218,7 +286,8 @@ class ViewController: UIViewController {
                 print("Hero use wd")
                 
             default:
-                print("Error")
+                
+                print("Hero use sc")
                 
             }
         }

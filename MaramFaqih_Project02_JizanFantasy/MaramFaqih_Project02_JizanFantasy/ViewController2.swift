@@ -14,6 +14,9 @@ protocol rollGameHero{
     var pD:Int? {get set}
     var wD:Int? {get set}
     var sC:Int {get set}
+    var addLP:Int {get set}
+    var addPD:Int {get set}
+    var addWD:Int {get set}
     
   // func playaCtion()-> Int
     
@@ -23,6 +26,12 @@ protocol rollGameHero{
     
 }
 class Hero:rollGameHero {
+    var addLP: Int
+    
+    var addPD: Int
+    
+    var addWD: Int
+    
   
     var name: String
     
@@ -37,7 +46,7 @@ class Hero:rollGameHero {
     var pDMax:Int
     var wDMax:Int
     
-    init(name: String,points:Int,lP:Int?,dF:Int?,pD:Int?,wD:Int?,sC:Int,dFMax:Int,pDMax:Int,wDMax:Int){
+    init(name: String,points:Int,lP:Int?,dF:Int?,pD:Int?,wD:Int?,sC:Int,dFMax:Int,pDMax:Int,wDMax:Int,addLP: Int,addPD: Int,addWD: Int){
         self.name=name
         self.points=points
         self.lP=lP
@@ -49,6 +58,10 @@ class Hero:rollGameHero {
        self.dFMax=dFMax
        self.pDMax=pDMax
        self.wDMax=wDMax
+        
+        self.addLP=addLP
+        self.addPD=addPD
+        self.addWD=addWD
     }
 
 
@@ -113,11 +126,13 @@ class ViewController2: UIViewController {
     
     @IBOutlet weak var pointPlayer2Label: UILabel!
     
-    var knight = Knight(name:"Knight", points: 250, lP: nil, dF:nil, pD:nil, wD:nil, sC:100,dFMax:20, pDMax:30, wDMax:40)
-    var wizard = Wizard(name:"Wizard", points: 245, lP: nil, dF:nil, pD:nil, wD:nil, sC:50, dFMax:15, pDMax:70, wDMax:20)
-    var thief = Thief(name:"Thief", points: 210,  lP: nil, dF:nil, pD:nil, wD:nil, sC:75,dFMax:25, pDMax:15, wDMax:30)
+    var knight = Knight(name:"Knight", points: 250, lP: nil, dF:nil, pD:nil, wD:nil, sC:100,dFMax:20, pDMax:30, wDMax:40, addLP: 5,addPD: 0,addWD: 10)
+    var wizard = Wizard(name:"Wizard", points: 245, lP: nil, dF:nil, pD:nil, wD:nil, sC:50, dFMax:15, pDMax:70, wDMax:20, addLP: 35 ,addPD: 10,addWD: 0)
+    var thief = Thief(name:"Thief", points: 210,  lP: nil, dF:nil, pD:nil, wD:nil, sC:75,dFMax:25, pDMax:15, wDMax:30, addLP: 5,addPD: 0,addWD: 35)
     
-   
+    var lPValue = 0
+    var pDValue = 0
+    var wDValue = 0
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +160,9 @@ class ViewController2: UIViewController {
             }*/
             pDLabel.text = String(knight.pD ?? 30)
            wDLabel.text = String(knight.wD ?? 40)
-            
+            lPValue = knight.addLP
+            pDValue = knight.addPD
+            wDValue = knight.addWD
         case "wizard":
             lPLabel.text = String(wizard.lP ?? 90)
             dFLabel.text = String(wizard.dF ?? 15)
@@ -153,11 +170,17 @@ class ViewController2: UIViewController {
            //wizard.checkdF()=
             pDLabel.text = String(wizard.pD ?? 70)
            wDLabel.text = String(wizard.wD ?? 20)
+            lPValue = wizard.addLP
+            pDValue = wizard.addPD
+            wDValue = wizard.addWD
         case "thief" :
             lPLabel.text = String(thief.lP ?? 65)
             dFLabel.text = String(thief.dF ?? 25)
             pDLabel.text = String(thief.pD ?? 15)
            wDLabel.text = String(thief.wD ?? 30)
+            lPValue = thief.addLP
+            pDValue = thief.addPD
+            wDValue = thief.addWD
         default :
             print("Please enter the name of player 2 ")
         }
@@ -176,6 +199,9 @@ class ViewController2: UIViewController {
                 rootVC.player2LabelPD.text = pDLabel.text
                 rootVC.player2LabelWD.text = wDLabel.text
                 rootVC.player2LabelSC.text = sCLabel.text
+                rootVC.addLPP2 = lPValue
+                rootVC.addPDP2 = pDValue
+                rootVC.addWDP2 = wDValue
                 
         
             }
