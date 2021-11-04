@@ -44,9 +44,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomLabel: UILabel!
     @IBOutlet weak var labelGame: UILabel!
     
+    @IBOutlet weak var imageHeroB: UIImageView!
+    @IBOutlet weak var imageBoss: UIImageView!
+    
+    @IBOutlet weak var turnLabel: UILabel!
     @IBAction func unwindViweController(segue:UIStoryboardSegue){
         
     }
+    
     
     
     
@@ -54,39 +59,48 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         randomBossCame()
-        player.name = nameplayer.text
+       player.name = nameplayer.text
         player.lifePoint = Int(lPP.text ?? "0")
         player.defense = Int(dFP.text ?? "0")
         player.powerDamage = Int(pDP.text ?? "0")
         player.weaponDamage = Int(wDP.text ?? "0")
         player.specialCapacity = Int(sCP.text ?? "0")
-        /*
-        playerTwo.name = nameplayer.text
-        playerTwo.lifePoint = Int(lPP.text ?? "0")
-        playerTwo.defense = Int(dFP.text ?? "0")
-        playerTwo.powerDamage = Int(pDP.text ?? "0")
-        playerTwo.weaponDamage = Int(wDP.text ?? "0")
-        playerTwo.specialCapacity = Int(sCP.text ?? "0")
-        
-        playerthree.name = nameplayer.text
-        playerthree.lifePoint = Int(lPP.text ?? "0")
-        playerthree.defense = Int(dFP.text ?? "0")
-        playerthree.powerDamage = Int(pDP.text ?? "0")
-        playerthree.weaponDamage = Int(wDP.text ?? "0")
-        playerthree.specialCapacity = Int(sCP.text ?? "0")
-         */
     }
-    var number :Int = 0
+    
+    
+    let boss1 = Boss(name: "Boss1", lifePoint: 250, defense: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110)
+    let boss2 = Boss(name: "Boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75)
+    
+    
+    var player = Hero(name: nil , lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
+
+    
+    
+    var number = 0
     var turn = 0
-    var a = false
+    var pressButton = false
+    var extraPoints = 0
+    var extraDamage = 0
+    var useScBoss1 = false
+    var useScBoss2 = false
+    var useScHero = false
+    
     @IBAction func rollDice(_ sender: Any) {
-        //turn += 1
+        
         if lP.text! > "0" && lPP.text! > "0"{
-           // labelGame.text = "\(turn)"
-            if a == true {
+            
+            if lP.text! < "0" {
+                lP.text! = "0"
+            }
+            if lPP.text! < "0"{
+                lPP.text! = "0"
+            }
+            if pressButton == true {
             
                 rollDiceForBoss()
             }else{
+            
+                turnLabel.text = "Turn : \(turn)"
                 rollDiceForHero()
             }
         }else {
@@ -98,13 +112,9 @@ class ViewController: UIViewController {
         }
     }
     
-    let boss1 = Boss(name: "boss1", lifePoint: 250, defense: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110)
-    let boss2 = Boss(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75)
-    var player = Hero(name: nil , lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-
-    
-    let randomBoss = Int.random(in: 1 ... 2)
+   
     func randomBossCame(){
+    let randomBoss = Int.random(in: 1 ... 2)
     switch randomBoss{
     case 1:
         nameBoss.text = boss1.name
@@ -113,6 +123,7 @@ class ViewController: UIViewController {
         pD.text = String(boss1.powerDamage)
         wD.text = String(boss1.weaponDamage)
         sC.text = String(boss1.specialCapacity)
+        imageBoss.image = UIImage(named: "boss1")
     case 2:
         nameBoss.text = boss2.name
         lP.text = String(boss2.lifePoint)
@@ -120,131 +131,145 @@ class ViewController: UIViewController {
         pD.text = String(boss2.powerDamage)
         wD.text = String(boss2.weaponDamage)
         sC.text = String(boss2.specialCapacity)
+        imageBoss.image = UIImage(named: "boss2")
     default: print("Error")
     }
     }
     
-  //  var playerTwo = Hero(name: nil , lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-  //  var playerthree = Hero(name: nil , lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-   // let playerOne = Boss(name: nameplayer.text , lifePoint: lPP.text, defense: dFP.text, powerDamage: pDP.text, weaponDamage: wDP.text, specialCapacity: sCP.text)
-    
     func rollDiceForHero(){
-        //var pDamageHero
         player.powerDamage = Int(pDP.text!)!
-      //  var wDamageHero
         player.weaponDamage = Int(wDP.text!)!
         var lifePointBoss = Int(lP.text!)!
         let dFBoss = Int(dF.text!)!
-        //var lifePointHero
         player.lifePoint = Int(lPP.text!)!
         
         let randomDiceHero = Int.random(in: 1 ... 20)
         switch randomDiceHero{
         case 1...9:
+            if useScHero == true{
+                player.powerDamage! += extraDamage
+                useScHero = false
+            }
+            
             player.powerDamage! -= dFBoss
+            
+            
             if player.powerDamage! < 0{
                 player.powerDamage = 0
             }
            lifePointBoss -= player.powerDamage!
             lP.text = String(lifePointBoss)
-           labelGame.text = "الاول"
+           labelGame.text = "Hero Use Power Damage \(player.powerDamage!)"
             randomLabel.text = "Result of the Dice : \(randomDiceHero)"
         case 10...19:
+            if useScHero == true{
+                player.weaponDamage! += extraDamage
+                useScHero = false
+            }
             player.weaponDamage! -= dFBoss
             if player.weaponDamage! < 0{
                 player.weaponDamage! = 0
             }
             lifePointBoss -= player.weaponDamage!
             lP.text = String(lifePointBoss)
-            labelGame.text = "الاول"
+            labelGame.text = "Hero use Weapon Damage \(player.weaponDamage!)"
             randomLabel.text = "Result of the Dice : \(randomDiceHero)"
         case 20: print("Special Capacity ")
          UseSpecialCapacity()
-            
            player.specialCapacity! -= dFBoss
           if player.specialCapacity! < 0{
                 player.specialCapacity = 0
             }
            lifePointBoss -= player.specialCapacity!
            lPP.text = String(player.lifePoint! + extraPoints)
-            labelGame.text = "الاول"
+            labelGame.text = "Hero Use Special Capacity \(player.specialCapacity!)"
             randomLabel.text = "Result of the Dice : \(randomDiceHero)"
         default: print("Error")
         }
-        a = true
+        pressButton = true
      
     }
     
     func rollDiceForBoss(){
         var pDamageBoss = Int(pD.text!)!
         var wDamageBoss = Int(wD.text!)!
-       // var lifePointHero
         player.lifePoint = Int(lPP.text!)!
-       // let dFHero
         player.defense = Int(dFP.text!)!
         var sCBoss = Int(sC.text!)!
         var lifePointBoss = Int(lP.text!)!
+        
         let randomDiceBoss = Int.random(in: 1 ... 20)
         switch randomDiceBoss{
         case 1...9:
+            if useScBoss2 == true {
+                pDamageBoss += 32
+                useScBoss2 = false
+            }
            pDamageBoss -= player.defense!
+            
+            
+            
             if pDamageBoss < 0{
                 pDamageBoss = 0
             }
+            
             player.lifePoint! -= pDamageBoss
             lPP.text = String(player.lifePoint!)
-            labelGame.text = "الثاني"
+            labelGame.text = "Boss Use Power Damage \(pDamageBoss)"
             randomLabel.text = "Result of the Dice : \(randomDiceBoss)"
         case 10 ... 19:
+            if useScBoss1 == true {
+                wDamageBoss += 22
+                useScBoss1 = false
+            }
             wDamageBoss -= player.defense!
             if wDamageBoss < 0{
                 wDamageBoss = 0
             }
             player.lifePoint! -= wDamageBoss
             lPP.text = String(player.lifePoint!)
-            
-            labelGame.text = "الثاني"
-
+            labelGame.text = "Boss Use Weapon Damage \(wDamageBoss)"
             randomLabel.text = "Result of the Dice : \(randomDiceBoss)"
-        case 20: 
-            labelGame.text = "الثاني"
+        
+        case 20:
+            if nameBoss.text == "Boss1"{
+                useScBoss1 = true
+            }else{
+                useScBoss2 = true
+            }
+            labelGame.text = "Hero Use Special Capacity \(sCBoss)"
             sCBoss -= player.defense!
            if sCBoss < 0{
                  player.specialCapacity = 0
              }
             player.lifePoint! -= sCBoss
-            lP.text = String(lifePointBoss /*جمع مع نقاط الاضافيه*/)
+            lP.text = String(lifePointBoss + 5)
             randomLabel.text = "Result of the Dice : \(randomDiceBoss)"
         default: print("Error")
         }
-        a = false
-      
-        
+        pressButton = false
     }
-    var extraPoints:Int = 0
-            var extraDamage:Int = 0
+    
+    
+    
     func UseSpecialCapacity(){
-        
         if number == 1{
             player.specialCapacity = 100
             extraPoints = 5
             extraDamage = 10
+            useScHero = true
         }else if number == 2 {
             player.specialCapacity = 50
             extraPoints = 35
             extraDamage = 10
+            useScHero = true
         }else{
             player.specialCapacity = 75
             extraPoints = 5
             extraDamage = 35
+            useScHero = true
         }
-
     }
-    
-    
-    
-    
-    
     
 }
 
