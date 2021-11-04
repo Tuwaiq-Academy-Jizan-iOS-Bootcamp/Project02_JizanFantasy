@@ -39,22 +39,9 @@ extension viewControllerTow: UITextFieldDelegate{
           return true
       }
 }
-func DiceRoll(){
-    let ViewText:Int = .random(in: 0...20)
-    switch ViewText {
-        case 1...9
-        ViewDescriotion.text = "PowerDamage"
-        print("PowerDamage")
-    case 10...19:
-        ViewDescriotion.text = "weapondamage"
-        print("weapondamage")
-    case 20:
-        ViewDescriotion.text = "specialcapacity"
-        print("specialcapacity")
-    default : print(0)
-    }
-    
+
     
 
-    }
-}
+
+ 
+
