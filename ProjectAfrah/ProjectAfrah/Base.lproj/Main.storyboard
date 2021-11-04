@@ -25,16 +25,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ir-jI-LDJ">
-                                <rect key="frame" x="28" y="83" width="147" height="48"/>
+                                <rect key="frame" x="33" y="83" width="147" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-uP-maz">
-                                <rect key="frame" x="241" y="83" width="150" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -218,10 +211,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ax-Uf-EfJ">
-                                <rect key="frame" x="249" y="767" width="28" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ax-Uf-EfJ">
+                                <rect key="frame" x="249" y="767" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -230,6 +222,20 @@
                                 <rect key="frame" x="279" y="542" width="108" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-Te-sJP">
+                                <rect key="frame" x="191" y="809" width="55" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-uP-maz">
+                                <rect key="frame" x="246" y="80" width="150" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -248,20 +254,22 @@
                         <outlet property="labelBossPoints" destination="xW2-UV-bRF" id="Nj8-DS-fhI"/>
                         <outlet property="labelBossSC" destination="cGK-SM-9pt" id="5rY-Eb-J3B"/>
                         <outlet property="labelBossWD" destination="bV1-ca-Za6" id="TZX-78-wmV"/>
-                        <outlet property="labelDice" destination="0ax-Uf-EfJ" id="cgx-MY-KjH"/>
+                        <outlet property="labelDice" destination="ofY-Te-sJP" id="2sE-QM-b1G"/>
                         <outlet property="labelHeroDF" destination="PVo-Tt-Hz4" id="m35-Or-A3q"/>
                         <outlet property="labelHeroLP" destination="nCM-Tz-2xd" id="exi-4l-cwx"/>
                         <outlet property="labelHeroPD" destination="DuB-wl-VS5" id="NLN-ej-Sdt"/>
                         <outlet property="labelHeroSC" destination="Cby-Gv-6eK" id="nbK-rE-ct2"/>
                         <outlet property="labelHeroWD" destination="Zhu-gB-7dO" id="lWX-ta-QBS"/>
                         <outlet property="labelHeropoints" destination="JZe-mG-b3y" id="ua9-fR-tHI"/>
+                        <outlet property="nameHero" destination="cEj-uP-maz" id="0ng-y3-IFA"/>
+                        <outlet property="nameboss" destination="9ir-jI-LDJ" id="ZKx-uH-LkZ"/>
                         <outlet property="textDescrabtion" destination="Wc5-7U-Qrd" id="X71-ir-Asf"/>
                         <segue destination="3j6-5F-gWx" kind="show" identifier="VC2" id="BTl-Ms-CJ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6233.3333333333339" y="-1114.2857142857142"/>
+            <point key="canvasLocation" x="-7662" y="-1114"/>
         </scene>
         <!--View Controller Two-->
         <scene sceneID="yzy-5d-TWA">
@@ -435,7 +443,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8f-TY-OlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="K6j-KJ-HkA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-5527.536231884058" y="-1114.2857142857142"/>
+            <point key="canvasLocation" x="-6997" y="-1114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZMr-wa-Wbv">
@@ -453,7 +461,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IR2-Ds-C18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6980" y="-1114"/>
+            <point key="canvasLocation" x="-8341" y="-1114"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
