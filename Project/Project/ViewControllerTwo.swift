@@ -52,6 +52,10 @@ class ViewControllerTwo:UIViewController {
           super.viewDidLoad()
         
        myTextLP.delegate = self
+        myTextDF.delegate = self
+        myTextPD.delegate = self
+        myTextWD.delegate = self
+        myTextSC.delegate = self
         }
     @IBAction func creat(_ sender: Any) {
     }
