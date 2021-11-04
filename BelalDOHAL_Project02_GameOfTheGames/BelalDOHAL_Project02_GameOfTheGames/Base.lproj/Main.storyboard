@@ -134,7 +134,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save And Begen The Fight !"/>
                                 <connections>
-                                    <action selector="knightToFight:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="JUn-tt-7tw"/>
+                                    <action selector="knightToFight:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="eB2-Oe-VLu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWH-di-9Xe">
@@ -227,6 +227,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="lifePointsActionMinus:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="05g-Nn-Nr5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66o-iB-dcW">
                                 <rect key="frame" x="285" y="379" width="32" height="31"/>
@@ -235,6 +238,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="defenseMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="TLO-FI-ZRH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-lP-CC8">
                                 <rect key="frame" x="285" y="467" width="32" height="31"/>
@@ -243,6 +249,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="weaponMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="UZI-kF-2kW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mr5-OM-k7n">
                                 <rect key="frame" x="285" y="423" width="32" height="31"/>
@@ -251,6 +260,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="powerMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Li4-Vn-3e7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imC-sA-EDc">
                                 <rect key="frame" x="254" y="423" width="32" height="31"/>
@@ -259,6 +271,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="powerPLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Ma4-5n-CIB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-Fh-gi2">
                                 <rect key="frame" x="254" y="467" width="32" height="31"/>
@@ -267,6 +282,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="weaponPLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Z1o-oe-kJQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeV-jw-2Pb">
                                 <rect key="frame" x="254" y="379" width="32" height="31"/>
@@ -275,6 +293,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="defencePLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="AB7-c2-9Sy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZw-XA-Wl7">
                                 <rect key="frame" x="254" y="341" width="32" height="31"/>
@@ -283,6 +304,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="lifePointsActionPlus:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Agc-1k-qjN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8n-gH-xVC">
                                 <rect key="frame" x="21" y="506" width="349" height="153"/>
@@ -405,15 +429,21 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="Jc4-xe-H1Z"/>
                     <connections>
-                        <outlet property="minusLP" destination="7Iq-ay-nLL" id="Cdl-qU-F5z"/>
-                        <outlet property="pluseLP" destination="UZw-XA-Wl7" id="NVS-RH-lSj"/>
-                        <outlet property="warriorDefense" destination="pbu-H7-iog" id="HfF-IO-hsN"/>
-                        <outlet property="warriorLifePoints" destination="OM3-Hc-BqF" id="kj4-Hn-VoC"/>
-                        <outlet property="warriorPower" destination="gmZ-TI-TlL" id="yMD-Um-H5d"/>
-                        <outlet property="warriorSaveButton" destination="FNy-VS-zW1" id="JQI-96-4Pm"/>
-                        <outlet property="warriorSkillPoints" destination="TPy-xI-cRJ" id="eub-3I-yUM"/>
-                        <outlet property="warriorTextField" destination="d4k-x7-3cT" id="7ov-Fq-CsG"/>
-                        <outlet property="warriorWeapon" destination="WYY-ZD-4zi" id="Dhk-c8-bwV"/>
+                        <outlet property="minusDEF" destination="66o-iB-dcW" id="n7X-uu-WCg"/>
+                        <outlet property="minusLP" destination="7Iq-ay-nLL" id="aGA-L9-icf"/>
+                        <outlet property="minusPD" destination="mr5-OM-k7n" id="ARh-zG-JgS"/>
+                        <outlet property="minusWD" destination="i4X-lP-CC8" id="VQb-iY-K1w"/>
+                        <outlet property="playerDEF" destination="pbu-H7-iog" id="JwJ-E1-aYy"/>
+                        <outlet property="playerLP" destination="OM3-Hc-BqF" id="cpj-ki-xAH"/>
+                        <outlet property="playerPD" destination="gmZ-TI-TlL" id="nOW-4v-mt6"/>
+                        <outlet property="playerSP" destination="TPy-xI-cRJ" id="PQf-9S-Ili"/>
+                        <outlet property="playerTextField" destination="d4k-x7-3cT" id="5RK-AP-Ql5"/>
+                        <outlet property="playerWD" destination="WYY-ZD-4zi" id="cY7-fZ-irP"/>
+                        <outlet property="plusDEF" destination="IeV-jw-2Pb" id="jNx-yb-xZh"/>
+                        <outlet property="plusPD" destination="imC-sA-EDc" id="SLV-GS-2nV"/>
+                        <outlet property="plusWD" destination="KtJ-Fh-gi2" id="hTc-6v-MkW"/>
+                        <outlet property="pluseLP" destination="UZw-XA-Wl7" id="WoV-Ar-BSD"/>
+                        <outlet property="warriorSaveButton" destination="FNy-VS-zW1" id="mhq-o3-tMS"/>
                         <segue destination="lWq-lC-59m" kind="show" identifier="fromKnight" id="8kV-hV-zAD"/>
                     </connections>
                 </viewController>
@@ -467,6 +497,9 @@ Cg
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save And Begen The Fight !"/>
+                                <connections>
+                                    <action selector="knightToFight:" destination="zzl-jw-g6U" eventType="touchUpInside" id="XVd-Hs-pD6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8si-O4-wOX">
                                 <rect key="frame" x="324" y="343" width="49" height="36"/>
@@ -482,6 +515,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="lifePointsActionMinus:" destination="zzl-jw-g6U" eventType="touchUpInside" id="3eX-9l-79c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mK-9s-8SR">
                                 <rect key="frame" x="255" y="346" width="32" height="31"/>
@@ -490,6 +526,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="lifePointsActionPlus:" destination="zzl-jw-g6U" eventType="touchUpInside" id="1nR-wq-UqF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leb-Ci-vIp">
                                 <rect key="frame" x="324" y="387" width="49" height="36"/>
@@ -505,6 +544,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="defenseMINUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="zb4-Dx-SFj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1n-hf-5Q6">
                                 <rect key="frame" x="255" y="390" width="32" height="31"/>
@@ -513,6 +555,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="defencePLUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="7O8-Km-oOr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTq-cv-3HO">
                                 <rect key="frame" x="324" y="431" width="49" height="36"/>
@@ -528,6 +573,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="powerMINUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="rn4-Nl-gV8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87H-Rp-xMV">
                                 <rect key="frame" x="255" y="434" width="32" height="31"/>
@@ -536,6 +584,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="powerPLUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="nT7-Fq-fpb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-ck-ZJh">
                                 <rect key="frame" x="324" y="475" width="49" height="36"/>
@@ -551,6 +602,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="weaponMINUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="ENi-QL-IGi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-MY-fkd">
                                 <rect key="frame" x="255" y="478" width="32" height="31"/>
@@ -559,6 +613,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="weaponPLUS:" destination="zzl-jw-g6U" eventType="touchUpInside" id="mUC-8g-4ZX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Life Points (LP)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-0g-KNV">
                                 <rect key="frame" x="17" y="343" width="160" height="36"/>
@@ -694,7 +751,21 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="Usc-6I-ZpS"/>
                     <connections>
-                        <outlet property="mageSaveButton" destination="KSK-Wq-JZP" id="eJb-Wj-k9Y"/>
+                        <outlet property="minusDEF" destination="eYF-rt-sJq" id="P2e-D0-olr"/>
+                        <outlet property="minusLP" destination="6Ae-3I-KBY" id="M8q-Ua-9gd"/>
+                        <outlet property="minusPD" destination="yB3-2T-TFa" id="1Ai-SD-1sh"/>
+                        <outlet property="minusWD" destination="piQ-B7-HFp" id="dYl-sS-zF3"/>
+                        <outlet property="playerDEF" destination="Leb-Ci-vIp" id="6YD-HS-rAw"/>
+                        <outlet property="playerLP" destination="8si-O4-wOX" id="bIz-pE-y0g"/>
+                        <outlet property="playerPD" destination="tTq-cv-3HO" id="nfU-gV-HjV"/>
+                        <outlet property="playerSP" destination="clm-cL-QD0" id="Yxd-Pw-QAV"/>
+                        <outlet property="playerTextField" destination="Lde-nr-DhD" id="f7n-l3-P9C"/>
+                        <outlet property="playerWD" destination="yc8-ck-ZJh" id="3e3-Wa-bqG"/>
+                        <outlet property="plusDEF" destination="s1n-hf-5Q6" id="7e8-Q6-yjb"/>
+                        <outlet property="plusPD" destination="87H-Rp-xMV" id="Np4-Oe-1Yy"/>
+                        <outlet property="plusWD" destination="ggp-MY-fkd" id="5J8-Ap-jD7"/>
+                        <outlet property="pluseLP" destination="9mK-9s-8SR" id="PGS-sr-ev7"/>
+                        <outlet property="warriorSaveButton" destination="KSK-Wq-JZP" id="0CA-FP-jND"/>
                         <segue destination="lWq-lC-59m" kind="show" identifier="fromWizard" id="IVT-hz-7i1"/>
                     </connections>
                 </viewController>
@@ -755,6 +826,9 @@ Cg
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save And Begen The Fight !"/>
+                                <connections>
+                                    <action selector="knightToFight:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="b5T-RQ-al7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yek-wa-qjv">
                                 <rect key="frame" x="324" y="331" width="49" height="36"/>
@@ -770,6 +844,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="lifePointsActionMinus:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="kQz-xG-fZR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nl-Mm-EdE">
                                 <rect key="frame" x="255" y="334" width="32" height="31"/>
@@ -778,6 +855,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="lifePointsActionPlus:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="GPU-0j-Zfh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpv-oy-lWi">
                                 <rect key="frame" x="324" y="375" width="49" height="36"/>
@@ -793,6 +873,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="defenseMINUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="Aio-oe-WJF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSj-NZ-nfm">
                                 <rect key="frame" x="255" y="378" width="32" height="31"/>
@@ -801,6 +884,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="defencePLUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="kdm-CM-SoZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMf-qD-U83">
                                 <rect key="frame" x="324" y="419" width="49" height="36"/>
@@ -816,6 +902,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="powerMINUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="SfL-Qd-hfL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ru-y5-Ilr">
                                 <rect key="frame" x="255" y="422" width="32" height="31"/>
@@ -824,6 +913,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="powerPLUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="7Vi-tS-ydr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T7-mH-eJm">
                                 <rect key="frame" x="324" y="463" width="49" height="36"/>
@@ -839,6 +931,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <connections>
+                                    <action selector="weaponMINUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="gOH-xo-3kZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-QS-8p0">
                                 <rect key="frame" x="255" y="466" width="32" height="31"/>
@@ -847,6 +942,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="weaponPLUS:" destination="Ntq-4t-gxS" eventType="touchUpInside" id="bz9-ub-Opc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Life Points (LP)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atC-Po-9md">
                                 <rect key="frame" x="17" y="331" width="160" height="36"/>
@@ -968,7 +1066,21 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="pCn-HP-fbr"/>
                     <connections>
-                        <outlet property="rougeSaveButton" destination="9Sp-7e-IP7" id="1sm-zl-IGR"/>
+                        <outlet property="minusDEF" destination="XfX-Zy-1FK" id="sME-h5-lD1"/>
+                        <outlet property="minusLP" destination="vNF-9g-arp" id="HH9-N7-vNL"/>
+                        <outlet property="minusPD" destination="YoT-yv-cDh" id="qVd-il-xTP"/>
+                        <outlet property="minusWD" destination="2Ic-e0-ZA1" id="bcP-Xj-NmJ"/>
+                        <outlet property="playerDEF" destination="Cpv-oy-lWi" id="cxC-bg-dCe"/>
+                        <outlet property="playerLP" destination="yek-wa-qjv" id="R4G-hL-faP"/>
+                        <outlet property="playerPD" destination="RMf-qD-U83" id="Vw9-RG-UCc"/>
+                        <outlet property="playerSP" destination="mv3-Dc-MQE" id="G2T-CO-NWw"/>
+                        <outlet property="playerTextField" destination="jA1-km-kAr" id="hr9-za-Oye"/>
+                        <outlet property="playerWD" destination="7T7-mH-eJm" id="Oqz-Mm-mDA"/>
+                        <outlet property="plusDEF" destination="vSj-NZ-nfm" id="LWU-Fc-Jhh"/>
+                        <outlet property="plusPD" destination="3Ru-y5-Ilr" id="XTa-ax-eMe"/>
+                        <outlet property="plusWD" destination="bOO-QS-8p0" id="Cv3-fM-YjK"/>
+                        <outlet property="pluseLP" destination="6Nl-Mm-EdE" id="lGe-Tc-Aak"/>
+                        <outlet property="warriorSaveButton" destination="9Sp-7e-IP7" id="OZP-Iy-RkD"/>
                         <segue destination="lWq-lC-59m" kind="show" identifier="fromThief" id="uco-II-ZbY"/>
                     </connections>
                 </viewController>
@@ -1210,7 +1322,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8kV-hV-zAD"/>
+        <segue reference="uco-II-ZbY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Mage" width="400" height="400"/>
