@@ -1235,22 +1235,25 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K24-pc-166">
-                                <rect key="frame" x="16" y="756" width="195" height="54"/>
+                                <rect key="frame" x="16" y="756" width="160" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27397017045454541" green="0.0077629825607535277" blue="0.0026327995126040125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Rull The Dice"/>
+                                <connections>
+                                    <action selector="rulleTheDice:" destination="lWq-lC-59m" eventType="touchUpInside" id="46f-DQ-hgz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soL-Fa-ZE2">
-                                <rect key="frame" x="231" y="760" width="87" height="50"/>
+                                <rect key="frame" x="184" y="760" width="190" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="20">
                                         <attributes>
-                                            <color key="NSColor" red="1" green="0.0" blue="0.018721711901257265" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="49" name="Papyrus"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="24" name="Papyrus"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -1276,9 +1279,18 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="Iug-Tz-0N9"/>
                     <connections>
+                        <outlet property="bossDEF" destination="VqK-z1-vGN" id="FXe-EL-v7Q"/>
+                        <outlet property="bossLP" destination="tfa-J2-Hdf" id="b66-GA-r4a"/>
+                        <outlet property="bossLable" destination="YQp-Wg-RlZ" id="Mhx-sv-y4D"/>
+                        <outlet property="bossPD" destination="euI-bX-z1R" id="8ej-yK-eYp"/>
+                        <outlet property="bossSC" destination="Tmi-Jq-42e" id="kMq-EN-LPG"/>
+                        <outlet property="bossUIImage" destination="BlY-K0-Ozo" id="6bh-fw-SpU"/>
+                        <outlet property="bossWD" destination="kRV-co-o6G" id="7s2-XV-81i"/>
                         <outlet property="defenseLable" destination="Myp-l6-7jK" id="jty-3t-xMw"/>
+                        <outlet property="diceLable" destination="soL-Fa-ZE2" id="aLh-eY-9Cm"/>
                         <outlet property="lifePLable" destination="qxL-Tn-arE" id="KWA-0C-L0C"/>
                         <outlet property="playerNameLable" destination="f4q-o0-bqh" id="yi3-1G-Ieq"/>
+                        <outlet property="playerUIImage" destination="9lF-mo-590" id="4Zd-87-jGI"/>
                         <outlet property="poweDLable" destination="Hsr-sy-B0I" id="EGR-Jx-lIq"/>
                         <outlet property="rulleTheDice" destination="K24-pc-166" id="INg-cI-D7I"/>
                         <outlet property="specialCLable" destination="pBj-fx-JxP" id="Jca-8J-Sez"/>
@@ -1325,6 +1337,7 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="6ZV-jk-gDd"/>
                     <connections>
+                        <outlet property="bossShow" destination="nHe-4h-7Fc" id="lkJ-A7-GJS"/>
                         <outlet property="challengMeMortal" destination="Rqu-Uf-r8l" id="4qK-bw-E6E"/>
                     </connections>
                 </viewController>
