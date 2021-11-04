@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED332C9F273264A7002949F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332C9E273264A7002949F8 /* AppDelegate.swift */; };
+		ED332CA1273264A7002949F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CA0273264A7002949F8 /* SceneDelegate.swift */; };
+		ED332CA3273264A7002949F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CA2273264A7002949F8 /* ViewController.swift */; };
+		ED332CA6273264A8002949F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED332CA4273264A8002949F8 /* Main.storyboard */; };
+		ED332CA8273264A9002949F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED332CA7273264A9002949F8 /* Assets.xcassets */; };
+		ED332CAB273264A9002949F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED332CA9273264A9002949F8 /* LaunchScreen.storyboard */; };
+		ED332CB6273264AA002949F8 /* projectGamejazanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CB5273264AA002949F8 /* projectGamejazanTests.swift */; };
+		ED332CC0273264AA002949F8 /* projectGamejazanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CBF273264AA002949F8 /* projectGamejazanUITests.swift */; };
+		ED332CC2273264AA002949F8 /* projectGamejazanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CC1273264AA002949F8 /* projectGamejazanUITestsLaunchTests.swift */; };
+		ED332CCF27329C77002949F8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED332CCE27329C77002949F8 /* ViewController2.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED332CB2273264AA002949F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED332C93273264A7002949F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED332C9A273264A7002949F8;
+			remoteInfo = projectGamejazan;
+		};
+		ED332CBC273264AA002949F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED332C93273264A7002949F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED332C9A273264A7002949F8;
+			remoteInfo = projectGamejazan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED332C9B273264A7002949F8 /* projectGamejazan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectGamejazan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED332C9E273264A7002949F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED332CA0273264A7002949F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ED332CA2273264A7002949F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED332CA5273264A8002949F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED332CA7273264A9002949F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED332CAA273264A9002949F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED332CAC273264A9002949F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED332CB1273264AA002949F8 /* projectGamejazanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectGamejazanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED332CB5273264AA002949F8 /* projectGamejazanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectGamejazanTests.swift; sourceTree = "<group>"; };
+		ED332CBB273264AA002949F8 /* projectGamejazanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectGamejazanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED332CBF273264AA002949F8 /* projectGamejazanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectGamejazanUITests.swift; sourceTree = "<group>"; };
+		ED332CC1273264AA002949F8 /* projectGamejazanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectGamejazanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED332CCE27329C77002949F8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED332C98273264A7002949F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CAE273264AA002949F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CB8273264AA002949F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED332C92273264A7002949F8 = {
+			isa = PBXGroup;
+			children = (
+				ED332C9D273264A7002949F8 /* projectGamejazan */,
+				ED332CB4273264AA002949F8 /* projectGamejazanTests */,
+				ED332CBE273264AA002949F8 /* projectGamejazanUITests */,
+				ED332C9C273264A7002949F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED332C9C273264A7002949F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED332C9B273264A7002949F8 /* projectGamejazan.app */,
+				ED332CB1273264AA002949F8 /* projectGamejazanTests.xctest */,
+				ED332CBB273264AA002949F8 /* projectGamejazanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED332C9D273264A7002949F8 /* projectGamejazan */ = {
+			isa = PBXGroup;
+			children = (
+				ED332C9E273264A7002949F8 /* AppDelegate.swift */,
+				ED332CA0273264A7002949F8 /* SceneDelegate.swift */,
+				ED332CA4273264A8002949F8 /* Main.storyboard */,
+				ED332CA2273264A7002949F8 /* ViewController.swift */,
+				ED332CCE27329C77002949F8 /* ViewController2.swift */,
+				ED332CA7273264A9002949F8 /* Assets.xcassets */,
+				ED332CA9273264A9002949F8 /* LaunchScreen.storyboard */,
+				ED332CAC273264A9002949F8 /* Info.plist */,
+			);
+			path = projectGamejazan;
+			sourceTree = "<group>";
+		};
+		ED332CB4273264AA002949F8 /* projectGamejazanTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED332CB5273264AA002949F8 /* projectGamejazanTests.swift */,
+			);
+			path = projectGamejazanTests;
+			sourceTree = "<group>";
+		};
+		ED332CBE273264AA002949F8 /* projectGamejazanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED332CBF273264AA002949F8 /* projectGamejazanUITests.swift */,
+				ED332CC1273264AA002949F8 /* projectGamejazanUITestsLaunchTests.swift */,
+			);
+			path = projectGamejazanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED332C9A273264A7002949F8 /* projectGamejazan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED332CC5273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazan" */;
+			buildPhases = (
+				ED332C97273264A7002949F8 /* Sources */,
+				ED332C98273264A7002949F8 /* Frameworks */,
+				ED332C99273264A7002949F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = projectGamejazan;
+			productName = projectGamejazan;
+			productReference = ED332C9B273264A7002949F8 /* projectGamejazan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED332CB0273264AA002949F8 /* projectGamejazanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED332CC8273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazanTests" */;
+			buildPhases = (
+				ED332CAD273264AA002949F8 /* Sources */,
+				ED332CAE273264AA002949F8 /* Frameworks */,
+				ED332CAF273264AA002949F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED332CB3273264AA002949F8 /* PBXTargetDependency */,
+			);
+			name = projectGamejazanTests;
+			productName = projectGamejazanTests;
+			productReference = ED332CB1273264AA002949F8 /* projectGamejazanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED332CBA273264AA002949F8 /* projectGamejazanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED332CCB273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazanUITests" */;
+			buildPhases = (
+				ED332CB7273264AA002949F8 /* Sources */,
+				ED332CB8273264AA002949F8 /* Frameworks */,
+				ED332CB9273264AA002949F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED332CBD273264AA002949F8 /* PBXTargetDependency */,
+			);
+			name = projectGamejazanUITests;
+			productName = projectGamejazanUITests;
+			productReference = ED332CBB273264AA002949F8 /* projectGamejazanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED332C93273264A7002949F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					ED332C9A273264A7002949F8 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					ED332CB0273264AA002949F8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = ED332C9A273264A7002949F8;
+					};
+					ED332CBA273264AA002949F8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = ED332C9A273264A7002949F8;
+					};
+				};
+			};
+			buildConfigurationList = ED332C96273264A7002949F8 /* Build configuration list for PBXProject "projectGamejazan" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED332C92273264A7002949F8;
+			productRefGroup = ED332C9C273264A7002949F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED332C9A273264A7002949F8 /* projectGamejazan */,
+				ED332CB0273264AA002949F8 /* projectGamejazanTests */,
+				ED332CBA273264AA002949F8 /* projectGamejazanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED332C99273264A7002949F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED332CAB273264A9002949F8 /* LaunchScreen.storyboard in Resources */,
+				ED332CA8273264A9002949F8 /* Assets.xcassets in Resources */,
+				ED332CA6273264A8002949F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CAF273264AA002949F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CB9273264AA002949F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED332C97273264A7002949F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED332CA3273264A7002949F8 /* ViewController.swift in Sources */,
+				ED332CCF27329C77002949F8 /* ViewController2.swift in Sources */,
+				ED332C9F273264A7002949F8 /* AppDelegate.swift in Sources */,
+				ED332CA1273264A7002949F8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CAD273264AA002949F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED332CB6273264AA002949F8 /* projectGamejazanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED332CB7273264AA002949F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED332CC0273264AA002949F8 /* projectGamejazanUITests.swift in Sources */,
+				ED332CC2273264AA002949F8 /* projectGamejazanUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED332CB3273264AA002949F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED332C9A273264A7002949F8 /* projectGamejazan */;
+			targetProxy = ED332CB2273264AA002949F8 /* PBXContainerItemProxy */;
+		};
+		ED332CBD273264AA002949F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED332C9A273264A7002949F8 /* projectGamejazan */;
+			targetProxy = ED332CBC273264AA002949F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED332CA4273264A8002949F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED332CA5273264A8002949F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED332CA9273264A9002949F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED332CAA273264A9002949F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED332CC3273264AA002949F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED332CC4273264AA002949F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED332CC6273264AA002949F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = projectGamejazan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED332CC7273264AA002949F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = projectGamejazan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED332CC9273264AA002949F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/projectGamejazan.app/projectGamejazan";
+			};
+			name = Debug;
+		};
+		ED332CCA273264AA002949F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/projectGamejazan.app/projectGamejazan";
+			};
+			name = Release;
+		};
+		ED332CCC273264AA002949F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = projectGamejazan;
+			};
+			name = Debug;
+		};
+		ED332CCD273264AA002949F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = grand.com.projectGamejazanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = projectGamejazan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED332C96273264A7002949F8 /* Build configuration list for PBXProject "projectGamejazan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED332CC3273264AA002949F8 /* Debug */,
+				ED332CC4273264AA002949F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED332CC5273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED332CC6273264AA002949F8 /* Debug */,
+				ED332CC7273264AA002949F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED332CC8273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED332CC9273264AA002949F8 /* Debug */,
+				ED332CCA273264AA002949F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED332CCB273264AA002949F8 /* Build configuration list for PBXNativeTarget "projectGamejazanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED332CCC273264AA002949F8 /* Debug */,
+				ED332CCD273264AA002949F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED332C93273264A7002949F8 /* Project object */;
+}
