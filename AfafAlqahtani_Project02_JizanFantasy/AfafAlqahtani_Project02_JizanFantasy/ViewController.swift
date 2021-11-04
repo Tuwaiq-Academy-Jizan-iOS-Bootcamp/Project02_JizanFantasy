@@ -23,14 +23,23 @@ class Herro {
         self.weponDemage = weponDemage
         self.specialDemage = specialDemage
         
-        func thGameStart(){
-            
-            
-        }
+//        func thGameStart(){
+//            self.lifePoint -= powerDemage-defencse
+//            print("")
+//
+//
+//        }
     }
 }
 
 class Boss1: Herro{
+    
+    func thGameStart(){
+         powerDemage -= lifePoint-defencse
+        print("\(name)start of \(powerDemage)")
+        
+        
+    }
 }
 
 class Boss2: Herro{
