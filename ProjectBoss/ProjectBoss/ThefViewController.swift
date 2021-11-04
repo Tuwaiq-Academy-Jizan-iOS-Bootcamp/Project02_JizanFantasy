@@ -11,7 +11,7 @@ class ThefViewController: UIViewController {
 
     
 //    .....................skil label
-    var skillPointPlayer = 0
+//    var skillPointPlayer = 0
 //stepper
     @IBOutlet weak var skillPoint: UILabel!
     @IBOutlet weak var labelStepper: UILabel!
@@ -27,19 +27,23 @@ class ThefViewController: UIViewController {
 //    STEPPER FUNCTION.......
 
     @IBAction func stepperLifePoint(_ sender: UIStepper) {
-        let stepperInt = Int(sender.value)
-                labelStepper.text = String(stepperInt)
-       
+//        let stepperInt = Int(sender.value)
+                labelStepper.text = String(Int(sender.value))
         skillPoint.text = labelStepper.text
+        
     }
         @IBAction func stepperDefans(_ sender: UIStepper) {
             defensLabel.text = String(Int(sender.value))
+            skillPoint.text = defensLabel.text
     }
     @IBAction func stepperPowerDamge(_ sender: UIStepper) {
+        
         powerDamgeLable.text = String(Int(sender.value))
+        skillPoint.text = powerDamgeLable.text
     }
     
     @IBAction func stepperWeponDamge(_ sender: UIStepper) {
         weaponDamageLabel.text = String(Int(sender.value))
+        skillPoint.text = weaponDamageLabel.text
     }
 }
