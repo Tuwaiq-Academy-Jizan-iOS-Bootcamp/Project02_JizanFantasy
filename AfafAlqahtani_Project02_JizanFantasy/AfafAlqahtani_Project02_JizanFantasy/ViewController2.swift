@@ -26,14 +26,17 @@ class viewController2: UIViewController {
 }
     override  func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let rootViewController = segue.destination  as! ViewController
-    rootViewController.lfR.text = nameHerro.text
-    rootViewController.dfR.text = nameHerro.text
-    rootViewController.pdR.text = nameHerro.text
-    rootViewController.wdR.text = nameHerro.text
-    rootViewController.seR.text = nameHerro.text
-
+    rootViewController.lfR.text = lfVc2.text
+    rootViewController.dfR.text = dfVc2.text
+    rootViewController.pdR.text = dfVc2.text
+    rootViewController.wdR.text = wdVc2.text
+    rootViewController.seR.text = seVc2.text
+    }
 }
-}
 
-
-
+    extension viewController2:UITextViewDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+    }
