@@ -55,57 +55,52 @@ class ThiefView: UIViewController {
         sendInfo?.specialCValue = "75 Damage / +5(LP) / +35(WD)"
     }
     //LP Actions//
+    //Plus//
     @IBAction func lifePointsActionPlus(_ sender: Any) {
         if stateSP > 0 {
-            plusDEF.isEnabled = true
-            plusPD.isEnabled = true
-            plusWD.isEnabled = true
             minusLP.isEnabled = true
             stateSP -= 1
             stateLP += 1
             playerSP.text = "\(stateSP)"
             playerLP.text = "\(stateLP)"
         }else if stateSP == 0 {
-            plusDEF.isEnabled = true
-            plusPD.isEnabled = true
-            plusWD.isEnabled = true
             pluseLP.isEnabled = false
         }
     }
+    //Minus//
     @IBAction func lifePointsActionMinus(_ sender: Any) {
         if stateLP > 0 {
-            plusPD.isEnabled = true
-            plusDEF.isEnabled = true
-            plusWD.isEnabled = true
             pluseLP.isEnabled = true
+            plusPD.isEnabled = true
+            plusWD.isEnabled = true
+            plusDEF.isEnabled = true
             stateLP -= 1
             stateSP += 1
             playerSP.text = "\(stateSP)"
             playerLP.text = "\(stateLP)"
         }else if stateLP == 0 {
-            plusPD.isEnabled = true
-            plusDEF.isEnabled = true
-            plusWD.isEnabled = true
             minusLP.isEnabled = false
         }
     }
     //Defense Action//
+    //Plus//
     @IBAction func defencePLUS(_ sender: Any) {
         if stateSP > 0 && stateDEF < 25 {
-            pluseLP.isEnabled = true
             minusDEF.isEnabled = true
             stateSP -= 1
             stateDEF += 1
             playerSP.text = "\(stateSP)"
             playerDEF.text = "\(stateDEF)"
         }else if stateDEF == 25 || stateSP == 0 {
-            pluseLP.isEnabled = true
             plusDEF.isEnabled = false
         }
     }
+    //Minus//
     @IBAction func defenseMINUS(_ sender: Any) {
         if stateDEF > 0 {
             pluseLP.isEnabled = true
+            plusPD.isEnabled = true
+            plusWD.isEnabled = true
             plusDEF.isEnabled = true
             stateSP += 1
             stateDEF -= 1
@@ -113,40 +108,40 @@ class ThiefView: UIViewController {
             playerDEF.text = "\(stateDEF)"
         }else if stateDEF == 0 {
             minusDEF.isEnabled = false
-            pluseLP.isEnabled = true
         }
     }
     //Power Actions//
+    //Plus//
     @IBAction func powerPLUS(_ sender: Any) {
         if stateSP > 0 && statePD < 15 {
-            pluseLP.isEnabled = true
             minusPD.isEnabled = true
             stateSP -= 1
             statePD += 1
             playerSP.text = "\(stateSP)"
             playerPD.text = "\(statePD)"
         }else if statePD == 15 || stateSP == 0 {
-            pluseLP.isEnabled = true
             plusPD.isEnabled = false
         }
     }
+    //Minus//
     @IBAction func powerMINUS(_ sender: Any) {
         if statePD > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
+            plusWD.isEnabled = true
+            plusDEF.isEnabled = true
             stateSP += 1
             statePD -= 1
             playerSP.text = "\(stateSP)"
             playerPD.text = "\(statePD)"
         }else if stateWD == 0 {
             minusPD.isEnabled = false
-            pluseLP.isEnabled = true
         }
     }
     //Weapon Actions//
+    //Plus//
     @IBAction func weaponPLUS(_ sender: Any) {
         if stateSP > 0 && stateWD < 30 {
-            pluseLP.isEnabled = true
             minusWD.isEnabled = true
             stateSP -= 1
             stateWD += 1
@@ -156,17 +151,19 @@ class ThiefView: UIViewController {
             plusWD.isEnabled = false
         }
     }
+    //Minus//
     @IBAction func weaponMINUS(_ sender: Any) {
         if stateWD > 0 {
             pluseLP.isEnabled = true
+            plusPD.isEnabled = true
             plusWD.isEnabled = true
+            plusDEF.isEnabled = true
             stateSP += 1
             stateWD -= 1
             playerSP.text = "\(stateSP)"
             playerWD.text = "\(stateWD)"
         }else if stateWD == 0 {
             minusWD.isEnabled = false
-            pluseLP.isEnabled = true
         }
     }
 }
