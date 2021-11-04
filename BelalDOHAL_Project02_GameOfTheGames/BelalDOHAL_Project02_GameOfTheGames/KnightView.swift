@@ -1,6 +1,8 @@
 import UIKit
 
 class KnightView: UIViewController {
+    //Image//
+    var warriorImage = 1
     //Text Field//
     @IBOutlet weak var playerTextField: UITextField!
     //Skill Points//
@@ -40,18 +42,15 @@ class KnightView: UIViewController {
         minusPD.isEnabled = false
         minusWD.isEnabled = false
     }
-    //Go To Fight//
-    @IBAction func knightToFight(_ sender: UIButton) {
-        performSegue(withIdentifier: "fromKnight", sender: self)
-    }
     //Send Function//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let sendInfo = segue.destination as? FightView
-        sendInfo?.powerDValue = "\(statePD)"
-        sendInfo?.defenseValue = "\(stateDEF)"
-        sendInfo?.weaponDValue = "\(stateWD)"
-        sendInfo?.lifePValue = "\(stateLP)"
-        sendInfo?.playerName = playerTextField.text!
+        let sendInfo = segue.destination as? BossView
+        sendInfo?.playerImage = statePD
+        sendInfo?.defenseValue = stateDEF
+        sendInfo?.weaponDValue = stateWD
+        sendInfo?.lifePValue = stateLP
+        sendInfo?.playerImage = warriorImage
+        sendInfo?.playerNL = playerTextField.text!
         sendInfo?.specialCValue = "100 Damage / +5(LP) / +10(WD)"
     }
     //LP Actions//
