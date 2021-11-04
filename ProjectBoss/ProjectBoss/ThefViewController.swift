@@ -9,21 +9,37 @@ import UIKit
 
 class ThefViewController: UIViewController {
 
+    
+//    .....................skil label
+    var skillPointPlayer = 0
+//stepper
+    @IBOutlet weak var skillPoint: UILabel!
+    @IBOutlet weak var labelStepper: UILabel!
+    @IBOutlet weak var defensLabel: UILabel!
+    @IBOutlet weak var powerDamgeLable: UILabel!
+    @IBOutlet weak var weaponDamageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+//    STEPPER FUNCTION.......
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func stepperLifePoint(_ sender: UIStepper) {
+        let stepperInt = Int(sender.value)
+                labelStepper.text = String(stepperInt)
+       
+        skillPoint.text = labelStepper.text
     }
-    */
-
+        @IBAction func stepperDefans(_ sender: UIStepper) {
+            defensLabel.text = String(Int(sender.value))
+    }
+    @IBAction func stepperPowerDamge(_ sender: UIStepper) {
+        powerDamgeLable.text = String(Int(sender.value))
+    }
+    
+    @IBAction func stepperWeponDamge(_ sender: UIStepper) {
+        weaponDamageLabel.text = String(Int(sender.value))
+    }
 }
