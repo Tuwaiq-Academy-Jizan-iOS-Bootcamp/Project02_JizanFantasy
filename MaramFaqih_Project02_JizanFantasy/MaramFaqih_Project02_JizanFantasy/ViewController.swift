@@ -107,7 +107,7 @@ class ViewController: UIViewController {
     var boss1 = Boss(name: "Boss1", points: 0, lP: 250, dF: 30, pD: 20, wD: 45, sC: 110,addLP: 5,addPD: 0,addWD: 22)
     var boss2 = Boss(name: "Boss2", points: 0, lP: 170, dF: 25, pD: 15, wD: 30, sC: 75,addLP: 5 ,addPD: 32,addWD: 0)
 
-    var turn = 0
+    //var turn = 0
     var turnNo = 0
     
     var addLPP1 = 0
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
     var tempPD2 = 0
     var tempWD2 = 0
     
-    var endTern = false
+    var endTurn = false
     
     
     override func viewDidLoad() {
@@ -186,22 +186,22 @@ class ViewController: UIViewController {
          
    
         //Turn Boss
-        if turn == 0{
-            turn += 1
-            if ( turn == 1){
-                if endTern == false {
-                    turnNo += 1 }
+        if endTurn == false{
+           // turn += 1
+           // if ( turn == 1){
+                //if endTern == false {
+                    turnNo += 1 //}
             desccriptionGame.text += "-------------------- Turn \(turnNo) --------------------\n"
                 //turn = 0
-                endTern = true
+                endTurn = true
                 
-        }
+       // }
             
-      
+            desccriptionGame.text += ("Dise number 🎲 : ( \(randomDICE) )\n")
             switch randomDICE {
 
         case 1...9 :
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+                //desccriptionGame.text += ("Dise number: \(randomDICE)\n")
                 desccriptionGame.text += ("life point: \( player2LabelName.text!) is \(lPP2)\n")
            // player2LabelDF.text! = String(Int(player2LabelDF.text!) - 1)
                 if ((lDFP2 - (lDPP1 + tempPD1)) <= 0) {
@@ -216,18 +216,18 @@ class ViewController: UIViewController {
                 }
                 
                 player2LabelLP.text = String(checkZero(num:lPP2))
-                desccriptionGame.text += ("Boss use Power Damage : \( lDPP1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
+                desccriptionGame.text += ("\(bossLabelName.text!) use Power Damage : \( lDPP1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
 //                if lPP2>=0{
 //                    player2LabelLP.text = String(lPP2)
 //                }else{
 //                    player2LabelLP.text = String(0)
 //                }
-                print("Boss use dp")
+                //print("Boss use dp")
                 
         case 10...19 :
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+               // desccriptionGame.text += ("Dise number 🎲 : \(randomDICE)\n")
                 
-                desccriptionGame.text += ("life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
+                desccriptionGame.text += ("life point \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
                 if ((lDFP2 - (lWDP1+tempWD1)) <= 0) {
                     lPP2 = (lPP2 + (lDFP2 - (lWDP1+tempWD1)))
                     if(tempWD1 != 0){
@@ -238,7 +238,7 @@ class ViewController: UIViewController {
                     lPP2 = (lPP2 - 0)
                 }
                 player2LabelLP.text = String(checkZero(num:lPP2))
-                desccriptionGame.text += ("Boss use Weapon Damage : \(lWDP1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
+                desccriptionGame.text += ("\(bossLabelName.text!) use Weapon Damage : \(lWDP1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
                 
 //                if lPP2>=0{
 //                    player2LabelLP.text = String(lPP2)
@@ -250,8 +250,9 @@ class ViewController: UIViewController {
             
         default:
                 
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+                //desccriptionGame.text += ("Dise number: \(randomDICE)\n")
                 desccriptionGame.text += ("life point: \( player2LabelName.text!) is \(lPP2)\n")
+                desccriptionGame.text += ("point \(bossLabelName.text!) is \(lPP1)\n")
                 lPP1 += addLPP1
                 bossLabelLP.text = String(checkZero(num:lPP1))
                 tempPD1 += addPDP1
@@ -264,22 +265,24 @@ class ViewController: UIViewController {
                     lPP2 = (lPP2 - 0)
                 }
                 player2LabelLP.text = String(checkZero(num:lPP2))
-                desccriptionGame.text += ("Boss use Spécial Capacity: \(lWSC1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point Boss:\(bossLabelLP.text!)\n")
+                desccriptionGame.text += ("\(bossLabelName.text!) use Spécial Capacity: \(lWSC1) life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point \(bossLabelName.text!) :\(bossLabelLP.text!)\n")
                 
                 
-            print("Boss use cs")
+                    //print("Boss use cs")
             
-            }}
+            }
+            desccriptionGame.text += "----------------------------------------\n"
+        }
         //Turn Hero
         else{
-            turn = 0
-            endTern = false
-           
+            //turn = 0
+            endTurn = false
+            desccriptionGame.text += ("Dise number 🎲 :( \(randomDICE) ) \n")
             switch randomDICE {
                 
             case 1...9 :
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
-                desccriptionGame.text += ("point \(bossLabelName.text!) is \(lPP1)\n")
+                //desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+                desccriptionGame.text += ("point \(player2LabelName.text!) is \(lPP1)\n")
                 if ((lDFP1 - (lDPP2-tempPD2)) <= 0) {
                     lPP1 = (lPP1 + (lDFP1 - lDPP2))
                     if(tempPD2 != 0){
@@ -290,17 +293,17 @@ class ViewController: UIViewController {
                     lPP1 = (lPP1 - 0)
                 }
                 bossLabelLP.text = String(checkZero(num:lPP1))
-                desccriptionGame.text += (" \( bossLabelName.text!) use Power Damage : \( lDPP2) life point Boss is \(bossLabelLP.text!)\n")
+                desccriptionGame.text += (" \( player2LabelName.text!) use Power Damage : \( lDPP2) life point \(bossLabelName.text!) is \(bossLabelLP.text!)\n")
 //                if lPP1>=0{
 //                bossLabelLP.text = String(lPP1)
 //                }else{
 //                    bossLabelLP.text = String(0)
 //                }}
-                print("Hero use dp")
+               // print("Hero use dp")
                 
             case 10...19 :
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
-                desccriptionGame.text += ("point Boss is \(lPP1)\n")
+               // desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+                desccriptionGame.text += ("point \(bossLabelName.text!) is \(lPP1)\n")
                 
                 if ((lDFP1 - (lWDP2+tempWD2)) <= 0) {
                     lPP1 = (lPP1 + (lDFP1 - lWDP2))
@@ -312,7 +315,7 @@ class ViewController: UIViewController {
                     lPP1 = (lPP1 - 0)
                 }
                 bossLabelLP.text = String(checkZero(num:lPP1))
-                desccriptionGame.text += (" \( bossLabelName.text!) use  Weapon Damage  : \( lDPP2) life point Boss is \(bossLabelLP.text!)\n")
+                desccriptionGame.text += (" \( player2LabelName.text!) use  Weapon Damage  : \( lDPP2) life point \(bossLabelName.text!) is \(bossLabelLP.text!)\n")
                
 //                     if lPP1>=0{
 //                     bossLabelLP.text = String(lPP1)
@@ -322,8 +325,9 @@ class ViewController: UIViewController {
                 print("Hero use wd")
                 
             default:
-                desccriptionGame.text += ("Dise number: \(randomDICE)\n")
-                desccriptionGame.text += ("point Boss is \(lPP1)\n")
+              //  desccriptionGame.text += ("Dise number: \(randomDICE)\n")
+                desccriptionGame.text += ("point \(bossLabelName.text!) is \(lPP1)\n")
+                desccriptionGame.text += ("point \(player2LabelName.text!) is \(lPP2)\n")
                 lPP2 += addLPP2
                 player2LabelLP.text = String(checkZero(num:lPP2))
                 tempPD2 += addPDP2
@@ -336,11 +340,13 @@ class ViewController: UIViewController {
                     lPP1 = (lPP1 - 0)
                 }
                 bossLabelLP.text = String(checkZero(num:lPP1))
-                desccriptionGame.text += ("Boss use Spécial Capacity: \(lWDP2) life point Boss: is \(bossLabelLP.text!),and life point \( player2LabelName.text!) :\(player2LabelLP.text!)\n")
+                desccriptionGame.text += ("\(player2LabelLP.text!) use Spécial Capacity: \(lWDP2) life point \(bossLabelName.text!): is \(bossLabelLP.text!),and life point \( player2LabelName.text!) :\(player2LabelLP.text!)\n")
                 
-                print("Hero use sc")
+               // print("Hero use sc")
                 
             }
+            desccriptionGame.text += "----------------- End Turn \(turnNo) -----------------\n"
+            desccriptionGame.text += ("\n")
         }
             
         }
@@ -348,14 +354,18 @@ class ViewController: UIViewController {
        
         if(Int(player2LabelLP.text!) == 0 || Int(bossLabelLP.text!) == 0){
             if (Int(player2LabelLP.text!) == 0){
-                desccriptionGame.text += ("=========================\n")
+                desccriptionGame.text += ("===================================\n")
+                desccriptionGame.text += ("***********************************\n")
                 desccriptionGame.text += ("The winner Is \(bossLabelName.text!) \n")
-                desccriptionGame.text += ("=========================\n")
+                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("===================================\n")
                 
             }else{
-                desccriptionGame.text += ("=========================\n")
-                    desccriptionGame.text += ("The winner Is \(player2LabelName.text!) \n")
-                desccriptionGame.text += ("=========================\n")
+                desccriptionGame.text += ("===================================\n")
+                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("The winner Is \(player2LabelName.text!) \n")
+                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("===================================\n")
                 
             }
             ButtonRollingOutlet.isEnabled = false

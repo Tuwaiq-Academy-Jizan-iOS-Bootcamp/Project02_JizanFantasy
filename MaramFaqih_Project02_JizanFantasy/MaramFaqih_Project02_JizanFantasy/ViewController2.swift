@@ -149,6 +149,21 @@ class ViewController2: UIViewController {
             
             lPLabel.text = String(knight.lP ?? 60)
             dFLabel.text = String(knight.dF ?? 20)
+            dFLabel.text = String(knight.dF ?? 20)
+            
+//            if let text: String = dFLabel.text , Int(text)! >= 0 &&  Int(text)! <= knight.dFMax {
+//                dFLabel.text = text
+//            }else{
+//                dFLabel.text = ""
+//            }
+            
+//             if (Int(dFLabel.text!)! >= 0 && Int(dFLabel.text!)! <= knight.dFMax)
+//            {
+//                 dFLabel.text = String(knight.dF ?? 20)
+//             }else{
+//                 dFLabel.text = ""
+//             }
+            
             
          /*   if knight.dF != nil{
                 if(Int(dFLabel.text) > knight.dFMax){
@@ -159,6 +174,12 @@ class ViewController2: UIViewController {
                 
             }*/
             pDLabel.text = String(knight.pD ?? 30)
+//            if let str = pDLabel.text , Int(str)! >= 0 &&  Int(str)! <= knight.pDMax {
+//                // render the non-optional string value in "str"
+//            } else {
+//                // show an empty label
+//            }
+            //String(knight.pD ?? 30)
            wDLabel.text = String(knight.wD ?? 40)
             lPValue = knight.addLP
             pDValue = knight.addPD
@@ -205,6 +226,10 @@ class ViewController2: UIViewController {
                 
         
             }
+    func alertView(maxv:Int){
+        let aleart = UIAlertController(title: "Error", message: "the number must be greater than\(maxv)", preferredStyle:.alert)
+        aleart.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    }
     
 }
     
@@ -229,6 +254,7 @@ extension ViewController2:UITextFieldDelegate{
        if namePlayer.text == "knight" {
             pointPlayer2Label.text = String(knight.points)
             sCLabel.text = String(knight.sC)
+           
         }
         else if namePlayer.text == "wizard" {
             pointPlayer2Label.text = String(wizard.points)
