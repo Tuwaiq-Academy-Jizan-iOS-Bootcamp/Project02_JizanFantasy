@@ -9,6 +9,11 @@ class WizardView: UIViewController {
     @IBOutlet weak var playerSP: UILabel!
     var stateSP = 195
     //----State----//
+    //SC//
+    var sCValue = 50
+    var sCBonusPD = 10
+    var sCBonusWD = 0
+    var sCBonusLP = 35
     //DEF//
     @IBOutlet weak var plusDEF: UIButton!
     @IBOutlet weak var minusDEF: UIButton!
@@ -45,13 +50,17 @@ class WizardView: UIViewController {
     //Send Function//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendInfo = segue.destination as? BossView
+        sendInfo?.sCValue = sCValue
+        sendInfo?.sCBonusWD = sCBonusWD
+        sendInfo?.sCBonusPD = sCBonusPD
+        sendInfo?.sCBonusLP = sCBonusLP
         sendInfo?.powerDValue = statePD
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
         sendInfo?.playerImage = mageImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCValue = "50 Damage / +35(LP) / +10(PD)"
+        sendInfo?.specialCText = "50 Damage / +35(LP) / +10(PD)"
     }
     //LP Actions//
     //Plus//

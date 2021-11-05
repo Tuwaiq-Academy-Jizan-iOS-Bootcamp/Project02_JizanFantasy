@@ -2,19 +2,26 @@ struct Boss {
     var name:String
     var weaponD:Int
     var PowerD:Int
-    var specialC:Int
+    var specialDamage:Int
     var lifeP:Int
     var defense:Int
-    var specialEffect:String
+    var specialText:String
+    var BSCBonusWD:Int
+    var BSCBonusPD:Int
+    var BSCBonusLP:Int
 }
 import UIKit
 class BossView: UIViewController {
     //Outlet Go Button//
     @IBOutlet weak var challengMeMortal: UIButton!
     //Player Info//
+    var sCValue = 0
+    var sCBonusWD = 0
+    var sCBonusPD = 0
+    var sCBonusLP = 0
     var playerNL = ""
     var playerImage = 0
-    var specialCValue = ""
+    var specialCText = ""
     var weaponDValue = 0
     var powerDValue = 0
     var defenseValue = 0
@@ -22,8 +29,8 @@ class BossView: UIViewController {
     //Boss Info//
     @IBOutlet weak var bossShow: UIImageView!
     var randomBoss = Int.random(in: 1...2)
-    var boss1 = Boss(name: "Ravana", weaponD: 45, PowerD: 20, specialC: 110, lifeP: 250, defense: 30, specialEffect: "Ravana Ultimate")
-    var boss2 = Boss(name: "Dragoon", weaponD: 30, PowerD: 15, specialC: 75, lifeP: 170, defense: 25, specialEffect: "Dragoon Uitimate")
+    var boss1 = Boss(name: "Ravana", weaponD: 45, PowerD: 20, specialDamage: 110, lifeP: 250, defense: 30, specialText: "Ravana Ultimate", BSCBonusWD: 22, BSCBonusPD: 0, BSCBonusLP: 5)
+    var boss2 = Boss(name: "Dargoon", weaponD: 30, PowerD: 15, specialDamage: 75, lifeP: 170, defense: 25, specialText: "Dragoon Ultimate", BSCBonusWD: 0, BSCBonusPD: 32, BSCBonusLP: 5)
     //Override//
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,32 +44,43 @@ class BossView: UIViewController {
     //Send Function//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendInfo = segue.destination as? FightView
+        sendInfo?.sCValue = sCValue
+        sendInfo?.sCBonusWD = sCBonusWD
+        sendInfo?.sCBonusPD = sCBonusPD
+        sendInfo?.sCBonusLP = sCBonusLP
         sendInfo?.playerImage = playerImage
-        sendInfo?.specialCValue = specialCValue
+        sendInfo?.specialCText = specialCText
         sendInfo?.weaponDValue = weaponDValue
         sendInfo?.powerDValue = powerDValue
         sendInfo?.defenseValue = defenseValue
         sendInfo?.lifePValue = lifePValue
         sendInfo?.playerNL = playerNL
+        
         //Boss State//
         if randomBoss == 1 {
             sendInfo?.bossName = boss1.name
             sendInfo?.bossImage = randomBoss
             sendInfo?.bStateLP = boss1.lifeP
             sendInfo?.bStatePD = boss1.PowerD
-            sendInfo?.bStateSC = boss1.specialC
+            sendInfo?.bStateSCD = boss1.specialDamage
+            sendInfo?.bStateSCWD = boss1.BSCBonusWD
+            sendInfo?.bStateSCPD = boss1.BSCBonusPD
+            sendInfo?.bStateSCLP = boss1.BSCBonusLP
             sendInfo?.bStateDEF = boss1.defense
             sendInfo?.bStateWD = boss1.weaponD
-            sendInfo?.btextSC = boss1.specialEffect
+            sendInfo?.btextSC = boss1.specialText
         }else{
             sendInfo?.bossName = boss2.name
             sendInfo?.bossImage = randomBoss
             sendInfo?.bStateLP = boss2.lifeP
             sendInfo?.bStatePD = boss2.PowerD
-            sendInfo?.bStateSC = boss2.specialC
-            sendInfo?.bStateWD = boss1.weaponD
+            sendInfo?.bStateSCD = boss2.specialDamage
+            sendInfo?.bStateSCWD = boss2.BSCBonusWD
+            sendInfo?.bStateSCPD = boss2.BSCBonusPD
+            sendInfo?.bStateSCLP = boss2.BSCBonusLP
+            sendInfo?.bStateWD = boss2.weaponD
             sendInfo?.bStateDEF = boss2.defense
-            sendInfo?.btextSC = boss2.specialEffect
+            sendInfo?.btextSC = boss2.specialText
         }
     }
 }

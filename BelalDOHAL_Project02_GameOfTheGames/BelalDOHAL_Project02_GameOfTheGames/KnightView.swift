@@ -9,6 +9,11 @@ class KnightView: UIViewController {
     @IBOutlet weak var playerSP: UILabel!
     var stateSP = 150
     //----State----//
+    //SC//
+    var sCValue = 100
+    var sCBonusWD = 10
+    var sCBonusPD = 0
+    var sCBonusLP = 5
     //DEF//
     @IBOutlet weak var plusDEF: UIButton!
     @IBOutlet weak var minusDEF: UIButton!
@@ -45,13 +50,17 @@ class KnightView: UIViewController {
     //Send Function//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendInfo = segue.destination as? BossView
+        sendInfo?.sCValue = sCValue
+        sendInfo?.sCBonusWD = sCBonusWD
+        sendInfo?.sCBonusPD = sCBonusPD
+        sendInfo?.sCBonusLP = sCBonusLP
         sendInfo?.playerImage = statePD
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
         sendInfo?.playerImage = warriorImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCValue = "100 Damage / +5(LP) / +10(WD)"
+        sendInfo?.specialCText = "100 Damage / +5(LP) / +10(WD)"
     }
     //LP Actions//
     //Plus//

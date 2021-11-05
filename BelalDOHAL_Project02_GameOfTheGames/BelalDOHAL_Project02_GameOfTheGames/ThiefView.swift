@@ -9,6 +9,11 @@ class ThiefView: UIViewController {
     @IBOutlet weak var playerSP: UILabel!
     var stateSP = 135
     //----State----//
+    //SC//
+    var sCValue = 75
+    var sCBonusWD = 35
+    var sCBonusPD = 0
+    var sCBonusLP = 5
     //DEF//
     @IBOutlet weak var plusDEF: UIButton!
     @IBOutlet weak var minusDEF: UIButton!
@@ -45,13 +50,17 @@ class ThiefView: UIViewController {
     //Send Function//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendInfo = segue.destination as? BossView
+        sendInfo?.sCValue = sCValue
+        sendInfo?.sCBonusWD = sCBonusWD
+        sendInfo?.sCBonusPD = sCBonusPD
+        sendInfo?.sCBonusLP = sCBonusLP
         sendInfo?.powerDValue = statePD
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
         sendInfo?.playerImage = rougeImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCValue = "75 Damage / +5(LP) / +35(WD)"
+        sendInfo?.specialCText = "75 Damage / +5(LP) / +35(WD)"
     }
     //LP Actions//
     //Plus//
