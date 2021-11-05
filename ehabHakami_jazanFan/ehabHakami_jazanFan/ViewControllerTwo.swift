@@ -23,6 +23,11 @@ class ViewControllerTwo: UIViewController {
     @IBOutlet weak var cS: UITextField!
     
     
+    @IBOutlet weak var allPointHero: UILabel!
+    
+    @IBOutlet weak var nameHeroSSS: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,8 +59,47 @@ class ViewControllerTwo: UIViewController {
         
         rootVC.labelsCValue.text = cS.text
         
+        rootVC.labelNameValue.text = nameHeroSSS.text
+        
+        
+        
         // Pass the selected object to the new view controller.
     }
+    
+    @IBAction func knightAddValue(_ sender: Any) {
+        textFieldLp.text = "\(60)"
+        textFieldDf.text = "\(20)"
+        textFieldPd.text = "\(30)"
+        textFieldLpWd.text = "\(40)"
+        cS.text = "\(100)"
+        allPointHero.text = "250 points to dispatch "
+        nameHeroSSS.text = "knight"
+        
+    }
+    
+    @IBAction func wizardAddValue(_ sender: Any) {
+        textFieldLp.text = "\(90)"
+        textFieldDf.text = "\(15)"
+        textFieldPd.text = "\(70)"
+        textFieldLpWd.text = "\(20)"
+        cS.text = "\(50)"
+        allPointHero.text = "245 points to dispatch "
+        nameHeroSSS.text = "wizard"
+        
+    }
+    
+    
+    @IBAction func thifAddValue(_ sender: Any) {
+        textFieldLp.text = "\(65)"
+        textFieldDf.text = "\(25)"
+        textFieldPd.text = "\(15)"
+        textFieldLpWd.text = "\(30)"
+        cS.text = "\(55)"
+        allPointHero.text = "210 points to dispatch "
+        nameHeroSSS.text = "thif"
+        
+    }
+    
     
 
 }
