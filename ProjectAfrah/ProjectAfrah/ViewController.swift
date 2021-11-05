@@ -29,16 +29,19 @@ struct Boss{
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textDescrabtion: UILabel!
+    // Labels for Boss
+    
     @IBOutlet weak var labelBossPoints: UILabel!
+    @IBOutlet weak var labelBossLP: UILabel!
     @IBOutlet weak var labelBossDF: UILabel!
     @IBOutlet weak var labelBossPD: UILabel!
     @IBOutlet weak var labelBossWD: UILabel!
     @IBOutlet weak var labelBossSC: UILabel!
     @IBOutlet weak var nameboss: UILabel!
-    @IBOutlet weak var nameHero: UILabel!
     
-    @IBOutlet weak var labelBossLP: UILabel!
+    // Labels for Hero ..
+    
+    @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var labelHeropoints: UILabel!
     @IBOutlet weak var labelHeroLP: UILabel!
     @IBOutlet weak var labelHeroDF: UILabel!
@@ -46,143 +49,126 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelHeroWD: UILabel!
     @IBOutlet weak var labelHeroSC: UILabel!
     
-//    @IBOutlet weak var numberdice: UILabel!
-//    var i = Int.random(in: 1...20)
-//    numberdice.text = String(i)
-    
     @IBOutlet weak var imageBoss: UIImageView!
     @IBOutlet weak var imageHero: UIImageView!
     
-//
-//    let dices = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-//    var boss1 = Boss(name: "Boss1", lifePoint: 250, defense: 30, PowerDamage: 20, weaponDamage: 45, specialCapacity: 110)
-//        var boss2 = Boss(name: "Boss2", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30,specialCapacity: 75)
-//    var hero = Hero(name: "", lifePoint:0, defense: 22, PowerDamage: 0, weaponDamage: 0, specialCapacity: 0)
-
-   let dices = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-
-   var hero = Hero(name: "Knight", lifePoint: 200, defense: 20, PowerDamage: 55, weaponDamage: 20, specialCapacity: 100 , image: "Knight")
-    let bosses = [Boss(name: "boss1", lifePoint: 250, defense: 15, PowerDamage: 33, weaponDamage: 30, specialCapacity: 75, image: "boss1"),Boss(name: "boss2", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75, image: "boss2")]
-   var boss: Boss!
+    // Variabels & let for Boss & Hero..
+    
+    let dices = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    var hero = Hero(name: "", lifePoint: 0 , defense: 0 , PowerDamage: 0 , weaponDamage: 0 , specialCapacity: 0 , image: "")
+    
+    // Hero 1:  Name: Knight , (Points to dispatch : 250 , -> LP , DF , PD , WD , SC)
+    // Hero 2:  Name: Wizard , (Points to dispatch : 245 , -> LP , DF , PD , WD , SC)
+    // Hero 3:  Name: Thief , (Points to dispatch : 210 , -> LP , DF , PD , WD , SC)
+    
+    let bosses = [Boss(name: "Eila", lifePoint: 250, defense: 15, PowerDamage: 33, weaponDamage: 30, specialCapacity: 75, image: "boos1"),Boss(name: "Leon", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75, image: "boss2")]
+    var boss: Boss!
+    
+       // Var for The Winner & Turn ...
+    
+    var turn: Int = 0
+    var winner = false
+    
     override func viewDidLoad() {
-     
         super.viewDidLoad()
+        
+        //  Element , skils for Boss ...
+    
        boss = bosses.randomElement()!
-       imageBoss.image = UIImage(named: "boss1")
+        imageBoss.image = UIImage(named: boss.image)
         nameboss.text = boss.name
        labelBossLP.text = String(boss.lifePoint)
        labelBossDF.text = String(boss.defense)
         labelBossPD.text = String(boss.PowerDamage)
-       labelDice.text = String(boss.weaponDamage)
+       labelBossWD.text = String(boss.weaponDamage)
         labelBossSC.text = String(boss.specialCapacity)
         
-        imageHero.image = UIImage(named: "boss1")
+        // Element , skils for Hero ...
+        
+        imageHero.image = UIImage(named: hero.image)
         nameHero.text = hero.name
         labelHeroLP.text = String(hero.lifePoint)
         labelHeroDF.text = String(hero.defense)
          labelHeroPD.text = String(hero.PowerDamage)
-        labelDice.text = String(hero.weaponDamage)
+        labelHeroWD.text = String(hero.weaponDamage)
          labelHeroSC.text = String(hero.specialCapacity)
         
-    bossRandom()
-        rollingDice()
 
     }
-    @IBAction func
-      RootViewContrller(segue: UIStoryboardSegue) {
+    @IBAction func RootViewContrller(segue: UIStoryboardSegue) {
     }
+    // The logic of the game ..
     
     @IBOutlet weak var labelDice: UILabel!
-    @IBAction func buttonAcation(_ sender: Any) {
-        let r = Int.random(in: 1...20)
-        labelDice.text = String(r)
-//        performSegue(withIdentifier: "VC2", sender: self)
-   }
+    @IBOutlet weak var deci: UITextView!
+         @IBAction func rollingDice(_ sender: Any) {
+
 //
-    
-    
-    func rollingDice() {
-//      var lifB = Int(labelBossLD.text!)
-////
-        let dice = Int.random(in: 1...20)
-        switch dice {
-        case 1...9:
-            
-//            numberdice.text = String(dice)
-            labelDice.text = "PowerDemage"
-            print("PowerDemage")
-        case 10...19:
-//            numberdice.text = String(dice)
-            labelDice.text = "WeaponDamage"
-            print("WeaponDamage")
-        case 20:
-//            numberdice.text = String(dice)
-            labelDice.text = "speecialcapacity"
-            print("speecialcapacity")
-        default:
-print("Error")
-            
-        }
-    }
-    func bossRandom() {
 //    if hero.lifePoint >= 0 && boss.lifePoint >= 0 {
+//
 //        bossTurn()
+//
 //        heroTurn()
 //    }else{
 //        if hero.lifePoint <= 0 {
-//            print("hero dead")
+//            deci.text += ("hero dead")
+//            deci.text += ("The Winner is : \(boss.name) at turn \(turn)")
 //        }else if boss.lifePoint <= 0 {
-//            print("boss dead")
+//            deci.text += ("boss dead")
+//            deci.text += ("The winner is : \(hero.name) at turn \(turn)")
+//            winner = true
 //        }else{
-//            print("Error")
-//
+//            deci.text += ("Error")
 //        }
 //    }
-//    }
+//
+//             // دور boss
 //    func bossTurn() {
 //        let diceBoss = dices.randomElement()!
 //
-//        print("Dice for boss number is : \(diceBoss)")
-//        print("it's the boss turn!")
+//        deci.text += ("Dice for boss number is : \(diceBoss)")
+//        deci.text += ("it's the boss turn!")
 //        if diceBoss >= 1 && diceBoss <= 9 {
 //            if boss.PowerDamage - hero.defense > 0 {
-//                print("Power Damager =  \(boss.PowerDamage - hero.defense)")
-//                print("hero health \(hero.lifePoint)")
+////                deci.text += ("=========================")
+//                deci.text += ("Power Damager =  \(boss.PowerDamage - hero.defense)")
+//                deci.text += ("hero health \(hero.lifePoint)")
 //                hero.lifePoint -= boss.PowerDamage - hero.defense
 //            }else{
-//                print("defence")
+//                deci.text += ("defenc")
 //            }
+//        } else if diceBoss >= 10 && diceBoss <= 19 {
+//
+//            if boss.weaponDamage - hero.defense > 0 {
+//                hero.lifePoint -= boss.weaponDamage - hero.defense
+////                deci.text += ("======================")
+//                deci.text += ("attack was Weapon Damager that = \(boss.weaponDamage - hero.defense)")
+//                deci.text += ("hero health \(hero.lifePoint)")
+//        }else{
+//            deci.text += ("hero defence block all attack damage!")
+//        }
 //        }else if diceBoss == 20 {
-//            print("special capacity damage")
+//            deci.text += ("special capacity damage")
 //        }
 //    }
-    func heroTurn()  {
+//    func heroTurn() {
+//
     
-//         var boss = Int.random(in: 1...2)
-//        switch boss {
-//           case 1:
-//            imageBoss.image = UIImage(named: "boss2")
-//             labelBossLP.text = String(boss1.lifePoint)
-//             labelBossDF.text = String(boss1.defense)
-//             labelBossPD.text = String(boss1.PowerDamage)
-//             labelBossWD.text = String(boss1.weaponDamage)
-//             labelBossSC.text = String(boss1.specialCapacity)
+//            theWinnerIs(hero: hero, boss: boss )
+//            func theWinnerIs(hero: Hero, boss: Boss) {
 //
-//           case 2:
-//              imageBoss.image = UIImage(named: "boss1")
-//              labelBossLP.text = String(boss2.lifePoint)
-//             labelBossDF.text = String(boss2.defense)
-//             labelBossPD.text = String(boss2.PowerDamage)
-//              labelBossWD.text = String(boss2.weaponDamage)
-//             labelBossSC.text = String(boss2.specialCapacity)
+//                if (hero.lifePoint <= 0) {
+//                    print("The Winner is  : \(boss.name) at turn \(turn)")
+//                    winner = true
+//                }
+//                if (boss.lifePoint <= 0) {
+//                    print("The winner is : \(hero.name) at turn \(turn)")
+//                    winner = true
+//        }
 //
-//          default:
-//               print("Error")
-//         }
-//
-//     }
-//
-//}
+
+            
+            
     }
-}
-}
+    }
+
