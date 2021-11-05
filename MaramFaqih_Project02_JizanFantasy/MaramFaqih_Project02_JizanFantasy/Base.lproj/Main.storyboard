@@ -318,25 +318,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-U4-eIB">
-                                <rect key="frame" x="197" y="291" width="133" height="34"/>
+                                <rect key="frame" x="197" y="291" width="79" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS6-uC-qH9">
-                                <rect key="frame" x="197" y="333" width="177" height="34"/>
+                                <rect key="frame" x="197" y="333" width="79" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zqy-aN-Jos">
-                                <rect key="frame" x="197" y="375" width="177" height="34"/>
+                                <rect key="frame" x="197" y="375" width="79" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUb-V9-Rb0">
-                                <rect key="frame" x="197" y="417" width="177" height="34"/>
+                                <rect key="frame" x="197" y="417" width="79" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -366,6 +366,30 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="joV-IU-tZu">
                                 <rect key="frame" x="284" y="291" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepLPAction:" destination="mbz-ar-3AJ" eventType="valueChanged" id="tIZ-LL-WjF"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-B3-mLH">
+                                <rect key="frame" x="284" y="333" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepDFAction:" destination="mbz-ar-3AJ" eventType="valueChanged" id="KyC-7m-iAD"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-jK-nBX">
+                                <rect key="frame" x="284" y="378" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepPDAction:" destination="mbz-ar-3AJ" eventType="valueChanged" id="kvh-ik-M3M"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GgQ-XE-qEn">
+                                <rect key="frame" x="284" y="420" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepWDAction:" destination="mbz-ar-3AJ" eventType="valueChanged" id="Psk-Jt-xfr"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TJe-G7-no4"/>
@@ -373,13 +397,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="JmO-bL-yEp"/>
                     <connections>
+                        <outlet property="buttonOutlet" destination="usX-tw-1um" id="8qU-FZ-Qzt"/>
                         <outlet property="dFLabel" destination="wS6-uC-qH9" id="mfA-br-5G5"/>
+                        <outlet property="imageViewPlayer2" destination="iS5-4X-0ym" id="PAt-jn-3iQ"/>
                         <outlet property="lPLabel" destination="Wzp-U4-eIB" id="YYU-Gl-3nO"/>
                         <outlet property="namePlayer" destination="oHP-G6-NPJ" id="HXP-Ud-Kg2"/>
                         <outlet property="namePlayer2" destination="wIU-ba-tFA" id="A4C-1I-jSr"/>
                         <outlet property="pDLabel" destination="Zqy-aN-Jos" id="o71-Sb-Vpn"/>
                         <outlet property="pointPlayer2Label" destination="jCB-JH-RnB" id="eD7-zl-SbG"/>
                         <outlet property="sCLabel" destination="x11-uE-JKq" id="UYE-1d-cvp"/>
+                        <outlet property="stepDF" destination="DHz-B3-mLH" id="wqM-0w-12c"/>
+                        <outlet property="stepLP" destination="joV-IU-tZu" id="92F-IL-ClO"/>
+                        <outlet property="stepPD" destination="dg4-jK-nBX" id="Ewt-aC-5Kg"/>
+                        <outlet property="stepWD" destination="GgQ-XE-qEn" id="V9a-ZB-gdl"/>
+                        <outlet property="textViewStory" destination="uGV-6h-Mrd" id="eox-SS-CHN"/>
                         <outlet property="wDLabel" destination="QUb-V9-Rb0" id="8ut-MU-O7Z"/>
                         <outletCollection property="textFieldSet" destination="oHP-G6-NPJ" collectionClass="NSMutableArray" id="JHS-Sm-G95"/>
                         <outletCollection property="textFieldSet" destination="Wzp-U4-eIB" collectionClass="NSMutableArray" id="gpZ-Dr-Vap"/>

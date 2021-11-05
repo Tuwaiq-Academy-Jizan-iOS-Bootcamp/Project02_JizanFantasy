@@ -20,9 +20,9 @@ protocol rollGameHero{
     
   // func playaCtion()-> Int
     
-    func checkdF()-> Int
-    func checkpD()-> Int
-    func checkwD()-> Int
+//    func checkdF()-> Int
+//    func checkpD()-> Int
+//    func checkwD()-> Int
     
 }
 class Hero:rollGameHero {
@@ -65,91 +65,101 @@ class Hero:rollGameHero {
     }
 
 
-func checkdF() -> Int {
-    if dF! <= dFMax {
-        return dF!
-    }else{
-        return 0
-    }
-}
-    func checkpD() -> Int {
-        if pD! <= pDMax{
-            return pD!
-        }else{
-            return 0
-        }
-    }
-
-func checkwD() -> Int {
-    if wD! <= wDMax{
-        return wD!
-    }else{
-        return 0
-    }
-}
-}
-    class Knight:Hero{
-       
- 
-        
-        
-    }
-class Wizard:Hero{
-   
-
- 
-    
+//func checkdF() -> Int {
+//    if dF! <= dFMax {
+//        return dF!
+//    }else{
+//        return 0
+//    }
+//}
+//    func checkpD() -> Int {
+//        if pD! <= pDMax{
+//            return pD!
+//        }else{
+//            return 0
+//        }
+//    }
+//
+//func checkwD() -> Int {
+//    if wD! <= wDMax{
+//        return wD!
+//    }else{
+//        return 0
+//    }
     
 }
 
-
-class Thief:Hero{
-   
-
-    
-    
-}
 
 class ViewController2: UIViewController {
-
+    //steper outlet
+    @IBOutlet weak var stepLP: UIStepper!
+    @IBOutlet weak var stepDF: UIStepper!
+    @IBOutlet weak var stepPD: UIStepper!
+    @IBOutlet weak var stepWD: UIStepper!
     
-    @IBOutlet weak var lPLabel: UITextField!
-    
+    //label outlet
+    @IBOutlet weak var namePlayer2: UILabel!
     @IBOutlet weak var sCLabel: UILabel!
+    @IBOutlet weak var pointPlayer2Label: UILabel!
+    //text field outlet
+    @IBOutlet weak var lPLabel: UITextField!
     @IBOutlet weak var wDLabel: UITextField!
     @IBOutlet weak var pDLabel: UITextField!
     @IBOutlet weak var dFLabel: UITextField!
-    @IBOutlet weak var namePlayer2: UILabel!
-    
     @IBOutlet weak var namePlayer: UITextField!
+    
     @IBOutlet var textFieldSet: [UITextField]!
     
-    @IBOutlet weak var pointPlayer2Label: UILabel!
+    @IBOutlet weak var imageViewPlayer2: UIImageView!
     
-    var knight = Knight(name:"Knight", points: 250, lP: nil, dF:nil, pD:nil, wD:nil, sC:100,dFMax:20, pDMax:30, wDMax:40, addLP: 5,addPD: 0,addWD: 10)
-    var wizard = Wizard(name:"Wizard", points: 245, lP: nil, dF:nil, pD:nil, wD:nil, sC:50, dFMax:15, pDMax:70, wDMax:20, addLP: 35 ,addPD: 10,addWD: 0)
-    var thief = Thief(name:"Thief", points: 210,  lP: nil, dF:nil, pD:nil, wD:nil, sC:75,dFMax:25, pDMax:15, wDMax:30, addLP: 5,addPD: 0,addWD: 35)
+    @IBOutlet weak var textViewStory: UITextView!
+    
+    @IBOutlet weak var buttonOutlet: UIButton!
+    //object from Hero class
+    var knight = Hero(name:"Knight", points: 250, lP: nil, dF:nil, pD:nil, wD:nil, sC:100,dFMax:20, pDMax:30, wDMax:40, addLP: 5,addPD: 0,addWD: 10)
+    var wizard = Hero(name:"Wizard", points: 245, lP: nil, dF:nil, pD:nil, wD:nil, sC:50, dFMax:15, pDMax:70, wDMax:20, addLP: 35 ,addPD: 10,addWD: 0)
+    var thief = Hero(name:"Thief", points: 210,  lP: nil, dF:nil, pD:nil, wD:nil, sC:75,dFMax:25, pDMax:15, wDMax:30, addLP: 5,addPD: 0,addWD: 35)
     
     var lPValue = 0
     var pDValue = 0
     var wDValue = 0
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    // Do any additional setup after loading the view.
+        
         for i in textFieldSet{
             i.delegate = self
             //print("\(i)")
     }
         namePlayer.delegate = self
         let player2 = namePlayer.text
-        //var lPVar:S? = nil
+       
+        stepLP.stepValue = 1
+        stepDF.stepValue = 1
+        stepPD.stepValue = 1
+        stepWD.stepValue = 1
+        if player2 == "" {
+            stepLP.isUserInteractionEnabled = false
+            stepDF.isUserInteractionEnabled = false
+            stepPD.isUserInteractionEnabled = false
+            stepWD.isUserInteractionEnabled = false
+            buttonOutlet.isUserInteractionEnabled = false
+           
+        }
+        
+        dFLabel.isUserInteractionEnabled = false
+        pDLabel.isUserInteractionEnabled = false
+        wDLabel.isUserInteractionEnabled = false
+        
         switch player2{
         case "knight":
             
+            //stepDF.maximumValue = 10
+            
             lPLabel.text = String(knight.lP ?? 60)
             dFLabel.text = String(knight.dF ?? 20)
-            dFLabel.text = String(knight.dF ?? 20)
+            //dFLabel.text = String(knight.dF ?? 20)
             
 //            if let text: String = dFLabel.text , Int(text)! >= 0 &&  Int(text)! <= knight.dFMax {
 //                dFLabel.text = text
@@ -226,9 +236,22 @@ class ViewController2: UIViewController {
                 
         
             }
-    func alertView(maxv:Int){
-        let aleart = UIAlertController(title: "Error", message: "the number must be greater than\(maxv)", preferredStyle:.alert)
-        aleart.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//    func alertView(maxv:Int){
+//        let aleart = UIAlertController(title: "Error", message: "the number must be greater than\(maxv)", preferredStyle:.alert)
+//        aleart.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//    }
+//
+    @IBAction func stepLPAction(_ sender: UIStepper) {
+        lPLabel.text = Int(sender.value).description
+    }
+    @IBAction func stepDFAction(_ sender: UIStepper) {
+        dFLabel.text = Int(sender.value).description
+    }
+    @IBAction func stepPDAction(_ sender: UIStepper) {
+        pDLabel.text = Int(sender.value).description
+    }
+    @IBAction func stepWDAction(_ sender: UIStepper) {
+        wDLabel.text = Int(sender.value).description
     }
     
 }
@@ -251,22 +274,56 @@ extension ViewController2:UITextFieldDelegate{
         //let nameDelegate = namePlayer.text
         //pointPlayer2Label.text = nameDelegate.points
         //sCLabel.text = nameDelegate.sC
+        
        if namePlayer.text == "knight" {
             pointPlayer2Label.text = String(knight.points)
             sCLabel.text = String(knight.sC)
+       
+              stepDF.maximumValue = Double(knight.dFMax)
+              stepPD.maximumValue = Double(knight.pDMax)
+              stepWD.maximumValue = Double(knight.wDMax)
+           
+           stepLP.isUserInteractionEnabled = true
+           stepDF.isUserInteractionEnabled = true
+           stepPD.isUserInteractionEnabled = true
+           stepWD.isUserInteractionEnabled = true
+           buttonOutlet.isUserInteractionEnabled = true
            
         }
         else if namePlayer.text == "wizard" {
             pointPlayer2Label.text = String(wizard.points)
             sCLabel.text = String(wizard.sC)
+            
+            stepDF.maximumValue = Double(wizard.dFMax)
+            stepPD.maximumValue = Double(wizard.pDMax)
+            stepWD.maximumValue = Double(wizard.wDMax)
+            
+            stepLP.isUserInteractionEnabled = true
+            stepDF.isUserInteractionEnabled = true
+            stepPD.isUserInteractionEnabled = true
+            stepWD.isUserInteractionEnabled = true
+            buttonOutlet.isUserInteractionEnabled = true
+            
         }
         else if namePlayer.text == "thief" {
             pointPlayer2Label.text = String(thief.points)
             sCLabel.text = String(thief.sC)
+            
+            stepDF.maximumValue = Double(thief.dFMax)
+            stepPD.maximumValue = Double(thief.pDMax)
+            stepWD.maximumValue = Double(thief.wDMax)
+            
+            stepLP.isUserInteractionEnabled = true
+            stepDF.isUserInteractionEnabled = true
+            stepPD.isUserInteractionEnabled = true
+            stepWD.isUserInteractionEnabled = true
+            buttonOutlet.isUserInteractionEnabled = true
         }
       
         
-        //namePlayer2.text=
+        namePlayer2.text = namePlayer.text
+        
+        
         textField.resignFirstResponder()
         return true
         
