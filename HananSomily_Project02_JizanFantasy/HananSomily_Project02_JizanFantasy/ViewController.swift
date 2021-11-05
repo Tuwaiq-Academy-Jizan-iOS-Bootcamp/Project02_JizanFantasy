@@ -20,6 +20,10 @@ struct Player{
     mutating func power (){}
 }
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var imagePlayer1: UIImageView!
+    @IBOutlet weak var imagePlayer2: UIImageView!
+    
     @IBOutlet weak var roolButton: UIButton!
     
     // player1
@@ -63,6 +67,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectPlayr1()
+        //imagePlayer1.image = UIImage(name: bosss1)
         // Do any additional setup after loading the view.
 //         playr2LP! = Int(lpOfPlayer2Labl.text ?? "")
 //         playr1LP = Int(lpOfPlayr1Labl.text ?? "")
@@ -96,12 +101,10 @@ class ViewController: UIViewController {
         var  playr2WD = Int(wdOfPlayr2labl.text!)!
         var  playr2SC = Int(wdOfPlayr2labl.text!)!
         var  playr1SC = Int(scOfPlayer1Labl.text!)!
-          //let diceRoll = Int.random(in: 1...20)
         if winner == false {
         turn += 1
-        //discriptionOfActionTextView.text = "_This is the turn \(turn)_\n"
         discriptionOfActionTextView.text = "_This is the start of turn \(turn)_\n"
-                discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber)🎲🎲 -- \n ")
+        discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber)🎲🎲 -- \n ")
 
           print("dice \(diceNumber)")
           //print dice
@@ -116,7 +119,7 @@ class ViewController: UIViewController {
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 Power ")
-              discriptionOfActionTextView.text += ("\(playr2N)attack \(playr2PD) ,\(playr1N)life point \(playr1LP)\n")
+              discriptionOfActionTextView.text += ("\(playr2N) Use Power Damage  \(playr2PD) and \(playr1N) Use Defense \(playr1DF) life point \(playr1LP)\n")
 //
           case 10...19:
               playr2WD += spichalCapacityWD
@@ -128,7 +131,7 @@ class ViewController: UIViewController {
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 weapon")
-              discriptionOfActionTextView.text += ( "\(playr2N)attack \(playr2WD) ,\(playr1N)life point \(playr1LP)\n")
+              discriptionOfActionTextView.text += ( "\(playr2N) Use Weapon Damage \(playr2WD) And \(playr1N) Use Defense \(playr1DF) life Point \(playr1LP)\n")
 
 
           case 20:
@@ -136,7 +139,6 @@ class ViewController: UIViewController {
               if( reselt4 >= 0 ){
                  reselt4 = 0
               }
-
               playr1LP += reselt4
               if playr1LP <= 0 {
                   playr1LP = 0
@@ -144,7 +146,7 @@ class ViewController: UIViewController {
               playr1LP += spichalCapacityLP
               sFlag = true
               lpOfPlayr1Labl.text = String(playr1LP)
-              discriptionOfActionTextView.text += ("\(playr2N)attack \(playr2SC),\(playr1N)life point \(playr1LP)\n")
+              discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity  \(playr2SC),,, life Point \(playr2LP)\n")
 
           default:
              print( "OPS")
@@ -165,7 +167,7 @@ class ViewController: UIViewController {
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
             
-            discriptionOfActionTextView.text += ("\(playr2N)attack \(playr1DF) ,\(playr1N)life point \(playr2LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Power Damage \(playr1PD) and \(playr2N) Use Defense \(playr2DF) life point \(playr2LP)\n")
             print("playr2 power")
         case 10...19:
 
@@ -177,7 +179,7 @@ class ViewController: UIViewController {
             if playr2LP <= 0 { playr2LP = 0 }
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr2N)attack \(playr1WD) ,\(playr1N)life point \(playr2LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Weapon Damage \(playr1WD) And \(playr2N) Use Defense \(playr2DF) life Point \(playr2LP)\n")
             print("playr2 weapon")
 
         case 20:
@@ -193,7 +195,7 @@ class ViewController: UIViewController {
             playr2LP += spichalCapacityLP
             sFlag = true
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr2N)attack \(playr1SC) ,\(playr1N)life point \(playr2LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity  \(playr1SC),,, life Point \(playr1LP)\n")
             print(reselt5 , playr2LP)
 
         default:
@@ -213,19 +215,16 @@ class ViewController: UIViewController {
 
         }
         discriptionOfActionTextView.text += "_This is the end of turn \(turn)_\n"
-        //print(playr1LP)
-   //actionAttack1()
-        //sender.titleLabel
+
             
         }
-        //winner = true
     }
-    @IBAction func selectPlayr1Button(_ sender: Any) {
-        selectPlayr1()
-    }
+  
     func selectPlayr1(){
         let num = Int.random(in: 1...2)
         if num == 1{
+            imagePlayer1.image = UIImage(named: "bosss1")
+         
             nameOfPlayr1Labl.text = boss1.name
             lpOfPlayr1Labl.text = String( boss1.lifePoint)
             dfOfPlayr1Labl.text = String( boss1.defense)
@@ -235,6 +234,7 @@ class ViewController: UIViewController {
             //"+ 5 LP & + 22 WD"
         }
         if num == 2{
+            imagePlayer1.image = UIImage(named: "bosss2")
             nameOfPlayr1Labl.text = boss2.name
             lpOfPlayr1Labl.text = String( boss2.lifePoint)
             dfOfPlayr1Labl.text = String( boss2.defense)
@@ -247,20 +247,11 @@ class ViewController: UIViewController {
     @IBAction func backTo(segue:UIStoryboardSegue){
         
     }
-//    func poweAttack(){
-//       //if ()
-//
-//    }
-//    func weaponAttack(){
-//
-//    }
-//    func specialAttack(){
-//
-//    }
+
 //    func attackReselt(){
 //    var attck = 0
 //    if attck >= 0{
-////        attck = 0 }}
+//        attck = 0 }}
 //    func actionAttack1(){
 //      var  playr2LP = Int(lpOfPlayer2Labl.text!)!
 //        var  playr1LP = Int(lpOfPlayr1Labl.text !)
