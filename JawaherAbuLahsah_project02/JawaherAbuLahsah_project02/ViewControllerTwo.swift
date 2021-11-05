@@ -16,6 +16,10 @@ class ViewControllerTwo:UIViewController{
     @IBOutlet weak var fieldWD: UITextField!
     @IBOutlet weak var fieldSC: UITextField!
     
+    @IBOutlet weak var wDWarning: UILabel!
+    @IBOutlet weak var pDWarning: UILabel!
+    @IBOutlet weak var dFWarning: UILabel!
+    @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
@@ -36,7 +40,7 @@ class ViewControllerTwo:UIViewController{
             fieldSC.isEnabled = false
             num = 1
             imageHero.image = UIImage(named: "hero1")
-            storyLabel.text = "Hello, I Knight."
+            storyLabel.text = "Hello, I Knight. I will try not to disappoint you 🦹🏻‍♂️⚔️."
     }else if sender.tag == 2 {
             lPLabel.text = "245"
         fieldLP.text = "90"
@@ -47,7 +51,7 @@ class ViewControllerTwo:UIViewController{
         fieldSC.isEnabled = false
             num = 2
             imageHero.image = UIImage(named: "hero2")
-            storyLabel.text = "Hello, I Wizard."
+            storyLabel.text = "Hello, I Wizard. I will fight with all my might 🦸🏻💪🏻."
         }else{
             lPLabel.text = "210"
             fieldLP.text = "65"
@@ -58,7 +62,7 @@ class ViewControllerTwo:UIViewController{
             fieldSC.isEnabled = false
             num = 3
             imageHero.image = UIImage(named: "hero3")
-            storyLabel.text = "Hello, I Thief."
+            storyLabel.text = "Hello, I a win Thief 🥷🏻💰."
         }
     }
     //*************************
@@ -102,59 +106,83 @@ class ViewControllerTwo:UIViewController{
     
     //button to check if field max or min ....
     @IBAction func createHeroButton(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "WARNING", message: "🛑🛑🛑🛑🛑🛑🛑🛑", preferredStyle: UIAlertController.Style.alert)
+        
         if num == 1 {
             if Int(fieldDF.text!) ?? 0 > 21 || Int(fieldDF.text!) ?? 0 <= 0 {
                        fieldDF.text = ""
                        fieldDF.backgroundColor = .purple
+               
+                dFWarning.text = "Max:20"
                    }
             if Int(fieldPD.text!) ?? 0 > 31 || Int(fieldPD.text!) ?? 0 <= 0 {
                        fieldPD.text = ""
                        fieldPD.backgroundColor = .purple
+               
+                pDWarning.text = "Max:30"
                    }
             if Int(fieldWD.text!) ?? 0 > 41 || Int(fieldWD.text!) ?? 0 <= 0 {
                        fieldWD.text = ""
                        fieldWD.backgroundColor = .purple
+               
+                wDWarning.text = "Max:40"
             }
-         
+            pointCheck()
                }
         if num == 2 {
             if Int(fieldDF.text!) ?? 0 > 16 || Int(fieldDF.text!) ?? 0 <= 0 {
                        fieldDF.text = ""
                        fieldDF.backgroundColor = .purple
+               
+                dFWarning.text = "Max:15"
                    }
             if Int(fieldPD.text!) ?? 0 > 70 || Int(fieldPD.text!) ?? 0 <= 0 {
                        fieldPD.text = ""
                        fieldPD.backgroundColor = .purple
+                
+                pDWarning.text = "Max:70"
                    }
             if Int(fieldWD.text!) ?? 0 > 20 || Int(fieldWD.text!) ?? 0 <= 0 {
                        fieldWD.text = ""
                        fieldWD.backgroundColor = .purple
+               
+                wDWarning.text = "Max:20"
                    }
-           
+            pointCheck()
                }
         if num == 3 {
             if Int(fieldDF.text!) ?? 0 > 26 || Int(fieldDF.text!) ?? 0 <= 0 {
                        fieldDF.text = ""
                        fieldDF.backgroundColor = .purple
+                
+                dFWarning.text = "Max:25"
                    }
             if Int(fieldPD.text!) ?? 0 > 16 || Int(fieldPD.text!) ?? 0 <= 0 {
                        fieldPD.text = ""
                        fieldPD.backgroundColor = .purple
+                
+                pDWarning.text = "Max:15"
                    }
-            if Int(fieldWD.text!) ?? 0 > 30 || Int(fieldWD.text!) ?? 0 <= 0 {
+            if Int(fieldWD.text!) ?? 0 > 31 || Int(fieldWD.text!) ?? 0 <= 0 {
                        fieldWD.text = ""
                        fieldWD.backgroundColor = .purple
+                
+                wDWarning.text = "Max:30"
                    }
+            pointCheck()
+        }
+            
         
-               }
         //***********************************
         
         
         
         //message if field empty
-        let alert = UIAlertController(title: "WARNING", message: "THE TEXT FIELD IS EMPTY", preferredStyle: UIAlertController.Style.alert)
+        
         if (fieldName.text?.isEmpty)! ||  (fieldLP.text?.isEmpty)! ||  (fieldDF.text?.isEmpty)! ||  (fieldPD.text?.isEmpty)! ||  (fieldWD.text?.isEmpty)! ||  (fieldSC.text?.isEmpty)!  {
          //   alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            warningLabel.text = "Text field is empty🛑"
             self.present(alert, animated: true, completion: nil)
               }
         //************************************
@@ -170,12 +198,31 @@ class ViewControllerTwo:UIViewController{
         let f = Int(fieldSC.text!) ?? 0
         var x = Int(lPLabel.text!) ?? 0
         x = a - b - c - d - f
-        if x < 0 {
-            storyLabel.text = "the point ofer \(lPLabel.text!) \(x)"
+        if Int(lPLabel.text!) ?? 0 < x {
+            warningLabel.text = "The total of the point inside the text field \(x) greater then the player's points \(lPLabel.text!) "
             fieldLP.text = ""
+            fieldDF.text = ""
+            fieldPD.text = ""
+            fieldWD.text = ""
         }
     }
+    @IBAction func resetButton(_ sender: Any) {
+        fieldLP.text = ""
+        fieldDF.text = ""
+        fieldPD.text = ""
+        fieldWD.text = ""
+        fieldSC.text = ""
+        fieldName.text = ""
+        fieldDF.backgroundColor = .white
+        fieldWD.backgroundColor = .white
+        fieldPD.backgroundColor = .white
+        lPLabel.text = ""
+        dFWarning.text = ""
+        pDWarning.text = ""
+        wDWarning.text = ""
+        warningLabel.text = ""
     }
+}
 //***********************************
     
     
