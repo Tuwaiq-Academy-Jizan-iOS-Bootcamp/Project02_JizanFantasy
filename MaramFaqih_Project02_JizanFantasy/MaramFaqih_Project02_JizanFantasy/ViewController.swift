@@ -351,24 +351,32 @@ class ViewController: UIViewController {
             
         }
    
-       
-        if(Int(player2LabelLP.text!) == 0 || Int(bossLabelLP.text!) == 0){
+        
+        if(((Int(player2LabelLP.text!) == 0 || Int(bossLabelLP.text!) == 0)) && (player2LabelName.text != "Name Player 2")){
             if (Int(player2LabelLP.text!) == 0){
                 desccriptionGame.text += ("===================================\n")
-                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("**************************************\n")
                 desccriptionGame.text += ("The winner Is \(bossLabelName.text!) \n")
-                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("**************************************\n")
                 desccriptionGame.text += ("===================================\n")
                 
             }else{
                 desccriptionGame.text += ("===================================\n")
-                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("**************************************\n")
                 desccriptionGame.text += ("The winner Is \(player2LabelName.text!) \n")
-                desccriptionGame.text += ("***********************************\n")
+                desccriptionGame.text += ("**************************************\n")
                 desccriptionGame.text += ("===================================\n")
                 
             }
             ButtonRollingOutlet.isEnabled = false
+        }
+        if (player2LabelName.text == "Name Player 2"){
+            desccriptionGame.text += ("===================================\n")
+            desccriptionGame.text += ("**************************************\n")
+            desccriptionGame.text += ("Pless add player 2 \n")
+            desccriptionGame.text += ("**************************************\n")
+            desccriptionGame.text += ("===================================\n")
+            
         }
 
         
