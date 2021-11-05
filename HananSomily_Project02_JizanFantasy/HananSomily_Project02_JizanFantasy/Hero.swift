@@ -101,21 +101,33 @@ struct HeroPlayer{
      }
      
      @IBAction func LifePointHeroStepper(_ sender: UIStepper) {
-         lifePointHeroLabl.text = Int(sender.value).description
-     }
+         if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
+             lifePointHeroLabl.text = Int(sender.value).description
+                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+         //lifePointHeroLabl.text = Int(sender.value).description
+         }}
      
      @IBAction func heroDFstepper(_ sender: UIStepper) {
-         inserDFLabl.text = Int(sender.value).description
-     }
+         if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
+             inserDFLabl.text = Int(sender.value).description
+                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+         //inserDFLabl.text = Int(sender.value).description
+         }}
      
      @IBAction func heroPDstepper(_ sender: UIStepper) {
-         insertPDLabl.text = Int(sender.value).description
-     }
+         if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
+             insertPDLabl.text = Int(sender.value).description
+                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+         //insertPDLabl.text = Int(sender.value).description
+         }}
      
      @IBAction func heroWDstepper(_ sender: UIStepper) {
-         insertWDLabl.text = Int(sender.value).description
+         if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
+             insertWDLabl.text = Int(sender.value).description
+                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+         //insertWDLabl.text = Int(sender.value).description
      }
- }
+     }}
 extension Hero:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
