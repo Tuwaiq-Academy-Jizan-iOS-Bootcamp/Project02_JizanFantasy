@@ -104,9 +104,9 @@
 				F81EDA21273262B5005266E4 /* AppDelegate.swift */,
 				F81EDA23273262B5005266E4 /* SceneDelegate.swift */,
 				F81EDA25273262B5005266E4 /* ViewController.swift */,
-				F81EDA27273262B5005266E4 /* Main.storyboard */,
 				F81EDA512732792F005266E4 /* viewControllerTow.swift */,
 				F81EDA2A273262B7005266E4 /* Assets.xcassets */,
+				F81EDA27273262B5005266E4 /* Main.storyboard */,
 				F81EDA2C273262B7005266E4 /* LaunchScreen.storyboard */,
 				F81EDA2F273262B7005266E4 /* Info.plist */,
 			);
