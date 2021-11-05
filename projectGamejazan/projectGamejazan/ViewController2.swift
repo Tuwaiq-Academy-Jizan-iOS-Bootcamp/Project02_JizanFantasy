@@ -44,6 +44,7 @@ class ViewController2: UIViewController{
             controlsSegue.playerPDLabel.text = createPDlabel.text
             controlsSegue.playerWDLabel.text = createWDlabel.text
             controlsSegue.playerSCLabel.text = createSClabel.text
+            controlsSegue.playerImage.image = createImage.image
     }
 }
 }
@@ -57,7 +58,13 @@ extension ViewController2: UITextFieldDelegate {
         let images2: Int = .random(in: 0...arra.count - 1)
         createImage.image = UIImage(named: arra[images2])
     }
-}
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        let maxed: Int?
+//        if textField.tag == 3 {
+//        maxed: Int"\(createDFLabel.text)"
+//            }
+//        }
+    }
 //    func textFieldDidEndEditing(_ textField: UITextField) {
 //        print("0")
 //        if textField.tag == 3{
@@ -72,9 +79,6 @@ extension ViewController2: UITextFieldDelegate {
 //        switch added {
 //        case 1:
 //            createLPLabel.text = "\(knight.lifePoint)"
-////            createDFLabel.text = "\()"
-////            createPDlabel.text = "\()"
-////            createWDlabel.text = "\()"
 //            createSClabel.text = "\(knight.specialCapcity)"
 //        case 2:
 //            createLPLabel.text = "\(wizard.lifePoint)"

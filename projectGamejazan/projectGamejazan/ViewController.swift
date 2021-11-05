@@ -45,7 +45,7 @@ class Boss: Hero {
     var defense: Int
     var powerDamage: Int
     var weapon: Int
-//    var Weapon1 = weapon(name: "", damage: Int)
+    //    var Weapon1 = weapon(name: "", damage: Int)
     var specialCapcity: Int
     init(name:String, lifePoint:Int, defense: Int, powerDamage:Int, weapon:Int, specialCapcity:Int){
         self.name = name
@@ -54,7 +54,6 @@ class Boss: Hero {
         self.powerDamage = powerDamage
         self.weapon = weapon
         self.specialCapcity = specialCapcity
-        
     }
 }
 var knight = Boss(name: "knight", lifePoint: 60, defense:  20, powerDamage: 30, weapon: 40, specialCapcity: 100)
@@ -63,11 +62,11 @@ var thief = Boss(name: "thief", lifePoint: 65, defense:  25, powerDamage: 15, we
 var bossOne = Boss(name: "Boss1", lifePoint: 250, defense:  30, powerDamage: 20, weapon: 45, specialCapcity: 110)
 var bossTwo = Boss(name: "Boss2", lifePoint: 170, defense:  25, powerDamage: 15, weapon: 30, specialCapcity: 75)
 
-
 class ViewController: UIViewController {
     var turn: Int = 0
+    //    var lpboss = Int(bossPointLabel.text)
     var array = ["imageOne","imageTwo"]
-//    names
+    //    names
     @IBOutlet weak var namePlayer: UILabel!
     @IBOutlet weak var namePlayer2: UILabel!
     //    images
@@ -85,19 +84,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerPDLabel: UILabel!
     @IBOutlet weak var playerWDLabel: UILabel!
     @IBOutlet weak var playerSCLabel: UILabel!
-//    Label
+    //    Label
     @IBOutlet weak var textLabel: UILabel!
-//    rollingDice
+    //    rollingDice
     @IBOutlet weak var rolling: UILabel!
-    
     @IBAction func sequeController(seque: UIStoryboardSegue){
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView()
         change()
+        scboos()
     }
     
     func rollDice() {
@@ -105,15 +103,12 @@ class ViewController: UIViewController {
         //            button.setTitle("dice: \(result)", for: .normal)
         switch result {
         case 1...9:
-            bossDFLabel.text = "\(bossOne.defense)"
-            bossPDLabel.text = "\(bossOne.powerDamage)"
-            bossWdLabel.text = "\(bossOne.weapon)"
-            bossDFLabel.text = "\(bossTwo.defense)"
-            bossPDLabel.text = "\(bossTwo.powerDamage)"
-            bossWdLabel.text = "\(bossTwo.weapon)"
+            scboos()
+            //            bossPointLabel -= playerLPLabel
             textLabel.text = "rolling dice for Player"
             print("rolling dice for Player")
         case 10...19:
+            scboos()
             textLabel.text = "Weapon Damgage"
             print("Weapon Damgage")
         case 20:
@@ -131,7 +126,6 @@ class ViewController: UIViewController {
         let images: Int = .random(in: 0...array.count - 1)
         bossImage.image = UIImage(named: array[images])
     }
-   
     
     func change() {
         let changes: Int = .random(in: 1...2)
@@ -142,21 +136,52 @@ class ViewController: UIViewController {
             bossPDLabel.text = "\(bossOne.powerDamage)"
             bossWdLabel.text = "\(bossOne.weapon)"
             bossSCLabel.text = "\(bossOne.specialCapcity)"
-//            هنا اسم الليبل حق الاسم بوس ون بعدها تيكست
+            //            هنا اسم الليبل حق الاسم بوس ون بعدها تيكست
         case 2:
             bossPointLabel.text = "\(bossTwo.lifePoint)"
             bossDFLabel.text = "\(bossTwo.defense)"
             bossPDLabel.text = "\(bossTwo.powerDamage)"
             bossWdLabel.text = "\(bossTwo.weapon)"
             bossSCLabel.text = "\(bossTwo.specialCapcity)"
-//            نفسوا هنا 
+            //            نفسوا هنا
         default:
             print("Error")
         }
     }
-    func updata() {
-        bossPDLabel.text = "Pwoer"
+//    func update() {
+//
+//
+//    }
+    func scboos(){
+        var bossPointLabel = 0
+//        var bossLP = (bossPointLabel.text)
+        var playerLP = 0
+//        life Point
+        let bossDamage = 0
+        let playerDamage = 0
+//         Damage
+        let bossDefense = 0
+        let PlayerDefense = 0
+//        Defense
+        
+        let totalDamage = playerDamage - bossDefense
+        if totalDamage <= 0 {
+            bossPointLabel -= 0
+        } else {
+//            bossLP -= totalDamage
+        }
+        let totalLP = bossDamage - PlayerDefense
+        if totalLP <= 0 {
+            playerLP -= 0
+        } else {
+            playerLP -= totalLP
+        }
     }
-    
 }
 
+//            bossDFLabel.text = "\(bossOne.defense)"
+//            bossPDLabel.text = "\(bossOne.powerDamage)"
+//            bossWdLabel.text = "\(bossOne.weapon)"
+//            bossDFLabel.text = "\(bossTwo.defense)"
+//            bossPDLabel.text = "\(bossTwo.powerDamage)"
+//            bossWdLabel.text = "\(bossTwo.weapon)"
