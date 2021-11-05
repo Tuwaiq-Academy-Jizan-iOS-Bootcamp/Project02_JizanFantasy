@@ -45,6 +45,7 @@ class Boss: Hero {
     var defense: Int
     var powerDamage: Int
     var weapon: Int
+//    var Weapon1 = weapon(name: "", damage: Int)
     var specialCapcity: Int
     init(name:String, lifePoint:Int, defense: Int, powerDamage:Int, weapon:Int, specialCapcity:Int){
         self.name = name
@@ -53,6 +54,7 @@ class Boss: Hero {
         self.powerDamage = powerDamage
         self.weapon = weapon
         self.specialCapcity = specialCapcity
+        
     }
 }
 var knight = Boss(name: "knight", lifePoint: 60, defense:  20, powerDamage: 30, weapon: 40, specialCapcity: 100)
@@ -63,8 +65,12 @@ var bossTwo = Boss(name: "Boss2", lifePoint: 170, defense:  25, powerDamage: 15,
 
 
 class ViewController: UIViewController {
+    var turn: Int = 0
     var array = ["imageOne","imageTwo"]
-    
+//    names
+    @IBOutlet weak var namePlayer: UILabel!
+    @IBOutlet weak var namePlayer2: UILabel!
+    //    images
     @IBOutlet weak var bossImage: UIImageView!
     @IBOutlet weak var playerImage: UIImageView!
     //    Booses
@@ -74,27 +80,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var bossWdLabel: UILabel!
     @IBOutlet weak var bossSCLabel: UILabel!
     //   Player
-//    نربطهم كلهم
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var playerLPLabel: UILabel!
+    @IBOutlet weak var playerDFLabel: UILabel!
+    @IBOutlet weak var playerPDLabel: UILabel!
+    @IBOutlet weak var playerWDLabel: UILabel!
+    @IBOutlet weak var playerSCLabel: UILabel!
+//    Label
     @IBOutlet weak var textLabel: UILabel!
+//    rollingDice
     @IBOutlet weak var rolling: UILabel!
+    
+    @IBAction func sequeController(seque: UIStoryboardSegue){
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView()
+        change()
     }
+    
     func rollDice() {
         let result: Int = .random(in: 1...20)
         //            button.setTitle("dice: \(result)", for: .normal)
         switch result {
         case 1...9:
+            bossDFLabel.text = "\(bossOne.defense)"
+            bossPDLabel.text = "\(bossOne.powerDamage)"
+            bossWdLabel.text = "\(bossOne.weapon)"
+            bossDFLabel.text = "\(bossTwo.defense)"
+            bossPDLabel.text = "\(bossTwo.powerDamage)"
+            bossWdLabel.text = "\(bossTwo.weapon)"
             textLabel.text = "rolling dice for Player"
             print("rolling dice for Player")
         case 10...19:
@@ -116,5 +132,31 @@ class ViewController: UIViewController {
         bossImage.image = UIImage(named: array[images])
     }
    
+    
+    func change() {
+        let changes: Int = .random(in: 1...2)
+        switch changes {
+        case 1:
+            bossPointLabel.text = "\(bossOne.lifePoint)"
+            bossDFLabel.text = "\(bossOne.defense)"
+            bossPDLabel.text = "\(bossOne.powerDamage)"
+            bossWdLabel.text = "\(bossOne.weapon)"
+            bossSCLabel.text = "\(bossOne.specialCapcity)"
+//            هنا اسم الليبل حق الاسم بوس ون بعدها تيكست
+        case 2:
+            bossPointLabel.text = "\(bossTwo.lifePoint)"
+            bossDFLabel.text = "\(bossTwo.defense)"
+            bossPDLabel.text = "\(bossTwo.powerDamage)"
+            bossWdLabel.text = "\(bossTwo.weapon)"
+            bossSCLabel.text = "\(bossTwo.specialCapcity)"
+//            نفسوا هنا 
+        default:
+            print("Error")
+        }
+    }
+    func updata() {
+        bossPDLabel.text = "Pwoer"
+    }
+    
 }
 
