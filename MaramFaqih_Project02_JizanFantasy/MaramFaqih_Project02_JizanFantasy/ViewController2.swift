@@ -18,29 +18,21 @@ protocol rollGameHero{
     var addPD:Int {get set}
     var addWD:Int {get set}
     
-  // func playaCtion()-> Int
-    
-//    func checkdF()-> Int
-//    func checkpD()-> Int
-//    func checkwD()-> Int
     
 }
 class Hero:rollGameHero {
-    var addLP: Int
-    
-    var addPD: Int
-    
-    var addWD: Int
-    
   
     var name: String
-    
     var points: Int
     var lP: Int
     var dF: Int
     var pD: Int
     var wD: Int
     var sC: Int
+    
+    var addLP: Int
+    var addPD: Int
+    var addWD: Int
 
     var dFMax:Int
     var pDMax:Int
@@ -65,27 +57,6 @@ class Hero:rollGameHero {
     }
 
 
-//func checkdF() -> Int {
-//    if dF! <= dFMax {
-//        return dF!
-//    }else{
-//        return 0
-//    }
-//}
-//    func checkpD() -> Int {
-//        if pD! <= pDMax{
-//            return pD!
-//        }else{
-//            return 0
-//        }
-//    }
-//
-//func checkwD() -> Int {
-//    if wD! <= wDMax{
-//        return wD!
-//    }else{
-//        return 0
-//    }
     
 }
 
@@ -101,6 +72,11 @@ class ViewController2: UIViewController {
     @IBOutlet weak var namePlayer2: UILabel!
     @IBOutlet weak var sCLabel: UILabel!
     @IBOutlet weak var pointPlayer2Label: UILabel!
+    
+    @IBOutlet weak var wDPlus: UILabel!
+    @IBOutlet weak var lPPlus: UILabel!
+    @IBOutlet weak var pDPlus: UILabel!
+    
     //text field outlet
     @IBOutlet weak var lPLabel: UITextField!
     @IBOutlet weak var wDLabel: UITextField!
@@ -108,29 +84,32 @@ class ViewController2: UIViewController {
     @IBOutlet weak var dFLabel: UITextField!
     @IBOutlet weak var namePlayer: UITextField!
     
+
     @IBOutlet var textFieldSet: [UITextField]!
-    
     @IBOutlet weak var imageViewPlayer2: UIImageView!
-    
     @IBOutlet weak var textViewStory: UITextView!
-    
     @IBOutlet weak var buttonOutlet: UIButton!
+    
     //object from Hero class
     var knight = Hero(name:"Knight", points: 250, lP: 0, dF:0, pD:0, wD:0, sC:100,dFMax:20, pDMax:30, wDMax:40, addLP: 5,addPD: 0,addWD: 10)
     var wizard = Hero(name:"Wizard", points: 245, lP: 0, dF:0, pD:0, wD:0, sC:50, dFMax:15, pDMax:70, wDMax:20, addLP: 35 ,addPD: 10,addWD: 0)
     var thief = Hero(name:"Thief", points: 210,  lP: 0, dF:0, pD:0, wD:0, sC:75,dFMax:25, pDMax:15, wDMax:30, addLP: 5,addPD: 0,addWD: 35)
     
+   //Variables to save values ​​and transfer them to VC1
     var lPValue = 0
     var pDValue = 0
     var wDValue = 0
     
+
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
    // Do any additional setup after loading the view.
         
+        
         for i in textFieldSet{
             i.delegate = self
-            //print("\(i)")
     }
         namePlayer.delegate = self
         let player2 = namePlayer.text
@@ -152,164 +131,93 @@ class ViewController2: UIViewController {
         pDLabel.isUserInteractionEnabled = false
         wDLabel.isUserInteractionEnabled = false
         
-        switch player2{
-        case "knight":
-            
-            //stepDF.maximumValue = 10
-            
-            lPLabel.text = String(knight.lP)
-            dFLabel.text = String(knight.dF)
-            //dFLabel.text = String(knight.dF ?? 20)
-            
-//            if let text: String = dFLabel.text , Int(text)! >= 0 &&  Int(text)! <= knight.dFMax {
-//                dFLabel.text = text
-//            }else{
-//                dFLabel.text = ""
-//            }
-            
-//             if (Int(dFLabel.text!)! >= 0 && Int(dFLabel.text!)! <= knight.dFMax)
-//            {
-//                 dFLabel.text = String(knight.dF ?? 20)
-//             }else{
-//                 dFLabel.text = ""
-//             }
-            
-            
-         /*   if knight.dF != nil{
-                if(Int(dFLabel.text) > knight.dFMax){
-                    lPVar = Int(dFLabel.text)
-                }else{
-                    
-                }
-                
-            }*/
-            pDLabel.text = String(knight.pD)
-//            if let str = pDLabel.text , Int(str)! >= 0 &&  Int(str)! <= knight.pDMax {
-//                // render the non-optional string value in "str"
-//            } else {
-//                // show an empty label
-//            }
-            //String(knight.pD ?? 30)
-           wDLabel.text = String(knight.wD)
-            lPValue = knight.addLP
-            pDValue = knight.addPD
-            wDValue = knight.addWD
-        case "wizard":
-            lPLabel.text = String(wizard.lP )
-            dFLabel.text = String(wizard.dF)
-            //dFLabel.text = String(wizard.checkdF())
-           //wizard.checkdF()=
-            pDLabel.text = String(wizard.pD)
-           wDLabel.text = String(wizard.wD)
-            lPValue = wizard.addLP
-            pDValue = wizard.addPD
-            wDValue = wizard.addWD
-        case "thief" :
-            lPLabel.text = String(thief.lP)
-            dFLabel.text = String(thief.dF)
-            pDLabel.text = String(thief.pD)
-           wDLabel.text = String(thief.wD)
-            lPValue = thief.addLP
-            pDValue = thief.addPD
-            wDValue = thief.addWD
-        default :
-            print("Please enter the name of player 2 ")
-        }
-        
+
+            textViewStory.text = "Please enter the player name... "
       
+        
     }
     
  
-      
+      //Transfer data from VC2 to VC1
             override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 let rootVC = segue.destination as! ViewController
-                
+                rootVC.imageViewPlayer2v1.image = imageViewPlayer2.image
                 rootVC.player2LabelName.text = namePlayer.text
                 rootVC.player2LabelLP.text = lPLabel.text
                 rootVC.player2LabelDF.text = dFLabel.text
                 rootVC.player2LabelPD.text = pDLabel.text
                 rootVC.player2LabelWD.text = wDLabel.text
                 rootVC.player2LabelSC.text = sCLabel.text
-                rootVC.addLPP2 = lPValue
-                rootVC.addPDP2 = pDValue
-                rootVC.addWDP2 = wDValue
+                rootVC.addLPP2 = lPPlus.text!
+                rootVC.addPDP2 = pDPlus.text!
+                rootVC.addWDP2 = wDPlus.text!
                 
         
             }
-//    func alertView(maxv:Int){
-//        let aleart = UIAlertController(title: "Error", message: "the number must be greater than\(maxv)", preferredStyle:.alert)
-//        aleart.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//    }
-//
+
+ //Action UIStepper & Calculate the remaining points
+    
     @IBAction func stepLPAction(_ sender: UIStepper) {
         
-
-        
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
-            
-             
             lPLabel.text = Int(sender.value).description
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
-            
-            //pointPlayer2Label.text = String(s-l)
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDValue) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
+    
     @IBAction func stepDFAction(_ sender: UIStepper) {
+        
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
-            
         dFLabel.text = Int(sender.value).description
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
-            
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
+    
     @IBAction func stepPDAction(_ sender: UIStepper) {
+        
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
-            
-            
         pDLabel.text = Int(sender.value).description
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
+    
     @IBAction func stepWDAction(_ sender: UIStepper) {
+        
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
-           
-            
         wDLabel.text = Int(sender.value).description
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
     
 }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 
 extension ViewController2:UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //let nameDelegate = namePlayer.text
-        //pointPlayer2Label.text = nameDelegate.points
-        //sCLabel.text = nameDelegate.sC
         
+    
+  
        if namePlayer.text == "knight" {
+            imageViewPlayer2.image=UIImage(named: "Knight")
             pointPlayer2Label.text = String(knight.points-100)
             sCLabel.text = String(knight.sC)
-       
-              stepDF.maximumValue = Double(knight.dFMax)
-              stepPD.maximumValue = Double(knight.pDMax)
-              stepWD.maximumValue = Double(knight.wDMax)
            
+           lPPlus.text = String(knight.addLP)
+           pDPlus.text = String(knight.addPD)
+           wDPlus.text = String(knight.addWD)
            
+           //Check whether the label has the maximum value
+            stepDF.maximumValue = Double(knight.dFMax)
+            stepPD.maximumValue = Double(knight.pDMax)
+            stepWD.maximumValue = Double(knight.wDMax)
            
+
            stepLP.isUserInteractionEnabled = true
            stepDF.isUserInteractionEnabled = true
            stepPD.isUserInteractionEnabled = true
@@ -318,12 +226,19 @@ extension ViewController2:UITextFieldDelegate{
            
         }
         else if namePlayer.text == "wizard" {
+            imageViewPlayer2.image=UIImage(named: "Wizard")
             pointPlayer2Label.text = String(wizard.points-50)
             sCLabel.text = String(wizard.sC)
             
+            //Check whether the label has the maximum value
             stepDF.maximumValue = Double(wizard.dFMax)
             stepPD.maximumValue = Double(wizard.pDMax)
             stepWD.maximumValue = Double(wizard.wDMax)
+            
+            lPPlus.text = String(wizard.addLP)
+            pDPlus.text = String(wizard.addPD)
+            wDPlus.text = String(wizard.addWD)
+           
             
             stepLP.isUserInteractionEnabled = true
             stepDF.isUserInteractionEnabled = true
@@ -333,12 +248,19 @@ extension ViewController2:UITextFieldDelegate{
             
         }
         else if namePlayer.text == "thief" {
+            imageViewPlayer2.image=UIImage(named: "Thief")
             pointPlayer2Label.text = String(thief.points-75)
             sCLabel.text = String(thief.sC)
             
+            //Check whether the label has the maximum value
             stepDF.maximumValue = Double(thief.dFMax)
             stepPD.maximumValue = Double(thief.pDMax)
             stepWD.maximumValue = Double(thief.wDMax)
+            
+            lPPlus.text = String(thief.addLP)
+            pDPlus.text = String(thief.addPD)
+            wDPlus.text = String(thief.addWD)
+           
             
             stepLP.isUserInteractionEnabled = true
             stepDF.isUserInteractionEnabled = true
@@ -346,11 +268,11 @@ extension ViewController2:UITextFieldDelegate{
             stepWD.isUserInteractionEnabled = true
             buttonOutlet.isUserInteractionEnabled = true
         }
+        
+        textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
       
         
         namePlayer2.text = namePlayer.text
-        
-        
         textField.resignFirstResponder()
         return true
         
