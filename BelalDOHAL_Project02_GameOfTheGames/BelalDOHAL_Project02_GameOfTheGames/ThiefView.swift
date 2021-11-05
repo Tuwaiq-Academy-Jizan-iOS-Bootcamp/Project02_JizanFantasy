@@ -2,7 +2,7 @@ import UIKit
 
 class ThiefView: UIViewController {
     //Image//
-    var rougeImage = 1
+    var pImage = 3
     //Text Field//
     @IBOutlet weak var playerTextField: UITextField!
     //Skill Points//
@@ -58,7 +58,7 @@ class ThiefView: UIViewController {
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
-        sendInfo?.playerImage = rougeImage
+        sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
         sendInfo?.specialCText = "75 Damage / +5(LP) / +35(WD)"
     }

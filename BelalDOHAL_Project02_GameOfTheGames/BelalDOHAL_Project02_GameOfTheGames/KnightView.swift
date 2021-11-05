@@ -2,7 +2,7 @@ import UIKit
 
 class KnightView: UIViewController {
     //Image//
-    var warriorImage = 1
+    var pImage = 1
     //Text Field//
     @IBOutlet weak var playerTextField: UITextField!
     //Skill Points//
@@ -54,11 +54,11 @@ class KnightView: UIViewController {
         sendInfo?.sCBonusWD = sCBonusWD
         sendInfo?.sCBonusPD = sCBonusPD
         sendInfo?.sCBonusLP = sCBonusLP
-        sendInfo?.playerImage = statePD
+        sendInfo?.powerDValue = statePD
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
-        sendInfo?.playerImage = warriorImage
+        sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
         sendInfo?.specialCText = "100 Damage / +5(LP) / +10(WD)"
     }

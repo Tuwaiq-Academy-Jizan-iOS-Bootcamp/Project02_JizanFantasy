@@ -2,7 +2,7 @@ import UIKit
 
 class WizardView: UIViewController {
     //Image//
-    var mageImage = 2
+    var pImage = 2
     //Text Field//
     @IBOutlet weak var playerTextField: UITextField!
     //Skill Points//
@@ -58,7 +58,7 @@ class WizardView: UIViewController {
         sendInfo?.defenseValue = stateDEF
         sendInfo?.weaponDValue = stateWD
         sendInfo?.lifePValue = stateLP
-        sendInfo?.playerImage = mageImage
+        sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
         sendInfo?.specialCText = "50 Damage / +35(LP) / +10(PD)"
     }

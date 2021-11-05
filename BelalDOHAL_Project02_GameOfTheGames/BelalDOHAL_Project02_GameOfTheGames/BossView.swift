@@ -20,7 +20,7 @@ class BossView: UIViewController {
     var sCBonusPD = 0
     var sCBonusLP = 0
     var playerNL = ""
-    var playerImage = 0
+    var pImage = 0
     var specialCText = ""
     var weaponDValue = 0
     var powerDValue = 0
@@ -48,14 +48,13 @@ class BossView: UIViewController {
         sendInfo?.sCBonusWD = sCBonusWD
         sendInfo?.sCBonusPD = sCBonusPD
         sendInfo?.sCBonusLP = sCBonusLP
-        sendInfo?.playerImage = playerImage
+        sendInfo?.pImage = pImage
         sendInfo?.specialCText = specialCText
         sendInfo?.weaponDValue = weaponDValue
         sendInfo?.powerDValue = powerDValue
         sendInfo?.defenseValue = defenseValue
         sendInfo?.lifePValue = lifePValue
         sendInfo?.playerNL = playerNL
-        
         //Boss State//
         if randomBoss == 1 {
             sendInfo?.bossName = boss1.name
