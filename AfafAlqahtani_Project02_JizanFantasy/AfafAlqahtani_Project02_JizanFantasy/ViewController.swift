@@ -23,23 +23,11 @@ class Herro {
         self.weponDemage = weponDemage
         self.specialDemage = specialDemage
         
-//        func thGameStart(){
-//            self.lifePoint -= powerDemage-defencse
-//            print("")
-//
-//
-//        }
+//      }
     }
 }
 
 class Boss1: Herro{
-    
-    func thGameStart(){
-         powerDemage -= lifePoint-defencse
-        print("\(name)start of \(powerDemage)")
-        
-        
-    }
 }
 
 class Boss2: Herro{
@@ -55,7 +43,6 @@ class Wizard: Herro{
         
     }
     
-
 class ViewController: UIViewController {
 
     var bosss1 = Boss1(name: "Boss1", lifePoint: 250, defencse: 30, powerDemage: 20, weponDemage: 45, specialDemage: 110)
@@ -64,7 +51,7 @@ class ViewController: UIViewController {
     var wizard = Wizard(name: "Wizard", lifePoint: 90, defencse: 15, powerDemage: 70, weponDemage: 20, specialDemage: 50)
     var thief = Thief(name: "Thief", lifePoint: 65, defencse: 25, powerDemage: 15, weponDemage: 30, specialDemage: 75)
     
-    
+   
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,26 +62,26 @@ class ViewController: UIViewController {
         let bosses = Int.random(in: 1...2)
         switch bosses {
         case 1:
-            boss1Name.text = ("Boss1")
-            boss1.image = UIImage(named: "Bossimage1")
+            boss1Name.text = ("boss1Name")
+            boss1.image = UIImage(named: "Boss1")
             lfL.text = String (bosss1.lifePoint)
             dfL.text = String (bosss1.defencse)
             pdL.text = String (bosss1.powerDemage)
             wdL.text = String (bosss1.weponDemage)
             seL.text = String (bosss1.specialDemage)
         case 2:
-            boss2Name.text = ("Boos2")
-            boss2.image = UIImage(named: "Bossimage2")
+            boss2Name.text = ("boss22Name")
+            boss2.image = UIImage(named: "Boos2")
             lfL.text = String (bosss2.lifePoint)
             dfL.text = String (bosss2.defencse)
             pdL.text = String (bosss2.powerDemage)
             wdL.text = String (bosss2.weponDemage)
             seL.text = String (bosss2.specialDemage)
         default:
-            ("NON")
+           print ("no number")
         }
-        
     }
+    
     @IBOutlet weak var boss1Name: UILabel!
     @IBOutlet weak var boss2Name: UILabel!
     @IBOutlet weak var boss1: UIImageView!
@@ -117,7 +104,6 @@ class ViewController: UIViewController {
         diceNumber.text = String (i)
 
     }
-        
         func theDice(){
             let rullDice = Int.random(in: 1...20)
             switch rullDice{
@@ -133,11 +119,9 @@ class ViewController: UIViewController {
                 print("NON")
             }
         }
-    
     @IBAction func displayButton(_ sender: Any) {
         performSegue(withIdentifier: "goToVC2", sender: self)
         }
-    
     
     @IBAction func rootViewController(segue: UIStoryboardSegue){
         print("Unwind to Root ViewController")
