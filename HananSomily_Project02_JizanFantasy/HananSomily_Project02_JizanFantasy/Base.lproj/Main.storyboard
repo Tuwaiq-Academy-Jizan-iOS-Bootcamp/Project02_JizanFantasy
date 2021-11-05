@@ -250,6 +250,7 @@
                         <outlet property="nameOfPlayr2labl" destination="sP3-g9-0On" id="sTI-ei-8Z4"/>
                         <outlet property="pdOfPlayer2labl" destination="HVI-On-iNk" id="2Vm-xz-XNQ"/>
                         <outlet property="pdOfPlayr1Labl" destination="4Er-w3-Bnw" id="j7B-Cs-6hE"/>
+                        <outlet property="roolButton" destination="AVJ-aI-4NZ" id="H8D-tm-Vov"/>
                         <outlet property="scOfPlayer1Labl" destination="9Bu-hz-x8j" id="QLd-0U-Fp6"/>
                         <outlet property="scOfPlayer2Labl" destination="e31-2x-oGs" id="yX2-La-pLX"/>
                         <outlet property="wdOfPlayer1Labl" destination="0Sr-m1-kWd" id="rCW-aZ-nic"/>
@@ -306,12 +307,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-Zl-tcI">
-                                <rect key="frame" x="201" y="260" width="193" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defed (DF)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eci-yM-3fc">
                                 <rect key="frame" x="22" y="323" width="183" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -319,12 +314,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XL-dP-eif">
-                                <rect key="frame" x="201" y="322" width="193" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Power Damage (PD)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX6-65-Wt8">
                                 <rect key="frame" x="20" y="382" width="183" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -332,12 +321,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bY9-kx-PXw">
-                                <rect key="frame" x="201" y="382" width="193" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weapon Damage (WD)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moc-Pf-LiZ">
                                 <rect key="frame" x="20" y="435" width="183" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -376,9 +359,33 @@
                                     <segue destination="Agn-15-OsV" kind="unwind" unwindAction="backToSegue:" id="u1e-vU-Wja"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="fcA-0P-Miq">
-                                <rect key="frame" x="243" y="282" width="94" height="32"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="fcA-0P-Miq">
+                                <rect key="frame" x="310" y="260" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="LifePointHeroStepper:" destination="4ar-sV-HKx" eventType="valueChanged" id="Fal-cj-PoO"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="IBy-Zz-Rjt">
+                                <rect key="frame" x="310" y="323" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="heroDFstepper:" destination="4ar-sV-HKx" eventType="valueChanged" id="uwi-AU-mC1"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="70" translatesAutoresizingMaskIntoConstraints="NO" id="J8D-8C-T9E">
+                                <rect key="frame" x="310" y="382" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="heroPDstepper:" destination="4ar-sV-HKx" eventType="valueChanged" id="ZS3-DI-cdc"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="zAd-mC-imo">
+                                <rect key="frame" x="310" y="435" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="heroWDstepper:" destination="4ar-sV-HKx" eventType="valueChanged" id="2Rg-IG-6Yo"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDr-SP-1CJ">
                                 <rect key="frame" x="243" y="208" width="111" height="49"/>
@@ -394,24 +401,50 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnz-Xs-TUe">
-                                <rect key="frame" x="201" y="433" width="193" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tab-Hg-iue">
+                                <rect key="frame" x="212" y="260" width="84" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzF-if-g72">
+                                <rect key="frame" x="211" y="323" width="74" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-AD-GBh">
+                                <rect key="frame" x="211" y="435" width="84" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-Rg-Yji">
+                                <rect key="frame" x="211" y="382" width="92" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rj5-2z-oq9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cdK-ol-tlx"/>
                     <connections>
+                        <outlet property="LifePointHeroStepper" destination="fcA-0P-Miq" id="tXd-O8-wfO"/>
                         <outlet property="capacityPointLabl" destination="JTO-ZK-RwK" id="FJE-iD-pHO"/>
-                        <outlet property="inserDFtextField" destination="8XL-dP-eif" id="AwU-Kn-g5T"/>
+                        <outlet property="inserDFLabl" destination="kzF-if-g72" id="W78-MF-pBn"/>
+                        <outlet property="insertDFStepper" destination="IBy-Zz-Rjt" id="jMG-uu-hTT"/>
                         <outlet property="insertNameOfHeroTF" destination="2cH-GV-hzc" id="xwt-j7-b8g"/>
-                        <outlet property="insertPDtextField" destination="bY9-kx-PXw" id="myq-Cp-i5p"/>
-                        <outlet property="insertWDtextField" destination="bnz-Xs-TUe" id="fAl-3n-LxH"/>
-                        <outlet property="lifePointHeroTextField" destination="xeu-Zl-tcI" id="b3v-7b-Ou8"/>
+                        <outlet property="insertPDLabl" destination="fAl-Rg-Yji" id="LiO-14-Qux"/>
+                        <outlet property="insertPDstepper" destination="J8D-8C-T9E" id="LPZ-HV-aMi"/>
+                        <outlet property="insertWDLabl" destination="6Om-AD-GBh" id="Fqn-gh-WT9"/>
+                        <outlet property="insertinsertWDStepper" destination="zAd-mC-imo" id="0NZ-KG-aD7"/>
+                        <outlet property="lifePointHeroLabl" destination="Tab-Hg-iue" id="Vaf-11-2cb"/>
                         <outlet property="nameOfHeroLabl" destination="nt6-H1-wfo" id="IBj-Ys-813"/>
                         <outlet property="pointOfHeroLabl" destination="MDr-SP-1CJ" id="XdP-yD-Xw6"/>
                     </connections>
