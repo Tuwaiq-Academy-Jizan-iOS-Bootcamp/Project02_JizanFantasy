@@ -21,6 +21,9 @@ class ViewControllerTwo : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    
+        
         txDf.delegate = self
         txPd.delegate = self
         txWd.delegate = self

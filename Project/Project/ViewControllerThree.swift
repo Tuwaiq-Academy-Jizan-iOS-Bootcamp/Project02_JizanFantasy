@@ -15,6 +15,7 @@ class ViewControllerThree : UIViewController {
     @IBOutlet weak var txPdW: UITextField!
     @IBOutlet weak var txWdW: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -23,21 +24,24 @@ class ViewControllerThree : UIViewController {
         txWdW.delegate = self
     }
     
-    @IBAction func roll(_ sender: Any) {
-        
-        performSegue(withIdentifier: "GoToW", sender: self)
-    }
+    
+    
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let trData = segue.destination as! ViewController
-        trData.lpHero.text = txLfW.text
-        trData.lpDf.text = txDfW.text
-        trData.lpPd.text = txPdW.text
-        trData.lpWd.text = txWdW.text
+        let trDataW = segue.destination as! ViewController
+        
+        trDataW.lpHero.text = txLfW.text
+        trDataW.lpDf.text = txDfW.text
+        trDataW.lpPd.text = txPdW.text
+        trDataW.lpWd.text = txWdW.text
+        
+        
 }
-}
+    }
+
+
 extension ViewControllerThree : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
