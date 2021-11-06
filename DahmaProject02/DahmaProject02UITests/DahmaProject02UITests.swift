@@ -1,13 +1,13 @@
 //
-//  DahmaJaber_TheBigProject_02UITests.swift
-//  DahmaJaber_TheBigProject_02UITests
+//  DahmaProject02UITests.swift
+//  DahmaProject02UITests
 //
-//  Created by dahma alwani on 28/03/1443 AH.
+//  Created by dahma alwani on 02/04/1443 AH.
 //
 
 import XCTest
 
-class DahmaJaber_TheBigProject_02UITests: XCTestCase {
+class DahmaProject02UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

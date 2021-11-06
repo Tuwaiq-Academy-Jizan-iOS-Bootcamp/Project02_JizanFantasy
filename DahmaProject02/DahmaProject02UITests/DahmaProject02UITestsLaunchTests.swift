@@ -1,13 +1,13 @@
 //
-//  DahmaJaber_TheBigProject_02UITestsLaunchTests.swift
-//  DahmaJaber_TheBigProject_02UITests
+//  DahmaProject02UITestsLaunchTests.swift
+//  DahmaProject02UITests
 //
-//  Created by dahma alwani on 28/03/1443 AH.
+//  Created by dahma alwani on 02/04/1443 AH.
 //
 
 import XCTest
 
-class DahmaJaber_TheBigProject_02UITestsLaunchTests: XCTestCase {
+class DahmaProject02UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
