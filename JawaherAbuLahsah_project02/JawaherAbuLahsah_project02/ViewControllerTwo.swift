@@ -41,6 +41,12 @@ class ViewControllerTwo:UIViewController{
             num = 1
             imageHero.image = UIImage(named: "hero1")
             storyLabel.text = "Hello, I Knight. I will try not to disappoint you 🦹🏻‍♂️⚔️."
+            pDWarning.text = "Max:30"
+            wDWarning.text = "Max:40"
+            dFWarning.text = "Max:20"
+            pDWarning.textColor = .purple
+            wDWarning.textColor = .purple
+            dFWarning.textColor = .purple
     }else if sender.tag == 2 {
             lPLabel.text = "245"
         fieldLP.text = "90"
@@ -52,6 +58,12 @@ class ViewControllerTwo:UIViewController{
             num = 2
             imageHero.image = UIImage(named: "hero2")
             storyLabel.text = "Hello, I Wizard. I will fight with all my might 🦸🏻💪🏻."
+        pDWarning.text = "Max:70"
+        wDWarning.text = "Max:20"
+        dFWarning.text = "Max:15"
+        pDWarning.textColor = .purple
+        wDWarning.textColor = .purple
+        dFWarning.textColor = .purple
         }else{
             lPLabel.text = "210"
             fieldLP.text = "65"
@@ -63,6 +75,12 @@ class ViewControllerTwo:UIViewController{
             num = 3
             imageHero.image = UIImage(named: "hero3")
             storyLabel.text = "Hello, I a win Thief 🥷🏻💰."
+            pDWarning.text = "Max:15"
+            wDWarning.text = "Max:30"
+            dFWarning.text = "Max:25"
+            pDWarning.textColor = .purple
+            wDWarning.textColor = .purple
+            dFWarning.textColor = .purple
         }
     }
     //*************************
