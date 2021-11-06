@@ -165,7 +165,14 @@ class ViewController2: UIViewController {
             
             lPLabel.text = Int(sender.value).description
             
-            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            pointPlayer2Label.text =  String(Int(pointLabelPlayer.text!)! - Int( lPLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( dFLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( pDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( wDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( sCLabel.text!)!)
+            
+//            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDValue) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
@@ -176,7 +183,14 @@ class ViewController2: UIViewController {
             
         dFLabel.text = Int(sender.value).description
             
-            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            pointPlayer2Label.text =  String(Int(pointLabelPlayer.text!)! - Int( lPLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( dFLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( pDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( wDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( sCLabel.text!)!)
+            
+//            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
@@ -187,7 +201,13 @@ class ViewController2: UIViewController {
             
         pDLabel.text = Int(sender.value).description
             
-            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            pointPlayer2Label.text =  String(Int(pointLabelPlayer.text!)! - Int( lPLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( dFLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( pDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( wDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( sCLabel.text!)!)
+
+            
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
@@ -198,7 +218,15 @@ class ViewController2: UIViewController {
             
         wDLabel.text = Int(sender.value).description
             
-            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            
+            pointPlayer2Label.text =  String(Int(pointLabelPlayer.text!)! - Int( lPLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( dFLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( pDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( wDLabel.text!)!)
+            pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( sCLabel.text!)!)
+            
+//            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
+            
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
