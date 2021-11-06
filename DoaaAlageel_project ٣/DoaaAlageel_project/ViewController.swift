@@ -45,6 +45,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var dscripGame: UITextView!
+    @IBOutlet weak var diceNumber: UILabel!
     
     
     @IBOutlet weak var lableUserName: UILabel!
@@ -65,6 +66,10 @@ class ViewController: UIViewController {
     
     var user1 = User(name: "user1", points: 0, lifepoint: 250, defend: 30, powerdamage: 20, weapondamage: 45, specialeffect: 110)
     var user2 = User(name: "user2", points: 0, lifepoint: 170, defend: 25, powerdamage: 15, weapondamage: 30, specialeffect: 75)
+    
+    var turn = 0
+    var turnNm = 0
+    var endtern = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,41 +116,67 @@ class ViewController: UIViewController {
    
     @IBAction func rolligdice(_ sender: UIButton) {
         var lifp1 = Int(lableLP.text!)!
-        var def1 = Int(lableDF.text!)!
-        var pow1 = Int(lablePD.text!)!
-        var weap1 = Int(lableWD.text!)!
-      var spec1 = Int(lableSC.text!)!
+        let def1 = Int(lableDF.text!)!
+        let pow1 = Int(lablePD.text!)!
+        let weap1 = Int(lableWD.text!)!
+        
    
     var lifp2 = Int(user2LP.text!)!
-        var def2 = Int(user2DF.text!)!
-        var pow2 = Int(user2PD.text!)!
-        var weap2 = Int(user2WD.text!)!
-        var spec2 = Int(user2SC.text!)!
+        let def2 = Int(user2DF.text!)!
+        let pow2 = Int(user2PD.text!)!
+        let weap2 = Int(user2WD.text!)!
+       
+        
+            
+        
+        
+        let randomdice = Int.random(in: 1...20)
+        diceNumber.text = String(randomdice)
         
         let rolradaic = Int.random(in:1...20)
+            
+            
         switch rolradaic {
         case 1...9 :
-            if ((def2 - pow2) <= 0){
-                lifp2 = (lifp2 + (def2 - pow1 ))
+            dscripGame.text += ("dise number: \(rolradaic)\n")
+            dscripGame.text += ("point \(lableUserName.text!) is \(lifp1)\n")
+            if ((def1 - pow2) <= 0){
+                lifp1 = (lifp1 + (def1 - pow2 ))
+                
                 } else {
-                    lifp2 = (lifp2 - 0)
+                    lifp1 = (lifp1 - 0)
                 }
-            lableLP.text = String(lifp2)
+            lableLP.text = String(checkZero(num:lifp2))
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point user is \(lableLP.text!)\n")
             
         print("user use dp")
+            
+            
         
     case 10...19 :
+            
+            dscripGame.text += ("dise number : \(rolradaic)\n")
+            dscripGame.text += ("life point: \( labelUsername2.text!) is \(labelUsername2.text!)\n")
+            
             if ((def2 - weap1) <= 0){
         lifp2 = (lifp2 + (def2 - weap1))
                  }
                  else{
-            lifp2 = (lifp2 - 0)
+            lifp1 = (lifp1 - 0)
         }
+            lableLP.text = String(checkZero(num:lifp2))
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1)life point user is \(labelUsername2.text!) is \(user2LP.text!)\n")
+            
             lableLP.text = String(lifp2)
+            
+           
             
         default:
             print ("error")
     }
+    
+           
+            
     
         switch rolradaic {
         case 1...9 :
@@ -154,9 +185,10 @@ class ViewController: UIViewController {
                 } else {
                     lifp1 = (lifp1 - 0)
                 }
-            lableLP.text = String(lifp2)
+            lableLP.text = String(checkZero(num:lifp2))
+            print("\(lableLP.text!) use power damage : \(pow2) life point user is \(lifp1)")
             
-        print("user use dp")
+        print("player use dp")
         
     case 10...19 :
             if ((def1 - weap2) <= 0){
@@ -165,9 +197,8 @@ class ViewController: UIViewController {
                  else{
             lifp1 = (lifp1 - 0)
         }
-            user2LP.text = String(lifp1)
-            
-            
+            lableLP.text = String(checkZero(num:lifp1))
+            print("player use weapon damage :\(weap2) life point :  is \(lifp1)")
             
             
         
@@ -181,11 +212,15 @@ class ViewController: UIViewController {
             
         }
         
-        
-        
-        
-        
+    }
+
+func checkZero(num: Int)-> Int{
+    if(num > 0){
+        return num
+    }
+    return 0
 }
+
 
 
 
