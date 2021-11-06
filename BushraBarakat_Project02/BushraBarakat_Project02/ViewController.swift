@@ -6,32 +6,31 @@
 //
 
 import UIKit
-//struct Heros {
-//    var lifePoint : Int?
-//    var defense : Int?
-//    var powerDamage : Int?
-//    var weaponDamage : Int?
-//    var specialCapacity : Int
-//
-//    }
 
 struct Boss {
+    var name : String
     var lifePoint : Int
     var defense : Int
     var powerDamage : Int
     var weaponDamage : Int
     var spcialCapacity : Int
-    func specialCapacity() {
-        print ("\(lifePoint) & \(powerDamage)")
+    var specialPd : Int
+    var specialWd : Int
+    var specialLp : Int
+ 
     }
-}
+
 
 struct Hero {
-    var lifePoint : Int?
-    var defense : Int?
-    var powerDamage : Int?
-    var weaponDamage : Int?
-    var specialCapacity : Int?
+    var name : String
+    var lifePoint : Int
+    var defense : Int
+    var powerDamage : Int
+    var weaponDamage : Int
+    var specialCapacity : Int
+    var specialPd : Int
+    var specialWd : Int
+    var specialLp : Int
     
 }
 
@@ -56,26 +55,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var bossImage: UIImageView!
     @IBOutlet weak var descripationGame: UILabel!
     
+var boss1 = Boss(name: "boos1", lifePoint: 250, defense: 30, powerDamage:20, weaponDamage: 45, spcialCapacity: 110, specialPd: 0, specialWd: 22, specialLp: 5)
+var boss2 = Boss(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, spcialCapacity: 75, specialPd: 32, specialWd: 0, specialLp: 5)
+
+var hero = Hero(name: "" ,lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0, specialPd: 0, specialWd: 0, specialLp: 0)
+    var turn = true
+    var number = 0
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
         randomBoss()
-       
+        logicOfGame()
         
     }
-        
-    var boss1 = Boss(lifePoint: 250, defense: 30, powerDamage:20, weaponDamage: 45, spcialCapacity: 110)
-    var boss2 = Boss(lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, spcialCapacity: 75)
-    
-    var knight = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-    var wizerd = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-    var thief = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-    
-    var dead = 0
-    
-    
     func randomBoss(){
     let conect = Int.random(in:1...2)
     switch conect {
@@ -102,34 +96,175 @@ class ViewController: UIViewController {
     }
     
     
-func rollingDice(){
-    let randomDice = Int.random(in:1...20)
-    switch randomDice{
-
+func logicOfGame() {
+    var bossLp = Int(label1.text!)!
+    var bossDf = Int(label2.text!)!
+    var bossPd = Int(label3.text!)!
+    var bossWd = Int(label4.text!)!
+    var bossSc = Int(label5.text!)!
+    var heroLp = Int(labelHero1.text!)!
+    var heroDf = Int(labelHero2.text!)!
+    var heroPd = Int(labelHero3.text!)!
+    var heroWd = Int(labelHero4.text!)!
+    var heroSc = Int(labelHero5.text!)!
+    let heroRandomDice = Int.random(in:1...20)
+    switch heroRandomDice {
     case 1...9:
-        resultRollingDice.text = ""
+        if (heroRandomDice % 2 == 0){
+        descripationGame.text = ("hero use his power damage aginst boss")
+        heroPd -= bossDf
+        if heroPd < 0 {
+           heroPd = 0
+        }else{
+            bossLp -= heroPd
+            if bossLp < 0 {
+               bossLp = 0
+         descripationGame.text = ("boss life point = \(bossLp)")
+            }
+        }
+        }else {
+        descripationGame.text = ("boss use his power damage aginst hero")
+                bossPd -= heroDf
+                   if bossPd < 0 {
+                       bossPd = 0
+                   }else{
+                heroLp -= bossPd
+                    if heroLp < 0 {
+                        heroLp = 0}
+                        
+                   }
+            descripationGame.text = ("hero life point = \(heroLp)")
+                    }
+                
     case 10...19:
-        resultRollingDice.text = ""
-        print ("weapon Damage")
-    case 20:
-        resultRollingDice.text = ""
-        print ("special Capacity")
-    default:
-        print ("nothing")
+    if (heroRandomDice % 2 == 0){
+        descripationGame.text = ("hero use his weapon Damage aginst boss")
+       heroWd -= bossDf
+        if heroWd < 0 {
+           heroWd = 0
+        }else {
+              bossLp -= heroWd
+               if bossLp < 0 {
+                  bossLp = 0
+            }
+        }
+        descripationGame.text = ("boss life point = \(bossLp)")
+        
+    }else {
+         descripationGame.text = ("boss use his weapon Damage aginst hero")
+           bossWd -= heroDf
+            if bossWd < 0 {
+                bossWd = 0
+            }else {
+                heroLp -= bossWd
+               if heroLp < 0 {
+                    heroLp = 0
+         
+                }
+            }
     }
-}
-
-   @IBAction func rollingDice(_ sender: Any) {
-      var random = Int.random(in:1...20)
-       resultRollingDice.text = String (random)
-
+    descripationGame.text = ("hero life point = \(heroLp)")
+    case 20 :
+        print ("sc")
+        
+        
+        default:
+            print ("game over")
+        }
+//    case 20:
+//        print ("special Capacity")
+//
+//
        
+        
+        
+  
+        
+//func bossTurn(){
+//    var bossLp = Int(label1.text!)!
+//    var bossDf = Int(label2.text!)!
+//    var bossPd = Int(label3.text!)!
+//    var bossWd = Int(label4.text!)!
+//    var bossSc = Int(label5.text!)!
+//    var heroLp = Int(labelHero1.text!)!
+//    var heroDf = Int(labelHero2.text!)!
+//    var heroPd = Int(labelHero3.text!)!
+//    var heroWd = Int(labelHero4.text!)!
+//    var heroSc = Int(labelHero5.text!)!
+//    let bossRandomDice =  Int.random(in:1...20)
+//    if (bossRandomDice % 2 == 0){
+//    switch bossRandomDice {
+//    case 1...9:
+//        descripationGame.text = ("boss use his power damage aginst hero")
+//        bossPd -= heroDf
+//        heroLp -= bossPd
+//           if bossPd < 0 {
+//               bossPd = 0
+//           }else{
+//        heroLp -= bossPd
+//            if heroLp < 0 {
+//                heroLp = 0
+//               }
+//
+//           }
+//
+        
+//    case 10...19:
+//        descripationGame.text = ("boss use his weapon Damage aginst hero")
+//       bossWd -= heroDf
+//        heroLp -= bossWd
+//        if bossWd < 0 {
+//            bossWd = 0
+//        }else {
+//            heroLp -= bossWd
+//           if heroLp < 0 {
+//                heroLp = 0
+//            }
+//
+//        }
+//
+//    case 20:
+//        print ("special Capacity")
+//
+//
+//         default:
+//            print ("game over")
+//         }
+//    }
+//}
+    
+//    func specialCapacity(){
+//        if number == 1{
+        
+//    }
+
+    
+    
+    
+    
+    
+    
+}
+    
+//    func specialCapacity(){
+//        if number == 
+//            
+//        }
+    
+    
+    
+    @IBAction func rollingDice(_ sender: Any) {
+      let random = Int.random(in:1...20)
+       resultRollingDice.text = String (random)
+       logicOfGame()
+//
    }
-
-
+        
     
-    
-   @IBAction func unwind(segue: UIStoryboardSegue){
+    @IBAction func unwind(segue: UIStoryboardSegue){
+        
     }
+
+
 
 }

@@ -9,11 +9,16 @@ import Foundation
 import UIKit
 
 struct Heroplayer {
-    var lifePoint : Int?
-    var defense : Int?
-    var powerDamage : Int?
-    var weaponDamage : Int?
-    var specialCapacity : Int?
+    var name : String
+    var lifePoint : Int
+    var defense : Int
+    var powerDamage : Int
+    var weaponDamage : Int
+    var specialCapacity : Int
+    var specialPd : Int
+    var specialWd : Int
+    var specialLp : Int
+    
     
 }
 
@@ -30,11 +35,11 @@ class ViewControllerTwo: UIViewController{
     @IBOutlet weak var point: UILabel!
     
 //.............................
-    var knight = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-    var wizerd = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
-    var thief = Hero(lifePoint: nil, defense: nil, powerDamage: nil, weaponDamage: nil, specialCapacity: nil)
+    var hero = Hero(name: "", lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0, specialPd: 0, specialWd: 0, specialLp: 0)
+   
  //..............................
     var theHero = 0
+    var num = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,7 @@ class ViewControllerTwo: UIViewController{
         textFiled3.delegate = self
         textFiled4.delegate = self
         textFiled5.delegate = self
+        
         //.......image............
        
     }
@@ -56,6 +62,10 @@ class ViewControllerTwo: UIViewController{
         sender.labelHero3.text = textFiled3.text
         sender.labelHero4.text = textFiled4.text
         sender.labelHero5.text = textFiled5.text
+        sender.heroImage.image =
+        newChallengeImage.image
+        sender.nameHero.text =
+        newChallengerName.text
     }
     //.........imagefunction..........
     @IBAction func newChallengerButton(_ sender: Any) {
@@ -86,6 +96,7 @@ extension ViewControllerTwo: UITextFieldDelegate{
         return true
     }
 
+    
 }
 
 
