@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7W-fa-pGf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boss" translatesAutoresizingMaskIntoConstraints="NO" id="g7W-fa-pGf">
                                 <rect key="frame" x="20" y="122" width="135" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -213,6 +213,7 @@
                         <outlet property="bossPd" destination="Eg9-r6-r9f" id="cw8-5a-4FF"/>
                         <outlet property="bossWd" destination="XKP-m8-szK" id="di0-qB-KkK"/>
                         <outlet property="buttonOf" destination="FaP-c2-Hk0" id="uft-Dd-51W"/>
+                        <outlet property="imageHero" destination="PEJ-a9-62i" id="O0n-qF-A3n"/>
                         <outlet property="labelDfValue" destination="OhQ-ga-Syz" id="vF4-mm-hVC"/>
                         <outlet property="labelNameValue" destination="xaU-IB-opY" id="Wg6-lQ-x4A"/>
                         <outlet property="labelPdValue" destination="QZ2-rK-DzP" id="ETH-Hc-Mpd"/>
@@ -290,7 +291,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enh-lz-gTQ">
-                                <rect key="frame" x="20" y="748" width="374" height="61"/>
+                                <rect key="frame" x="45" y="748" width="327" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" cornerStyle="capsule">
@@ -365,15 +366,6 @@
                                     <action selector="knightAddValue:" destination="bbG-8Y-8GI" eventType="touchUpInside" id="k1F-3W-ykV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-3G-RTV">
-                                <rect key="frame" x="300" y="73" width="94" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Thif" cornerStyle="capsule"/>
-                                <connections>
-                                    <action selector="thifAddValue:" destination="bbG-8Y-8GI" eventType="touchUpInside" id="pXW-8u-DeF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Hero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGu-d0-oSI">
                                 <rect key="frame" x="163" y="135" width="156" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -382,12 +374,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-Gf-hLc">
-                                <rect key="frame" x="194" y="73" width="94" height="41"/>
+                                <rect key="frame" x="176" y="73" width="94" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="wizard" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="wizardAddValue:" destination="bbG-8Y-8GI" eventType="touchUpInside" id="CAf-22-VfP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-3G-RTV">
+                                <rect key="frame" x="278" y="73" width="94" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Thif" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="thifAddValue:" destination="bbG-8Y-8GI" eventType="touchUpInside" id="pXW-8u-DeF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -398,6 +399,7 @@
                     <connections>
                         <outlet property="allPointHero" destination="jgM-h6-467" id="HoU-9l-L0h"/>
                         <outlet property="cS" destination="MZz-yz-0Ma" id="wWS-TD-6iF"/>
+                        <outlet property="imageChrcter" destination="D51-AN-JP6" id="85U-T5-yAb"/>
                         <outlet property="nameHeroSSS" destination="pGu-d0-oSI" id="vy5-HP-UIY"/>
                         <outlet property="textFieldDf" destination="In6-mf-gS2" id="K45-us-x6f"/>
                         <outlet property="textFieldLp" destination="8ql-Yh-tvZ" id="5PF-I9-Ygo"/>
@@ -430,6 +432,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="boss" width="213" height="237"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

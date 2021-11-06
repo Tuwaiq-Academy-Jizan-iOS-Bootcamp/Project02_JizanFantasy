@@ -120,6 +120,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var buttonOf: UIButton!
     
+    @IBOutlet weak var imageHero: UIImageView!
+    
+    
     
     
     var playerBoss:Hero?
@@ -266,16 +269,56 @@ class ViewController: UIViewController {
 
 
          case 21:
-            playerHerooo!.lifePoint! += 5
+            
+            if playerHerooo?.name == "knight" {
+                playerHerooo!.lifePoint! += 5
+                playerHerooo?.weaponDamage! += 10
+                
+                viewPrintFight.text += ("the live point of  :\(String(describing: playerHerooo!.name!)) lifePoint +  = 5 ")
+                
+                viewPrintFight.text += ("the weaponDamage of  :\(String(describing: playerHerooo?.name!)) weaponDamage + 10 ")
+                
+            }else if playerHerooo?.name == "thif" {
+                playerHerooo?.weaponDamage! += 35
+                playerHerooo!.lifePoint! += 5
+                
+                viewPrintFight.text += ("the live point of  :\(String(describing: playerHerooo!.name!)) lifePoint +  = 5 ")
+                
+                viewPrintFight.text += ("the weaponDamage of  :\(String(describing: playerHerooo?.name!)) weaponDamage + 35 ")
+                
+            }else {
+                playerHerooo?.powerDamage! += 10
+                playerHerooo!.lifePoint! += 35
+                
+                viewPrintFight.text += ("the live point of  :\(String(describing: playerHerooo!.name!)) lifePoint +  = 5 ")
+                
+                viewPrintFight.text += ("the powerDamage of  :\(String(describing: playerHerooo?.name!)) powerDamage + 10 = \(playerHerooo!.powerDamage!)")
+            }
 
+            
+            
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            if playerBoss?.name == "Boss1" {
+                playerBoss?.lifePoint! += 5
+                playerBoss?.powerDamage! += 22
+                
+                viewPrintFight.text += ("the live point of  :\(String(describing: playerBoss!.name!)) powerDamage +  = 5 ")
 
-            playerHerooo!.powerDamage! += 10
-           viewPrintFight.text += ("the lifepoint of my hero : \(playerHerooo!.lifePoint!)")
-            ///////////////////000000///////////////////////////////////
-            playerBoss!.specialCapacit00()
-            playerBoss!.lifePoint! += 5
-          playerBoss!.powerDamage! += 32
-            viewPrintFight.text += ("the lifepoint of \(String(describing: playerHerooo!.name)) : \(String(describing: playerBoss!.lifePoint!))")
+                
+                viewPrintFight.text += ("the powerDamage of :\(String(describing: playerBoss!.name!)) powerDamage +  = 22 ")
+                
+            } else {
+                playerBoss!.lifePoint! += 5
+              playerBoss!.powerDamage! += 32
+                
+                viewPrintFight.text += ("the live point of  :\(String(describing: playerBoss!.name!)) powerDamage +  = 5 ")
+
+                
+                viewPrintFight.text += ("the powerDamage of :\(String(describing: playerBoss!.name!)) powerDamage +  = 32 ")
+                
+            }
+            
             zeroLivePoint()
            
             print ("get \(Int(playerBoss!.lifePoint!)) , \( Int(playerBoss!.powerDamage!))")
@@ -299,6 +342,8 @@ class ViewController: UIViewController {
         
         theWinnerIs(Hero: playerHerooo!, Boss: playerBoss!)
 //
+        
+        ///// hear add value label 
         labelVa.text = "\(playerHerooo!.lifePoint!)"
 //
         BossLiveP.text = "\(playerBoss!.lifePoint!)"
@@ -328,7 +373,7 @@ class ViewController: UIViewController {
 
     func rollingDiceee() -> Int {
         var dice: Int
-        dice = Int.random(in: 1...21)
+        dice = Int.random(in: 20...21)
         numDice.text = "Dice : \(dice)"
 
         return dice

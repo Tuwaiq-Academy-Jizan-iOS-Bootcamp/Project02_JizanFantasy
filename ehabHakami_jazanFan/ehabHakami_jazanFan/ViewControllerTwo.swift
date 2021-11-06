@@ -22,6 +22,7 @@ class ViewControllerTwo: UIViewController {
     
     @IBOutlet weak var cS: UITextField!
     
+    @IBOutlet weak var imageChrcter: UIImageView!
     
     @IBOutlet weak var allPointHero: UILabel!
     
@@ -61,6 +62,7 @@ class ViewControllerTwo: UIViewController {
         
         rootVC.labelNameValue.text = nameHeroSSS.text
         
+        rootVC.imageHero.image = imageChrcter.image
         
         
         // Pass the selected object to the new view controller.
@@ -74,7 +76,9 @@ class ViewControllerTwo: UIViewController {
         cS.text = "\(100)"
         allPointHero.text = "250 points to dispatch "
         nameHeroSSS.text = "knight"
+        imageChrcter.image = UIImage(named: "ragner")
         
+        //imageDice.image = UIImage(named: ehab[rollingDice()])
     }
     
     @IBAction func wizardAddValue(_ sender: Any) {
@@ -85,7 +89,7 @@ class ViewControllerTwo: UIViewController {
         cS.text = "\(50)"
         allPointHero.text = "245 points to dispatch "
         nameHeroSSS.text = "wizard"
-        
+        imageChrcter.image = UIImage(named: "wizard")
     }
     
     
@@ -97,6 +101,8 @@ class ViewControllerTwo: UIViewController {
         cS.text = "\(55)"
         allPointHero.text = "210 points to dispatch "
         nameHeroSSS.text = "thif"
+        
+        imageChrcter.image = UIImage(named: "Lupin")
         
     }
     
