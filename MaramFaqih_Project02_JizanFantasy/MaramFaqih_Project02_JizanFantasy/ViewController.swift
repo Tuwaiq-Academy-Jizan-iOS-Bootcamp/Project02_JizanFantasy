@@ -165,9 +165,8 @@ class ViewController: UIViewController {
                     
                     
            
-                }else{
-                    lPP2 = (lPP2 - 0)
                 }
+                
                 
                 player2LabelLP.text = String(checkZero(num:lPP2))
                 desccriptionGame.text += ("\(bossLabelName.text!) use Power Damage : \( lDPP1) ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
@@ -182,9 +181,8 @@ class ViewController: UIViewController {
                         wdLp1.text = ""
                     }
                 }
-                else{
-                    lPP2 = (lPP2 - 0)
-                }
+                
+             
                 player2LabelLP.text = String(checkZero(num:lPP2))
                 desccriptionGame.text += ("\(bossLabelName.text!) use Weapon Damage : \(lWDP1) ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!)\n")
             
@@ -201,15 +199,14 @@ class ViewController: UIViewController {
                     lPP2 = (lPP2 + (lDFP2 - lWSC1))
                     
                 }
-                else{
-                    lPP2 = (lPP2 - 0)
-                }
+            
                 if(tempPD1 > 0){
                     pdLp1.text = "+\(tempPD1)"
                 }
                 if(tempWD1 > 0){
                     wdLp1.text = "+\(tempWD1)"
                 }
+                
                 
                 player2LabelLP.text = String(checkZero(num:lPP2))
                 desccriptionGame.text += ("\(bossLabelName.text!) use Special Capacity: \(lWSC1) with , +\(tempPD1) PD, +\(addWDP1) WD,  +\(addLPP1) LP, ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point \(bossLabelName.text!) :\(bossLabelLP.text!)\n")
@@ -236,9 +233,8 @@ class ViewController: UIViewController {
                         pdLp2.text = ""
                     }
                 }
-                else{
-                    lPP1 = (lPP1 - 0)
-                }
+                
+              
                 bossLabelLP.text = String(checkZero(num:lPP1))
                 desccriptionGame.text += (" \( player2LabelName.text!) use Power Damage : \( lDPP2) ,life point \(bossLabelName.text!) is \(bossLabelLP.text!)\n")
 
@@ -254,9 +250,8 @@ class ViewController: UIViewController {
                         wdLp2.text = ""
                     }
                 }
-                else{
-                    lPP1 = (lPP1 - 0)
-                }
+                
+               
                 bossLabelLP.text = String(checkZero(num:lPP1))
                 desccriptionGame.text += (" \( player2LabelName.text!) use  Weapon Damage  : \( lDPP2) ,life point \(bossLabelName.text!) is \(bossLabelLP.text!)\n")
             
@@ -274,9 +269,7 @@ class ViewController: UIViewController {
                     lPP1 = (lPP1 + (lDFP1 - lWSC2))
                     
                 }
-                else{
-                    lPP1 = (lPP1 - 0)
-                }
+              
                
                 if(tempPD2 > 0){
                     pdLp2.text = "+\(tempPD2)"
