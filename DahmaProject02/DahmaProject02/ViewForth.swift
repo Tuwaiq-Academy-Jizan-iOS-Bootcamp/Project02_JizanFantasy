@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+//class ViewForth : UIViewController {
+
+
 class Hero {
     var name : String
     var lifePoint : Int
@@ -117,6 +120,12 @@ switch result {
     @IBAction func rootViewController (segue: UIStoryboardSegue){
         print ("d")
     }
+            
+            
+            
+            
+            
+            
 //func choosePlayer() {
 //    let random = Int.random(in: 1...2)
 //    if random == 1{

@@ -1,5 +1,5 @@
 //
-//  ViewTheard.swift
+//  ViewThief.swift
 //  DahmaProject02
 //
 //  Created by dahma alwani on 02/04/1443 AH.
@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-
-class ViewTheard : UIViewController {
+ 
+class ViewThief : UIViewController {
     
     @IBOutlet weak var labelLp: UILabel!
     @IBAction func stepperLp(_ sender: UIStepper) {
@@ -34,23 +34,13 @@ class ViewTheard : UIViewController {
     @IBAction func stepperSc(_ sender: UIStepper) {
         labelSc.text = String (sender.value)
     }
-    @IBAction func createChallenge(_ sender: Any) {
-        performSegue(withIdentifier: "goTovc4", sender: self)
-            }
     
     
-    @IBAction func rootViewController (segue: UIStoryboardSegue){
-        print ("d")
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let user = segue.destination as! ViewForth?
-//        user.namePlayer2.text = ""
-//        user.lifePoint2.text = labelLp.text
-//        user.defancd2.text = labelDf.text
-//        if let ViewForth = segue.destination is ViewForth {
-//            ViewForth.text = textField.text
+        let rootCV = segue.destination as! ViewController
+    
     }
+    
+//    func preformSegue (withIdentifier: "goToCV" , sender: self )
+    
 }
-
-
