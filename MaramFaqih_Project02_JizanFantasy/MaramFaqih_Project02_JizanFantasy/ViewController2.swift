@@ -77,6 +77,8 @@ class ViewController2: UIViewController {
     @IBOutlet weak var lPPlus: UILabel!
     @IBOutlet weak var pDPlus: UILabel!
     
+    @IBOutlet weak var pointLabelPlayer: UILabel!
+    
     //text field outlet
     @IBOutlet weak var lPLabel: UITextField!
     @IBOutlet weak var wDLabel: UITextField!
@@ -160,7 +162,9 @@ class ViewController2: UIViewController {
     @IBAction func stepLPAction(_ sender: UIStepper) {
         
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
+            
             lPLabel.text = Int(sender.value).description
+            
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDValue) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
@@ -169,7 +173,9 @@ class ViewController2: UIViewController {
     @IBAction func stepDFAction(_ sender: UIStepper) {
         
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
+            
         dFLabel.text = Int(sender.value).description
+            
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
@@ -178,7 +184,9 @@ class ViewController2: UIViewController {
     @IBAction func stepPDAction(_ sender: UIStepper) {
         
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
+            
         pDLabel.text = Int(sender.value).description
+            
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
@@ -187,7 +195,9 @@ class ViewController2: UIViewController {
     @IBAction func stepWDAction(_ sender: UIStepper) {
         
         if(( (Int(pointPlayer2Label.text!)!) != 0 )){
+            
         wDLabel.text = Int(sender.value).description
+            
             pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
@@ -205,6 +215,7 @@ extension ViewController2:UITextFieldDelegate{
   
        if namePlayer.text == "knight" {
             imageViewPlayer2.image=UIImage(named: "Knight")
+           pointLabelPlayer.text = String(knight.points)
             pointPlayer2Label.text = String(knight.points-100)
             sCLabel.text = String(knight.sC)
            
@@ -224,9 +235,12 @@ extension ViewController2:UITextFieldDelegate{
            stepWD.isUserInteractionEnabled = true
            buttonOutlet.isUserInteractionEnabled = true
            
+           textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+           
         }
         else if namePlayer.text == "wizard" {
             imageViewPlayer2.image=UIImage(named: "Wizard")
+            pointLabelPlayer.text = String(wizard.points)
             pointPlayer2Label.text = String(wizard.points-50)
             sCLabel.text = String(wizard.sC)
             
@@ -246,9 +260,12 @@ extension ViewController2:UITextFieldDelegate{
             stepWD.isUserInteractionEnabled = true
             buttonOutlet.isUserInteractionEnabled = true
             
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+            
         }
         else if namePlayer.text == "thief" {
             imageViewPlayer2.image=UIImage(named: "Thief")
+            pointLabelPlayer.text = String(thief.points)
             pointPlayer2Label.text = String(thief.points-75)
             sCLabel.text = String(thief.sC)
             
@@ -260,6 +277,7 @@ extension ViewController2:UITextFieldDelegate{
             lPPlus.text = String(thief.addLP)
             pDPlus.text = String(thief.addPD)
             wDPlus.text = String(thief.addWD)
+            
            
             
             stepLP.isUserInteractionEnabled = true
@@ -267,9 +285,11 @@ extension ViewController2:UITextFieldDelegate{
             stepPD.isUserInteractionEnabled = true
             stepWD.isUserInteractionEnabled = true
             buttonOutlet.isUserInteractionEnabled = true
+            
+            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
         }
         
-        textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+      
       
         
         namePlayer2.text = namePlayer.text

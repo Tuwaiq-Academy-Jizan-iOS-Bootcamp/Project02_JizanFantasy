@@ -102,45 +102,18 @@ class ViewController: UIViewController {
     //Flag for end turn
     var endTurn = false
     
+    var user1Random = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         // Variable "user1" to save a random value and choose the player
-        let user1 = Int.random(in:1...2)
-        desccriptionGame.textAlignment = .center
+         user1Random = Int.random(in:1...2)
+         heroChoice(user1 : user1Random )
        
-        switch user1{
-        case 1 :
-            imageViewPlayer1.image=UIImage(named: "Boss1")
-            
-            bossLabelName.text = boss1.name
-            bossLabelLP.text = String(boss1.lP)
-            bossLabelDF.text = String(boss1.dF)
-            bossLabelDP.text = String(boss1.pD)
-            bossLabelWD.text = String(boss1.wD)
-            bossLabelSC.text = String(boss1.sC)
-             addLPP1 = boss1.addLP
-             addPDP1 = boss1.addPD
-             addWDP1 = boss1.addWD
-            
-            
-        default:
-            imageViewPlayer1.image=UIImage(named: "Boss2")
-            
-            bossLabelName.text = boss2.name
-            bossLabelLP.text = String(boss2.lP)
-            bossLabelDF.text = String(boss2.dF)
-            bossLabelDP.text = String(boss2.pD)
-            bossLabelWD.text = String(boss2.wD)
-            bossLabelSC.text = String(boss2.sC)
-             addLPP1 = boss2.addLP
-             addPDP1 = boss2.addPD
-             addWDP1 = boss2.addWD
-        
-            
-        }
+        desccriptionGame.textAlignment = .center
         
     }
     
@@ -226,7 +199,7 @@ class ViewController: UIViewController {
                 desccriptionGame.text += ("\(bossLabelName.text!) use Special Capacity: \(lWSC1) ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point \(bossLabelName.text!) :\(bossLabelLP.text!)\n")
             }
             desccriptionGame.text += "----------------------------------------\n"
-            print("dfgf\(addLPP2)")
+           
         }
             
             
@@ -340,6 +313,53 @@ class ViewController: UIViewController {
     }
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue){
         
+    }
+    
+    @IBAction func restButton(_ sender: Any) {
+        user1Random = Int.random(in:1...2)
+        heroChoice(user1 : user1Random )
+        player2LabelName.text = "Name Player 2"
+        player2LabelLP.text = "0"
+        player2LabelDF.text = "0"
+        player2LabelPD.text = "0"
+        player2LabelWD.text = "0"
+        player2LabelSC.text = "0"
+        imageViewPlayer2v1.image=UIImage(named: "PLAYER2")
+        desccriptionGame.text = ""
+        
+        
+    }
+    func heroChoice(user1 : Int){
+        switch user1{
+        case 1 :
+            imageViewPlayer1.image=UIImage(named: "Boss1")
+            
+            bossLabelName.text = boss1.name
+            bossLabelLP.text = String(boss1.lP)
+            bossLabelDF.text = String(boss1.dF)
+            bossLabelDP.text = String(boss1.pD)
+            bossLabelWD.text = String(boss1.wD)
+            bossLabelSC.text = String(boss1.sC)
+             addLPP1 = boss1.addLP
+             addPDP1 = boss1.addPD
+             addWDP1 = boss1.addWD
+            
+            
+        default:
+            imageViewPlayer1.image=UIImage(named: "Boss2")
+            
+            bossLabelName.text = boss2.name
+            bossLabelLP.text = String(boss2.lP)
+            bossLabelDF.text = String(boss2.dF)
+            bossLabelDP.text = String(boss2.pD)
+            bossLabelWD.text = String(boss2.wD)
+            bossLabelSC.text = String(boss2.sC)
+             addLPP1 = boss2.addLP
+             addPDP1 = boss2.addPD
+             addWDP1 = boss2.addWD
+        
+            
+        }
     }
  }
 
