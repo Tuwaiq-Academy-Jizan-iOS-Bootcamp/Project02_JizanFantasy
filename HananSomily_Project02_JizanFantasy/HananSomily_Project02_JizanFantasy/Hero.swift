@@ -23,6 +23,8 @@ struct HeroPlayer{
 
  class Hero: UIViewController {
      
+     @IBOutlet weak var plusSCHero: UILabel!
+     @IBOutlet weak var changePoins: UILabel!
      @IBOutlet weak var descriptionOfHero: UITextView!
      @IBOutlet weak var imageHero: UIImageView!
      @IBOutlet weak var nameOfHeroLabl: UILabel!
@@ -48,7 +50,8 @@ struct HeroPlayer{
      override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
-         lifePointHeroLabl.text = "0"
+         pointOfHeroLabl.text = "0"
+         //Int( LifePointHeroStepper - insertDFStepper - insertPDstepper - insertinsertWDStepper )
          LifePointHeroStepper.stepValue = 1.0
          inserDFLabl.text = "0"
          insertDFStepper.stepValue = 1.0
@@ -57,6 +60,7 @@ struct HeroPlayer{
          insertWDLabl.text = "0"
          insertinsertWDStepper.stepValue = 1.0
          insertNameOfHeroTF.delegate = self
+         pointOfHeroLabl.text = "0"
         // inserDFtextField.delegate = self
         // lifePointHeroTextField.delegate = self
         // insertPDtextField.delegate = self
@@ -87,28 +91,51 @@ struct HeroPlayer{
      @IBAction func LifePointHeroStepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              lifePointHeroLabl.text = Int(sender.value).description
-                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+             
+             LifePointHeroStepper.minimumValue = 0
          //lifePointHeroLabl.text = Int(sender.value).description
          }}
      
      @IBAction func heroDFstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              inserDFLabl.text = Int(sender.value).description
-                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
+             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+ pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+
          //inserDFLabl.text = Int(sender.value).description
          }}
      
      @IBAction func heroPDstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              insertPDLabl.text = Int(sender.value).description
-                      pointOfHeroLabl.text = String((Int(pointOfHeroLabl.text!)!)-1)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+pointOfHeroLabl.text = String((Int(pointOfHeroLabl.text!)!)-1)
          //insertPDLabl.text = Int(sender.value).description
          }}
      
      @IBAction func heroWDstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              insertWDLabl.text = Int(sender.value).description
-                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
          //insertWDLabl.text = Int(sender.value).description
      }
      }}
@@ -120,42 +147,45 @@ extension Hero:UITextFieldDelegate{
         switch heroName {
         case "knight" :
             imageHero.image = UIImage(named: "knight")
-            pointOfHeroLabl.text = String(knight.points - knight.specialCapacity)
+            changePoins.text = String(knight.points)
+            pointOfHeroLabl.text = String("150")
             nameOfHeroLabl.text = String(knight.name)
             capacityPointLabl.text = String(knight.specialCapacity)
             playrSLP = knight.specialLP
             playrSPD = knight.specialPD
             playrSWD = knight.specialWD
             descriptionOfHero.text = (" Knight 250 points to dispatch : \n Life Point: 60 \n Defense: 20 \n Power Damage: 30 \n Weapon damage: 40 \n Special capacity: 100 And + 5 LP & + 10 WD (for next time he use it) ")
-            //" + 5 LP & + 10 WD"
+            plusSCHero.text = " + 5 LP & + 10 WD"
             LifePointHeroStepper.maximumValue = Double(knight.lifePoint)
             insertDFStepper.maximumValue = Double(knight.defense)
             insertPDstepper.maximumValue = Double(knight.powerDamage)
             insertinsertWDStepper.maximumValue = Double(knight.weaponDamage)
         case "wizard" :
             imageHero.image = UIImage(named: "wizard")
-            pointOfHeroLabl.text = String(wizard.points  - wizard.specialCapacity)
+            changePoins.text = String(wizard.points)
+            pointOfHeroLabl.text = String("195")
             nameOfHeroLabl.text = String(wizard.name)
             capacityPointLabl.text = String(wizard.specialCapacity)
             playrSLP = wizard.specialLP
             playrSPD = wizard.specialPD
             playrSWD = wizard.specialWD
             descriptionOfHero.text = (" Wizard 245 points to dispatch : \n Life Point: 90 \n Defense: 15 \n Power Damage: 70 \n Weapon damage: 20 \n Special capacity: 50 And + 35 LP  & + 10 PD (for the next time he use it) ")
-            //"+ 35 LP  & + 10 PD"
+            plusSCHero.text = "+ 35 LP  & + 10 PD"
             LifePointHeroStepper.maximumValue = Double(wizard.lifePoint)
             insertDFStepper.maximumValue = Double(wizard.defense)
             insertPDstepper.maximumValue = Double(wizard.powerDamage)
             insertinsertWDStepper.maximumValue = Double(wizard.weaponDamage)
         case "thief" :
             imageHero.image = UIImage(named: "thief")
-            pointOfHeroLabl.text = String(thief.points - thief.specialCapacity)
+            changePoins.text = String(thief.points)
+            pointOfHeroLabl.text = String("135")
             nameOfHeroLabl.text = String(thief.name)
             capacityPointLabl.text = String(thief.specialCapacity)
             playrSLP = thief.specialLP
             playrSPD = thief.specialPD
             playrSWD = thief.specialWD
             descriptionOfHero.text = (" Thief 210 points to dispatch : \n Life Point: 65 \n Defense: 25 \n Power Damage: 15 \n Weapon damage: 30 \n Special capacity: 75 And + 5 LP & + 35 WD (for the next time he use it) ")
-            //"+ 5 LP & + 35 WD"
+            plusSCHero.text = "+ 5 LP & + 35 WD"
             LifePointHeroStepper.maximumValue = Double(thief.lifePoint)
             insertDFStepper.maximumValue = Double(thief.defense)
             insertPDstepper.maximumValue = Double(thief.powerDamage)

@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     var boss1 = Player(name: "Boss1", lifePoint: 250, defense: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110, specialLP: 5, specialWD: 22, specialPD: 0)
     var boss2 = Player(name: "Boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75, specialLP: 5, specialWD: 0, specialPD: 32)
-    var sFlag = false
+    //var sFlag = false
     var winner = false
     var turn = 0
     var bossSCLP = 0
@@ -91,20 +91,20 @@ class ViewController: UIViewController {
     @IBAction func chngeDiceNumber(_ sender: UIButton) {
         let diceNumber = Int.random(in: 1...20)
 
-        diceNumberLabl.text = String(diceNumber)
-        var  playr2N = String(nameOfPlayr2labl.text ?? "")
-        var  playr1N = String(nameOfPlayr1Labl.text ?? "")
+        //diceNumberLabl.text = String(diceNumber)
+        let  playr2N = String(nameOfPlayr2labl.text ?? "")
+        let  playr1N = String(nameOfPlayr1Labl.text ?? "")
         var  playr2LP = Int(lpOfPlayer2Labl.text!)!
         var  playr1LP = Int(lpOfPlayr1Labl.text!)!
-        var  playr2DF = Int(dfOfPlayr2labl.text!)!
-        var  playr1DF = Int(dfOfPlayr1Labl.text!)!
+        let  playr2DF = Int(dfOfPlayr2labl.text!)!
+        let  playr1DF = Int(dfOfPlayr1Labl.text!)!
         var  playr1PD = Int(pdOfPlayr1Labl.text!)!
         var  playr2PD = Int(pdOfPlayer2labl.text!)!
         var  playr1WD = Int(wdOfPlayer1Labl.text!)!
         var  playr2WD = Int(wdOfPlayr2labl.text!)!
-        var  playr2SC = Int(scOfPlayer2Labl.text!)!
-        var  playr1SC = Int(scOfPlayer1Labl.text!)!
-        sFlag = false
+        let  playr2SC = Int(scOfPlayer2Labl.text!)!
+        let  playr1SC = Int(scOfPlayer1Labl.text!)!
+       // sFlag = false
         if winner == false {
             bossSCLP = 0
             bossSCPD = 0
@@ -113,6 +113,9 @@ class ViewController: UIViewController {
             spichalCapacityWD = 0
             spichalCapacityPD = 0
         turn += 1
+            winner = true
+            diceNumberLabl.text = String(turn)
+
         discriptionOfActionTextView.text += "♧ This is the start of turn \(turn)♧\n"
         discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber)🎲🎲 -- \n ")
 //sFlag = false
@@ -120,28 +123,28 @@ class ViewController: UIViewController {
           //print dice
           switch diceNumber{
           case 1...9:
-              playr2PD += spichalCapacityPD
-              sFlag = false
-              var reselt = playr1DF - playr2PD
+              //playr2PD += spichalCapacityPD
+              //sFlag = false
+              var reselt = ( playr1DF - ( playr2PD + spichalCapacityPD ))
               if( reselt >= 0 ){ reselt = 0 }
               playr1LP += reselt
               if playr1LP <= 0 { playr1LP = 0 }
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 Power ")
-              discriptionOfActionTextView.text += ("\(playr2N) Use Power Damage ⚒︎ \(playr2PD) and \(playr1N) Use Defense \(playr1DF) life point \(playr1LP),, For \(playr1N)\n")
+              discriptionOfActionTextView.text += ("\(playr2N) Use Power Damage ⚒︎ \(playr2PD) and \(playr1N) Use Defense \(playr1DF),,, life point \(playr1LP) For \(playr1N)\n")
 //
           case 10...19:
-              playr2WD += spichalCapacityWD
-              sFlag = false
-              var reselt = playr1DF - playr2WD
+//              playr2WD += spichalCapacityWD
+              //sFlag = false
+              var reselt = ( playr1DF - ( playr2WD + spichalCapacityWD ))
               if( reselt >= 0 ){ reselt = 0 }
               playr1LP += reselt
               if playr1LP <= 0 { playr1LP = 0 }
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 weapon")
-              discriptionOfActionTextView.text += ( "\(playr2N) Use Weapon Damage ⚔︎ \(playr2WD) And \(playr1N) Use Defense \(playr1DF) life Point \(playr1LP),, For \(playr1N)\n")
+              discriptionOfActionTextView.text += ( "\(playr2N) Use Weapon Damage ⚔︎ \(playr2WD) And \(playr1N) Use Defense \(playr1DF),,, life Point \(playr1LP) For \(playr1N)\n")
 
 
           case 20:
@@ -154,42 +157,46 @@ class ViewController: UIViewController {
                   playr1LP = 0
               }
               playr2LP += spichalCapacityLP
-              sFlag = true
+              //playr2PD += spichalCapacityPD
+              //playr2WD += spichalCapacityWD
+              //sFlag = true
               lpOfPlayr1Labl.text = String(playr1LP)
               discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity ☢︎☠︎ \(playr2SC) And \(playr1N) Use Defense \(playr1DF) ,,, life Point \(playr2LP)for \(playr2N) And life Point \(playr1LP)for \(playr1N)\n")
           default:
              print( "OPS")
           }
-        var diceNumber1 = Int.random(in: 1...20)
             discriptionOfActionTextView.text += ("------------------------------------\n")
+            
+            winner = false
+            let diceNumber1 = Int.random(in: 1...20)
             discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber1)🎲🎲 -- \n ")
-            print(diceNumber1)
+            print(diceNumber)
             //var sFlag = false
 
         switch diceNumber1{
         case 1...9:
-            playr1PD += bossSCPD
-            sFlag = false
-            var reselt1 = playr2DF - playr1PD
+//            playr1PD += bossSCPD
+            //sFlag = false
+            var reselt1 = ( playr2DF - ( playr1PD + bossSCPD))
             if( reselt1 >= 0 ){ reselt1 = 0 }
             playr2LP += reselt1
             if playr2LP <= 0 { playr2LP = 0 }
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
             
-            discriptionOfActionTextView.text += ("\(playr1N) Use Power Damage ⚒︎ \(playr1PD) and \(playr2N) Use Defense \(playr2DF) life point \(playr2LP),, For \(playr2N)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Power Damage ⚒︎ \(playr1PD) and \(playr2N) Use Defense \(playr2DF),,, life point \(playr2LP) For \(playr2N)\n")
             print("playr2 power")
         case 10...19:
 
-            playr1WD += bossSCWD
-            sFlag = false
-            var reselt1 = playr2DF - playr1WD
+//            playr1WD += bossSCWD
+            //sFlag = false
+            var reselt1 = ( playr2DF - (playr1WD + bossSCWD ))
             if( reselt1 >= 0 ){ reselt1 = 0 }
             playr2LP += reselt1
             if playr2LP <= 0 { playr2LP = 0 }
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr1N) Use Weapon Damage ⚔︎ \(playr1WD) And \(playr2N) Use Defense \(playr2DF) life Point \(playr2LP),, For \(playr2N)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Weapon Damage ⚔︎ \(playr1WD) And \(playr2N) Use Defense \(playr2DF),,, life Point \(playr2LP) For \(playr2N)\n")
             print("playr2 weapon")
 
         case 20:
@@ -203,7 +210,10 @@ class ViewController: UIViewController {
                 playr2LP = 0
             }
             playr1LP += bossSCLP
-            sFlag = true
+            //playr1WD += bossSCWD
+            //playr1PD += bossSCPD
+
+            //sFlag = true
             lpOfPlayer2Labl.text = String(playr2LP)
             discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity ☢︎☠︎ \(playr1SC) And \(playr2N) Use Defense \(playr2DF),,, life Point \(playr2LP)for \(playr2N) And life Point \(playr1LP)for \(playr1N)\n")
          
@@ -211,7 +221,7 @@ class ViewController: UIViewController {
 
         default:
            print( "OPS")
-        }
+        }}
         //turn += 1
         if (playr1LP <= 0) {
             discriptionOfActionTextView.text += ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
@@ -240,7 +250,7 @@ class ViewController: UIViewController {
             "_This is the end of turn \(turn)_\n"
         discriptionOfActionTextView.text += "_→→→→→→→→→→→→→→←←←←←←←←←←←←←\n"
             
-        }
+        //}
     }
   
     func selectPlayr1(){
