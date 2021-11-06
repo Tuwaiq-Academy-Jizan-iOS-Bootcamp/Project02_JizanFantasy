@@ -19,16 +19,18 @@ protocol rollGameUser{
 class User:rollGameUser {
   
     var name: String
-    
     var points: Int
     var lifepoint: Int?
     var defend: Int?
     var powerdamage: Int?
     var weapondamage: Int?
     var specialeffect: Int
+    var addLP: Int
+    var addPD: Int
+    var addWD: Int
 
    
-    init(name: String,points:Int,lifepoint:Int?,defend:Int?,powerdamage:Int?,weapondamage:Int?,specialeffect:Int){
+    init(name: String,points:Int,lifepoint:Int?,defend:Int?,powerdamage:Int?,weapondamage:Int?,specialeffect:Int, addLP: Int, addPD: Int, addWD: Int){
         self.name=name
         self.points=points
         self.lifepoint=lifepoint
@@ -36,7 +38,9 @@ class User:rollGameUser {
         self.powerdamage=powerdamage
         self.weapondamage=weapondamage
         self.specialeffect=specialeffect
-       
+        self.addLP=addLP
+        self.addPD=addPD
+        self.addWD=addWD
        
     }
 }
@@ -64,8 +68,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var user2WD: UILabel!
     @IBOutlet weak var user2SC: UILabel!
     
-    var user1 = User(name: "user1", points: 0, lifepoint: 250, defend: 30, powerdamage: 20, weapondamage: 45, specialeffect: 110)
-    var user2 = User(name: "user2", points: 0, lifepoint: 170, defend: 25, powerdamage: 15, weapondamage: 30, specialeffect: 75)
+    var user1 = User(name: "user1", points: 0, lifepoint: 250, defend: 30, powerdamage: 20, weapondamage: 45, specialeffect: 110, addLP: 5, addPD: 0, addWD: 22)
+    var user2 = User(name: "user2", points: 0, lifepoint: 170, defend: 25, powerdamage: 15, weapondamage: 30, specialeffect: 75, addLP: 5, addPD: 32, addWD: 0)
     
     var turn = 0
     var turnNm = 0
@@ -128,7 +132,7 @@ class ViewController: UIViewController {
        
         
             
-        
+        if(lifp1 != 0 && lifp2 != 0){
         
         let randomdice = Int.random(in: 1...20)
         diceNumber.text = String(randomdice)
@@ -139,7 +143,7 @@ class ViewController: UIViewController {
         switch rolradaic {
         case 1...9 :
             dscripGame.text += ("dise number: \(rolradaic)\n")
-            dscripGame.text += ("point \(lableUserName.text!) is \(lifp1)\n")
+            dscripGame.text += (" point \(lableUserName.text!) is \(lifp1)\n")
             if ((def1 - pow2) <= 0){
                 lifp1 = (lifp1 + (def1 - pow2 ))
                 
@@ -147,7 +151,7 @@ class ViewController: UIViewController {
                     lifp1 = (lifp1 - 0)
                 }
             lableLP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point user is \(lableLP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point  \(lableLP.text!)\n")
             
         print("user use dp")
             
@@ -165,7 +169,7 @@ class ViewController: UIViewController {
             lifp1 = (lifp1 - 0)
         }
             lableLP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1)life point user is \(labelUsername2.text!) is \(user2LP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1)life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
             
             lableLP.text = String(lifp2)
             
@@ -186,7 +190,7 @@ class ViewController: UIViewController {
                     lifp1 = (lifp1 - 0)
                 }
             lableLP.text = String(checkZero(num:lifp2))
-            print("\(lableLP.text!) use power damage : \(pow2) life point user is \(lifp1)")
+            print("\(lableLP.text!) use power damage : \(pow2) life point  is \(lifp1)")
             
         print("player use dp")
         
@@ -198,7 +202,7 @@ class ViewController: UIViewController {
             lifp1 = (lifp1 - 0)
         }
             lableLP.text = String(checkZero(num:lifp1))
-            print("player use weapon damage :\(weap2) life point :  is \(lifp1)")
+            print(" use weapon damage :\(weap2) life point :  is \(lifp1)")
             
             
         
@@ -221,7 +225,7 @@ func checkZero(num: Int)-> Int{
     return 0
 }
 
-
+}
 
 
 
