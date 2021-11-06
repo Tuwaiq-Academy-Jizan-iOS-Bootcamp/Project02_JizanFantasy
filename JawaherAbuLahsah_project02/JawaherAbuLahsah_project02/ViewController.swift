@@ -117,10 +117,13 @@ class ViewController: UIViewController {
                 rollDiceForHero()
             }
         }else {
+            turnLabel.text = "End"
+            whatHappening.text = "GAME OVER"
+            whatNext.text = "👾👾👾👾👾"
             if lP.text! > "0" {
-                labelGame.text = "Have winner -> Boss 🏆"
+                labelGame.text = "We have a winner -> Boss 🏆"
             }else{
-                labelGame.text = "have winner -> \((nameplayer.text) ?? "you") 🏆"
+                labelGame.text = "We have a winner -> \((nameplayer.text) ?? "you") 🏆"
             }
         }
     }
