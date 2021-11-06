@@ -51,6 +51,7 @@ class ViewController: UIViewController
     @IBOutlet weak var Total: UILabel!
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var Bossimage: UIImageView!
+    @IBOutlet weak var description: UILabel!
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var labelTow: UILabel!
     
@@ -67,61 +68,101 @@ class ViewController: UIViewController
 
          var Boss1 = Boss (lifePoint:250,Defenes:30,powerDamage:20,weapondamage:45,specialcapacity:110)
          var Boss2 = Boss (lifePoint:170,Defenes:25,powerDamage:15,weapondamage:30,specialcapacity:75)
-
+        
+        var LPPlayer = Int(label1.text!)!
+        var DFPlayer = Int(label2.text!)!
+        var PDPlayer = Int(label3.text!)!
+        var WDPlayer = Int(label4.text!)!
+        var SCPlayer = Int(Total2.text!)!
+        var LFBoss = Int(labelOne.text!)!
+        var DFBoss = Int(labelTow.text!)!
+        var PDBoss = Int(labelThree.text!)!
+        var WDBoss = Int(labelFor.text!)!
+        var SCBoss = Int(Total.text!)!
+        var Turn = 0
          
-     func DiceRoll(){
-            let Dicerandom :Int = .random(in: 1...20)
-            switch Dicerandom {
-            case  1...9:
-                 ResultDice.text = "PowerDamage"
-                 print("PowerDamage")
-                lifePoint -=(Player.powerDamage - Defenes)
-                let thePowerDamage=powerDamage - Defenes
-                if thePowerDamage <=0 {
-                    BossHealth
-                }else{
-                    BossHealth -= thePowerDamage
-                }
-                }
-            
+     func DiceRollHeroes(){
+         let DicerandomHeroe :Int = .random(in: 1...20)
+            switch DicerandomHeroe {
+                case  1...9:
                 
-            case 10...19:
-                 ResultDice.text = "weapondamage"
-                 print("weapondamage")
-                weapondamage -= Defenes
-                weapondamage -= lifePoint
-            case 20:
+                ResultDice.text = "PowerDamage"
+                 print("PowerDamage")
+                PDPlayer -= DFBoss
+                if PDPlayer < 0{
+                    PDPlayer = 0
+                    description.text =
+                }else{
+                    LFBoss -= PDPlayer
+                  if  LFBoss < 0 {
+                      LFBoss = 0
+                    labelOne.text = String(LFBoss)
+                description.text =
+                  }
+                }
+                case 10...19 :
+                    ResultDice.text = "weapondamage"
+                    print("weapondamage")
+                    WDPlayer -= DFBoss
+                    if WDPlayer < 0{
+                        WDPlayer = 0
+                    }else{
+                        LFBoss -= WDPlayer
+                        if LFBoss < 0 {
+                            LFBoss = 0
+                            labelOne.text = String(LFBoss)
+                        }
+                    }
+                     case 20 :
                 ResultDice.text = "specialcapacity"
                 print("specialcapacity")
             default : print(0)
 
                 
-                var PLP = Int(label1.text!)
-                var PDF = Int(label2.text!)
-                var PPD = Int(label3.text!)
-                var PWD = Int(label4.text!)
-                var PSC = Int(Total2.text!)
-                var BLP = Int(labelOne.text!)
-                var BDF = Int(labelTow.text!)
-                var BPD = Int(labelThree.text!)
-                var BWD = Int(labelFor.text!)
-                var BSC = Int(Total.text!)
-                var Turn = 0
-                
-               if (Turn1 %  2==0 ) {
-                 PowerDamage -= Defenes
-                 PowerDamage -= lifePoint
+    func DiceRollBoss(){
         
-                   if 10...19 {
-                       print(
-                   }
-            weapondamage -= Defenes
-                weapondamage -= lifePoint
-               
+        let DicerandomBoss :Int = .random(in: 1...20)
+        switch DicerandomBoss {
+            case  1...9:
+            }
+                ResultDice.text = "PowerDamage"
+                    print("PowerDamage")
+        PDBoss -= DFPlayer
+        if PDBoss < 0{
+            PDBoss = 0
+        }else{
+            LPPlayer -= WDBoss
+            if LPPlayer < 0{
+                LPPlayer = 0
+            
+            label1.text = String(LPPlayer)
+        }
+        }
+    case 10...19 :
+        ResultDice.text = "weapondamage"
+        print("weapondamage")
+        WDBoss -= DFPlayer
+        if WDBoss < 0{
+            WDBoss = 0
+        }else{
+            LPPlayer -= WDBoss
+            if LPPlayer < 0{
+                LPPlayer = 0
+        label1.text = String(LPPlayer)
+            }
+        }
+            case 20 :
+       ResultDice.text = "specialcapacity"
+       print("specialcapacity")
+   default : print(0)
 
-
+                
+            }
+            
+        }
+        }
            func BossRandom(){
-                let Boss =  Int.Random (in: 1...2)
+                let Boss =  Int.random (in: 1...2)
                 switch Boss {
                case 1:
                     Bossimage.image = UIImage(named: "Boss1")
@@ -138,13 +179,14 @@ class ViewController: UIViewController
                     labelThree.text = String(Boss2.powerDamage)
                     labelFor.text = String(Boss2.weapondamage)
                     Total.text = String(Boss2.specialcapacity)
-                    
+                default:
+                    print("error")
                }
 
-  }
-
    @IBAction func Rolleing(_ sender: Any) {
-    }
-}
-            }
-            
+       if labelOne.text! > "0" || label1.text! > "0"{
+           
+       }
+   }
+           }
+                    }

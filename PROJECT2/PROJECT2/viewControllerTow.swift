@@ -42,15 +42,14 @@ class viewControllerTow: UIViewController{
        
         Heros += 1
         switch Heros {
-        case 1 : viewplayer.image =
-            UIImage(named: "image1")
-            viewplayer.text = "Knight"
+        case 1 : viewplayer.image = UIImage(named: "image1")
+            Named.text = "Knight"
             labelPoint.text = "250"
         case 2 : viewplayer.image = UIImage(named: "image2")
-            viewplayer.text = "Wizard"
+            Named.text = "Wizard"
             labelPoint.text = "245"
         case 3 :viewplayer.image = UIImage(named: "image3")
-            viewplayer.text = "thief"
+            Named.text = "Thief"
             labelPoint.text = "210"
         case 4 :
             Heros = 0
