@@ -316,30 +316,6 @@ boss1.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)
     
     
     
-    func specialCapacity (player:String) {
-        hero.weaponDamage =  Int( weaponOfHero.text!)!
-        hero.powerDamage = Int (powerDamageOfHero.text!)!
-        boss1.weaponDamage =  Int(weaponDamageOfBoss.text!)!
-        boss2.powerDamage = Int(powerDamageOfBoss.text!)!
-        // parameter of this func is the name label .text
-        if player == "knight"{
-            hero.weaponDamage += 10
-        }else if player == "Wizard"{
-            hero.powerDamage += 10
-            
-        }else if player == "Thief"{
-            hero.weaponDamage += 35
-    
-        }else if player == "Boss1" {
-            boss1.weaponDamage += 22
-            
-        }else if player == "Boss2"{
-            boss2.powerDamage += 32
-            
-        }
-        
-        
-    }
     func restOfLife() {
         if hero.livePoint <= 0 {
             hero.livePoint = 0

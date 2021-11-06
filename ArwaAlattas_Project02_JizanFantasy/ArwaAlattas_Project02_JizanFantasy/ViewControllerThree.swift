@@ -26,24 +26,28 @@ class ViewControllerThree:UIViewController{
     
     
     
-    @IBAction func stepperLP(_ sender: UIStepper) {
-        lifePointLable.text = Int(sender.value).description
+    @IBAction func slaiderLP(_ sender: UISlider) {
+        lifePointLable.text = String(Int(sender.value))
+    }
+ 
+    @IBAction func slaiderDF(_ sender: UISlider) {
+        defaseLabel.text = String(Int(sender.value))
     }
     
-    @IBAction func stepperDF(_ sender: UIStepper) {
-        defaseLabel.text = Int(sender.value).description
+
+    @IBAction func slaiderPD(_ sender: UISlider) {
+        powerLabel.text = String(Int(sender.value))
     }
     
-    @IBAction func stepperPD(_ sender: UIStepper) {
-        powerLabel.text = Int(sender.value).description
+
+    @IBAction func slaiderWD(_ sender: UISlider) {
+        weaponLabel.text = String(Int(sender.value))
     }
     
-    @IBAction func stepperWD(_ sender: UIStepper) {
-        weaponLabel.text = Int(sender.value).description
-    }
-    
-    @IBAction func stepperSC(_ sender: UIStepper) {
-        specialLabel.text = Int(sender.value).description
+
+    @IBAction func slaiderSC(_ sender: UISlider) {
+        specialLabel.text = String(Int(sender.value))
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +71,11 @@ VC2.imageHero.image = imageOfHero.image
          self.present(alert, animated: true, completion: nil)
 
        }
+        
+        if lifePointLable.text == "0" || defaseLabel.text == "0" || powerLabel.text == "0" ||  weaponLabel.text == "0" || specialLabel.text == "0" {
+            self.present(alert, animated: true, completion: nil)
+
+          }
     }
     
     
