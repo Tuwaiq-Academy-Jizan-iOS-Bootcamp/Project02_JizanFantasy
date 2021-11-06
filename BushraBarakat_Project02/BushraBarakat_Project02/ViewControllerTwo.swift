@@ -33,13 +33,14 @@ class ViewControllerTwo: UIViewController{
     @IBOutlet weak var newChallengeImage: UIImageView!
     @IBOutlet weak var newChallengerName: UILabel!
     @IBOutlet weak var point: UILabel!
+    @IBOutlet weak var heroStory: UILabel!
     
 //.............................
     var hero = Hero(name: "", lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0, specialPd: 0, specialWd: 0, specialLp: 0)
    
  //..............................
     var theHero = 0
-    var num = 0
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,15 +72,35 @@ class ViewControllerTwo: UIViewController{
     @IBAction func newChallengerButton(_ sender: Any) {
         theHero += 1
         switch theHero {
-        case 1 : newChallengeImage.image =  UIImage(named:"knight" )
+        case 1 :
+            newChallengeImage.image =  UIImage(named:"knight" )
             newChallengerName.text = "Knight"
             point.text = "250"
+            textFiled1.text = "\(60)"
+            textFiled2.text = "\(20)"
+            textFiled3.text = "\(30)"
+            textFiled4.text = "\(40)"
+            textFiled5.text = "\(100)"
+            heroStory.text = "Knight hero have 250 point and 100 Special effect "
         case 2 : newChallengeImage.image = UIImage(named: "wizard")
             newChallengerName.text = "Wizerd"
             point.text = "245"
+            textFiled1.text = "\(90)"
+            textFiled2.text = "\(15)"
+            textFiled3.text = "\(70)"
+            textFiled4.text = "\(20)"
+            textFiled5.text = "\(50)"
+            heroStory.text = "Wizerd have 245 point and 50 Special effect "
         case 3 : newChallengeImage.image = UIImage(named: "thief")
             newChallengerName.text = "Thief"
             point.text = "210"
+            textFiled1.text = "\(65)"
+            textFiled2.text = "\(25)"
+            textFiled3.text = "\(15)"
+            textFiled4.text = "\(30)"
+            textFiled5.text = "\(65)"
+            heroStory.text = "Thief have 210 point and 65 Special effect "
+            
         case 4 :
             theHero = 0
         default:
