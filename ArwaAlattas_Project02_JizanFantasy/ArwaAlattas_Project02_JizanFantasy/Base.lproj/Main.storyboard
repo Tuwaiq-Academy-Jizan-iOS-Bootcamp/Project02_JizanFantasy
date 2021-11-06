@@ -144,14 +144,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-A7-vGt">
-                                <rect key="frame" x="32" y="503" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khD-mD-85r">
-                                <rect key="frame" x="18" y="532" width="374" height="202"/>
+                                <rect key="frame" x="32" y="536" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -219,6 +212,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-2R-6FJ">
+                                <rect key="frame" x="13" y="624" width="350" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2x-B7-0fT">
+                                <rect key="frame" x="19" y="585" width="338" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQK-aQ-iXm">
+                                <rect key="frame" x="-3" y="605" width="382" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -231,7 +245,7 @@
                         <outlet property="imageBoss" destination="4Gi-QG-biV" id="RQM-68-Y43"/>
                         <outlet property="imageHero" destination="HvR-bd-Fdk" id="ZaW-40-dGT"/>
                         <outlet property="lifePointOfBoss" destination="UET-6X-V78" id="4dN-ZZ-qk2"/>
-                        <outlet property="logicOfGame" destination="khD-mD-85r" id="kvc-BJ-SBc"/>
+                        <outlet property="logicOfGame" destination="Ef5-2R-6FJ" id="hy9-Qg-CuS"/>
                         <outlet property="nameOfBoss" destination="3ej-oe-Hkh" id="tIh-Xi-4wd"/>
                         <outlet property="nameOfHero" destination="dG6-Yv-wFp" id="95y-qe-17E"/>
                         <outlet property="numberOfDice" destination="6Um-1s-hoo" id="aoL-Ro-at4"/>
@@ -239,7 +253,9 @@
                         <outlet property="powerDamageOfHero" destination="udL-Uz-3gl" id="t7P-sN-sSz"/>
                         <outlet property="specialCapacityOfBoss" destination="ZUb-Pe-VWd" id="B5B-EA-dd5"/>
                         <outlet property="specialCapacityOfHero" destination="ZcI-dJ-q85" id="Qxc-w4-yo7"/>
+                        <outlet property="startLabel" destination="EQK-aQ-iXm" id="SYZ-re-b4C"/>
                         <outlet property="theGameButton" destination="hQY-Yy-CKy" id="Mj5-TZ-HZI"/>
+                        <outlet property="turnLabel" destination="N2x-B7-0fT" id="VFH-dG-shU"/>
                         <outlet property="weaponDamageOfBoss" destination="Vie-Ig-keY" id="REh-0G-JNh"/>
                         <outlet property="weaponOfHero" destination="cR4-iB-l91" id="fMg-eJ-map"/>
                     </connections>
@@ -420,6 +436,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="creatHero:" destination="DfG-kF-soP" eventType="touchUpInside" id="m77-x9-ypQ"/>
                                     <segue destination="t3c-Bz-F7O" kind="unwind" unwindAction="creetChallengerWithSeque:" id="Krj-AB-RCp"/>
                                 </connections>
                             </button>
@@ -659,35 +676,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="u9E-7Z-M1X">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="60" stepValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="u9E-7Z-M1X">
                                 <rect key="frame" x="274" y="358" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperLP:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="6r5-1r-DhR"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xju-a4-p2W">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" stepValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="xju-a4-p2W">
                                 <rect key="frame" x="274" y="439" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperPD:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="gIQ-Vi-mus"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-rw-NXa">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="40" stepValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-rw-NXa">
                                 <rect key="frame" x="274" y="480" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperWD:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="jAN-Kr-nco"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="EE5-Ak-urR">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" stepValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="EE5-Ak-urR">
                                 <rect key="frame" x="274" y="522" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperSC:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="gnI-dL-xlC"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Lod-b7-aTi">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" stepValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lod-b7-aTi">
                                 <rect key="frame" x="274" y="399" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -828,6 +845,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="creatHero:" destination="JDK-qm-VPe" eventType="touchUpInside" id="sIs-Su-DRG"/>
                                     <segue destination="ZML-w4-3En" kind="unwind" unwindAction="creetChallengerWithSeque:" id="ejb-MR-E7g"/>
                                 </connections>
                             </button>

@@ -142,11 +142,11 @@ VC2.imageHero.image = imageOfHero.image
     
     @IBAction func creatHero(_ sender: Any) {
         
-//        let alert = UIAlertController(title: "WARNING", message: "THE POINT OF THE HERO IS EMPTY", preferredStyle: UIAlertController.Style.alert)
-//           if lifePoint.text!.isEmpty || powerDamageOfHero.text!.isEmpty || weaponDamageOfHero.text!.isEmpty || SpecialCapacityOfHero.text!.isEmpty {
-//             self.present(alert, animated: true, completion: nil)
-//
-//           }
+       let alert = UIAlertController(title: "WARNING", message: "THE POINT OF THE HERO IS EMPTY", preferredStyle: UIAlertController.Style.alert)
+        if lifePointLable.text!.isEmpty || defaseLabel.text!.isEmpty || powerLabel.text!.isEmpty || weaponLabel.text!.isEmpty || specialLabel.text!.isEmpty {
+            self.present(alert, animated: true, completion: nil)
+
+          }
 //      if nameOfHero.text! == "Knight"{
 //          if Int(defanseOfHero.text!)! > 20 {
 //              defanseOfHero.text = ""
@@ -192,15 +192,15 @@ VC2.imageHero.image = imageOfHero.image
     
     
 }
-extension ViewControllerTwo:UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//extension ViewControllerTwo:UITextFieldDelegate{
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
 //    func textFieldDidEndEditing(_ textField: UITextField) {
 //        if textField.text! > {
 //            textField.text = ""
 //        }
 //    }
     
-}
+//}

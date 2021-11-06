@@ -22,6 +22,7 @@ class ViewControllerFour:UIViewController{
     
     @IBOutlet weak var storyOfHero: UILabel!
     override func viewDidLoad() {
+        nameOfHero.text = "Thief"
         imageOfHero.image = UIImage(named:"ThiefImage")
         storyOfHero.text = "The Thief have 250 point and he has big power and powerful weapon and strong defanse you won't regret choosing it "
     }
@@ -59,6 +60,20 @@ VC2.imageHero.image = imageOfHero.image
         VC2.specialCapacityOfHero.text = specialLabel.text
     
 }
+    
+    
+    @IBAction func creatHero(_ sender: Any) {
+        let alert = UIAlertController(title: "WARNING", message: "THE POINT OF THE HERO IS EMPTY", preferredStyle: UIAlertController.Style.alert)
+         if lifePointLable.text!.isEmpty || defaseLabel.text!.isEmpty || powerLabel.text!.isEmpty || weaponLabel.text!.isEmpty || specialLabel.text!.isEmpty {
+             self.present(alert, animated: true, completion: nil)
+
+           }
+    }
+    
+    
+    
+    
+    
 }
     
     

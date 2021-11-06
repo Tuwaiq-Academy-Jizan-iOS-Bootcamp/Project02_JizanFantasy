@@ -24,7 +24,6 @@
 		AFBB7D77273285740061CF81 /* Thief.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBB7D72273285740061CF81 /* Thief.jpg */; };
 		AFBB7D79273570670061CF81 /* ViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7D78273570670061CF81 /* ViewControllerThree.swift */; };
 		AFBB7D7B273570AE0061CF81 /* ViewControllerFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */; };
-		AFBB7D7D273570DD0061CF81 /* ViewControllerFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7D7C273570DD0061CF81 /* ViewControllerFive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 		AFBB7D72273285740061CF81 /* Thief.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Thief.jpg; path = ../../../../Thief.jpg; sourceTree = "<group>"; };
 		AFBB7D78273570670061CF81 /* ViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerThree.swift; sourceTree = "<group>"; };
 		AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFour.swift; sourceTree = "<group>"; };
-		AFBB7D7C273570DD0061CF81 /* ViewControllerFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 				AFBB7D42273172480061CF81 /* Main.storyboard */,
 				AFBB7D78273570670061CF81 /* ViewControllerThree.swift */,
 				AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */,
-				AFBB7D7C273570DD0061CF81 /* ViewControllerFive.swift */,
 				AFBB7D45273172490061CF81 /* Assets.xcassets */,
 				AFBB7D71273285740061CF81 /* boss1.jpg */,
 				AFBB7D6F273285740061CF81 /* boss2.jpg */,
@@ -296,7 +293,6 @@
 				AFBB7D3D273172480061CF81 /* AppDelegate.swift in Sources */,
 				AFBB7D3F273172480061CF81 /* SceneDelegate.swift in Sources */,
 				AFBB7D6D273172C30061CF81 /* ViewControllerTwo.swift in Sources */,
-				AFBB7D7D273570DD0061CF81 /* ViewControllerFive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
