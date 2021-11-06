@@ -14,11 +14,14 @@ class ViewControllerThree : UIViewController {
     @IBOutlet weak var txDfW: UITextField!
     @IBOutlet weak var txPdW: UITextField!
     @IBOutlet weak var txWdW: UITextField!
+    @IBOutlet weak var scWizard: UILabel!
+    @IBOutlet weak var theWizard: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        txLfW.text = "90"
+        
         txDfW.delegate = self
         txPdW.delegate = self
         txWdW.delegate = self
@@ -36,7 +39,8 @@ class ViewControllerThree : UIViewController {
         trDataW.lpDf.text = txDfW.text
         trDataW.lpPd.text = txPdW.text
         trDataW.lpWd.text = txWdW.text
-        
+        trDataW.sc.text = scWizard.text
+        trDataW.heroName.text = theWizard.text
         
 }
     }

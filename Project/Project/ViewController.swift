@@ -23,10 +23,10 @@ class Hero {
         self.specialCapacity = specialCapacity
     }
     func ActionDescration(){
-        print("the \(name) take the action :and he is defense: \(defense) & life point \(lifePoint) !")
+        print("The \(name) take the action :and he is defense: \(defense) & life point \(lifePoint) !")
     }
     func SC(){
-        print("the \(name) get \(specialCapacity) ")
+        print("The \(name) get \(specialCapacity) ")
     }
     func LifePoint(){
         print (lifePoint += lifePoint)
@@ -50,14 +50,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var lpPd: UILabel!
     @IBOutlet weak var lpWd: UILabel!
     @IBOutlet weak var sc: UILabel!
+    @IBOutlet weak var heroName: UILabel!
     
     var player1 :Hero?
-//    var player2 :Hero?
     
     // declear ourChracters!
 //    var knight = Hero(name: "Knight", lifePoint: 60, defense: 20, poewrDamage: 30, weaponDamage: 40, specialCapacity: 100)
 //    var wizard = Hero(name: "wizard", lifePoint: 90, defense: 15, poewrDamage: 70, weaponDamage: 20, specialCapacity: 50)
-    var player2 = Hero(name: "HERO", lifePoint: 0, defense: 0, poewrDamage: 0, weaponDamage: 0, specialCapacity: 5)
+    var player2 = Hero(name: "HERO", lifePoint: 0, defense: 0, poewrDamage: 0, weaponDamage: 0, specialCapacity: 0)
     var boss1 = Hero(name: "Boss1", lifePoint: 250, defense: 30, poewrDamage: 20, weaponDamage: 45, specialCapacity: 110)
     var boss2 = Hero(name: "Boss2", lifePoint: 170, defense: 25, poewrDamage: 15, weaponDamage: 30, specialCapacity: 75)
     
@@ -71,7 +71,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        
         let player = Int.random(in: 0...1)
         
         if player == 0 {
@@ -79,7 +78,6 @@ class ViewController: UIViewController {
         } else {
             player1 = boss2
         }
-        print(player1?.name)
     }
     
     @IBAction func roll(_ sender: Any) {
@@ -121,12 +119,13 @@ class ViewController: UIViewController {
         player2.defense = Int(lpDf.text!)!
         
         
+        
         switch roll() {
-        case 0...4: // knight
+        case 0...4: // Hero
             player2.ActionDescration()
             player1?.lifePoint -= player2.poewrDamage
             player1?.lifePoint += player1?.defense ?? 0
-            duringGame.text += ("the lifepoint of knight : \(player2.lifePoint)")
+            duringGame.text += ("the lifepoint of Hero : \(player2.lifePoint)")
             Dead()
             
         case 5...9: // Boss
@@ -140,7 +139,7 @@ class ViewController: UIViewController {
             player2.ActionDescration()
             player1?.lifePoint -= player2.weaponDamage
             player1?.lifePoint += player1?.defense ?? 0
-            duringGame.text += ("the lifepoint of knight : \(player2.lifePoint )")
+            duringGame.text += ("the lifepoint of Hero : \(player2.lifePoint )")
             Dead()
             
         case 15...19:
@@ -152,13 +151,24 @@ class ViewController: UIViewController {
             
         case 20:
             player2.SC()
-            player2.lifePoint += 5
-            player2.weaponDamage += 10
-            duringGame.text += ("the lifepoint of knight : \(player2.lifePoint)")
+            if sc.text == "+ 5 LP & + 10 WD" {
+                player2.weaponDamage += 10
+                player2.lifePoint += 5
+            } else if sc.text == "+ 35 LP  & + 10 PD" {
+                player2.poewrDamage += 10
+                player2.lifePoint += 35
+            } else {
+                player2.weaponDamage += 35
+                player2.lifePoint += 5
+            }
+            
+            duringGame.text += ("the lifepoint of Hero : \(player2.lifePoint)")
             Dead()
             player1?.SC()
-            player1?.lifePoint += 5
-            player1?.poewrDamage += 35
+            boss2.lifePoint += 5
+            boss2.poewrDamage += 35
+            boss1.lifePoint += 5
+            boss1.poewrDamage += 22
             duringGame.text += ("the lifepoint of \(player1?.name ?? "Boss") : \(player1?.lifePoint ??  0)")
             Dead()
             print ("get \(player1?.lifePoint ??  170) , \(player1?.lifePoint ??  170)")
@@ -185,7 +195,7 @@ class ViewController: UIViewController {
         lpDf.text = "\(player2.defense)"
         lpPd.text = "\(player2.poewrDamage)"
         lpWd.text = "\(player2.weaponDamage)"
-        sc.text = "\(player2.specialCapacity)"
+//        sc.text = "\(player2.specialCapacity)"
         
     }
     
@@ -200,10 +210,7 @@ class ViewController: UIViewController {
     }
     
     
-    
     @IBAction func unwindToRoot(segue: UIStoryboardSegue){
-       
-        
     }
 }//end the class
 
