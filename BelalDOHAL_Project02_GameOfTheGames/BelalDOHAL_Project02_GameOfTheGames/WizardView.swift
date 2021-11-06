@@ -36,9 +36,55 @@ class WizardView: UIViewController {
     var stateLP = 0
     //Save//
     @IBOutlet weak var warriorSaveButton: UIButton!
-//Override//------------
+    //Override//------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Long Click and One Click//
+        //DEF//
+        let plusDEFTap = UITapGestureRecognizer(target: self, action: #selector (defencePLUS))
+        let plusDEFLong = UILongPressGestureRecognizer(target: self, action: #selector(defencePLUS))
+        plusDEFTap.numberOfTapsRequired = 1
+        plusDEF.addGestureRecognizer(plusDEFTap)
+        plusDEF.addGestureRecognizer(plusDEFLong)
+        let minusDEFTap = UITapGestureRecognizer(target: self, action: #selector (defenseMINUS))
+        let minusDEFLong = UILongPressGestureRecognizer(target: self, action: #selector(defenseMINUS))
+        minusDEFTap.numberOfTapsRequired = 1
+        minusDEF.addGestureRecognizer(minusDEFTap)
+        minusDEF.addGestureRecognizer(minusDEFLong)
+        //LP//
+        let plusLPTap = UITapGestureRecognizer(target: self, action: #selector (lifePointsActionPlus))
+        let plusLPLong = UILongPressGestureRecognizer(target: self, action: #selector(lifePointsActionPlus))
+        plusLPTap.numberOfTapsRequired = 1
+        pluseLP.addGestureRecognizer(plusLPTap)
+        pluseLP.addGestureRecognizer(plusLPLong)
+        let minusLPTap = UITapGestureRecognizer(target: self, action: #selector (lifePointsActionMinus))
+        let minusLPLong = UILongPressGestureRecognizer(target: self, action: #selector(lifePointsActionMinus))
+        minusLPTap.numberOfTapsRequired = 1
+        minusLP.addGestureRecognizer(minusLPTap)
+        minusLP.addGestureRecognizer(minusLPLong)
+        //PD//
+        let plusPDTap = UITapGestureRecognizer(target: self, action: #selector (powerPLUS))
+        let plusPDLong = UILongPressGestureRecognizer(target: self, action: #selector(powerPLUS))
+        plusPDTap.numberOfTapsRequired = 1
+        plusPD.addGestureRecognizer(plusPDTap)
+        plusPD.addGestureRecognizer(plusPDLong)
+        let minusPDTap = UITapGestureRecognizer(target: self, action: #selector (powerMINUS))
+        let minusPDLong = UILongPressGestureRecognizer(target: self, action: #selector(powerMINUS))
+        minusPDTap.numberOfTapsRequired = 1
+        minusPD.addGestureRecognizer(minusPDTap)
+        minusPD.addGestureRecognizer(minusPDLong)
+        //WD//
+        let plusWDTap = UITapGestureRecognizer(target: self, action: #selector (weaponPLUS))
+        let plusWDLong = UILongPressGestureRecognizer(target: self, action: #selector(weaponPLUS))
+        plusWDTap.numberOfTapsRequired = 1
+        plusWD.addGestureRecognizer(plusWDTap)
+        plusWD.addGestureRecognizer(plusWDLong)
+        let minusWDTap = UITapGestureRecognizer(target: self, action: #selector (weaponMINUS))
+        let minusWDLong = UILongPressGestureRecognizer(target: self, action: #selector(weaponMINUS))
+        minusWDTap.numberOfTapsRequired = 1
+        minusWD.addGestureRecognizer(minusWDTap)
+        minusWD.addGestureRecognizer(minusWDLong)
+        //View//
         playerTextField.delegate = self
         warriorSaveButton.layer.cornerRadius = 20
         playerSP.text = "\(stateSP)"
@@ -60,11 +106,11 @@ class WizardView: UIViewController {
         sendInfo?.lifePValue = stateLP
         sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCText = "50 Damage / +35(LP) / +10(PD)"
+        sendInfo?.specialCText = "100 Damage / +5(LP) / +10(WD)"
     }
     //LP Actions//
     //Plus//
-    @IBAction func lifePointsActionPlus(_ sender: Any) {
+    @objc func lifePointsActionPlus(_ sender: Any) {
         if stateSP > 0 {
             minusLP.isEnabled = true
             stateSP -= 1
@@ -76,7 +122,7 @@ class WizardView: UIViewController {
         }
     }
     //Minus//
-    @IBAction func lifePointsActionMinus(_ sender: Any) {
+    @objc func lifePointsActionMinus(_ sender: Any) {
         if stateLP > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -90,21 +136,21 @@ class WizardView: UIViewController {
             minusLP.isEnabled = false
         }
     }
-    //Defense Action//
+    //Defense Function//
     //Plus//
-    @IBAction func defencePLUS(_ sender: Any) {
-        if stateSP > 0 && stateDEF < 15 {
+    @objc func defencePLUS(_ sender: Any) {
+        if stateSP > 0 && stateDEF < 20 {
             minusDEF.isEnabled = true
             stateSP -= 1
             stateDEF += 1
             playerSP.text = "\(stateSP)"
             playerDEF.text = "\(stateDEF)"
-        }else if stateDEF == 15 || stateSP == 0 {
+        }else if stateDEF == 20 || stateSP == 0 {
             plusDEF.isEnabled = false
         }
     }
     //Minus//
-    @IBAction func defenseMINUS(_ sender: Any) {
+    @objc func defenseMINUS(_ sender: Any) {
         if stateDEF > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -120,19 +166,19 @@ class WizardView: UIViewController {
     }
     //Power Actions//
     //Plus//
-    @IBAction func powerPLUS(_ sender: Any) {
-        if stateSP > 0 && statePD < 70 {
+    @objc func powerPLUS(_ sender: Any) {
+        if stateSP > 0 && statePD < 30 {
             minusPD.isEnabled = true
             stateSP -= 1
             statePD += 1
             playerSP.text = "\(stateSP)"
             playerPD.text = "\(statePD)"
-        }else if statePD == 70 || stateSP == 0 {
+        }else if statePD == 30 || stateSP == 0 {
             plusPD.isEnabled = false
         }
     }
     //Minus//
-    @IBAction func powerMINUS(_ sender: Any) {
+    @objc func powerMINUS(_ sender: Any) {
         if statePD > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -148,19 +194,19 @@ class WizardView: UIViewController {
     }
     //Weapon Actions//
     //Plus//
-    @IBAction func weaponPLUS(_ sender: Any) {
-        if stateSP > 0 && stateWD < 20 {
+    @objc func weaponPLUS(_ sender: Any) {
+        if stateSP > 0 && stateWD < 40 {
             minusWD.isEnabled = true
             stateSP -= 1
             stateWD += 1
             playerSP.text = "\(stateSP)"
             playerWD.text = "\(stateWD)"
-        }else if stateWD == 20 || stateSP == 0 {
+        }else if stateWD == 40 || stateSP == 0 {
             plusWD.isEnabled = false
         }
     }
     //Minus//
-    @IBAction func weaponMINUS(_ sender: Any) {
+    @objc func weaponMINUS(_ sender: Any) {
         if stateWD > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -182,3 +228,4 @@ extension WizardView: UITextFieldDelegate {
         return true
     }
 }
+

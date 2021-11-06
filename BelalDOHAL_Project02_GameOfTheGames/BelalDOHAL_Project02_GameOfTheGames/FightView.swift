@@ -23,9 +23,7 @@ class FightView: UIViewController {
     var lifePValue = 0
     //Dice Thing//
     @IBOutlet weak var rulleTheDice: UIButton!
-    @IBOutlet weak var fightFeald: UILabel!
     //Turn Text Things//
-    @IBOutlet weak var turnText: UILabel!
     //----------Boss Things//
     @IBOutlet weak var bossUIImage: UIImageView!
     var bossImage = 0
@@ -91,9 +89,7 @@ class FightView: UIViewController {
         if turnHow == true {
             switch rD {
             case 1...9:
-                fightFeald.text = usePower()
                 turnHow = false
-                turnText.text = turnWhat()
                 let wDCal = powerDValue - bStateDEF
                 if wDCal <= 0 {
                     bStateLP -= 0
@@ -103,9 +99,7 @@ class FightView: UIViewController {
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
             case 10...19:
-                fightFeald.text = useWeapon()
                 turnHow = false
-                turnText.text = turnWhat()
                 let pDCal = weaponDValue - bStateDEF
                 if pDCal <= 0 {
                     bStateLP -= 0
@@ -115,9 +109,7 @@ class FightView: UIViewController {
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
             case 20:
-                fightFeald.text = useSC()
                 turnHow = false
-                turnText.text = turnWhat()
                 let sCDcal = sCValue - bStateDEF
                 if sCDcal <= 0 {
                     bStateLP -= 0
@@ -136,7 +128,6 @@ class FightView: UIViewController {
         }else {
             switch rD {
             case 1...9:
-                fightFeald.text = usePower()
                 turnHow = true
                 turnNumber += 1
                 let bPDCal = bStatePD - defenseValue
@@ -147,10 +138,7 @@ class FightView: UIViewController {
                 }
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
-                fightFeald.text = usePower()
-                turnText.text = turnWhat()
             case 10...19:
-                fightFeald.text = useWeapon()
                 turnHow = true
                 turnNumber += 1
                 let bWDCal = bStateWD - defenseValue
@@ -161,10 +149,7 @@ class FightView: UIViewController {
                 }
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
-                fightFeald.text = useWeapon()
-                turnText.text = turnWhat()
             case 20:
-                fightFeald.text = useSC()
                 turnHow = true
                 turnNumber += 1
                 let bSCDcal = bStateSCD - defenseValue
@@ -181,72 +166,8 @@ class FightView: UIViewController {
                 bossWD.text = "\(bStateWD)"
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
-                fightFeald.text = useSC()
-                turnText.text = turnWhat()
             default: print("ERROR")
             }
-        }
-    }
-    //Turn Func//
-    func turnWhat() -> String {
-        if turnHow == true {
-            return "Turn number //\(turnNumber)//"
-        }else {
-            return "End of the turn number //\(turnNumber)//"
-        }
-    }
-    //Power Fighting Lable//
-    func usePower() -> String{
-        if turnHow == true {
-            return """
-\(playerNL)
-use his power on \(bossName)
-\(playerNL) Life points remain \(lifePValue)
-\(bossName) Life points remain \(bStateLP)
-"""
-        }else {
-            return """
-\(bossName)
-use his power on \(playerNL)
-\(bossName) Life points remain \(bStateLP)
-\(playerNL) Life points remain \(lifePValue)
-"""
-        }
-    }
-    func useWeapon() -> String {
-        if turnHow == true {
-            return """
-\(playerNL)
-use his weapon on \(bossName)
-\(playerNL) Life points remain \(lifePValue)
-\(bossName) Life points remain \(bStateLP)
-"""
-        }else {
-            return """
-\(bossName)
-use his weapon on \(playerNL)
-\(bossName) Life points remain \(bStateLP)
-\(playerNL) Life points remain \(lifePValue)
-"""
-        }
-    }
-    func useSC() -> String {
-        if turnHow == true {
-            return """
-\(playerNL)
-use SC on \(bossName)
-and get bunos weapon damage and revover some health
-\(playerNL) Life points remain \(lifePValue)
-\(bossName) Life points remain \(bStateLP)
-"""
-        }else {
-            return """
-\(bossName)
-use Uiltmate Attack on \(playerNL)
-and get bunos damage and revover some health
-\(bossName) Life points remain \(bStateLP)
-\(playerNL) Life points remain \(lifePValue)
-"""
         }
     }
 }

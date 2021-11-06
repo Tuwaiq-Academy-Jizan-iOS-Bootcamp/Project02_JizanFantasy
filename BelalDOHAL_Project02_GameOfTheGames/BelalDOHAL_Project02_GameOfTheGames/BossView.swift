@@ -12,6 +12,9 @@ struct Boss {
 }
 import UIKit
 class BossView: UIViewController {
+    
+    
+    
     //Outlet Go Button//
     @IBOutlet weak var challengMeMortal: UIButton!
     //Player Info//

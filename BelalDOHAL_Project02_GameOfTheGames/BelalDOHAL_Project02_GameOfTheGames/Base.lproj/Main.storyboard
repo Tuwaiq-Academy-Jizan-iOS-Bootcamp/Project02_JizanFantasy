@@ -227,9 +227,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
-                                <connections>
-                                    <action selector="lifePointsActionMinus:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="05g-Nn-Nr5"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66o-iB-dcW">
                                 <rect key="frame" x="285" y="379" width="32" height="31"/>
@@ -238,9 +235,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
-                                <connections>
-                                    <action selector="defenseMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="TLO-FI-ZRH"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-lP-CC8">
                                 <rect key="frame" x="285" y="467" width="32" height="31"/>
@@ -249,9 +243,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
-                                <connections>
-                                    <action selector="weaponMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="UZI-kF-2kW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mr5-OM-k7n">
                                 <rect key="frame" x="285" y="423" width="32" height="31"/>
@@ -260,9 +251,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
-                                <connections>
-                                    <action selector="powerMINUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Li4-Vn-3e7"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imC-sA-EDc">
                                 <rect key="frame" x="254" y="423" width="32" height="31"/>
@@ -271,9 +259,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                <connections>
-                                    <action selector="powerPLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Ma4-5n-CIB"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-Fh-gi2">
                                 <rect key="frame" x="254" y="467" width="32" height="31"/>
@@ -282,9 +267,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                <connections>
-                                    <action selector="weaponPLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Z1o-oe-kJQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeV-jw-2Pb">
                                 <rect key="frame" x="254" y="379" width="32" height="31"/>
@@ -293,9 +275,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                <connections>
-                                    <action selector="defencePLUS:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="AB7-c2-9Sy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZw-XA-Wl7">
                                 <rect key="frame" x="254" y="341" width="32" height="31"/>
@@ -304,9 +283,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                <connections>
-                                    <action selector="lifePointsActionPlus:" destination="sVv-Jx-V4U" eventType="touchUpInside" id="Agc-1k-qjN"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8n-gH-xVC">
                                 <rect key="frame" x="21" y="506" width="349" height="153"/>
@@ -1266,13 +1242,6 @@ Cg
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISs-fb-cxw">
-                                <rect key="frame" x="85" y="524" width="221" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Ge-jn-HFi"/>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1288,14 +1257,12 @@ Cg
                         <outlet property="bossWD" destination="kRV-co-o6G" id="7s2-XV-81i"/>
                         <outlet property="defenseLable" destination="Myp-l6-7jK" id="jty-3t-xMw"/>
                         <outlet property="diceLable" destination="soL-Fa-ZE2" id="aLh-eY-9Cm"/>
-                        <outlet property="fightFeald" destination="QFB-zt-nk1" id="cvd-HL-42x"/>
                         <outlet property="lifePLable" destination="qxL-Tn-arE" id="KWA-0C-L0C"/>
                         <outlet property="playerNameLable" destination="f4q-o0-bqh" id="yi3-1G-Ieq"/>
                         <outlet property="playerUIImage" destination="9lF-mo-590" id="4Zd-87-jGI"/>
                         <outlet property="poweDLable" destination="Hsr-sy-B0I" id="EGR-Jx-lIq"/>
                         <outlet property="rulleTheDice" destination="K24-pc-166" id="INg-cI-D7I"/>
                         <outlet property="specialCLable" destination="pBj-fx-JxP" id="Jca-8J-Sez"/>
-                        <outlet property="turnText" destination="ISs-fb-cxw" id="5xj-qk-yfY"/>
                         <outlet property="weaponDLable" destination="GSG-HH-lKv" id="JDd-Ya-YEa"/>
                     </connections>
                 </viewController>
