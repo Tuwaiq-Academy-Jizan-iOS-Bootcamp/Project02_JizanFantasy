@@ -117,7 +117,7 @@ struct HeroPlayer{
      @IBAction func heroPDstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              insertPDLabl.text = Int(sender.value).description
-                      pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+                      pointOfHeroLabl.text = String((Int(pointOfHeroLabl.text!)!)-1)
          //insertPDLabl.text = Int(sender.value).description
          }}
      

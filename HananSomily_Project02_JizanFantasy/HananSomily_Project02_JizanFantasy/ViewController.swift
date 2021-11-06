@@ -62,8 +62,12 @@ class ViewController: UIViewController {
     
     var boss1 = Player(name: "Boss1", lifePoint: 250, defense: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110, specialLP: 5, specialWD: 22, specialPD: 0)
     var boss2 = Player(name: "Boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75, specialLP: 5, specialWD: 0, specialPD: 32)
+    var sFlag = false
     var winner = false
     var turn = 0
+    var bossSCLP = 0
+    var bossSCPD = 0
+    var bossSCWD = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         selectPlayr1()
@@ -86,8 +90,7 @@ class ViewController: UIViewController {
 
     @IBAction func chngeDiceNumber(_ sender: UIButton) {
         let diceNumber = Int.random(in: 1...20)
-        var sFlag = false
-        
+
         diceNumberLabl.text = String(diceNumber)
         var  playr2N = String(nameOfPlayr2labl.text ?? "")
         var  playr1N = String(nameOfPlayr1Labl.text ?? "")
@@ -102,10 +105,16 @@ class ViewController: UIViewController {
         var  playr2SC = Int(wdOfPlayr2labl.text!)!
         var  playr1SC = Int(scOfPlayer1Labl.text!)!
         if winner == false {
+            bossSCLP = 0
+            bossSCPD = 0
+            bossSCWD = 0
+            spichalCapacityLP = 0
+            spichalCapacityWD = 0
+            spichalCapacityPD = 0
         turn += 1
-        discriptionOfActionTextView.text = "_This is the start of turn \(turn)_\n"
+        discriptionOfActionTextView.text = "♧ This is the start of turn \(turn)♧\n"
         discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber)🎲🎲 -- \n ")
-
+sFlag = false
           print("dice \(diceNumber)")
           //print dice
           switch diceNumber{
@@ -119,7 +128,7 @@ class ViewController: UIViewController {
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 Power ")
-              discriptionOfActionTextView.text += ("\(playr2N) Use Power Damage  \(playr2PD) and \(playr1N) Use Defense \(playr1DF) life point \(playr1LP)\n")
+              discriptionOfActionTextView.text += ("\(playr2N) Use Power Damage ⚒︎ \(playr2PD) and \(playr1N) Use Defense \(playr1DF) life point \(playr1LP),, For \(playr1N)\n")
 //
           case 10...19:
               playr2WD += spichalCapacityWD
@@ -131,7 +140,7 @@ class ViewController: UIViewController {
               print(reselt , playr1LP)
               lpOfPlayr1Labl.text = String(playr1LP)
               print("player1 weapon")
-              discriptionOfActionTextView.text += ( "\(playr2N) Use Weapon Damage \(playr2WD) And \(playr1N) Use Defense \(playr1DF) life Point \(playr1LP)\n")
+              discriptionOfActionTextView.text += ( "\(playr2N) Use Weapon Damage ⚔︎ \(playr2WD) And \(playr1N) Use Defense \(playr1DF) life Point \(playr1LP),, For \(playr1N)\n")
 
 
           case 20:
@@ -143,11 +152,10 @@ class ViewController: UIViewController {
               if playr1LP <= 0 {
                   playr1LP = 0
               }
-              playr1LP += spichalCapacityLP
+              playr2LP += spichalCapacityLP
               sFlag = true
               lpOfPlayr1Labl.text = String(playr1LP)
-              discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity  \(playr2SC),,, life Point \(playr2LP)\n")
-
+              discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity ☢︎☠︎ \(playr2SC),,, life Point \(playr2LP)\n")
           default:
              print( "OPS")
           }
@@ -155,10 +163,11 @@ class ViewController: UIViewController {
             discriptionOfActionTextView.text += ("------------------------------------\n")
             discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber1)🎲🎲 -- \n ")
             print(diceNumber1)
-            
+            var sFlag = false
+
         switch diceNumber1{
         case 1...9:
-            playr1PD += spichalCapacityPD
+            playr1PD += bossSCPD
             sFlag = false
             var reselt1 = playr2DF - playr1PD
             if( reselt1 >= 0 ){ reselt1 = 0 }
@@ -167,11 +176,11 @@ class ViewController: UIViewController {
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
             
-            discriptionOfActionTextView.text += ("\(playr1N) Use Power Damage \(playr1PD) and \(playr2N) Use Defense \(playr2DF) life point \(playr2LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Power Damage ⚒︎ \(playr1PD) and \(playr2N) Use Defense \(playr2DF) life point \(playr2LP),, For \(playr2N)\n")
             print("playr2 power")
         case 10...19:
 
-            playr1WD += spichalCapacityWD
+            playr1WD += bossSCWD
             sFlag = false
             var reselt1 = playr2DF - playr1WD
             if( reselt1 >= 0 ){ reselt1 = 0 }
@@ -179,7 +188,7 @@ class ViewController: UIViewController {
             if playr2LP <= 0 { playr2LP = 0 }
             print(reselt1 , playr2LP)
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr1N) Use Weapon Damage \(playr1WD) And \(playr2N) Use Defense \(playr2DF) life Point \(playr2LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Weapon Damage ⚔︎ \(playr1WD) And \(playr2N) Use Defense \(playr2DF) life Point \(playr2LP),, For \(playr2N)\n")
             print("playr2 weapon")
 
         case 20:
@@ -192,10 +201,10 @@ class ViewController: UIViewController {
             if playr2LP <= 0 {
                 playr2LP = 0
             }
-            playr2LP += spichalCapacityLP
+            playr1LP += bossSCLP
             sFlag = true
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity  \(playr1SC),,, life Point \(playr1LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity ☢︎☠︎ \(playr1SC),,, life Point \(playr1LP)\n")
             print(reselt5 , playr2LP)
 
         default:
@@ -203,13 +212,24 @@ class ViewController: UIViewController {
         }
         //turn += 1
         if (playr1LP <= 0) {
-            discriptionOfActionTextView.text = ("\(playr2N) Is a Winner 🎉🎉\n")
+            discriptionOfActionTextView.text = ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+            discriptionOfActionTextView.text += ("************ ⚑ ⚑ ⚑ ⚑ ⚑ ***********\n")
+            discriptionOfActionTextView.text += ("🎉🎉\(playr2N) Is a Winner 🎉🎉\n")
+            discriptionOfActionTextView.text += ("*********************************\n")
+            discriptionOfActionTextView.text += (" ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+
             winner = true
             roolButton.isEnabled = false
 
         }
         if (playr2LP <= 0) {
-            discriptionOfActionTextView.text = ("\(playr1N) Is a Winner 🎉🎉\n")
+            discriptionOfActionTextView.text = ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+            discriptionOfActionTextView.text += ("************ ⚑ ⚑ ⚑ ⚑ ⚑ ***********\n")
+            discriptionOfActionTextView.text += (" 🎉🎉\(playr1N) Is a Winner 🎉🎉 \n")
+            discriptionOfActionTextView.text += ("*********************************\n")
+            discriptionOfActionTextView.text += (" ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+
+
             winner = true
             roolButton.isEnabled = false
 
@@ -231,6 +251,9 @@ class ViewController: UIViewController {
             pdOfPlayr1Labl.text = String( boss1.powerDamage)
             wdOfPlayer1Labl.text = String(boss1.weaponDamage)
             scOfPlayer1Labl.text = String(boss1.specialCapacity)
+            bossSCLP = boss1.specialLP
+            bossSCPD = boss1.specialPD
+            bossSCWD = boss1.specialWD
             //"+ 5 LP & + 22 WD"
         }
         if num == 2{
@@ -241,6 +264,9 @@ class ViewController: UIViewController {
             pdOfPlayr1Labl.text = String( boss2.powerDamage)
             wdOfPlayer1Labl.text = String(boss2.weaponDamage)
             scOfPlayer1Labl.text = String(boss2.specialCapacity)
+            bossSCLP = boss2.specialLP
+            bossSCPD = boss2.specialPD
+            bossSCWD = boss2.specialWD
             //"+ 5 LP & + 32 PD"
         }
     }
