@@ -193,9 +193,6 @@ class ViewControllerTwo:UIViewController{
             
         
         //***********************************
-        
-        
-        
         //message if field empty
         
         if (fieldName.text?.isEmpty)! ||  (fieldLP.text?.isEmpty)! ||  (fieldDF.text?.isEmpty)! ||  (fieldPD.text?.isEmpty)! ||  (fieldWD.text?.isEmpty)! ||  (fieldSC.text?.isEmpty)!  {
@@ -205,9 +202,6 @@ class ViewControllerTwo:UIViewController{
               }
         //************************************
     }
-    
-    
-    //Not work yet :(
     func pointCheck(){
         let a = Int(fieldLP.text!) ?? 0
         let b = Int(fieldDF.text!) ?? 0
@@ -217,7 +211,7 @@ class ViewControllerTwo:UIViewController{
         var x = Int(lPLabel.text!) ?? 0
         x = a - b - c - d - f
         if Int(lPLabel.text!) ?? 0 < x {
-            warningLabel.text = "The total of the point inside the text field \(x) greater then the player's points \(lPLabel.text!) "
+        storyLabel.text = "The total of the point inside the text field \(x) greater then the player's points \(lPLabel.text!) "
             fieldLP.text = ""
             fieldDF.text = ""
             fieldPD.text = ""
