@@ -48,8 +48,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageHeroB: UIImageView!
     @IBOutlet weak var imageBoss: UIImageView!
     @IBOutlet weak var turnLabel: UILabel!
-    
-    
+    @IBOutlet weak var whatHappening: UILabel!
+    @IBOutlet weak var whatNext: UILabel!
     
     
     
@@ -150,14 +150,17 @@ class ViewController: UIViewController {
             }
             
            // player.powerDamage! -= dFBoss
+            whatHappening.text = "PD Hero: \(powerDamage) - DF Boss: \(dFBoss) = \(powerDamage - dFBoss)"
             powerDamage -= dFBoss
             //if player.powerDamage! < 0{
-            if powerDamage < 0{
+            if powerDamage <= 0{
                // player.powerDamage = 0
                 powerDamage = 0
                 labelGame.text = "The boss defense succeeded in repelling the attack 🛡"
+                whatNext.text = ""
             }else{
         //   lifePointBoss -= player.powerDamage!
+                whatNext.text = "LP Boss: \(lifePointBoss) - PD Hero: \(powerDamage) = \(lifePointBoss - powerDamage)"
                 lifePointBoss -= powerDamage
             if lifePointBoss < 0 {
                 lifePointBoss = 0
@@ -165,7 +168,7 @@ class ViewController: UIViewController {
             lP.text = String(lifePointBoss)
         
           // labelGame.text = "Hero Use Power Damage \(player.powerDamage!), Boss lost life point💔"
-                labelGame.text = "Hero Use Power Damage \(powerDamage), Boss lost life point💔"
+                labelGame.text = "Hero Use Power Damage , Boss lost life point💔"
             }
             randomLabel.text = "Result of the Dice : \(randomDiceHero) 🎲"
         case 10...19:
@@ -176,36 +179,42 @@ class ViewController: UIViewController {
                 useScHero = false
             }
             //player.weaponDamage! -= dFBoss
+            whatHappening.text = "WD Hero: \(weaponDamage) - PD Hero: \(dFBoss) = \(weaponDamage - dFBoss)"
             weaponDamage -= dFBoss
            // if player.weaponDamage! < 0{
-            if weaponDamage < 0{
+            if weaponDamage <= 0{
                // player.weaponDamage! = 0
                 weaponDamage = 0
         labelGame.text = "The boss defense succeeded in repelling the attack 🛡"
+                whatNext.text = ""
         }else{
             //lifePointBoss -= player.weaponDamage!
+            whatNext.text = "LP Boss: \(lifePointBoss) - WD Hero: \(weaponDamage) = \(lifePointBoss - weaponDamage)"
             lifePointBoss -= weaponDamage
             if lifePointBoss < 0 {
                 lifePointBoss = 0
             }
             lP.text = String(lifePointBoss)
           //  labelGame.text = "Hero use Weapon Damage \(player.weaponDamage!), Boss lost life point💔"
-            labelGame.text = "Hero use Weapon Damage \(weaponDamage), Boss lost life point💔"
+            labelGame.text = "Hero use Weapon Damage , Boss lost life point💔"
         }
             randomLabel.text = "Result of the Dice : \(randomDiceHero) 🎲"
         case 20:
             
          UseSpecialCapacity()
             //player.specialCapacity! -= dFBoss
+            whatHappening.text = "SC Hero: \(specialCapacity) - DF Boss: \(dFBoss) = \(specialCapacity - dFBoss)"
             specialCapacity -= dFBoss
          // if player.specialCapacity! < 0{
-           if  specialCapacity < 0 {
+           if  specialCapacity <= 0 {
                // player.specialCapacity = 0
                 specialCapacity = 0
               labelGame.text = "The boss defense succeeded in repelling the attack 🛡"
+               whatNext.text = ""
           }else{
               // labelGame.text = "Hero Use Special Capacity \(player.specialCapacity!), Boss lost life point💔"
-              labelGame.text = "Hero Use Special Capacity \(specialCapacity), Boss lost life point💔"
+              whatNext.text = "LP Boss: \(lifePointBoss) - SC Hero: \(specialCapacity) = \(lifePointBoss - specialCapacity)"
+              labelGame.text = "Hero Use Special Capacity , Boss lost life point💔"
           // lifePointBoss -= player.specialCapacity!
                lifePointBoss -= specialCapacity
             if lifePointBoss < 0 {
@@ -242,13 +251,16 @@ class ViewController: UIViewController {
             }
             
           // pDamageBoss -= player.defense!
+            whatHappening.text = "PD Boss: \(pDamageBoss) - DF Hero: \(defense) = \(pDamageBoss - defense)"
             pDamageBoss -= defense
-            if pDamageBoss < 0{
+            if pDamageBoss <= 0{
                 pDamageBoss = 0
                 labelGame.text = "The hero defense succeeded in repelling the attack 🛡"
+                whatNext.text = ""
             }else{
             
             //player.lifePoint! -= pDamageBoss
+                whatNext.text = "LP Hero: \(lifePoint) - PD Boss: \(pDamageBoss) = \(lifePoint - pDamageBoss)"
                 lifePoint -= pDamageBoss
            // if player.lifePoint! < 0 {
                 if lifePoint < 0 {
@@ -257,7 +269,7 @@ class ViewController: UIViewController {
             }
            // lPP.text = String(player.lifePoint!)
                 lPP.text = String(lifePoint)
-            labelGame.text = "Boss Use Power Damage \(pDamageBoss), Hero lost life point💔"
+            labelGame.text = "Boss Use Power Damage , Hero lost life point💔"
             }
             randomLabel.text = "Result of the Dice : \(randomDiceBoss) 🎲"
         case 10 ... 19:
@@ -267,12 +279,15 @@ class ViewController: UIViewController {
                 useScBoss1 = false
             }
           //  wDamageBoss -= player.defense!
+            whatHappening.text = " WD Boss: \(wDamageBoss) - DF Hero: \(defense) = \(wDamageBoss - defense)"
             wDamageBoss -= defense
-            if wDamageBoss < 0{
+            if wDamageBoss <= 0{
                 wDamageBoss = 0
                 labelGame.text = "The hero defense succeeded in repelling the attack 🛡"
+                whatNext.text = ""
             }else{
            // player.lifePoint! -= wDamageBoss
+                whatNext.text = "LP Hero: \(lifePoint) - WD Boss: \(wDamageBoss) = \(lifePoint - wDamageBoss)"
                 lifePoint -= wDamageBoss
             //if player.lifePoint! < 0 {
                 if lifePoint < 0 {
@@ -281,7 +296,7 @@ class ViewController: UIViewController {
             }
            // lPP.text = String(player.lifePoint!)
                 lPP.text = String(lifePoint)
-            labelGame.text = "Boss Use Weapon Damage \(wDamageBoss), Hero lost life point💔"
+            labelGame.text = "Boss Use Weapon Damage , Hero lost life point💔"
             }
             randomLabel.text = "Result of the Dice : \(randomDiceBoss) 🎲"
         
@@ -294,13 +309,16 @@ class ViewController: UIViewController {
             }
             
            // sCBoss -= player.defense!
+            whatHappening.text = "SC Boss: \(sCBoss) - DF Hero: \(defense) = \(sCBoss - defense)"
             sCBoss -= defense
-           if sCBoss < 0{
+           if sCBoss <= 0{
                //  player.specialCapacity = 0
                specialCapacity = 0
                labelGame.text = "The hero defense succeeded in repelling the attack 🛡"
+               whatNext.text = ""
            }else{
-            labelGame.text = "Boss Use Special Capacity \(sCBoss), Hero lost life point💔"
+               whatNext.text = "LP Hero: \(lifePoint) - SC Boss: \(sCBoss) = \(lifePoint - sCBoss)"
+            labelGame.text = "Boss Use Special Capacity , Hero lost life point💔"
           //  player.lifePoint! -= sCBoss
                lifePoint -= sCBoss
           //  if player.lifePoint! < 0 {
