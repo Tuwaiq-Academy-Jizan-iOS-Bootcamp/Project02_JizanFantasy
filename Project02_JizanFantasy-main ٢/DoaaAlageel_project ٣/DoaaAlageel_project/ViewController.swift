@@ -143,15 +143,15 @@ class ViewController: UIViewController {
         switch rolradaic {
         case 1...9 :
             dscripGame.text += ("dise number: \(rolradaic)\n")
-            dscripGame.text += (" point \(lableUserName.text!) is \(lifp1)\n")
-            if ((def1 - pow2) <= 0){
-                lifp1 = (lifp1 + (def1 - pow2 ))
+            dscripGame.text += (" point \(labelUsername2.text!) is \(user2LP.text!)\n")
+            if ((def2 - pow1) <= 0){
+                lifp2 = (lifp2 + (def2 - pow1 ))
                 
                 } else {
-                    lifp1 = (lifp1 - 0)
+                    lifp2 = (lifp2 - 0)
                 }
-            lableLP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point  \(lableLP.text!)\n")
+            user2LP.text = String(checkZero(num:lifp2))
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point  \(user2LP.text!)\n")
             
         print("user use dp")
             
@@ -160,18 +160,18 @@ class ViewController: UIViewController {
     case 10...19 :
             
             dscripGame.text += ("dise number : \(rolradaic)\n")
-            dscripGame.text += ("life point: \( labelUsername2.text!) is \(labelUsername2.text!)\n")
+            dscripGame.text += ("life point: \( labelUsername2.text!) is \(user2LP.text!)\n")
             
             if ((def2 - weap1) <= 0){
         lifp2 = (lifp2 + (def2 - weap1))
                  }
                  else{
-            lifp1 = (lifp1 - 0)
+            lifp2 = (lifp2 - 0)
         }
-            lableLP.text = String(checkZero(num:lifp2))
+            user2LP.text = String(checkZero(num:lifp2))
             dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1)life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
             
-            lableLP.text = String(lifp2)
+            //lableLP.text = String(lifp2)
             
            
             
@@ -184,17 +184,22 @@ class ViewController: UIViewController {
     
         switch rolradaic {
         case 1...9 :
-            if ((def1 - pow1) <= 0){
+            dscripGame.text += ("dise number : \(rolradaic)\n")
+            dscripGame.text += ("life point: \( lableUserName.text!) is \(lableLP.text!)\n")
+            if ((def1 - pow2) <= 0){
                 lifp1 = (lifp1 + (def1 - pow2 ))
                 } else {
                     lifp1 = (lifp1 - 0)
                 }
-            lableLP.text = String(checkZero(num:lifp2))
-            print("\(lableLP.text!) use power damage : \(pow2) life point  is \(lifp1)")
+            lableLP.text = String(checkZero(num:lifp1))
+            print("\(lableLP.text!) use power damage : \(pow2) life point  is \(lableLP.text!)")
             
         print("player use dp")
         
     case 10...19 :
+            
+                dscripGame.text += ("dise number : \(rolradaic)\n")
+                dscripGame.text += ("life point: \( lableUserName.text!) is \(lableLP.text!)\n")
             if ((def1 - weap2) <= 0){
         lifp1 = (lifp1 + (def1 - weap2))
                  }
@@ -202,7 +207,7 @@ class ViewController: UIViewController {
             lifp1 = (lifp1 - 0)
         }
             lableLP.text = String(checkZero(num:lifp1))
-            print(" use weapon damage :\(weap2) life point :  is \(lifp1)")
+            print(" use weapon damage :\(weap2) life point :  is \(lableLP.text!)")
             
             
         
