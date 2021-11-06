@@ -213,6 +213,34 @@
                                     <action selector="restButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M23-9L-DfV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-cA-iaq">
+                                <rect key="frame" x="326" y="394" width="68" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-Ze-M3G">
+                                <rect key="frame" x="326" y="429" width="68" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="map-qc-BfT">
+                                <rect key="frame" x="111" y="394" width="68" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jB-Pk-ceN">
+                                <rect key="frame" x="111" y="429" width="68" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,6 +257,8 @@
                         <outlet property="desccriptionGame" destination="rBm-6j-w33" id="1ez-Am-9TF"/>
                         <outlet property="imageViewPlayer1" destination="zYq-aS-w06" id="Npq-Tk-G9k"/>
                         <outlet property="imageViewPlayer2v1" destination="kr3-4q-giu" id="PPl-g0-wUs"/>
+                        <outlet property="pdLp1" destination="map-qc-BfT" id="Oac-bX-6n4"/>
+                        <outlet property="pdLp2" destination="hZW-cA-iaq" id="vf8-Xo-Vq7"/>
                         <outlet property="player2LabelDF" destination="1P2-jf-kFt" id="aBC-Ms-1SQ"/>
                         <outlet property="player2LabelLP" destination="Q0d-1Y-w8G" id="255-FM-7uV"/>
                         <outlet property="player2LabelName" destination="jOf-Aa-dip" id="ziH-pK-FrG"/>
@@ -236,6 +266,8 @@
                         <outlet property="player2LabelSC" destination="wmx-oo-XUo" id="MEs-JL-sA7"/>
                         <outlet property="player2LabelWD" destination="WLT-if-2NI" id="dOR-eW-3jP"/>
                         <outlet property="resultDiceLabel" destination="Hpf-B3-b5k" id="6aK-eH-cFj"/>
+                        <outlet property="wdLp1" destination="0jB-Pk-ceN" id="smY-ak-mEA"/>
+                        <outlet property="wdLp2" destination="sHn-Ze-M3G" id="34x-JC-CLL"/>
                         <segue destination="mbz-ar-3AJ" kind="show" identifier="addPlayer" id="qdz-j3-Yx8"/>
                     </connections>
                 </viewController>

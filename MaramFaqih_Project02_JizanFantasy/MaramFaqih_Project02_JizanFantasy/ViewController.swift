@@ -90,6 +90,12 @@ class ViewController: UIViewController {
     var addPDP2 = ""
     var addWDP2 = ""
     
+    @IBOutlet weak var pdLp1: UILabel!
+    @IBOutlet weak var wdLp1: UILabel!
+    
+    @IBOutlet weak var pdLp2: UILabel!
+    @IBOutlet weak var wdLp2: UILabel!
+    
     //Temporary variables to save and delete values
     var tempLP1 = 0
     var tempPD1 = 0
@@ -154,7 +160,9 @@ class ViewController: UIViewController {
                     lPP2 = (lPP2 + (lDFP2 - (lDPP1+tempPD1)))
                     if(tempPD1 != 0){
                         tempPD1 = 0
+                        pdLp1.text = ""
                     }
+                    
                     
            
                 }else{
@@ -171,6 +179,7 @@ class ViewController: UIViewController {
                     lPP2 = (lPP2 + (lDFP2 - (lWDP1+tempWD1)))
                     if(tempWD1 != 0){
                         tempWD1 = 0
+                        wdLp1.text = ""
                     }
                 }
                 else{
@@ -195,8 +204,15 @@ class ViewController: UIViewController {
                 else{
                     lPP2 = (lPP2 - 0)
                 }
+                if(tempPD1 > 0){
+                    pdLp1.text = "+\(tempPD1)"
+                }
+                if(tempWD1 > 0){
+                    wdLp1.text = "+\(tempWD1)"
+                }
+                
                 player2LabelLP.text = String(checkZero(num:lPP2))
-                desccriptionGame.text += ("\(bossLabelName.text!) use Special Capacity: \(lWSC1) ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point \(bossLabelName.text!) :\(bossLabelLP.text!)\n")
+                desccriptionGame.text += ("\(bossLabelName.text!) use Special Capacity: \(lWSC1) with , +\(tempPD1) PD, +\(addWDP1) WD,  +\(addLPP1) LP, ,life point: \( player2LabelName.text!) is \( player2LabelLP.text!),and life point \(bossLabelName.text!) :\(bossLabelLP.text!)\n")
             }
             desccriptionGame.text += "----------------------------------------\n"
            
@@ -212,11 +228,12 @@ class ViewController: UIViewController {
                 
             case 1...9 :
                 
-                desccriptionGame.text += ("point \(player2LabelName.text!) is \(lPP1)\n")
+                desccriptionGame.text += ("point \(bossLabelName.text!) is \(lPP1)\n")
                 if ((lDFP1 - (lDPP2-tempPD2)) <= 0) {
                     lPP1 = (lPP1 + (lDFP1 - lDPP2))
                     if(tempPD2 != 0){
                         tempPD2 = 0
+                        pdLp2.text = ""
                     }
                 }
                 else{
@@ -234,6 +251,7 @@ class ViewController: UIViewController {
                     lPP1 = (lPP1 + (lDFP1 - lWDP2))
                     if(tempWD2 != 0){
                         tempWD2 = 0
+                        wdLp2.text = ""
                     }
                 }
                 else{
@@ -259,8 +277,15 @@ class ViewController: UIViewController {
                 else{
                     lPP1 = (lPP1 - 0)
                 }
+               
+                if(tempPD2 > 0){
+                    pdLp2.text = "+\(tempPD2)"
+                }
+                if(tempWD2 > 0){
+                    wdLp2.text = "+\(tempWD2)"
+                }
                 bossLabelLP.text = String(checkZero(num:lPP1))
-                desccriptionGame.text += ("\(player2LabelLP.text!) use Special Capacity: \(lWDP2) life point \(bossLabelName.text!): is \(bossLabelLP.text!),and life point \( player2LabelName.text!) :\(player2LabelLP.text!)\n")
+                desccriptionGame.text += ("\(player2LabelLP.text!) use Special Capacity: \(lWDP2) with , +\(tempPD2) PD, +\(addWDP2) WD,  +\(addLPP2) LP, life point \(bossLabelName.text!): \(bossLabelLP.text!),and life point \( player2LabelName.text!) : \(player2LabelLP.text!)\n")
                 
             }
             desccriptionGame.text += "----------------- End Turn \(turnNo) -----------------\n"
@@ -326,6 +351,7 @@ class ViewController: UIViewController {
         player2LabelSC.text = "0"
         imageViewPlayer2v1.image=UIImage(named: "PLAYER2")
         desccriptionGame.text = ""
+        ButtonRollingOutlet.isEnabled = true
         
         
     }
