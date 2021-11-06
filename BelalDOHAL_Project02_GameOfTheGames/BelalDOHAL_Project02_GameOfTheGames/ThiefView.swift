@@ -1,5 +1,4 @@
 import UIKit
-
 class ThiefView: UIViewController {
     //Image//
     var pImage = 3
@@ -14,6 +13,7 @@ class ThiefView: UIViewController {
     var sCBonusWD = 35
     var sCBonusPD = 0
     var sCBonusLP = 5
+    //DEF//
     //DEF//
     @IBOutlet weak var plusDEF: UIButton!
     @IBOutlet weak var minusDEF: UIButton!
@@ -36,9 +36,55 @@ class ThiefView: UIViewController {
     var stateLP = 0
     //Save//
     @IBOutlet weak var warriorSaveButton: UIButton!
-//Override//------------
+    //Override//------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Long Click and One Click//
+        //DEF//
+        let plusDEFTap = UITapGestureRecognizer(target: self, action: #selector (defencePLUS))
+        let plusDEFLong = UILongPressGestureRecognizer(target: self, action: #selector(defencePLUS))
+        plusDEFTap.numberOfTapsRequired = 1
+        plusDEF.addGestureRecognizer(plusDEFTap)
+        plusDEF.addGestureRecognizer(plusDEFLong)
+        let minusDEFTap = UITapGestureRecognizer(target: self, action: #selector (defenseMINUS))
+        let minusDEFLong = UILongPressGestureRecognizer(target: self, action: #selector(defenseMINUS))
+        minusDEFTap.numberOfTapsRequired = 1
+        minusDEF.addGestureRecognizer(minusDEFTap)
+        minusDEF.addGestureRecognizer(minusDEFLong)
+        //LP//
+        let plusLPTap = UITapGestureRecognizer(target: self, action: #selector (lifePointsActionPlus))
+        let plusLPLong = UILongPressGestureRecognizer(target: self, action: #selector(lifePointsActionPlus))
+        plusLPTap.numberOfTapsRequired = 1
+        pluseLP.addGestureRecognizer(plusLPTap)
+        pluseLP.addGestureRecognizer(plusLPLong)
+        let minusLPTap = UITapGestureRecognizer(target: self, action: #selector (lifePointsActionMinus))
+        let minusLPLong = UILongPressGestureRecognizer(target: self, action: #selector(lifePointsActionMinus))
+        minusLPTap.numberOfTapsRequired = 1
+        minusLP.addGestureRecognizer(minusLPTap)
+        minusLP.addGestureRecognizer(minusLPLong)
+        //PD//
+        let plusPDTap = UITapGestureRecognizer(target: self, action: #selector (powerPLUS))
+        let plusPDLong = UILongPressGestureRecognizer(target: self, action: #selector(powerPLUS))
+        plusPDTap.numberOfTapsRequired = 1
+        plusPD.addGestureRecognizer(plusPDTap)
+        plusPD.addGestureRecognizer(plusPDLong)
+        let minusPDTap = UITapGestureRecognizer(target: self, action: #selector (powerMINUS))
+        let minusPDLong = UILongPressGestureRecognizer(target: self, action: #selector(powerMINUS))
+        minusPDTap.numberOfTapsRequired = 1
+        minusPD.addGestureRecognizer(minusPDTap)
+        minusPD.addGestureRecognizer(minusPDLong)
+        //WD//
+        let plusWDTap = UITapGestureRecognizer(target: self, action: #selector (weaponPLUS))
+        let plusWDLong = UILongPressGestureRecognizer(target: self, action: #selector(weaponPLUS))
+        plusWDTap.numberOfTapsRequired = 1
+        plusWD.addGestureRecognizer(plusWDTap)
+        plusWD.addGestureRecognizer(plusWDLong)
+        let minusWDTap = UITapGestureRecognizer(target: self, action: #selector (weaponMINUS))
+        let minusWDLong = UILongPressGestureRecognizer(target: self, action: #selector(weaponMINUS))
+        minusWDTap.numberOfTapsRequired = 1
+        minusWD.addGestureRecognizer(minusWDTap)
+        minusWD.addGestureRecognizer(minusWDLong)
+        //View//
         playerTextField.delegate = self
         warriorSaveButton.layer.cornerRadius = 20
         playerSP.text = "\(stateSP)"
@@ -60,11 +106,11 @@ class ThiefView: UIViewController {
         sendInfo?.lifePValue = stateLP
         sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCText = "75 Damage / +5(LP) / +35(WD)"
+        sendInfo?.specialCText = "Shadow Fang"
     }
     //LP Actions//
     //Plus//
-    @IBAction func lifePointsActionPlus(_ sender: Any) {
+    @objc func lifePointsActionPlus(_ sender: Any) {
         if stateSP > 0 {
             minusLP.isEnabled = true
             stateSP -= 1
@@ -76,7 +122,7 @@ class ThiefView: UIViewController {
         }
     }
     //Minus//
-    @IBAction func lifePointsActionMinus(_ sender: Any) {
+    @objc func lifePointsActionMinus(_ sender: Any) {
         if stateLP > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -90,9 +136,9 @@ class ThiefView: UIViewController {
             minusLP.isEnabled = false
         }
     }
-    //Defense Action//
+    //Defense Function//
     //Plus//
-    @IBAction func defencePLUS(_ sender: Any) {
+    @objc func defencePLUS(_ sender: Any) {
         if stateSP > 0 && stateDEF < 25 {
             minusDEF.isEnabled = true
             stateSP -= 1
@@ -104,7 +150,7 @@ class ThiefView: UIViewController {
         }
     }
     //Minus//
-    @IBAction func defenseMINUS(_ sender: Any) {
+    @objc func defenseMINUS(_ sender: Any) {
         if stateDEF > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -120,7 +166,7 @@ class ThiefView: UIViewController {
     }
     //Power Actions//
     //Plus//
-    @IBAction func powerPLUS(_ sender: Any) {
+    @objc func powerPLUS(_ sender: Any) {
         if stateSP > 0 && statePD < 15 {
             minusPD.isEnabled = true
             stateSP -= 1
@@ -132,7 +178,7 @@ class ThiefView: UIViewController {
         }
     }
     //Minus//
-    @IBAction func powerMINUS(_ sender: Any) {
+    @objc func powerMINUS(_ sender: Any) {
         if statePD > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -148,7 +194,7 @@ class ThiefView: UIViewController {
     }
     //Weapon Actions//
     //Plus//
-    @IBAction func weaponPLUS(_ sender: Any) {
+    @objc func weaponPLUS(_ sender: Any) {
         if stateSP > 0 && stateWD < 30 {
             minusWD.isEnabled = true
             stateSP -= 1
@@ -160,7 +206,7 @@ class ThiefView: UIViewController {
         }
     }
     //Minus//
-    @IBAction func weaponMINUS(_ sender: Any) {
+    @objc func weaponMINUS(_ sender: Any) {
         if stateWD > 0 {
             pluseLP.isEnabled = true
             plusPD.isEnabled = true
@@ -174,6 +220,18 @@ class ThiefView: UIViewController {
             minusWD.isEnabled = false
         }
     }
+    @IBAction func goPlayer(_ sender: Any) {
+        if stateSP == 0 {
+        performSegue(withIdentifier: "goRouge", sender: self)
+        }else {
+            showAlert()
+        }
+    }
+    func showAlert() {
+        let alert = UIAlertController(title: "You have Skill Points", message: "Use It", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in}))
+        present(alert, animated: true)
+    }
 }
 //Return Text Field Function//
 extension ThiefView: UITextFieldDelegate {
@@ -182,3 +240,5 @@ extension ThiefView: UITextFieldDelegate {
         return true
     }
 }
+
+
