@@ -1,5 +1,4 @@
 import UIKit
-
 class WizardView: UIViewController {
     //Image//
     var pImage = 2
@@ -106,7 +105,7 @@ class WizardView: UIViewController {
         sendInfo?.lifePValue = stateLP
         sendInfo?.pImage = pImage
         sendInfo?.playerNL = playerTextField.text!
-        sendInfo?.specialCText = "100 Damage / +5(LP) / +10(WD)"
+        sendInfo?.specialCText = "Xenoglossy"
     }
     //LP Actions//
     //Plus//
@@ -139,13 +138,13 @@ class WizardView: UIViewController {
     //Defense Function//
     //Plus//
     @objc func defencePLUS(_ sender: Any) {
-        if stateSP > 0 && stateDEF < 20 {
+        if stateSP > 0 && stateDEF < 15 {
             minusDEF.isEnabled = true
             stateSP -= 1
             stateDEF += 1
             playerSP.text = "\(stateSP)"
             playerDEF.text = "\(stateDEF)"
-        }else if stateDEF == 20 || stateSP == 0 {
+        }else if stateDEF == 15 || stateSP == 0 {
             plusDEF.isEnabled = false
         }
     }
@@ -167,13 +166,13 @@ class WizardView: UIViewController {
     //Power Actions//
     //Plus//
     @objc func powerPLUS(_ sender: Any) {
-        if stateSP > 0 && statePD < 30 {
+        if stateSP > 0 && statePD < 70 {
             minusPD.isEnabled = true
             stateSP -= 1
             statePD += 1
             playerSP.text = "\(stateSP)"
             playerPD.text = "\(statePD)"
-        }else if statePD == 30 || stateSP == 0 {
+        }else if statePD == 70 || stateSP == 0 {
             plusPD.isEnabled = false
         }
     }
@@ -195,13 +194,13 @@ class WizardView: UIViewController {
     //Weapon Actions//
     //Plus//
     @objc func weaponPLUS(_ sender: Any) {
-        if stateSP > 0 && stateWD < 40 {
+        if stateSP > 0 && stateWD < 20 {
             minusWD.isEnabled = true
             stateSP -= 1
             stateWD += 1
             playerSP.text = "\(stateSP)"
             playerWD.text = "\(stateWD)"
-        }else if stateWD == 40 || stateSP == 0 {
+        }else if stateWD == 20 || stateSP == 0 {
             plusWD.isEnabled = false
         }
     }
@@ -219,6 +218,18 @@ class WizardView: UIViewController {
         }else if stateWD == 0 {
             minusWD.isEnabled = false
         }
+    }
+    @IBAction func goPlayer(_ sender: Any) {
+        if stateSP == 0 {
+        performSegue(withIdentifier: "goMage", sender: self)
+        }else {
+            showAlert()
+        }
+    }
+    func showAlert() {
+        let alert = UIAlertController(title: "You have Skill Points", message: "Use It", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in}))
+        present(alert, animated: true)
     }
 }
 //Return Text Field Function//

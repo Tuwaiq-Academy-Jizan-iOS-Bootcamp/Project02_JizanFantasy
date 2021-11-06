@@ -24,6 +24,8 @@ class FightView: UIViewController {
     //Dice Thing//
     @IBOutlet weak var rulleTheDice: UIButton!
     //Turn Text Things//
+    @IBOutlet weak var turnWhat: UILabel!
+    @IBOutlet weak var fightDescreption: UILabel!
     //----------Boss Things//
     @IBOutlet weak var bossUIImage: UIImageView!
     var bossImage = 0
@@ -47,6 +49,7 @@ class FightView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         diceLable.text = "Start The Game"
+        fightDescreption.layer.cornerRadius = 40
         rulleTheDice.layer.cornerRadius = 20
         if pImage == 1 {
             playerUIImage.image = UIImage(named: "Warrior")
@@ -84,38 +87,59 @@ class FightView: UIViewController {
     var turnNumber = 0
     var turnHow = true
     @IBAction func rulleTheDice(_ sender: Any) {
+        //turnNumber += 1
         let rD = Int.random(in: 1...20)
         diceLable.text = "\(rD)"
         if turnHow == true {
             switch rD {
             case 1...9:
+                turnAndComment()
                 turnHow = false
-                let wDCal = powerDValue - bStateDEF
-                if wDCal <= 0 {
-                    bStateLP -= 0
-                }else {
-                    bStateLP -= wDCal
-                }
-                bossLP.text = "\(bStateLP)"
-                lifePLable.text = "\(lifePValue)"
-            case 10...19:
-                turnHow = false
-                let pDCal = weaponDValue - bStateDEF
+                var pDCal = powerDValue - bStateDEF
                 if pDCal <= 0 {
                     bStateLP -= 0
                 }else {
                     bStateLP -= pDCal
                 }
+                deadLine()
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
-            case 20:
+                if pDCal < 0 {
+                    pDCal = 0
+                }
+                fightDescreption.text = """
+                \(playerNL) use his power to Damage \(bossName)
+                 by \(pDCal)
+                """
+            case 10...19:
+                turnAndComment()
                 turnHow = false
-                let sCDcal = sCValue - bStateDEF
+                var wDCal = weaponDValue - bStateDEF
+                if wDCal <= 0 {
+                    bStateLP -= 0
+                }else {
+                    bStateLP -= wDCal
+                }
+                deadLine()
+                bossLP.text = "\(bStateLP)"
+                lifePLable.text = "\(lifePValue)"
+                if wDCal < 0 {
+                    wDCal = 0
+                }
+                fightDescreption.text = """
+                \(playerNL) use his weapon to Damage \(bossName)
+                 by \(wDCal)
+                """
+            case 20:
+                turnAndComment()
+                turnHow = false
+                var sCDcal = sCValue - bStateDEF
                 if sCDcal <= 0 {
                     bStateLP -= 0
                 }else {
                     bStateLP -= sCDcal
                 }
+                deadLine()
                 lifePValue += sCBonusLP
                 powerDValue += sCBonusPD
                 weaponDValue += sCBonusWD
@@ -123,42 +147,62 @@ class FightView: UIViewController {
                 weaponDLable.text = "\(weaponDValue)"
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
+                if sCDcal < 0 {
+                    sCDcal = 0
+                }
+                fightDescreption.text = """
+                \(playerNL) use his Special Capacity to hit \(bossName)
+                and do \(sCDcal) Damage to him also recover \(sCBonusLP) L.P and empower his W.D by \(sCBonusWD) and his P.D by \(sCBonusPD)
+                """
             default: print("ERROR")
             }
         }else {
             switch rD {
             case 1...9:
                 turnHow = true
-                turnNumber += 1
-                let bPDCal = bStatePD - defenseValue
+                var bPDCal = bStatePD - defenseValue
                 if bPDCal <= 0 {
                     lifePValue -= 0
                 }else {
                     lifePValue -= bPDCal
                 }
+                deadLine()
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
+                if bPDCal < 0 {
+                    bPDCal = 0
+                }
+                fightDescreption.text = """
+                \(bossName) use his power to hit \(playerNL)
+                and do \(bPDCal) Damage to him
+                """
             case 10...19:
                 turnHow = true
-                turnNumber += 1
-                let bWDCal = bStateWD - defenseValue
+                var bWDCal = bStateWD - defenseValue
                 if bWDCal <= 0 {
                     lifePValue -= 0
                 }else {
                     lifePValue -= bWDCal
                 }
+                deadLine()
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
+                if bWDCal < 0 {
+                    bWDCal = 0
+                }
+                fightDescreption.text = """
+                \(bossName) use his weapon to hit \(playerNL)
+                and do \(bWDCal) Damage to him
+                """
             case 20:
                 turnHow = true
-                turnNumber += 1
-                let bSCDcal = bStateSCD - defenseValue
+                var bSCDcal = bStateSCD - defenseValue
                 if bSCDcal <= 0 {
                     lifePValue -= 0
                 }else {
                     lifePValue -= bSCDcal
                 }
-                //lifePValue -= (bStateSCD - defenseValue)
+                deadLine()
                 bStateLP += bStateSCLP
                 bStatePD += bStateSCPD
                 bStateWD += bStateSCWD
@@ -166,8 +210,31 @@ class FightView: UIViewController {
                 bossWD.text = "\(bStateWD)"
                 bossLP.text = "\(bStateLP)"
                 lifePLable.text = "\(lifePValue)"
+                if bSCDcal < 0 {
+                    bSCDcal = 0
+                }
+                fightDescreption.text = """
+\(bossName) use his Special Capacity to hit \(playerNL) and do \(bSCDcal) Damage to him also recover \(bStateSCLP) L.P and empower his W.D by \(bStateSCWD) and his P.D by \(bStateSCPD)
+"""
             default: print("ERROR")
             }
+        }
+    }
+    func deadLine() {
+        if lifePValue <= 0 {
+            lifePValue = 0
+            rulleTheDice.isEnabled = false
+            diceLable.text = "YOU LOST !"
+        }else if bStateLP <= 0 {
+            bStateLP = 0
+            rulleTheDice.isEnabled = false
+            diceLable.text = "YOU WIN !"
+        }
+    }
+    func turnAndComment(){
+        if turnHow == true {
+            turnNumber += 1
+            turnWhat.text = "Turn number: //\(turnNumber)//"
         }
     }
 }
