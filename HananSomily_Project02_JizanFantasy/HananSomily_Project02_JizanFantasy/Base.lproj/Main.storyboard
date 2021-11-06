@@ -151,7 +151,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="must describe turn by turn what happen" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lVt-mk-H8D">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lVt-mk-H8D">
                                 <rect key="frame" x="8" y="593" width="393" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94737797838582638" green="1" blue="0.98830176295339445" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

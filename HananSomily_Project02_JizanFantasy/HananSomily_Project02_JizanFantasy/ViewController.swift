@@ -102,8 +102,9 @@ class ViewController: UIViewController {
         var  playr2PD = Int(pdOfPlayer2labl.text!)!
         var  playr1WD = Int(wdOfPlayer1Labl.text!)!
         var  playr2WD = Int(wdOfPlayr2labl.text!)!
-        var  playr2SC = Int(wdOfPlayr2labl.text!)!
+        var  playr2SC = Int(scOfPlayer2Labl.text!)!
         var  playr1SC = Int(scOfPlayer1Labl.text!)!
+        sFlag = false
         if winner == false {
             bossSCLP = 0
             bossSCPD = 0
@@ -112,9 +113,9 @@ class ViewController: UIViewController {
             spichalCapacityWD = 0
             spichalCapacityPD = 0
         turn += 1
-        discriptionOfActionTextView.text = "♧ This is the start of turn \(turn)♧\n"
+        discriptionOfActionTextView.text += "♧ This is the start of turn \(turn)♧\n"
         discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber)🎲🎲 -- \n ")
-sFlag = false
+//sFlag = false
           print("dice \(diceNumber)")
           //print dice
           switch diceNumber{
@@ -155,7 +156,7 @@ sFlag = false
               playr2LP += spichalCapacityLP
               sFlag = true
               lpOfPlayr1Labl.text = String(playr1LP)
-              discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity ☢︎☠︎ \(playr2SC),,, life Point \(playr2LP)\n")
+              discriptionOfActionTextView.text += ("\(playr2N) Use Special Capacity ☢︎☠︎ \(playr2SC) And \(playr1N) Use Defense \(playr1DF) ,,, life Point \(playr2LP)for \(playr2N) And life Point \(playr1LP)for \(playr1N)\n")
           default:
              print( "OPS")
           }
@@ -163,7 +164,7 @@ sFlag = false
             discriptionOfActionTextView.text += ("------------------------------------\n")
             discriptionOfActionTextView.text += (" -- 🎲🎲Roll Dice\(diceNumber1)🎲🎲 -- \n ")
             print(diceNumber1)
-            var sFlag = false
+            //var sFlag = false
 
         switch diceNumber1{
         case 1...9:
@@ -204,7 +205,8 @@ sFlag = false
             playr1LP += bossSCLP
             sFlag = true
             lpOfPlayer2Labl.text = String(playr2LP)
-            discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity ☢︎☠︎ \(playr1SC),,, life Point \(playr1LP)\n")
+            discriptionOfActionTextView.text += ("\(playr1N) Use Special Capacity ☢︎☠︎ \(playr1SC) And \(playr2N) Use Defense \(playr2DF),,, life Point \(playr2LP)for \(playr2N) And life Point \(playr1LP)for \(playr1N)\n")
+         
             print(reselt5 , playr2LP)
 
         default:
@@ -212,7 +214,7 @@ sFlag = false
         }
         //turn += 1
         if (playr1LP <= 0) {
-            discriptionOfActionTextView.text = ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+            discriptionOfActionTextView.text += ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
             discriptionOfActionTextView.text += ("************ ⚑ ⚑ ⚑ ⚑ ⚑ ***********\n")
             discriptionOfActionTextView.text += ("🎉🎉\(playr2N) Is a Winner 🎉🎉\n")
             discriptionOfActionTextView.text += ("*********************************\n")
@@ -223,7 +225,7 @@ sFlag = false
 
         }
         if (playr2LP <= 0) {
-            discriptionOfActionTextView.text = ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
+            discriptionOfActionTextView.text += ("\n◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉\n")
             discriptionOfActionTextView.text += ("************ ⚑ ⚑ ⚑ ⚑ ⚑ ***********\n")
             discriptionOfActionTextView.text += (" 🎉🎉\(playr1N) Is a Winner 🎉🎉 \n")
             discriptionOfActionTextView.text += ("*********************************\n")
@@ -234,8 +236,9 @@ sFlag = false
             roolButton.isEnabled = false
 
         }
-        discriptionOfActionTextView.text += "_This is the end of turn \(turn)_\n"
-
+        discriptionOfActionTextView.text +=
+            "_This is the end of turn \(turn)_\n"
+        discriptionOfActionTextView.text += "_→→→→→→→→→→→→→→←←←←←←←←←←←←←\n"
             
         }
     }

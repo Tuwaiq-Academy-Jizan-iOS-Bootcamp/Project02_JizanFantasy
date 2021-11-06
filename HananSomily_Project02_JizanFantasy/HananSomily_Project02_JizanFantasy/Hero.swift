@@ -62,23 +62,7 @@ struct HeroPlayer{
         // insertPDtextField.delegate = self
         // insertWDtextField.delegate = self
 //         var heroName = insertNameOfHeroTF.text
-//         switch heroName {
-//         case "knight" :
-//             pointOfHeroLabl.text = String(knight.lifePoint)
-//             nameOfHeroLabl.text = String(knight.name)
-//             capacityPointLabl.text = String(knight.specialCapacity)
-//
-//         case "wiza" :
-//             pointOfHeroLabl.text = String(wizard.lifePoint)
-//             nameOfHeroLabl.text = String(wizard.name)
-//             capacityPointLabl.text = String(knight.specialCapacity)
-//         case "thief" :
-//             pointOfHeroLabl.text = String(thief.lifePoint)
-//             nameOfHeroLabl.text = String(thief.name)
-//             capacityPointLabl.text = String(knight.specialCapacity)
-//         default:
-//             print("error")
-//         }
+
      }
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          var sender = segue.destination as! ViewController
@@ -136,7 +120,7 @@ extension Hero:UITextFieldDelegate{
         switch heroName {
         case "knight" :
             imageHero.image = UIImage(named: "knight")
-            pointOfHeroLabl.text = String(knight.points)
+            pointOfHeroLabl.text = String(knight.points - knight.specialCapacity)
             nameOfHeroLabl.text = String(knight.name)
             capacityPointLabl.text = String(knight.specialCapacity)
             playrSLP = knight.specialLP
@@ -150,7 +134,7 @@ extension Hero:UITextFieldDelegate{
             insertinsertWDStepper.maximumValue = Double(knight.weaponDamage)
         case "wizard" :
             imageHero.image = UIImage(named: "wizard")
-            pointOfHeroLabl.text = String(wizard.points)
+            pointOfHeroLabl.text = String(wizard.points  - wizard.specialCapacity)
             nameOfHeroLabl.text = String(wizard.name)
             capacityPointLabl.text = String(wizard.specialCapacity)
             playrSLP = wizard.specialLP
@@ -164,7 +148,7 @@ extension Hero:UITextFieldDelegate{
             insertinsertWDStepper.maximumValue = Double(wizard.weaponDamage)
         case "thief" :
             imageHero.image = UIImage(named: "thief")
-            pointOfHeroLabl.text = String(thief.points)
+            pointOfHeroLabl.text = String(thief.points - thief.specialCapacity)
             nameOfHeroLabl.text = String(thief.name)
             capacityPointLabl.text = String(thief.specialCapacity)
             playrSLP = thief.specialLP
