@@ -1,13 +1,8 @@
-//
-//  project_02_jazan_fantasyUITestsLaunchTests.swift
-//  project 02 jazan fantasyUITests
-//
-//  Created by موسى مسملي on 03/11/2021.
-//
+//___FILEHEADER___
 
 import XCTest
 
-class project_02_jazan_fantasyUITestsLaunchTests: XCTestCase {
+class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

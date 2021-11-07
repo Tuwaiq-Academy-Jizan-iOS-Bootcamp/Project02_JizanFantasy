@@ -7,68 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A31E0FF327326342002EC9D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF227326342002EC9D0 /* AppDelegate.swift */; };
-		A31E0FF527326342002EC9D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF427326342002EC9D0 /* SceneDelegate.swift */; };
-		A31E0FF727326342002EC9D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E0FF627326342002EC9D0 /* ViewController.swift */; };
-		A31E0FFA27326342002EC9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FF827326342002EC9D0 /* Main.storyboard */; };
-		A31E0FFC27326343002EC9D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FFB27326343002EC9D0 /* Assets.xcassets */; };
-		A31E0FFF27326343002EC9D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */; };
-		A31E100A27326343002EC9D0 /* project_02_jazan_fantasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */; };
-		A31E101427326344002EC9D0 /* project_02_jazan_fantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */; };
-		A31E101627326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */; };
-		A31E10232732A54A002EC9D0 /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */; };
+		A3FF188B2737C1C900FADC9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF188A2737C1C900FADC9F /* AppDelegate.swift */; };
+		A3FF188D2737C1C900FADC9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF188C2737C1C900FADC9F /* SceneDelegate.swift */; };
+		A3FF188F2737C1C900FADC9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF188E2737C1C900FADC9F /* ViewController.swift */; };
+		A3FF18922737C1C900FADC9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FF18902737C1C900FADC9F /* Main.storyboard */; };
+		A3FF18942737C1CB00FADC9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FF18932737C1CB00FADC9F /* Assets.xcassets */; };
+		A3FF18972737C1CB00FADC9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FF18952737C1CB00FADC9F /* LaunchScreen.storyboard */; };
+		A3FF18A22737C1CB00FADC9F /* progect_002_jazan__f____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF18A12737C1CB00FADC9F /* progect_002_jazan__f____Tests.swift */; };
+		A3FF18AC2737C1CB00FADC9F /* progect_002_jazan__f____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF18AB2737C1CB00FADC9F /* progect_002_jazan__f____UITests.swift */; };
+		A3FF18AE2737C1CB00FADC9F /* progect_002_jazan__f____UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF18AD2737C1CB00FADC9F /* progect_002_jazan__f____UITestsLaunchTests.swift */; };
+		A3FF18BB2737C33300FADC9F /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF18BA2737C33300FADC9F /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A31E100627326343002EC9D0 /* PBXContainerItemProxy */ = {
+		A3FF189E2737C1CB00FADC9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A31E0FE727326342002EC9D0 /* Project object */;
+			containerPortal = A3FF187F2737C1C900FADC9F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A31E0FEE27326342002EC9D0;
-			remoteInfo = "project 02 jazan fantasy";
+			remoteGlobalIDString = A3FF18862737C1C900FADC9F;
+			remoteInfo = "progect 002 jazan  f ...";
 		};
-		A31E101027326344002EC9D0 /* PBXContainerItemProxy */ = {
+		A3FF18A82737C1CB00FADC9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A31E0FE727326342002EC9D0 /* Project object */;
+			containerPortal = A3FF187F2737C1C900FADC9F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A31E0FEE27326342002EC9D0;
-			remoteInfo = "project 02 jazan fantasy";
+			remoteGlobalIDString = A3FF18862737C1C900FADC9F;
+			remoteInfo = "progect 002 jazan  f ...";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project 02 jazan fantasy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A31E0FF227326342002EC9D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A31E0FF427326342002EC9D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A31E0FF627326342002EC9D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A31E0FF927326342002EC9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A31E0FFB27326343002EC9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A31E0FFE27326343002EC9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A31E100027326343002EC9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project 02 jazan fantasyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyTests.swift; sourceTree = "<group>"; };
-		A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "project 02 jazan fantasyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyUITests.swift; sourceTree = "<group>"; };
-		A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_02_jazan_fantasyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
+		A3FF18872737C1C900FADC9F /* progect 002 jazan  f ....app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "progect 002 jazan  f ....app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FF188A2737C1C900FADC9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3FF188C2737C1C900FADC9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A3FF188E2737C1C900FADC9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3FF18912737C1C900FADC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3FF18932737C1CB00FADC9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3FF18962737C1CB00FADC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3FF18982737C1CB00FADC9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3FF189D2737C1CB00FADC9F /* progect 002 jazan  f ...Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "progect 002 jazan  f ...Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FF18A12737C1CB00FADC9F /* progect_002_jazan__f____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "progect_002_jazan__f____Tests.swift"; sourceTree = "<group>"; };
+		A3FF18A72737C1CB00FADC9F /* progect 002 jazan  f ...UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "progect 002 jazan  f ...UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FF18AB2737C1CB00FADC9F /* progect_002_jazan__f____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "progect_002_jazan__f____UITests.swift"; sourceTree = "<group>"; };
+		A3FF18AD2737C1CB00FADC9F /* progect_002_jazan__f____UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "progect_002_jazan__f____UITestsLaunchTests.swift"; sourceTree = "<group>"; };
+		A3FF18BA2737C33300FADC9F /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A31E0FEC27326342002EC9D0 /* Frameworks */ = {
+		A3FF18842737C1C900FADC9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100227326343002EC9D0 /* Frameworks */ = {
+		A3FF189A2737C1CB00FADC9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100C27326344002EC9D0 /* Frameworks */ = {
+		A3FF18A42737C1CB00FADC9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,138 +78,138 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A31E0FE627326342002EC9D0 = {
+		A3FF187E2737C1C900FADC9F = {
 			isa = PBXGroup;
 			children = (
-				A31E0FF127326342002EC9D0 /* project 02 jazan fantasy */,
-				A31E100827326343002EC9D0 /* project 02 jazan fantasyTests */,
-				A31E101227326344002EC9D0 /* project 02 jazan fantasyUITests */,
-				A31E0FF027326342002EC9D0 /* Products */,
+				A3FF18892737C1C900FADC9F /* progect 002 jazan  f ... */,
+				A3FF18A02737C1CB00FADC9F /* progect 002 jazan  f ...Tests */,
+				A3FF18AA2737C1CB00FADC9F /* progect 002 jazan  f ...UITests */,
+				A3FF18882737C1C900FADC9F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A31E0FF027326342002EC9D0 /* Products */ = {
+		A3FF18882737C1C900FADC9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */,
-				A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */,
-				A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */,
+				A3FF18872737C1C900FADC9F /* progect 002 jazan  f ....app */,
+				A3FF189D2737C1CB00FADC9F /* progect 002 jazan  f ...Tests.xctest */,
+				A3FF18A72737C1CB00FADC9F /* progect 002 jazan  f ...UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A31E0FF127326342002EC9D0 /* project 02 jazan fantasy */ = {
+		A3FF18892737C1C900FADC9F /* progect 002 jazan  f ... */ = {
 			isa = PBXGroup;
 			children = (
-				A31E0FF227326342002EC9D0 /* AppDelegate.swift */,
-				A31E0FF427326342002EC9D0 /* SceneDelegate.swift */,
-				A31E0FF627326342002EC9D0 /* ViewController.swift */,
-				A31E0FF827326342002EC9D0 /* Main.storyboard */,
-				A31E10222732A54A002EC9D0 /* ViewControllerTwo.swift */,
-				A31E0FFB27326343002EC9D0 /* Assets.xcassets */,
-				A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */,
-				A31E100027326343002EC9D0 /* Info.plist */,
+				A3FF188A2737C1C900FADC9F /* AppDelegate.swift */,
+				A3FF188C2737C1C900FADC9F /* SceneDelegate.swift */,
+				A3FF188E2737C1C900FADC9F /* ViewController.swift */,
+				A3FF18BA2737C33300FADC9F /* ViewController2.swift */,
+				A3FF18902737C1C900FADC9F /* Main.storyboard */,
+				A3FF18932737C1CB00FADC9F /* Assets.xcassets */,
+				A3FF18952737C1CB00FADC9F /* LaunchScreen.storyboard */,
+				A3FF18982737C1CB00FADC9F /* Info.plist */,
 			);
-			path = "project 02 jazan fantasy";
+			path = "progect 002 jazan  f ...";
 			sourceTree = "<group>";
 		};
-		A31E100827326343002EC9D0 /* project 02 jazan fantasyTests */ = {
+		A3FF18A02737C1CB00FADC9F /* progect 002 jazan  f ...Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A31E100927326343002EC9D0 /* project_02_jazan_fantasyTests.swift */,
+				A3FF18A12737C1CB00FADC9F /* progect_002_jazan__f____Tests.swift */,
 			);
-			path = "project 02 jazan fantasyTests";
+			path = "progect 002 jazan  f ...Tests";
 			sourceTree = "<group>";
 		};
-		A31E101227326344002EC9D0 /* project 02 jazan fantasyUITests */ = {
+		A3FF18AA2737C1CB00FADC9F /* progect 002 jazan  f ...UITests */ = {
 			isa = PBXGroup;
 			children = (
-				A31E101327326344002EC9D0 /* project_02_jazan_fantasyUITests.swift */,
-				A31E101527326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift */,
+				A3FF18AB2737C1CB00FADC9F /* progect_002_jazan__f____UITests.swift */,
+				A3FF18AD2737C1CB00FADC9F /* progect_002_jazan__f____UITestsLaunchTests.swift */,
 			);
-			path = "project 02 jazan fantasyUITests";
+			path = "progect 002 jazan  f ...UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */ = {
+		A3FF18862737C1C900FADC9F /* progect 002 jazan  f ... */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A31E101927326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasy" */;
+			buildConfigurationList = A3FF18B12737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ..." */;
 			buildPhases = (
-				A31E0FEB27326342002EC9D0 /* Sources */,
-				A31E0FEC27326342002EC9D0 /* Frameworks */,
-				A31E0FED27326342002EC9D0 /* Resources */,
+				A3FF18832737C1C900FADC9F /* Sources */,
+				A3FF18842737C1C900FADC9F /* Frameworks */,
+				A3FF18852737C1C900FADC9F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "project 02 jazan fantasy";
-			productName = "project 02 jazan fantasy";
-			productReference = A31E0FEF27326342002EC9D0 /* project 02 jazan fantasy.app */;
+			name = "progect 002 jazan  f ...";
+			productName = "progect 002 jazan  f ...";
+			productReference = A3FF18872737C1C900FADC9F /* progect 002 jazan  f ....app */;
 			productType = "com.apple.product-type.application";
 		};
-		A31E100427326343002EC9D0 /* project 02 jazan fantasyTests */ = {
+		A3FF189C2737C1CB00FADC9F /* progect 002 jazan  f ...Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A31E101C27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyTests" */;
+			buildConfigurationList = A3FF18B42737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ...Tests" */;
 			buildPhases = (
-				A31E100127326343002EC9D0 /* Sources */,
-				A31E100227326343002EC9D0 /* Frameworks */,
-				A31E100327326343002EC9D0 /* Resources */,
+				A3FF18992737C1CB00FADC9F /* Sources */,
+				A3FF189A2737C1CB00FADC9F /* Frameworks */,
+				A3FF189B2737C1CB00FADC9F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A31E100727326343002EC9D0 /* PBXTargetDependency */,
+				A3FF189F2737C1CB00FADC9F /* PBXTargetDependency */,
 			);
-			name = "project 02 jazan fantasyTests";
-			productName = "project 02 jazan fantasyTests";
-			productReference = A31E100527326343002EC9D0 /* project 02 jazan fantasyTests.xctest */;
+			name = "progect 002 jazan  f ...Tests";
+			productName = "progect 002 jazan  f ...Tests";
+			productReference = A3FF189D2737C1CB00FADC9F /* progect 002 jazan  f ...Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A31E100E27326344002EC9D0 /* project 02 jazan fantasyUITests */ = {
+		A3FF18A62737C1CB00FADC9F /* progect 002 jazan  f ...UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A31E101F27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyUITests" */;
+			buildConfigurationList = A3FF18B72737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ...UITests" */;
 			buildPhases = (
-				A31E100B27326344002EC9D0 /* Sources */,
-				A31E100C27326344002EC9D0 /* Frameworks */,
-				A31E100D27326344002EC9D0 /* Resources */,
+				A3FF18A32737C1CB00FADC9F /* Sources */,
+				A3FF18A42737C1CB00FADC9F /* Frameworks */,
+				A3FF18A52737C1CB00FADC9F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A31E101127326344002EC9D0 /* PBXTargetDependency */,
+				A3FF18A92737C1CB00FADC9F /* PBXTargetDependency */,
 			);
-			name = "project 02 jazan fantasyUITests";
-			productName = "project 02 jazan fantasyUITests";
-			productReference = A31E100F27326344002EC9D0 /* project 02 jazan fantasyUITests.xctest */;
+			name = "progect 002 jazan  f ...UITests";
+			productName = "progect 002 jazan  f ...UITests";
+			productReference = A3FF18A72737C1CB00FADC9F /* progect 002 jazan  f ...UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A31E0FE727326342002EC9D0 /* Project object */ = {
+		A3FF187F2737C1C900FADC9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					A31E0FEE27326342002EC9D0 = {
+					A3FF18862737C1C900FADC9F = {
 						CreatedOnToolsVersion = 13.1;
 					};
-					A31E100427326343002EC9D0 = {
+					A3FF189C2737C1CB00FADC9F = {
 						CreatedOnToolsVersion = 13.1;
-						TestTargetID = A31E0FEE27326342002EC9D0;
+						TestTargetID = A3FF18862737C1C900FADC9F;
 					};
-					A31E100E27326344002EC9D0 = {
+					A3FF18A62737C1CB00FADC9F = {
 						CreatedOnToolsVersion = 13.1;
-						TestTargetID = A31E0FEE27326342002EC9D0;
+						TestTargetID = A3FF18862737C1C900FADC9F;
 					};
 				};
 			};
-			buildConfigurationList = A31E0FEA27326342002EC9D0 /* Build configuration list for PBXProject "project 02 jazan fantasy" */;
+			buildConfigurationList = A3FF18822737C1C900FADC9F /* Build configuration list for PBXProject "progect 002 jazan  f ..." */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,37 +217,37 @@
 				en,
 				Base,
 			);
-			mainGroup = A31E0FE627326342002EC9D0;
-			productRefGroup = A31E0FF027326342002EC9D0 /* Products */;
+			mainGroup = A3FF187E2737C1C900FADC9F;
+			productRefGroup = A3FF18882737C1C900FADC9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */,
-				A31E100427326343002EC9D0 /* project 02 jazan fantasyTests */,
-				A31E100E27326344002EC9D0 /* project 02 jazan fantasyUITests */,
+				A3FF18862737C1C900FADC9F /* progect 002 jazan  f ... */,
+				A3FF189C2737C1CB00FADC9F /* progect 002 jazan  f ...Tests */,
+				A3FF18A62737C1CB00FADC9F /* progect 002 jazan  f ...UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A31E0FED27326342002EC9D0 /* Resources */ = {
+		A3FF18852737C1C900FADC9F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31E0FFF27326343002EC9D0 /* LaunchScreen.storyboard in Resources */,
-				A31E0FFC27326343002EC9D0 /* Assets.xcassets in Resources */,
-				A31E0FFA27326342002EC9D0 /* Main.storyboard in Resources */,
+				A3FF18972737C1CB00FADC9F /* LaunchScreen.storyboard in Resources */,
+				A3FF18942737C1CB00FADC9F /* Assets.xcassets in Resources */,
+				A3FF18922737C1C900FADC9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100327326343002EC9D0 /* Resources */ = {
+		A3FF189B2737C1CB00FADC9F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100D27326344002EC9D0 /* Resources */ = {
+		A3FF18A52737C1CB00FADC9F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,62 +257,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A31E0FEB27326342002EC9D0 /* Sources */ = {
+		A3FF18832737C1C900FADC9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31E0FF727326342002EC9D0 /* ViewController.swift in Sources */,
-				A31E0FF327326342002EC9D0 /* AppDelegate.swift in Sources */,
-				A31E0FF527326342002EC9D0 /* SceneDelegate.swift in Sources */,
-				A31E10232732A54A002EC9D0 /* ViewControllerTwo.swift in Sources */,
+				A3FF188F2737C1C900FADC9F /* ViewController.swift in Sources */,
+				A3FF18BB2737C33300FADC9F /* ViewController2.swift in Sources */,
+				A3FF188B2737C1C900FADC9F /* AppDelegate.swift in Sources */,
+				A3FF188D2737C1C900FADC9F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100127326343002EC9D0 /* Sources */ = {
+		A3FF18992737C1CB00FADC9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31E100A27326343002EC9D0 /* project_02_jazan_fantasyTests.swift in Sources */,
+				A3FF18A22737C1CB00FADC9F /* progect_002_jazan__f____Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A31E100B27326344002EC9D0 /* Sources */ = {
+		A3FF18A32737C1CB00FADC9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31E101627326344002EC9D0 /* project_02_jazan_fantasyUITestsLaunchTests.swift in Sources */,
-				A31E101427326344002EC9D0 /* project_02_jazan_fantasyUITests.swift in Sources */,
+				A3FF18AE2737C1CB00FADC9F /* progect_002_jazan__f____UITestsLaunchTests.swift in Sources */,
+				A3FF18AC2737C1CB00FADC9F /* progect_002_jazan__f____UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A31E100727326343002EC9D0 /* PBXTargetDependency */ = {
+		A3FF189F2737C1CB00FADC9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */;
-			targetProxy = A31E100627326343002EC9D0 /* PBXContainerItemProxy */;
+			target = A3FF18862737C1C900FADC9F /* progect 002 jazan  f ... */;
+			targetProxy = A3FF189E2737C1CB00FADC9F /* PBXContainerItemProxy */;
 		};
-		A31E101127326344002EC9D0 /* PBXTargetDependency */ = {
+		A3FF18A92737C1CB00FADC9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A31E0FEE27326342002EC9D0 /* project 02 jazan fantasy */;
-			targetProxy = A31E101027326344002EC9D0 /* PBXContainerItemProxy */;
+			target = A3FF18862737C1C900FADC9F /* progect 002 jazan  f ... */;
+			targetProxy = A3FF18A82737C1CB00FADC9F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A31E0FF827326342002EC9D0 /* Main.storyboard */ = {
+		A3FF18902737C1C900FADC9F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A31E0FF927326342002EC9D0 /* Base */,
+				A3FF18912737C1C900FADC9F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A31E0FFD27326343002EC9D0 /* LaunchScreen.storyboard */ = {
+		A3FF18952737C1CB00FADC9F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A31E0FFE27326343002EC9D0 /* Base */,
+				A3FF18962737C1CB00FADC9F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A31E101727326344002EC9D0 /* Debug */ = {
+		A3FF18AF2737C1CB00FADC9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,7 +381,7 @@
 			};
 			name = Debug;
 		};
-		A31E101827326344002EC9D0 /* Release */ = {
+		A3FF18B02737C1CB00FADC9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -436,7 +436,7 @@
 			};
 			name = Release;
 		};
-		A31E101A27326344002EC9D0 /* Debug */ = {
+		A3FF18B22737C1CB00FADC9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -444,7 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "project 02 jazan fantasy/Info.plist";
+				INFOPLIST_FILE = "progect 002 jazan  f .../Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasy";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -463,7 +463,7 @@
 			};
 			name = Debug;
 		};
-		A31E101B27326344002EC9D0 /* Release */ = {
+		A3FF18B32737C1CB00FADC9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -471,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "project 02 jazan fantasy/Info.plist";
+				INFOPLIST_FILE = "progect 002 jazan  f .../Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -482,7 +482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasy";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,7 +490,7 @@
 			};
 			name = Release;
 		};
-		A31E101D27326344002EC9D0 /* Debug */ = {
+		A3FF18B52737C1CB00FADC9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -505,16 +505,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project 02 jazan fantasy.app/project 02 jazan fantasy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/progect 002 jazan  f ....app/progect 002 jazan  f ...";
 			};
 			name = Debug;
 		};
-		A31E101E27326344002EC9D0 /* Release */ = {
+		A3FF18B62737C1CB00FADC9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -529,16 +529,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project 02 jazan fantasy.app/project 02 jazan fantasy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/progect 002 jazan  f ....app/progect 002 jazan  f ...";
 			};
 			name = Release;
 		};
-		A31E102027326344002EC9D0 /* Debug */ = {
+		A3FF18B82737C1CB00FADC9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -551,16 +551,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "project 02 jazan fantasy";
+				TEST_TARGET_NAME = "progect 002 jazan  f ...";
 			};
 			name = Debug;
 		};
-		A31E102127326344002EC9D0 /* Release */ = {
+		A3FF18B92737C1CB00FADC9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -573,55 +573,55 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.project-02-jazan-fantasyUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "musa-masmali.progect-002-jazan--f----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "project 02 jazan fantasy";
+				TEST_TARGET_NAME = "progect 002 jazan  f ...";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A31E0FEA27326342002EC9D0 /* Build configuration list for PBXProject "project 02 jazan fantasy" */ = {
+		A3FF18822737C1C900FADC9F /* Build configuration list for PBXProject "progect 002 jazan  f ..." */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A31E101727326344002EC9D0 /* Debug */,
-				A31E101827326344002EC9D0 /* Release */,
+				A3FF18AF2737C1CB00FADC9F /* Debug */,
+				A3FF18B02737C1CB00FADC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A31E101927326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasy" */ = {
+		A3FF18B12737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ..." */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A31E101A27326344002EC9D0 /* Debug */,
-				A31E101B27326344002EC9D0 /* Release */,
+				A3FF18B22737C1CB00FADC9F /* Debug */,
+				A3FF18B32737C1CB00FADC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A31E101C27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyTests" */ = {
+		A3FF18B42737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ...Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A31E101D27326344002EC9D0 /* Debug */,
-				A31E101E27326344002EC9D0 /* Release */,
+				A3FF18B52737C1CB00FADC9F /* Debug */,
+				A3FF18B62737C1CB00FADC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A31E101F27326344002EC9D0 /* Build configuration list for PBXNativeTarget "project 02 jazan fantasyUITests" */ = {
+		A3FF18B72737C1CB00FADC9F /* Build configuration list for PBXNativeTarget "progect 002 jazan  f ...UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A31E102027326344002EC9D0 /* Debug */,
-				A31E102127326344002EC9D0 /* Release */,
+				A3FF18B82737C1CB00FADC9F /* Debug */,
+				A3FF18B92737C1CB00FADC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A31E0FE727326342002EC9D0 /* Project object */;
+	rootObject = A3FF187F2737C1C900FADC9F /* Project object */;
 }

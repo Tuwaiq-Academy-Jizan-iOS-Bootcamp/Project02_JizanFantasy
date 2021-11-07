@@ -1,13 +1,8 @@
-//
-//  project_02_jazan_fantasyUITests.swift
-//  project 02 jazan fantasyUITests
-//
-//  Created by موسى مسملي on 03/11/2021.
-//
+//___FILEHEADER___
 
 import XCTest
 
-class project_02_jazan_fantasyUITests: XCTestCase {
+class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
