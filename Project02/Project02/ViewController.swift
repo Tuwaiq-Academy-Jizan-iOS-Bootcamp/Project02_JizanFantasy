@@ -56,53 +56,55 @@ class ViewController: UIViewController{
     @IBAction func RollingDice(_ sender: Any) {
         let random =  Int.random(in: 1...20)
         resultDice.text = "\(random)"
+        // Hero
         if random >= 1 && random <= 9 && turnH == true {
         turnH = false
             if let a = Int(PlayerPD2.text!), let b = Int(PlayerDF1.text!){
-            var heroDM = a - b
-            if heroDM < 0 {
+            var bossDM = a - b
+            if bossDM < 0 {
                 PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
             }else {
-                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - bossDM)"
             }
-            if heroDM < 0 {
-                heroDM = 0
+            if bossDM < 0 {
+                bossDM = 0
             }
-            Description.text = " \(player2.text!)  use his power to damage\(Player1.text!) by \(heroDM)"
+            Description.text = " \(player2.text!)  use his power to damage\(Player1.text!) by \(bossDM)"
             print("power Damage")
             }
         }else if random >= 10 && random <= 19 && turnH == true {
             turnH = false
             if let a = Int(PlayerWD2.text!), let b = Int(PlayerDF1.text!){
-           var heroDM = a - b
-            if heroDM < 0 {
+           var bossDM = a - b
+            if bossDM < 0 {
                 PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
             } else {
-                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - bossDM)"
             }
-            if heroDM < 0 {
-                heroDM = 0
+            if bossDM < 0 {
+                bossDM = 0
             }
-            Description.text = " \(Player1.text!) use his weapon to damage \(player2.text!) by \(heroDM)"
+            Description.text = " \(Player1.text!) use his weapon to damage \(player2.text!) by \(bossDM)"
             print("weapon Damage")
             }
         }else if random == 20 && turnH == true {
             turnH = false
             if let a = Int(PlayerSC2.text!), let b = Int(PlayerDF1.text!){
-            var heroDM = a - b
-            if heroDM < 0 {
+            var bossDM = a - b
+            if bossDM < 0 {
                 PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
             } else {
-                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - bossDM)"
             }
-            if heroDM < 0 {
-                heroDM = 0
+            if bossDM < 0 {
+                bossDM = 0
             }
             PlayerLP2.text = "\(Int(PlayerLP2.text!)! + Int(specialLP2)!)"
             PlayerPD2.text = "\(Int(PlayerPD2.text!)! + Int(specialPD2)!)"
             PlayerWD2.text = "\(Int(PlayerWD2.text!)! + Int(specialWD2)!)"
             print("special Capacity")
             }
+            // Boss
         }else  if random >= 1 && random <= 9 && turnH == false {
             turnH = true
             if let a = Int(PlayerPD1.text!), let b = Int(PlayerDF2.text!) {
