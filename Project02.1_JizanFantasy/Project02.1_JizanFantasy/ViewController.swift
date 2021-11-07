@@ -1,5 +1,6 @@
 //  Created by حمد الحريصي on 03/11/2021.
 import UIKit
+
 class Player1
 {
 var name:String
@@ -52,30 +53,40 @@ class Boss2:Player1
  }
 class Wizard:Player2
 {
-    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int) {
+    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int)
+    {
         super.init(name: name, lifePoint: lifePoint, defense: defense, powerDamage: powerDamage, Weapondamage: Weapondamage, Specialcapacity: Specialcapacity)
     }
 }
 class Thief:Player2
 {
-    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int) {
+    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int)
+    {
         super.init(name: name, lifePoint: lifePoint, defense: defense, powerDamage: powerDamage, Weapondamage: Weapondamage, Specialcapacity: Specialcapacity)
     }
 }
 class Knight:Player2
 {
-    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int) {
+    override init(name: String, lifePoint: Int, defense: Int, powerDamage: Int, Weapondamage: Int, Specialcapacity: Int)
+    {
         super.init(name: name, lifePoint: lifePoint, defense: defense, powerDamage: powerDamage, Weapondamage: Weapondamage, Specialcapacity: Specialcapacity)
     }
 }
+struct Weapon
+{
+  var name:String
+  var damage:Int
+  var attackAction:String
+}
+struct Power
+{
+  var name:String
+  var damage:Int
+  var attackAction:String
+  var specialEffect:Int
+}
 class ViewController: UIViewController
 {
-    var index: Int = 0
-    var myImages2 = ["boss1","boss2"]
-  //  var heroImageinVC1 = 0
-   // var index: Int = 0
-
-    var myImages = ["Wizard","Thief","Knight"]
     
     @IBOutlet var vsLabel: UILabel!
     @IBOutlet var lpHeroLabel: UILabel!
@@ -84,148 +95,98 @@ class ViewController: UIViewController
     @IBOutlet var wdHeroLabel: UILabel!
     @IBOutlet var scHeroLabel: UILabel!
     
-    @IBOutlet var descrptionTextView: UITextView!
+    @IBOutlet var turnLabel: UILabel!
+    
+    @IBOutlet var descrLabel: UILabel!
+    @IBOutlet var descrLabel2: UILabel!
+    @IBOutlet var descrLabel3: UILabel!
     
     @IBOutlet var heroImageinVC1: UIImageView!
     @IBOutlet var bossImage: UIImageView!
     @IBOutlet var diceLabel: UILabel!
     
+     @IBOutlet var bossLP1: UILabel!
+     @IBOutlet var bossDF1: UILabel!
+     @IBOutlet var bossPD1: UILabel!
+     @IBOutlet var bossWD1: UILabel!
+     @IBOutlet var bossSC1: UILabel!
+
+    
+    // boss array images
+    var myImages2 = ["boss1","boss2"]
+    
+    // champs array images
+    var myImages = ["Wizard","Thief","Knight"]
     override func viewDidLoad()
     {
     super.viewDidLoad()
         
-      
+    // random boss between boss1 and boss2
     bossImage.image = UIImage(named: myImages2[Int.random(in: 0...1)])
-        
-        
-        bossSwitch()
-      //  heroSwitch()
-        
-        
-        
-        // description
-//        let myNumber = ""
-        descrptionTextView.text = "\(description)"
+    
+    bossSwitch()
 
     }
     
     
-    @IBOutlet var bossLP1: UILabel!
-    @IBOutlet var bossDF1: UILabel!
-    @IBOutlet var bossPD1: UILabel!
-    @IBOutlet var bossWD1: UILabel!
-    @IBOutlet var bossSC1: UILabel!
+ 
     
     
     
-    func description()
-    {
-        boos2.defense += boos2.lifePoint
-    }
-    
-    var turnNumber = 0
-    
-    var boos1 = Boss1(name: "boss1", lifePoint: 250, defense: 30, powerDamage: 20, Weapondamage: 45, Specialcapacity: 110)
-    var boos2 = Boss2(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, Weapondamage: 30, Specialcapacity: 75)
-    var hero = Player1(name: "", lifePoint: 0, defense: 0, powerDamage: 0, Weapondamage: 0, Specialcapacity: 0 )
-    
-   //var dfHeroLabel.text = "250"
-  //  var dfHero = dfHeroLabel.text
-    
-//    var wizard = Wizard(name: "Wizard", lifePoint: 90, defense: 15, powerDamage: 70, Weapondamage: 20, Specialcapacity: 50)
-//    var knight = Knight(name: "Knight", lifePoint: 60, defense: 20, powerDamage: 30, Weapondamage: 40, Specialcapacity: 100)
-//    var thief = Thief(name: "Thief", lifePoint: 65, defense: 25, powerDamage: 15, Weapondamage: 30, Specialcapacity: 70)
-//    var boss1power = Power(name: "gggggggg", damage: 35, attackAction: "x", specialEffect: 55)
+//    func description()
+//    {
+//        boos2.defense += boos2.lifePoint
+//    }
 //
-//    func power()
-//    {
-//        vsLabel.text = "\(boss1power.attackAction)"
-//    }
-//  func boss1()
-//    {
-//    if myImages2[index] == myImages2[0]
-//        {
-//        bossLP1.text = "\(boos1.lifePoint)"
-//        bossDF1.text = "\(boos1.defense)"
-//    }
-//     else if myImages2[index] == myImages2[1]
-//     {
-//    bossLP1.text = "\(boos2.lifePoint)"
-//    bossDF1.text = "\(boos2.defense)"
-//     }
-//    }
+    
+
+var turnNumber = 1
+    
+var boos1 = Boss1(name: "boss1", lifePoint: 250, defense: 30, powerDamage: 20, Weapondamage: 45, Specialcapacity: 110)
+var boos2 = Boss2(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, Weapondamage: 30, Specialcapacity: 75)
+    var wazerd = Wizard(name: "Wizard", lifePoint: 90, defense: 15, powerDamage: 70, Weapondamage: 20, Specialcapacity: 50)
+var thief = Thief(name: "Thief", lifePoint: 65, defense: 25, powerDamage: 15, Weapondamage: 30, Specialcapacity: 70)
+var knight = Knight(name: "Knight", lifePoint: 60, defense: 20, powerDamage: 30, Weapondamage: 40, Specialcapacity: 100)
+var hero = Player1(name: "", lifePoint: 0, defense: 0, powerDamage: 0, Weapondamage: 0, Specialcapacity: 0 )
+var wepan = Weapon(name: "M4", damage: -30, attackAction: "-20 LP")
+var power = Power(name: "healing", damage: -50, attackAction: "no action", specialEffect: 30)
+    
+    
+    
+    
+    // func for switch Energies between boss1 and boss2
     func bossSwitch()
     {
     switch bossImage.image
     {
     case UIImage(named: myImages2[0]):
-        bossLP1.text = "\(boos1.lifePoint)"
-        bossDF1.text = "\(boos1.defense)"
-        bossPD1.text = "\(boos1.powerDamage)"
-        bossWD1.text = "\(boos1.Weapondamage)"
-        bossSC1.text = "\(boos1.Specialcapacity)"
+    bossLP1.text = "\(boos1.lifePoint)"
+    bossDF1.text = "\(boos1.defense)"
+    bossPD1.text = "\(boos1.powerDamage)"
+    bossWD1.text = "\(boos1.Weapondamage)"
+    bossSC1.text = "\(boos1.Specialcapacity)"
+        
     case UIImage(named: myImages2[1]):
-        bossLP1.text = "\(boos2.lifePoint)"
-        bossDF1.text = "\(boos2.defense)"
-        bossPD1.text = "\(boos2.powerDamage)"
-        bossWD1.text = "\(boos2.Weapondamage)"
-        bossSC1.text = "\(boos2.Specialcapacity)"
-     default:
+    bossLP1.text = "\(boos2.lifePoint)"
+    bossDF1.text = "\(boos2.defense)"
+    bossPD1.text = "\(boos2.powerDamage)"
+    bossWD1.text = "\(boos2.Weapondamage)"
+    bossSC1.text = "\(boos2.Specialcapacity)"
+    default:
      print("ERORR ?!$##%#$%^@$^@")
     }
     }
+ // if players LP = 0
+ var dead = 0
     
-//    func heroSwitch()
-//    {
-//    switch heroImageinVC1.image
-//    {
-//    case UIImage(named: myImages[0]):
-//        lpHeroLabel.text = "\(wizard.lifePoint)"
-//        dfHeroLabel.text = "\(wizard.defense)"
-//        pdHeroLabel.text = "\(wizard.powerDamage)"
-//        wdHeroLabel.text = "\(wizard.Weapondamage)"
-//        scHeroLabel.text = "\(wizard.Specialcapacity)"
-//    case UIImage(named: myImages[1]):
-//        lpHeroLabel.text = "\(knight.lifePoint)"
-//        dfHeroLabel.text = "\(knight.defense)"
-//        pdHeroLabel.text = "\(knight.powerDamage)"
-//        wdHeroLabel.text = "\(knight.Weapondamage)"
-//        scHeroLabel.text = "\(knight.Specialcapacity)"
-//    case UIImage(named: myImages[2]):
-//        lpHeroLabel.text = "\(thief.lifePoint)"
-//        dfHeroLabel.text = "\(thief.defense)"
-//        pdHeroLabel.text = "\(thief.powerDamage)"
-//        wdHeroLabel.text = "\(thief.Weapondamage)"
-//        scHeroLabel.text = "\(thief.Specialcapacity)"
-//     default:
-//     print("ERORR ?!$##%#$%^@$^@")
-//    }
-//    }
+@IBAction func rollDiceButton(_ sender: UIButton)
+{
     
     
-    
-    @IBAction func rollDiceButton(_ sender: UIButton)
-    {
-        
-        
-       // description()
-        
-        
-        
-               
+  //  hero.lifePoint = "\(lpHeroLabel)"
+//descrLabel.text = "turn \(turnNumber)"
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-     //   boss1()
-        
+turnLabel.text = "Turn = \(turnNumber)"
 turnNumber += 1
 print("Turn Number  \(turnNumber)")
 
@@ -234,7 +195,7 @@ func rollingDice() -> Int
 {
     
 var dice: Int
-dice = Int.random(in: 1...20)
+dice = Int.random(in: 1...20 )
 print("Dice = \(dice)")
         
             
@@ -244,18 +205,16 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
-print("\(boos2.lifePoint)")
-//boos2.Weapondamage
-boos2.lifePoint -= boos1.Weapondamage
+descrLabel2.text = "boss1 LP \(boos1.lifePoint)"
+boos1.lifePoint -= wazerd.powerDamage
+//boos2.lifePoint -= boos1.Weapondamage
 case UIImage(named: myImages2[1]):
-print("\(boos1.lifePoint)")
 print("\(boos2.lifePoint)")
-boos2.lifePoint -= boos1.Weapondamage
+descrLabel2.text = "boss2 LP \(boos2.lifePoint)"
+boos2.lifePoint -= wazerd.powerDamage
 default:
 print("Error")
 }
-//                boos2.Weapondamage
-//                boos2.lifePoint += boos1.Weapondamage
 }
 else if dice == 2
 {
@@ -263,8 +222,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+    
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+    boos2.lifePoint -= wazerd.powerDamage
 default:
 print("Error")
 }
@@ -275,8 +238,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -286,8 +253,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -297,8 +268,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+    
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -308,8 +283,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+    
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -319,8 +298,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -330,8 +313,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -341,8 +328,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.powerDamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.powerDamage
 default: print("Error")
 }
 }
@@ -352,8 +343,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.Weapondamage
+  
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+  
+    boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -363,8 +358,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.Weapondamage
+    
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+  
+    boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -374,8 +373,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.Weapondamage
+  
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.Weapondamage
 default:print("Error")
 }
 }
@@ -385,8 +388,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.Weapondamage
+
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+   
+    boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -396,8 +403,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+boos1.lifePoint -= wazerd.Weapondamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+boos2.lifePoint -= wazerd.Weapondamage
 default:
 print("Error")
 }
@@ -408,8 +419,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+boos1.lifePoint -= wazerd.Weapondamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -419,8 +434,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+    boos1.lifePoint -= wazerd.Weapondamage
+   
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+    
+    boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -430,8 +449,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+boos1.lifePoint -= wazerd.Weapondamage
+
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+
+boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -441,8 +464,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+boos1.lifePoint -= wazerd.Weapondamage
+
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+
+boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -452,8 +479,12 @@ switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
 print("\(boos1.lifePoint)")
+boos1.lifePoint -= wazerd.Weapondamage
+
 case UIImage(named: myImages2[1]):
 print("\(boos2.lifePoint)")
+
+boos2.lifePoint -= wazerd.Weapondamage
 default: print("Error")
 }
 }
@@ -462,21 +493,86 @@ else if dice == 20
 switch bossImage.image
 {
 case UIImage(named: myImages2[0]):
+boos1.Specialcapacity += wazerd.Specialcapacity
+
+    
 print("\(boos1.lifePoint)")
 case UIImage(named: myImages2[1]):
+
+boos2.Specialcapacity += wazerd.Specialcapacity
 print("\(boos2.lifePoint)")
 default:print("Error")
 }
+    
 }
+    
+//    func bossSwitch()
+//    {
+//    if boos1.lifePoint <= dead
+//    {
+//
+//    }
+//    else if boos2.lifePoint <= dead
+//    {
+//
+//    }
+//
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+    // if players energies = 0
+    if boos1.lifePoint <= dead
+    {
+        switch heroImageinVC1.image
+        { 
+        case UIImage(named: myImages[0]):
+        descrLabel.text = "\(wazerd.name) is a WINNER !!!"
+        case UIImage(named: myImages[1]):
+        descrLabel.text = ("\(thief.name) is a WINNER !!!")
+        case UIImage(named: myImages[2]):
+        descrLabel.text = "\(knight.name) is a WINNER !!!"
+        default: print("erooooorrrrrrr")
+        }
+        descrLabel.text = "\(wazerd.name) is a WINNER !!!"
+    print("\(wazerd.name) is a WINNER !!!")
+
+    }
+    else if boos2.lifePoint <= dead
+    {
+    print("\(wazerd.name) is a WINNER !!!")
+
+    }
+    else if wazerd.lifePoint <= dead
+    {
+    print("\(boos1.name) is a WINNER !!!")
+    print("\(boos2.name) is a WINNER !!!")
+    }
+    else if knight.lifePoint <= dead
+    {
+    print("\(boos1.name) is a WINNER !!!")
+    print("\(boos2.name) is a WINNER !!!")
+    }
+    else if thief.lifePoint <= dead
+    {
+    print("\(boos1.name) is a WINNER !!!")
+    print("\(boos2.name) is a WINNER !!!")
+    }
+    
 return dice
 }
+    
 }
-
-    @IBAction func toHeroesPage(_ sender: Any)
-    {
-        
-        performSegue(withIdentifier: "fromVC1toVC2", sender: self)
-    }
+// segue between VC1 and VC2
+@IBAction func toHeroesPage(_ sender: Any)
+{
+performSegue(withIdentifier: "fromVC1toVC2", sender: self)
+}
     
 @IBAction func textFieldfromLP(segue:UIStoryboardSegue)
 {

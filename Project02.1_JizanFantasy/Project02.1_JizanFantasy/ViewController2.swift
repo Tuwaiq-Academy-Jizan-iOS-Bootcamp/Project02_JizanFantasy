@@ -13,15 +13,15 @@ var index: Int = 0
 var myImages = ["Wizard","Thief","Knight"]
     
     @IBOutlet var lpLabel: UILabel!
-    @IBOutlet var dfTextField: UITextField!
-    @IBOutlet var pdTextField: UITextField!
-    @IBOutlet var wdTextField: UITextField!
-    @IBOutlet var scTextField: UITextField!
+//    @IBOutlet var dfTextField: UITextField!
+//    @IBOutlet var pdTextField: UITextField!
+//    @IBOutlet var wdTextField: UITextField!
+//    @IBOutlet var scTextField: UITextField!
+    @IBOutlet var pdLabel: UILabel!
+    @IBOutlet var wdLabel: UILabel!
+    @IBOutlet var dfLabel: UILabel!
+    @IBOutlet var scLabel: UILabel!
     
-//    var dfTextField = ""
-//    var pdTextField = ""
-//    var wdTextField = ""
-//    var scTextField = ""
     
     @IBOutlet var viewImage: UIImageView!
     @IBOutlet var heroNameLabel: UILabel!
@@ -31,93 +31,20 @@ var myImages = ["Wizard","Thief","Knight"]
  override func viewDidLoad()
  {
         super.viewDidLoad()
-//     let lpOfHero = ["250","170","250"]
-//
-//
-//     switch lpOfHero[index]
-//     {
-//     case :
-//
-//    lpLabel.text = "\(lpOfHero[1])"
-//     case :
-//    lpLabel.text = "\(lpOfHero[2])"
-//
-//     default:
-//         print("eroor")
-     
-   //  lpLabel.text = "\(lpOfHero)"
-     
-          
-//     if "\(String(describing: viewImage))" == myImages[0]
-//     {
-//         lpLabel.text = lpOfHero[0]
-//     }
-//     else if "\(String(describing: viewImage))" == myImages[1]
-//     {
-//         lpLabel.text = lpOfHero[1]
-//     }
-//     else if "\(String(describing: viewImage))" == myImages[2]
-//     {
-//         lpLabel.text = lpOfHero[2]
-//     }
-//
+
      
      
         viewImage.image = UIImage(named: myImages[0] )
         heroNameLabel.text = myImages[0]
-     
-     func swit()
-     {
-     let waz = 250
-     if heroNameLabel.text == myImages[0]
-     {
-     lpLabel.text = "\(waz)"
-     }
-     else if  heroNameLabel.text == myImages[1]
-     {
-     lpLabel.text = "\(waz)"
-     }
- }
-     
-     func textfeild()
-     {
-         if myImages[index] == myImages[0]
-         {
-         dfTextField.text = "250"
-         }
-     }
+     switchLP()
  }
     
-//    func swit()
-//    {
-//    var myImages = ["Wizard","Thief","Knight"]
-//
-//    if heroNameLabel.text == UIImage(named: myImages2[0])
-//    {
-//    lpLabel.text = "\(250)"
-//    }
-//    else if  heroNameLabel == UIImage(named: myImages2[1])    {
-//    lpLabel.text = "\(250)"
-//    }
-//    else if heroNameLabel == UIImage(named: myImages2[2])
-//    {
-//    lpLabel.text = "\(250)"
-//    }
-//    }
-    
+    // button that link with VC1
     @IBAction func gatewayToBattle(_ sender: Any)
     {
         
 
-//        func send()
-//        {
-//
-//            if lpTextField.text >= 40
-//        {
-//
-//        }
-//            
-//        }
+
     }
 override func prepare(for segue: UIStoryboardSegue, sender: Any?)
 {
@@ -129,18 +56,18 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?)
         gatewayToBattle1.lpHeroLabel.text = lpLabel.text
         
  let gatewayToBattle2 = segue.destination as! ViewController
-        gatewayToBattle2.dfHeroLabel.text = dfTextField.text
+        gatewayToBattle2.dfHeroLabel.text = dfLabel.text
         
  let gatewayToBattle3 = segue.destination as! ViewController
-        gatewayToBattle3.pdHeroLabel.text = pdTextField.text
+        gatewayToBattle3.pdHeroLabel.text = pdLabel.text
         
  let gatewayToBattle4 = segue.destination as! ViewController
-        gatewayToBattle4.wdHeroLabel.text = wdTextField.text
+        gatewayToBattle4.wdHeroLabel.text = wdLabel.text
         
     let gatewayToBattle5 = segue.destination as! ViewController
-    gatewayToBattle5.scHeroLabel.text = scTextField.text
+    gatewayToBattle5.scHeroLabel.text = scLabel.text
 }
-
+// back button
     @IBAction func backHero(_ sender: Any)
     {
 //        swit()
@@ -155,13 +82,13 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?)
         }
         viewImage.image = UIImage(named: myImages[index] )
         heroNameLabel.text = myImages[index]
-        
-            
-        
-        
-        //lpLabel.text = myImages[0]
     
+         lpLabel.text = heroNameLabel.text
+        
+        switchLP()
+ 
     }
+    // next button
     @IBAction func nextHero(_ sender: Any)
     {
         if index < myImages.count - 1
@@ -174,22 +101,45 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?)
         }
         viewImage.image = UIImage(named: myImages[index] )
         heroNameLabel.text = myImages[index]
+        switchLP()
     }
-    
-//    func heroSwitch()
-//    {
-//        if nextHero(Any) == myImages[0]
-//        {
-//
-//       }
-//    }
+    // func for switch Energies between Wizard and Thief and Knight
+    func switchLP()
+    {
+    if myImages[0] == heroNameLabel.text
+      {
+        wdLabel.text = "20" 
+        scLabel.text = "50"
+        dfLabel.text = "15"
+        pdLabel.text = "70"
+        lpLabel.text = "90"
+    }else if myImages[1] == heroNameLabel.text
+    {
+        wdLabel.text = "30"
+        scLabel.text = "70"
+        dfLabel.text = "25"
+        pdLabel.text = "15"
+        lpLabel.text = "65"
+    }
+      else if myImages[2] == heroNameLabel.text
+      {
+      wdLabel.text = "40"
+      scLabel.text = "100"
+      dfLabel.text = "20"
+      pdLabel.text = "30"
+      lpLabel.text = "60"
+      }
+    }
 
 }
 extension ViewController2: UITextFieldDelegate
 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-      //  textFieldfromLP.resignFirstResponder()
+//        dfTextField.resignFirstResponder()
+//        pdTextField.resignFirstResponder()
+//        wdTextField.resignFirstResponder()
+//        scTextField.resignFirstResponder()
         return true
     }
 }
