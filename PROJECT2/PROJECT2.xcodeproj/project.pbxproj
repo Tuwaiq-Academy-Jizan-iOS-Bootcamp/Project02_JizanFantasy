@@ -17,6 +17,7 @@
 		F81EDA43273262B7005266E4 /* PROJECT2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDA42273262B7005266E4 /* PROJECT2UITests.swift */; };
 		F81EDA45273262B7005266E4 /* PROJECT2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDA44273262B7005266E4 /* PROJECT2UITestsLaunchTests.swift */; };
 		F81EDA5227327930005266E4 /* viewControllerTow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDA512732792F005266E4 /* viewControllerTow.swift */; };
+		F86FAFA82737B2F800E17AFA /* class3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86FAFA72737B2F800E17AFA /* class3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F81EDA42273262B7005266E4 /* PROJECT2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROJECT2UITests.swift; sourceTree = "<group>"; };
 		F81EDA44273262B7005266E4 /* PROJECT2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROJECT2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F81EDA512732792F005266E4 /* viewControllerTow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllerTow.swift; sourceTree = "<group>"; };
+		F86FAFA72737B2F800E17AFA /* class3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = class3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				F81EDA512732792F005266E4 /* viewControllerTow.swift */,
 				F81EDA2A273262B7005266E4 /* Assets.xcassets */,
 				F81EDA27273262B5005266E4 /* Main.storyboard */,
+				F86FAFA72737B2F800E17AFA /* class3.swift */,
 				F81EDA2C273262B7005266E4 /* LaunchScreen.storyboard */,
 				F81EDA2F273262B7005266E4 /* Info.plist */,
 			);
@@ -265,6 +268,7 @@
 				F81EDA22273262B5005266E4 /* AppDelegate.swift in Sources */,
 				F81EDA24273262B5005266E4 /* SceneDelegate.swift in Sources */,
 				F81EDA5227327930005266E4 /* viewControllerTow.swift in Sources */,
+				F86FAFA82737B2F800E17AFA /* class3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

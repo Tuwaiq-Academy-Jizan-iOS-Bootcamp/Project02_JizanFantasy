@@ -36,6 +36,7 @@ class viewControllerTow: UIViewController{
         sendBack.label3.text = textField4.text
         sendBack.label4.text = textField5.text
         sendBack.Total2.text = textField6.text
+        sendBack.Playerimage.image = viewplayer.image
     }
 
     @IBAction func imageChanges(_ sender: Any) {
@@ -58,14 +59,14 @@ class viewControllerTow: UIViewController{
        
     }
 }
-
+}
 extension viewControllerTow: UITextFieldDelegate{
       func textFieldShoulderReturn(_ textField: UITextField)-> Bool {
           textField.resignFirstResponder()
           return true
       }
 }
-}
+
     
 
 
