@@ -10,7 +10,7 @@ import UIKit
 class ViewControllerFour:UIViewController{
     
     
-    
+    @IBOutlet weak var pointOfHero: UILabel!
     
     @IBOutlet weak var lifePointLable: UILabel!
     @IBOutlet weak var defaseLabel: UILabel!
@@ -25,6 +25,7 @@ class ViewControllerFour:UIViewController{
         nameOfHero.text = "Thief"
         imageOfHero.image = UIImage(named:"ThiefImage")
         storyOfHero.text = "The Thief have 250 point and he has big power and powerful weapon and strong defanse you won't regret choosing it "
+        pointOfHero.text = "210"
     }
     
     
@@ -66,6 +67,13 @@ VC2.imageHero.image = imageOfHero.image
     
     
     @IBAction func creatHero(_ sender: Any) {
+        let lp = Int(lifePointLable.text!)
+        let df = Int(defaseLabel.text!)
+        let pd = Int(powerLabel.text!)
+        let wd = Int(weaponLabel.text!)
+        let sc = Int(specialLabel.text!)
+        let sum = lp! + df! + pd! + wd! + sc!
+        let alert2 = UIAlertController(title: "WARNING", message: "THE POINT OF THE HERO IS greater than specified point ", preferredStyle: UIAlertController.Style.alert)
         let alert = UIAlertController(title: "WARNING", message: "THE POINT OF THE HERO IS EMPTY", preferredStyle: UIAlertController.Style.alert)
          if lifePointLable.text!.isEmpty || defaseLabel.text!.isEmpty || powerLabel.text!.isEmpty || weaponLabel.text!.isEmpty || specialLabel.text!.isEmpty {
              self.present(alert, animated: true, completion: nil)
@@ -75,7 +83,10 @@ VC2.imageHero.image = imageOfHero.image
             self.present(alert, animated: true, completion: nil)
 
           }
-        
+        if sum > Int( pointOfHero.text!)! {
+    
+            self.present(alert2, animated: true, completion: nil)
+        }
         
         
     }

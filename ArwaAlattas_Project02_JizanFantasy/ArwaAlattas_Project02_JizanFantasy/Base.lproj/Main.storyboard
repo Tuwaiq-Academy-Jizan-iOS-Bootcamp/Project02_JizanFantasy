@@ -489,7 +489,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="2uA-P9-e0y">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2uA-P9-e0y">
                                 <rect key="frame" x="246" y="329" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -517,7 +517,7 @@
                                     <action selector="slaiderWD:" destination="DfG-kF-soP" eventType="valueChanged" id="6Z3-KT-NiT"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-b4-dz7">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-b4-dz7">
                                 <rect key="frame" x="246" y="545" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -541,6 +541,7 @@
                         <outlet property="imageOfHero" destination="o6H-aJ-wkR" id="DCg-23-YY5"/>
                         <outlet property="lifePointLable" destination="9kJ-3c-jax" id="ckF-oG-Rgw"/>
                         <outlet property="nameOfHero" destination="GVw-kZ-VcL" id="x9e-If-WKD"/>
+                        <outlet property="pointOfHero" destination="J44-8s-wiA" id="VXH-an-K8p"/>
                         <outlet property="powerLabel" destination="8Nz-ak-Jru" id="uRv-Ue-QmZ"/>
                         <outlet property="specialLabel" destination="QMn-vC-vdB" id="KNJ-7x-fbj"/>
                         <outlet property="storyOfHero" destination="97d-ZR-Pqs" id="lMx-Qm-SgX"/>
@@ -697,14 +698,14 @@
                                     <action selector="slaiderPD:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="aef-t2-TTk"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-hD-loe">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-hD-loe">
                                 <rect key="frame" x="262" y="359" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="slaiderLP:" destination="Fi8-oJ-zmB" eventType="valueChanged" id="NaD-Pv-wVO"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-gX-rEy">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-gX-rEy">
                                 <rect key="frame" x="262" y="523" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -768,8 +769,6 @@
         <!--View Controller Four-->
         <scene sceneID="Hrr-KU-lwg">
             <objects>
-                <exit id="ZML-w4-3En" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RbG-l5-vLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="JDK-qm-VPe" customClass="ViewControllerFour" customModule="ArwaAlattas_Project02_JizanFantasy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xKg-vg-rR9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -898,7 +897,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="65" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-XQ-h8H">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-XQ-h8H">
                                 <rect key="frame" x="241" y="329" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -926,7 +925,7 @@
                                     <action selector="slaiderWD:" destination="JDK-qm-VPe" eventType="valueChanged" id="og8-cf-g2N"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="WGo-Ag-qjD">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WGo-Ag-qjD">
                                 <rect key="frame" x="241" y="539" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -950,12 +949,15 @@
                         <outlet property="imageOfHero" destination="rml-oQ-wcn" id="WIE-ba-8Wr"/>
                         <outlet property="lifePointLable" destination="auZ-uY-0jD" id="gwh-GW-GaU"/>
                         <outlet property="nameOfHero" destination="onY-C2-7cR" id="mjd-3G-sz4"/>
+                        <outlet property="pointOfHero" destination="TxH-cX-D1R" id="GyV-OV-Qsg"/>
                         <outlet property="powerLabel" destination="Rgs-TD-Zsb" id="wyL-QQ-0ni"/>
                         <outlet property="specialLabel" destination="dcZ-xE-4xW" id="uMa-J2-dg5"/>
                         <outlet property="storyOfHero" destination="h2V-JX-Hhd" id="f8V-d6-D2q"/>
                         <outlet property="weaponLabel" destination="VkR-RV-3Fz" id="5eO-yk-PYX"/>
                     </connections>
                 </viewController>
+                <exit id="ZML-w4-3En" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbG-l5-vLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2611.594202898551" y="793.52678571428567"/>
         </scene>
