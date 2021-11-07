@@ -44,25 +44,6 @@ class Hero {
         
         
     }
-//struct Heroo{
-//    var name: String?
-//    var lifePoint: Int?
-//    var defense: Int?
-//    var powerDamage: Int?
-//    var weaponDamage: Int?
-//    var specialCapacity: Int?
-//
-//
-//
-//    mutating func restOfLife() {
-//        if lifePoint! < 0 {
-//            lifePoint = 0
-//        }
-//        print("Rest of life point for Knight : \(lifePoint!)")
-//    }
-//
-//
-//}
 
 class Hero1: Hero{
     func restOfLife() {
@@ -132,7 +113,7 @@ class ViewController: UIViewController {
     var turn: Int = 0
     var winner = false
     
-//    var knightAndheroo = Hero(name: "", lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0)
+
     var knightAndheroo = Hero (name: "", lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0)
     var boss2 = Hero(name: "Boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75)
     var boss1 = Hero(name: "Boss1", lifePoint: 240, defense: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110)
@@ -162,17 +143,7 @@ class ViewController: UIViewController {
         
 
         
-//        knightAndheroo.name = labelNameValue.text!
-//
-//        knightAndheroo.defense = Int(labelDfValue.text!)
-//
-//        knightAndheroo.lifePoint = Int(labelVa.text!)
-//
-//        knightAndheroo.powerDamage = Int(labelPdValue.text!)
-//
-//        knightAndheroo.weaponDamage = Int(labelWdValue.text!)
-//
-//        knightAndheroo.specialCapacity = Int(labelsCValue.text!)
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         playerHerooo?.name = labelNameValue.text
 
@@ -345,6 +316,11 @@ class ViewController: UIViewController {
         
         ///// hear add value label 
         labelVa.text = "\(playerHerooo!.lifePoint!)"
+        labelDfValue.text = "\(playerHerooo!.defense!)"
+        labelPdValue.text = "\(playerHerooo!.powerDamage!)"
+        labelWdValue.text = "\(playerHerooo!.weaponDamage!)"
+        
+        
 //
         BossLiveP.text = "\(playerBoss!.lifePoint!)"
 //
@@ -352,6 +328,8 @@ class ViewController: UIViewController {
         bossDf.text = "\(playerBoss!.defense!)"
         bossPd.text = "\(playerBoss!.powerDamage!)"
         bossWd.text = "\(playerBoss!.weaponDamage!)"
+        
+        
 //
 //
 //
