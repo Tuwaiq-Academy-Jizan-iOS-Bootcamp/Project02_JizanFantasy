@@ -19,6 +19,8 @@
 		BA9320D62732C28D0041D651 /* newGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9320D52732C28D0041D651 /* newGameTests.swift */; };
 		BA9320E02732C28D0041D651 /* newGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9320DF2732C28D0041D651 /* newGameUITests.swift */; };
 		BA9320E22732C28D0041D651 /* newGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9320E12732C28D0041D651 /* newGameUITestsLaunchTests.swift */; };
+		BA9748872735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */; };
+		BA9748892735D90300F24A13 /* ViewControllerNewPlayerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		BA9320DB2732C28D0041D651 /* newGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9320DF2732C28D0041D651 /* newGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGameUITests.swift; sourceTree = "<group>"; };
 		BA9320E12732C28D0041D651 /* newGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewPlayerTwo.swift; sourceTree = "<group>"; };
+		BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewPlayerThree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				BA9320C02732C28C0041D651 /* SceneDelegate.swift */,
 				BA9320C22732C28C0041D651 /* ViewController.swift */,
 				BA9320C42732C28C0041D651 /* Main.storyboard */,
+				BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */,
+				BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */,
 				BA6481FF2733BB1600AA7D52 /* ViewControllerNewPlayer.swift */,
 				BA6481FD2733B45E00AA7D52 /* ViewControllerPlayears.swift */,
 				BA6481FB2733B42500AA7D52 /* ViewControllerMatch.swift */,
@@ -269,10 +275,12 @@
 			files = (
 				BA6481FE2733B45E00AA7D52 /* ViewControllerPlayears.swift in Sources */,
 				BA6481FC2733B42500AA7D52 /* ViewControllerMatch.swift in Sources */,
+				BA9748872735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift in Sources */,
 				BA9320C32732C28C0041D651 /* ViewController.swift in Sources */,
 				BA9320BF2732C28C0041D651 /* AppDelegate.swift in Sources */,
 				BA6482002733BB1600AA7D52 /* ViewControllerNewPlayer.swift in Sources */,
 				BA9320C12732C28C0041D651 /* SceneDelegate.swift in Sources */,
+				BA9748892735D90300F24A13 /* ViewControllerNewPlayerThree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
