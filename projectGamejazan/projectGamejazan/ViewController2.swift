@@ -59,6 +59,7 @@ class ViewController2: UIViewController{
             controlsSegue.hero = selectedHero
         }
     }
+//    max
     func checkValues() -> Bool {
         
         if selectedHero == nil {
@@ -109,7 +110,8 @@ extension ViewController2: UITextFieldDelegate {
         switch textField.tag{
         case 1:
             guard let heroName = textField.text else {
-                createButton.isEnabled = false
+//                createButton.isEnabled = false
+                createButton.isEnabled = true
                 return
             }
             let trimmed = heroName.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

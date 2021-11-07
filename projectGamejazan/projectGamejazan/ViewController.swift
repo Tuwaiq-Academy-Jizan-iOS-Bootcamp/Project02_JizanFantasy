@@ -129,7 +129,11 @@ class ViewController: UIViewController {
         updateLabels()
     }
     @IBAction func roolingDice(_ sender: Any) {
+        if bossPointLabel.text! > "0" && playerLPLabel.text! > "0"{
         rollDice()
+        }else{
+            descriptionTextView.text = "Good Luck 😂🦦!"
+        }
     }
     
     func loadBoss() {
