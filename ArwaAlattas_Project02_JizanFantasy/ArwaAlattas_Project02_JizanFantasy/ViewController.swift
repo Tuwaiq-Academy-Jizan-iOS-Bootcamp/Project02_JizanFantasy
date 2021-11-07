@@ -50,30 +50,20 @@ class Bosses{
  
 
 class ViewController: UIViewController {
-   
-var boss1=Bosses(name : "Boss1",livePoint: 250, defanse: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110,specialCapacityOfLifePoint: 5)
-var boss2 = Bosses(name : "Boss2",livePoint: 170, defanse: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75,specialCapacityOfLifePoint: 5)
-
-var hero = Hero(pointOfDispatch: 0, livePoint: 0, defanse: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0,specialCapacityOfLifePoint: 5)
-var theturn = false
-    var flagKnight = false
-    var flagWizard = false
-    var flagThief = false
-    var flagBoss1 = false
-    var flagBoss2 = false
-  var turnNumber = 1
+    // tool for player 1
     @IBOutlet weak var nameOfBoss: UILabel!
     @IBOutlet weak var lifePointOfBoss: UILabel!
     @IBOutlet weak var defanseOfBoss: UILabel!
     @IBOutlet weak var powerDamageOfBoss: UILabel!
     @IBOutlet weak var weaponDamageOfBoss: UILabel!
     @IBOutlet weak var specialCapacityOfBoss: UILabel!
-    @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var imageBoss: UIImageView!
     
+    //  tool for descreption the game
+    @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet weak var logicOfGame: UILabel!
-    
+    // tool for player 2
     @IBOutlet weak var nameOfHero: UILabel!
     @IBOutlet weak var LifePointOfHero: UILabel!
     @IBOutlet weak var defanseOfHero: UILabel!
@@ -82,8 +72,21 @@ var theturn = false
     @IBOutlet weak var specialCapacityOfHero: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
     
- 
     
+    
+    var boss1=Bosses(name : "Boss1",livePoint: 250, defanse: 30, powerDamage: 20, weaponDamage: 45, specialCapacity: 110,specialCapacityOfLifePoint: 5)
+    var boss2 = Bosses(name : "Boss2",livePoint: 170, defanse: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75,specialCapacityOfLifePoint: 5)
+    var hero = Hero(pointOfDispatch: 0, livePoint: 0, defanse: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0,specialCapacityOfLifePoint: 5)
+// flags for sort turn and for add special effect
+var theturn = false
+var flagKnight = false
+var flagWizard = false
+var flagThief = false
+var flagBoss1 = false
+var flagBoss2 = false
+var turnNumber = 1
+ 
+// I use this method becouse I want this information frist appear
     override func viewWillAppear(_ animated: Bool) {
         let randomBoss = Int.random(in: 1...2)
         if randomBoss == 1 {
@@ -106,13 +109,10 @@ specialCapacityOfBoss.text = String(boss1.specialCapacity)
         
     }
     
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view.
+//    }
     @IBAction func creetChallenger(seque:UIStoryboardSegue){
     }
 
@@ -120,14 +120,16 @@ specialCapacityOfBoss.text = String(boss1.specialCapacity)
     @IBOutlet weak var theGameButton: UIButton!
     
     @IBAction func theGame(_ sender: Any) {
-      if Int(lifePointOfBoss.text!)! > 0 && Int(LifePointOfHero.text!)! > 0  {
+    if Int(lifePointOfBoss.text!)! > 0 && Int(LifePointOfHero.text!)! > 0  {
+        // like initial value
    hero.livePoint = Int(LifePointOfHero.text!)!
     boss1.livePoint = Int(lifePointOfBoss.text!)!
     boss2.livePoint = Int(lifePointOfBoss.text!)!
             
     turnLabel.text = "Turn Number is  \(turnNumber) "
+        // this flag for sort the turn to each player
         if theturn == true {
-//    boss turn
+//    boss turn  I'm  declear dice for each player
             turnNumber += 1
     let dice = Int.random(in: 1...20)
 if dice >= 1 && dice <= 9{
@@ -191,7 +193,9 @@ if dice >= 1 && dice <= 9{
       
         rollinDiceOfHero ()
 
-        }}else if Int(lifePointOfBoss.text!)! <= 0 {
+        }
+        
+    }else if Int(lifePointOfBoss.text!)! <= 0 {
             turnLabel.text = "🎊🎉🎊🎉🎊🎉🎊🎉"
             startLabel.text = "only in turn  \(turnNumber)"
             logicOfGame.text = "\n The winner  is  \(nameOfHero.text!)   🥳🥳 \n  game over !!"
@@ -227,7 +231,6 @@ boss2.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
            LifePointOfHero.text! = String(hero.livePoint)
        }
        logicOfGame.text = "\n life Point of \(nameOfHero.text!)  :  \(hero.livePoint) \n life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)"
-//       logicOfGame.text = "\n life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)"
        if flagWizard{
            switch nameOfBoss.text! {
            case "Boss1" :
@@ -315,7 +318,7 @@ boss1.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)
         
     
     
-    
+    // fu
     func restOfLife() {
         if hero.livePoint <= 0 {
             hero.livePoint = 0

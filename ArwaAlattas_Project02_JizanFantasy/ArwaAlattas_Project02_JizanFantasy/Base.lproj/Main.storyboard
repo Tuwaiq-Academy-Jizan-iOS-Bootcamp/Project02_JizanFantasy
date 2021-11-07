@@ -23,8 +23,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG6-Yv-wFp">
-                                <rect key="frame" x="258" y="89" width="95" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You must choose" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG6-Yv-wFp">
+                                <rect key="frame" x="214" y="74" width="189" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -143,10 +143,10 @@
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-A7-vGt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-A7-vGt">
                                 <rect key="frame" x="32" y="536" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -242,7 +242,7 @@
                         <outlet property="LifePointOfHero" destination="wLd-Om-yv9" id="LJg-Im-cvg"/>
                         <outlet property="defanseOfBoss" destination="wtP-nu-7bJ" id="aed-dv-7rs"/>
                         <outlet property="defanseOfHero" destination="tLY-oD-8g2" id="z5f-86-9rw"/>
-                        <outlet property="imageBoss" destination="4Gi-QG-biV" id="RQM-68-Y43"/>
+                        <outlet property="imageBoss" destination="4Gi-QG-biV" id="SVF-vd-jSP"/>
                         <outlet property="imageHero" destination="HvR-bd-Fdk" id="ZaW-40-dGT"/>
                         <outlet property="lifePointOfBoss" destination="UET-6X-V78" id="4dN-ZZ-qk2"/>
                         <outlet property="logicOfGame" destination="Ef5-2R-6FJ" id="hy9-Qg-CuS"/>
