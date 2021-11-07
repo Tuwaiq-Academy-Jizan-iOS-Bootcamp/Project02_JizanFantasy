@@ -215,6 +215,10 @@ class ViewController: UIViewController {
             viewPrintFight.text += ("========= This is the end of turn N°\(turn)======================================================")
         }
         
+        //textView or viewPrintFight Scroll
+        let range = NSMakeRange(viewPrintFight.text.count - 1, 0)
+        viewPrintFight.scrollRangeToVisible(range)
+        
         //end button rolingdice
     }
 
