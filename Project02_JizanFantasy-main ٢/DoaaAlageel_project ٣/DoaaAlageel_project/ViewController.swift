@@ -123,12 +123,13 @@ class ViewController: UIViewController {
         let def1 = Int(lableDF.text!)!
         let pow1 = Int(lablePD.text!)!
         let weap1 = Int(lableWD.text!)!
-        
+        let SP1 = Int(lableSC.text!)!
    
     var lifp2 = Int(user2LP.text!)!
         let def2 = Int(user2DF.text!)!
         let pow2 = Int(user2PD.text!)!
         let weap2 = Int(user2WD.text!)!
+        let SP2 = Int(user2SC.text!)!
        
         
             
@@ -138,6 +139,9 @@ class ViewController: UIViewController {
         diceNumber.text = String(randomdice)
         
         let rolradaic = Int.random(in:1...20)
+          
+            turn+=1
+            dscripGame.text += ("💥~~~turn\(turn)~~~💥\n")
             
             
         switch rolradaic {
@@ -151,9 +155,9 @@ class ViewController: UIViewController {
                     lifp2 = (lifp2 - 0)
                 }
             user2LP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow2)life point  \(user2LP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1),,life point  \(user2LP.text!)\n")
             
-        print("user use dp")
+        
             
             
         
@@ -169,14 +173,23 @@ class ViewController: UIViewController {
             lifp2 = (lifp2 - 0)
         }
             user2LP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1)life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
             
             //lableLP.text = String(lifp2)
             
            
             
         default:
-            print ("error")
+            dscripGame.text += ("dise number : \(rolradaic)\n")
+            dscripGame.text += ("life point: \( labelUsername2.text!) is \(user2LP.text!)\n")
+            
+            if ((def2 - SP1) <= 0){
+        lifp2 = (lifp2 + (def2 - SP1))
+                 }
+               
+            user2LP.text = String(checkZero(num:lifp2))
+            dscripGame.text += (" \(lableUserName.text!) use Special capacity : \(pow1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
+           
     }
     
            
@@ -192,7 +205,7 @@ class ViewController: UIViewController {
                     lifp1 = (lifp1 - 0)
                 }
             lableLP.text = String(checkZero(num:lifp1))
-            print("\(lableLP.text!) use power damage : \(pow2) life point  is \(lableLP.text!)")
+            print("\(labelUsername2.text!) use power damage : \(pow2),,life point  is \(lableLP.text!)")
             
         print("player use dp")
         
@@ -207,12 +220,20 @@ class ViewController: UIViewController {
             lifp1 = (lifp1 - 0)
         }
             lableLP.text = String(checkZero(num:lifp1))
-            print(" use weapon damage :\(weap2) life point :  is \(lableLP.text!)")
+            print("\(labelUsername2.text!) use weapon damage :\(weap2) life point :  is \(lableLP.text!)")
             
             
         
         default:
-            print ("error")
+            
+                dscripGame.text += ("dise number : \(rolradaic)\n")
+                dscripGame.text += ("life point: \( lableUserName.text!) is \(lableLP.text!)\n")
+            if ((def1 - SP2) <= 0){
+        lifp1 = (lifp1 + (def1 - SP2))
+                 }
+            lableLP.text = String(checkZero(num:lifp1))
+            print("\(labelUsername2.text!) use Special capacity  :\(weap2) life point :  is \(lableLP.text!)")
+            
         
     
     }
