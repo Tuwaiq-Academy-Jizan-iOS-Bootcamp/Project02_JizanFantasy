@@ -9,42 +9,72 @@ import UIKit
 class TwoViewController: UIViewController {
     @IBOutlet weak var NameText: UITextField!
     @IBOutlet weak var pointName: UILabel!
-  
+    @IBOutlet weak var pointName2: UILabel!
+    @IBOutlet weak var pointName3: UILabel!
     @IBOutlet weak var textLP: UITextField!
     @IBOutlet weak var textDF: UITextField!
     @IBOutlet weak var textPD: UITextField!
     @IBOutlet weak var textWD: UITextField!
     @IBOutlet weak var textSC: UITextField!
     @IBOutlet weak var imagePlayer: UIImageView!
+    
     @IBAction func stepperDF(_ sender: UIStepper) {
         textDF.text = String(sender.value)
     }
-    
+    @IBAction func stepperPDK(_ sender: UIStepper) {
+        textPD.text = String(sender.value)
+    }
+    @IBAction func stepperWDK(_ sender: UIStepper) {
+        textWD.text = String(sender.value)
+    }
+    @IBAction func stepperDFW(_ sender: UIStepper) {
+        textDF.text = String(sender.value)
+    }
+    @IBAction func stepperPDW(_ sender: UIStepper) {
+        textPD.text = String(sender.value)
+    }
+    @IBAction func stepperWDW(_ sender: UIStepper) {
+        textWD.text = String(sender.value)
+    }
+    @IBAction func stepperDFT(_ sender: UIStepper) {
+        textDF.text = String(sender.value)
+    }
+    @IBAction func stepperPDT(_ sender: UIStepper) {
+        textPD.text = String(sender.value)
+    }
+    @IBAction func stepperWDT(_ sender: UIStepper) {
+        textWD.text = String(sender.value)
+    }
+    @IBAction func steepperSCK(_ sender: UIStepper) {
+        textSC.text = String(sender.value)
+    }
+    @IBAction func steepperSCW(_ sender: UIStepper) {
+        textSC.text = String(sender.value)
+    }
+    @IBAction func steepperSCT(_ sender: UIStepper) {
+        textSC.text = String(sender.value)
+    }
     @IBAction func Name1(_ sender: Any) {
         NameText.text = String("knight")
         pointName.text = String(250)
         imagePlayer.image = UIImage(named: "knight")
     }
-    
     @IBAction func name2(_ sender: Any) {
-        NameText.text = String("wizard")
-        pointName.text = String(245)
+       NameText.text = String("wizard")
+        pointName2.text = String(245)
         imagePlayer.image = UIImage(named: "wizard")
     }
-    
     @IBAction func name3(_ sender: Any) {
         NameText.text = String("thief")
-        pointName.text = String(210)
+     pointName3.text = String(210)
         imagePlayer.image = UIImage(named: "thief")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let image = segue.destination as! ViewController
+        image.imagePlayer2.image = imagePlayer.image
         let name = segue.destination as! ViewController
         name.player2.text = NameText.text
         let playr01 = segue.destination as! ViewController
@@ -64,6 +94,4 @@ extension TwoViewController: UITextFieldDelegate{
          textField.resignFirstResponder()
          return true
      }
-    
-
 }

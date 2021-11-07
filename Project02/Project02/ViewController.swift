@@ -6,153 +6,192 @@
 //
 
 import UIKit
-class Hero {
+struct Player {
     var name: String
-    var LifePoint: Int
-    var Defense:Int
-    var PowerDamage:Int
-    var WeaponDamage:Int
-    var SpecialCapacity:Int
-    init (name:String,LifePoint:Int,Defense:Int,PowerDamage:Int,WeaponDamage:Int,SpecialCapacity:Int){
-        self.name = name
-        self.LifePoint = LifePoint
-        self.Defense = Defense
-        self.PowerDamage = PowerDamage
-        self.WeaponDamage = WeaponDamage
-        self.SpecialCapacity = SpecialCapacity
-    }
-    
+    var LifePoint: String
+    var Defense:String
+    var PowerDamage:String
+    var WeaponDamage:String
+    var SpecialCapacity:String
+    var specialLP: String
+    var specialWD: String
+    var specialPD: String
 }
-
-class Boss{
-    var name: String
-    var LifePoint: Int
-    var Defense:Int
-    var PowerDamage:Int
-    var WeaponDamage:Int
-    var SpecialCapacity:Int
-    init (name:String,LifePoint:Int,Defense:Int,PowerDamage:Int,WeaponDamage:Int,SpecialCapacity:Int){
-        self.name = name
-        self.LifePoint = LifePoint
-        self.Defense = Defense
-        self.PowerDamage = PowerDamage
-        self.WeaponDamage = WeaponDamage
-        self.SpecialCapacity = SpecialCapacity
-        
-    }
-}
-
 class ViewController: UIViewController{
-    
-    
+ // boss
+    let randomB = Int.random(in: 1...2)
+    var boss1 = Player(name: "boss1", LifePoint: "250", Defense: "30", PowerDamage: "20", WeaponDamage: "45", SpecialCapacity: "110", specialLP: "0", specialWD: "22", specialPD: "5")
+    var boss2 = Player(name: "boss2", LifePoint: "170", Defense: "25", PowerDamage: "15", WeaponDamage: "30", SpecialCapacity: "75", specialLP: "32", specialWD: "0", specialPD: "5")
     @IBOutlet weak var Player1: UILabel!
     @IBOutlet weak var PlayerLP1: UILabel!
     @IBOutlet weak var PlayerDF1: UILabel!
     @IBOutlet weak var PlayerPD1: UILabel!
     @IBOutlet weak var PlayerWD1: UILabel!
     @IBOutlet weak var PlayerSC1: UILabel!
+    // players
     @IBOutlet weak var player2: UILabel!
     @IBOutlet weak var PlayerLP2: UILabel!
     @IBOutlet weak var PlayerDF2: UILabel!
     @IBOutlet weak var PlayerPD2: UILabel!
     @IBOutlet weak var PlayerWD2: UILabel!
     @IBOutlet weak var PlayerSC2: UILabel!
+    var sC2 = ""
+    var specialLP2 = "0"
+    var specialWD2 = "0"
+    var specialPD2 = "0"
+    // description
     @IBOutlet weak var Description: UILabel!
+// button
     @IBOutlet weak var resultDice: UILabel!
+    // image Boss
     @IBOutlet weak var ImageBoss: UIImageView!
-    
+    // image players
     @IBOutlet weak var imagePlayer2: UIImageView!
-    
-    
-    var knight = Hero(name: "knight", LifePoint: 250, Defense: 20, PowerDamage: 30, WeaponDamage: 40, SpecialCapacity:100)
-    var wizard = Hero(name: "wizard", LifePoint: 245, Defense: 15, PowerDamage: 70, WeaponDamage: 20, SpecialCapacity:50)
-    var thief = Hero(name: "thief", LifePoint: 210, Defense: 25, PowerDamage: 15, WeaponDamage: 30, SpecialCapacity:75)
-    var boss1 = Boss(name: "boss1", LifePoint: 250, Defense: 30, PowerDamage: 20, WeaponDamage: 45, SpecialCapacity:110)
-    var boss2 = Boss(name: "boss2", LifePoint: 170, Defense: 25, PowerDamage: 15, WeaponDamage: 30, SpecialCapacity:75)
-    
+    var ImageP = 0
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        roll()
-        bossRandom()
+    roll()
     }
-    func roll() {
-       var bossLP = Int(PlayerLP1.text!)
-        var bossDF = Int(PlayerDF1.text!)
-        var bossPD = Int(PlayerPD1.text!)
-        var bossWD = Int(PlayerWD1.text!)
-        var bossSC = Int(PlayerSC1.text!)
-        
-        var heroLP = Int(PlayerLP1.text!)
-         var heroDF = Int(PlayerDF1.text!)
-         var heroPD = Int(PlayerPD1.text!)
-         var heroWD = Int(PlayerWD1.text!)
-         var heroSC = Int(PlayerSC1.text!)
-        
-        let reules: Int = .random(in: 1...20)
-        switch reules {
-        case 1...9:
-            Description.text = "Power Damage"
-            resultDice.text
-            print("Power Damage")
-        case 10...19:
-            Description.text = "Weapon Damage"
-            resultDice.text
-            print("Weapon Damage")
-        case 20:
-            Description.text = "Spécial Capacity"
-            resultDice.text
-            print("Spécial Capacity")
-        default:
-            print("Geam Over  !!!")
-        }
-    }
-    
-    func DefenseKnight(){
-    }
-    func PowerDamageKnight(){
-    }
-    func WeaponDamageKnight(){
-    }
-    func Defensewizard(){
-    }
-    func PowerDamagewizard(){
-    }
-    func WeaponDamagewizard(){
-    }
-    func bossRandom(){
-        let Boss =  Int.random(in: 1...2)
-        switch Boss {
-        case 1:
-            ImageBoss.image = UIImage(named: "imageOne")
-            Player1.text = String(boss1.name)
-            PlayerLP1.text = String(boss1.LifePoint)
-            PlayerDF1.text = String(boss1.Defense )
-            PlayerPD1.text = String(boss1.PowerDamage)
-            PlayerWD1.text = String(boss1.WeaponDamage)
-            PlayerSC1.text = String(boss1.SpecialCapacity)
-            
-        case 2:
-            ImageBoss.image = UIImage(named: "imageTwo")
-            Player1.text = String(boss2.name)
-            PlayerLP1.text = String(boss2.LifePoint)
-            PlayerDF1.text = String(boss2.Defense)
-            PlayerPD1.text = String(boss2.PowerDamage)
-            PlayerWD1.text = String(boss2.WeaponDamage)
-            PlayerSC1.text = String(boss2.SpecialCapacity)
-            
-        default:
-            print(0)
-        }
-    }
-    
+       var turnH = true
     @IBAction func RollingDice(_ sender: Any) {
-        resultDice.text = String(Int.random(in:1...20))
-        roll()
-    }
-    @IBAction func
-    unwindToRootViewController(segue: UIStoryboardSegue){
-        print("Unwind to Root View Controller")
+        let random =  Int.random(in: 1...20)
+        resultDice.text = "\(random)"
+        if random >= 1 && random <= 9 && turnH == true {
+        turnH = false
+            if let a = Int(PlayerPD2.text!), let b = Int(PlayerDF1.text!){
+            var heroDM = a - b
+            if heroDM < 0 {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
+            }else {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+            }
+            if heroDM < 0 {
+                heroDM = 0
+            }
+            Description.text = " \(player2.text!)  use his power to damage\(Player1.text!) by \(heroDM)"
+            print("power Damage")
+            }
+        }else if random >= 10 && random <= 19 && turnH == true {
+            turnH = false
+            if let a = Int(PlayerWD2.text!), let b = Int(PlayerDF1.text!){
+           var heroDM = a - b
+            if heroDM < 0 {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
+            } else {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+            }
+            if heroDM < 0 {
+                heroDM = 0
+            }
+            Description.text = " \(Player1.text!) use his weapon to damage \(player2.text!) by \(heroDM)"
+            print("weapon Damage")
+            }
+        }else if random == 20 && turnH == true {
+            turnH = false
+            if let a = Int(PlayerSC2.text!), let b = Int(PlayerDF1.text!){
+            var heroDM = a - b
+            if heroDM < 0 {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - 0)"
+            } else {
+                PlayerLP1.text = "\(Int(PlayerLP1.text!)! - heroDM)"
+            }
+            if heroDM < 0 {
+                heroDM = 0
+            }
+            PlayerLP2.text = "\(Int(PlayerLP2.text!)! + Int(specialLP2)!)"
+            PlayerPD2.text = "\(Int(PlayerPD2.text!)! + Int(specialPD2)!)"
+            PlayerWD2.text = "\(Int(PlayerWD2.text!)! + Int(specialWD2)!)"
+            print("special Capacity")
+            }
+        }else  if random >= 1 && random <= 9 && turnH == false {
+            turnH = true
+            if let a = Int(PlayerPD1.text!), let b = Int(PlayerDF2.text!) {
+            var bossDM = a - b
+            if bossDM < 0 {
+                PlayerLP2.text = "\(Int(PlayerLP2.text!)! - 0)"
+            } else {
+                PlayerLP2.text = "\(Int(PlayerLP2.text!)! - bossDM)"
+            }
+            if bossDM < 0 {
+                bossDM = 0
+            }
+            Description.text = " \(Player1.text!) use his power to damage \(player2.text!) by \(bossDM)"
+            print("power Damage")
+        }
+        }else if random >= 10 && random <= 19 && turnH == false {
+            turnH = false
+            if let a = Int(PlayerWD1.text!), let b = Int(PlayerDF2.text!){
+            var bossDM = a - b
+            if bossDM < 0 {
+                PlayerLP2.text = "\(Int(PlayerLP2.text!)! - 0)"
+            }else {
+                PlayerLP2.text = "\(Int(PlayerLP2.text!)! - bossDM)"
+            }
+            if bossDM < 0 {
+                bossDM = 0
+            }
+            Description.text = " \(player2.text!) use his weapon to damage \(player2.text!) by \(bossDM)"
+            print("weapon Damage")
+            }
+    }else  if random == 20 && turnH == false && random == 1 {
+        turnH = true
+        if let a = Int(boss1.SpecialCapacity), let b = Int(PlayerDF2.text!){
+        var bossDM = a - b
+        if bossDM < 0 {
+            PlayerLP2.text = "\(Int(PlayerLP2.text!)! - 0)"
+        } else {
+            PlayerLP2.text = "\(Int(PlayerLP2.text!)! - bossDM)"
+        }
+        if bossDM < 0 {
+            bossDM = 0
+       }
+        }
+        PlayerLP1.text = "\(Int(PlayerLP1.text!)! + Int(boss1.specialLP)!)"
+        PlayerPD1.text = "\(Int(PlayerPD1.text!)! + Int(boss1.specialPD)!)"
+        PlayerWD1.text = "\(Int(PlayerWD1.text!)! + Int(boss1.specialWD)!)"
+    }else if random == 20 && turnH == false && randomB == 2 {
+        turnH = true
+        if let a = Int(boss2.SpecialCapacity), let b = Int(PlayerDF2.text!){
+        var bossDM = a - b
+        if bossDM < 0 {
+            PlayerLP2.text = "\(Int(PlayerLP2.text!)! - 0)"
+        }else {
+            PlayerLP2.text = "\(Int(PlayerLP2.text!)! - bossDM)"
+        }
+        if bossDM < 0 {
+            bossDM = 0
+        }
+        }
+        PlayerLP1.text = "\(Int(PlayerLP1.text!)! + Int(boss2.specialLP)!)"
+        PlayerPD1.text = "\(Int(PlayerPD1.text!)! + Int(boss2.specialPD)!)"
+        PlayerWD1.text = "\(Int(PlayerWD1.text!)! + Int(boss2.specialWD)!)"
+        print("special Capacity")
     }
 }
-
+    // func Boss
+    func roll() {
+        let randomB = Int.random(in: 1...2)
+                switch randomB {
+                case 1:
+                    ImageBoss.image = UIImage(named: "boss1")
+                    Player1.text = boss1.name
+                    PlayerLP1.text = boss1.LifePoint
+                    PlayerDF1.text = boss1.Defense
+                    PlayerPD1.text = boss1.PowerDamage
+                    PlayerWD1.text = boss1.WeaponDamage
+                    PlayerSC1.text = boss2.SpecialCapacity
+                case 2:
+                    ImageBoss.image = UIImage(named: "boss2")
+                    Player1.text = boss2.name
+                    PlayerLP1.text = boss2.LifePoint
+                    PlayerDF1.text = boss2.Defense
+                    PlayerPD1.text = boss2.PowerDamage
+                    PlayerWD1.text = boss2.WeaponDamage
+                    PlayerSC1.text = boss2.SpecialCapacity
+                default:
+                    print("ERROR")
+                }
+         }
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue){      print("Unwind to Root View Controller")
+    }
+}
