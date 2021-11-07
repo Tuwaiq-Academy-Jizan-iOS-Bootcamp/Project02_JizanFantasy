@@ -10,5 +10,16 @@ import UIKit
 
 
 class ViewSecond: UIViewController {
+    //Outlets//
+    @IBOutlet weak var knightButton: UIButton!
+    @IBOutlet weak var wizardButton: UIButton!
+    @IBOutlet weak var thiefButton: UIButton!
+    //Override//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        knightButton.layer.cornerRadius = 40
+//        wizardButton.layer.cornerRadius = 40
+//        thiefButton.layer.cornerRadius = 40
+//    }
 
 }
