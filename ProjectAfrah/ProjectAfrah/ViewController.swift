@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  kk
+//  
 //
 //  Created by Afrah Omar on 28/03/1443 AH.
 //
@@ -61,13 +61,13 @@ class ViewController: UIViewController {
     // Hero 2:  Name: Wizard , (Points to dispatch : 245 , -> LP , DF , PD , WD , SC)
     // Hero 3:  Name: Thief , (Points to dispatch : 210 , -> LP , DF , PD , WD , SC)
     
-    let bosses = [Boss(name: "Eila", lifePoint: 250, defense: 15, PowerDamage: 33, weaponDamage: 30, specialCapacity: 75, image: "boos1"),Boss(name: "Leon", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75, image: "boss2")]
+    let bosses = [Boss(name: "Eila", lifePoint: 250, defense: 30, PowerDamage: 20, weaponDamage: 45 , specialCapacity: 75, image: "boos1"),Boss(name: "Leon", lifePoint: 170, defense: 25, PowerDamage: 15, weaponDamage: 30, specialCapacity: 75, image: "boss2")]
     var boss: Boss!
     
        // Var for The Winner & Turn ...
     
-//    var turn: Int = 0
-    var winner = false
+
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,25 +85,24 @@ class ViewController: UIViewController {
         
         // Element for Hero ...
         
-        imageHero.image = UIImage(named: hero.image)
-        nameHero.text = hero.name
-        labelHeroLP.text = String(hero.lifePoint)
-        labelHeroDF.text = String(hero.defense)
-         labelHeroPD.text = String(hero.PowerDamage)
-        labelHeroWD.text = String(hero.weaponDamage)
-         labelHeroSC.text = String(hero.specialCapacity)
+//        imageHero.image = UIImage(named: hero.image)
+//        nameHero.text = hero.name
+//        labelHeroLP.text = String(hero.lifePoint)
+//        labelHeroDF.text = String(hero.defense)
+//         labelHeroPD.text = String(hero.PowerDamage)
+//        labelHeroWD.text = String(hero.weaponDamage)
+//         labelHeroSC.text = String(hero.specialCapacity)
     }
     @IBAction func RootViewContrller(segue: UIStoryboardSegue) {
     }
-    // The logic of the game ..
-//    var number = 0
+
+    var winner = false
     var turn = 0
     var pressButton = false
     var number = 0
-    var extraDamage = 0
-    var extraPoints = 0
-    var useScBoss = false
-    var useScHero = false
+    var Damage = 0
+    var Points = 0
+    var useSpecialapaCityHero = false
     
     
     @IBOutlet weak var labelDice: UILabel!
@@ -111,75 +110,72 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var deci: UITextView!
 
+    // The logic of the game ..
+    
     @IBAction func rollingDiceButton(_ sender: Any) {
       
         if boss.lifePoint >= 0 && hero.lifePoint >= 0 {
             if pressButton == true {
+                
                 bossTurn()
+                
             }else{
                 turn += 1
                 labelDice.text = " Turn : \(turn)"
                 heroTurn()
             }
         }else {
-            if hero.lifePoint <= 0 {
+            if hero.lifePoint < 0 {
                 deci.text += ("======================\n")
-                deci.text += " 🏆👏 Fanalliy !! Have Winner Boss 👏🏆"
+                deci.text = "  Fanalliy !!  The Winner Boss 🏆"
+                deci.text += ("======================\n")
             }else{
-                deci.text = " Have winner -> \((nameHero.text) ?? "you\n") 🏆"
+                deci.text += ("======================\n")
+                deci.text = " Fanalliy  !! The Winner  -> \((nameHero.text) ?? "\n") 🏆"
+                deci.text += ("======================\n")
             }
         }
     }
-        
-//        if hero.lifePoint >= 0 && boss.lifePoint >= 0 {
-//
-//            bossTurn()
-//
-//            heroTurn()
-//
-//        }else{
-//            if hero.lifePoint <= 0 {
-//                deci.text += ("hero dead ")
-//                deci.text += ("The Winner is : \(boss.name) at turn \(turn)   ")
-//
-//            }else if boss.lifePoint <= 0 {
-//                deci.text += (" boss dead")
-//                deci.text += ("The winner is : \(hero.name) at turn \(turn)")
-//                winner = true
-//            }else{
-//                deci.text += ("something went terribly wrong with my logic")
-//            }
-//        }
-        
+    
+//    The Turn is Boss ..
+    
     func bossTurn() {
         let diceForBoss = dices.randomElement()!
-        
-        deci.text += (" Dice for boss number is : \(diceForBoss)")
-        deci.text += (" it's the boss turn !")
+        deci.text += ("========================\n")
+        deci.text += (" Dice for Boss number is : \(diceForBoss)\n")
+        deci.text += (" it's the boss turn ! \n")
+        deci.text += ("========================\n")
         if diceForBoss >= 1 && diceForBoss <= 9 {
-            deci.text += ("========================\n")
-            if useScBoss == true {
+            if useSpecialapaCityHero == true {
                 boss.PowerDamage += 32
-                useScHero = false
+                useSpecialapaCityHero = false
             }
             if boss.PowerDamage - hero.defense > 0 {
-                deci.text += (" attack was Power Damager that ⚔️  =  \(boss.PowerDamage - hero.defense)")
-                deci.text += (" Hero health 🩸 \(hero.lifePoint) ")
+                deci.text += ("Boss use his power damege aginst Hero =  \(boss.PowerDamage - hero.defense)\n")
+                deci.text += ("Hero health :  \(hero.lifePoint)\n")
                 hero.lifePoint -= boss.PowerDamage - hero.defense
+                if hero.lifePoint < 0 {
+                    hero.lifePoint = 0
+                }
+                labelHeroLP.text = "\( hero.lifePoint)"
             }else{
-                deci.text += (" Hero defence block all attack damage 🛡 !  ")
+                deci.text += ("Hero use defence 🛡 !\n")
             }
            
         } else if diceForBoss >= 10 && diceForBoss <= 19 {
-            if useScBoss == true {
+            if useSpecialapaCityHero == true {
                 boss.PowerDamage += 22
-                useScHero = false
+                useSpecialapaCityHero = false
             }
             
             if boss.weaponDamage - hero.defense > 0 {
                 hero.lifePoint -= boss.weaponDamage - hero.defense
-                deci.text += (" attack was Weapon Damager that 🗡 = \(boss.weaponDamage - hero.defense)")
-                deci.text += (" Hero health 🩸 \(hero.lifePoint)\n  ")
+                if hero.lifePoint < 0 {
+                    hero.lifePoint = 0
+                }
+                labelHeroLP.text = "\( hero.lifePoint)"
+                deci.text += ("Boss use his power damege aginst Hero = \(boss.weaponDamage - hero.defense)\n")
+                deci.text += (" Hero health : \(hero.lifePoint)\n  ")
         }else{
             deci.text += ("Hero defence block all attack damage 🛡 ! \n")
         }
@@ -188,9 +184,9 @@ class ViewController: UIViewController {
               hero.specialCapacity -= boss.defense
              if hero.specialCapacity < 0{
                    hero.specialCapacity = 0
-                 deci.text = "The boss defense succeeded in repelling the attack 🛡"
+//                 deci.text = "The boss defense succeeded in repelling the attack 🛡\n"
              }else{
-                 deci.text = "Hero Use Special Capacity \(hero.specialCapacity),Ohh Boss lost life point 💔"
+                 deci.text = "Hero Use Special Capacity \(hero.specialCapacity)\n"
                  boss.lifePoint -= boss.specialCapacity
                if boss.lifePoint < 0 {
                    boss.lifePoint = 0
@@ -199,10 +195,12 @@ class ViewController: UIViewController {
         }
         labelBossLP.text = String(boss.lifePoint)
             
-            labelDice.text = "Result of the Dice : \(diceForBoss) 🎲"
+            labelDice.text = "Result : \(diceForBoss) 🎲"
 
-        pressButton = true
+        pressButton = false
     }
+    
+    //    The Turn is Hero ..
 
     func heroTurn() {
        
@@ -210,73 +208,81 @@ class ViewController: UIViewController {
         deci.text += ("========================\n")
         deci.text += (" Dice for Hero number is: \(diceForHero)\n")
         deci.text += (" it's the Hero turn!\n")
+        deci.text += ("========================\n")
+    
         if diceForHero >= 1 && diceForHero <= 9 {
-            if useScHero == true {
-                hero.PowerDamage += extraDamage
-                useScHero = false
+            if useSpecialapaCityHero == true {
+                hero.PowerDamage += Damage
+                useSpecialapaCityHero = false
             }
             if hero.PowerDamage - boss.defense > 0 {
                 boss.lifePoint -= hero.PowerDamage - boss.defense
-                deci.text += ("========================\n")
-                deci.text += (" attack was Power Damager that =  \(boss.PowerDamage - hero.defense)\n")
-                deci.text += (" Hero health \(hero.lifePoint)\n  ")
+                labelBossLP.text = "\( hero.lifePoint)"
+                deci.text += ("Hero use his power damage aginst Boss =  \(boss.PowerDamage - hero.defense)\n")
+                deci.text += (" Boss health : \(hero.lifePoint)\n")
                 hero.lifePoint -= boss.PowerDamage - hero.defense
+                if hero.lifePoint < 0{
+                    hero.lifePoint = 0
+                }
+                labelHeroLP.text = "\( hero.lifePoint)"
             }else{
-                deci.text += ("attack was Weapon Damager that\n")
+                deci.text += ("Boss use defence \n")
             }
         } else if diceForHero >= 10 && diceForHero <= 19 {
-            if useScHero == true {
-                hero.weaponDamage += extraDamage
-                useScHero = false
+            if useSpecialapaCityHero == true {
+                hero.weaponDamage += Damage
+                useSpecialapaCityHero = false
             }
             if hero.weaponDamage - boss.defense > 0 {
                 boss.lifePoint -= hero.weaponDamage - boss.defense
-                deci.text += (" attack was Weapon Damager that = \(hero.weaponDamage - boss.defense)")
-                deci.text += (" Hero health \(boss.lifePoint)  ")
+                deci.text += ("Hero use his weapon damage aginst Boss = \(hero.weaponDamage - boss.defense)\n")
+                deci.text += (" Boss health : \(boss.lifePoint)\n")
+                if hero.lifePoint < 0{
+                    hero.lifePoint = 0
+                }
+                labelBossLP.text = "\( boss.lifePoint)"
         }else{
-            deci.text += (" Hero defence block all attack damage!\n")
+            deci.text += (" Boss use defence! \n")
         }
         }else if diceForHero == 20 {
             UseSpecialCapacity()
               hero.specialCapacity -= boss.defense
              if hero.specialCapacity < 0{
                    hero.specialCapacity = 0
-                 deci.text = "The boss defense succeeded in repelling the attack 🛡"
+//                 deci.text = "The boss defense succeeded in repelling the attack 🛡\n"
              }else{
-                 deci.text = "Hero Use Special Capacity \(hero.specialCapacity), Boss lost life point💔"
+                 deci.text = "Hero Use Special Capacity \(hero.specialCapacity)\n"
                  boss.lifePoint -= hero.specialCapacity
                if boss.lifePoint < 0 {
                    boss.lifePoint = 0
                }
                  labelBossLP.text = String(boss.lifePoint)
              }
-            labelHeroLP.text = String(hero.lifePoint + extraPoints)
-            labelDice.text = "Result of the Dice : \(diceForHero) 🎲"
-
-//            deci.text += ("special capacity damage")
-//            deci.text += ("========================\n")
+            labelHeroLP.text = String(hero.lifePoint + Points)
+            labelDice.text = "Result  : \(diceForHero) "
         }
-        pressButton = false
-        
+        pressButton = true
+    
     }
 
-func UseSpecialCapacity(){
-    if number == 1{
-        hero.specialCapacity = 100
-        extraPoints = 5
-        extraDamage = 10
-        useScHero = true
-    }else if number == 2 {
-        hero.specialCapacity = 50
-        extraPoints = 35
-        extraDamage = 10
-        useScHero = true
-    }else{
-        hero.specialCapacity = 75
-        extraPoints = 5
-        extraDamage = 35
-        useScHero = true
+//   The Special capacity
+    
+    func UseSpecialCapacity(){
+        if number == 1{
+            hero.specialCapacity = 100
+            Points = 5
+            Damage = 10
+            useSpecialapaCityHero = true
+        }else if number == 2 {
+            hero.specialCapacity = 50
+            Points = 35
+            Damage = 10
+            useSpecialapaCityHero = true
+        }else{
+            hero.specialCapacity = 75
+            Points = 5
+            Damage = 35
+            useSpecialapaCityHero = true
+        }
     }
-}
-}
-
+    }

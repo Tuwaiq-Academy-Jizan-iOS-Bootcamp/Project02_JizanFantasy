@@ -17,6 +17,7 @@
 		9A4BBA1B2731BBCB00C2BB8D /* ProjectAfrahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA1A2731BBCB00C2BB8D /* ProjectAfrahUITests.swift */; };
 		9A4BBA1D2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA1C2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift */; };
 		9A4BBA2A2731CEF000C2BB8D /* ViewControllerTwo .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */; };
+		9AC651D727370E68004C6742 /* ViewControllerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC651D627370E68004C6742 /* ViewControllerV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9A4BBA1A2731BBCB00C2BB8D /* ProjectAfrahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAfrahUITests.swift; sourceTree = "<group>"; };
 		9A4BBA1C2731BBCB00C2BB8D /* ProjectAfrahUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAfrahUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerTwo .swift"; sourceTree = "<group>"; };
+		9AC651D627370E68004C6742 /* ViewControllerV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				9A4BB9FB2731BBCA00C2BB8D /* SceneDelegate.swift */,
 				9A4BB9FD2731BBCA00C2BB8D /* ViewController.swift */,
 				9A4BB9FF2731BBCA00C2BB8D /* Main.storyboard */,
+				9AC651D627370E68004C6742 /* ViewControllerV.swift */,
 				9A4BBA292731CEF000C2BB8D /* ViewControllerTwo .swift */,
 				9A4BBA022731BBCB00C2BB8D /* Assets.xcassets */,
 				9A4BBA042731BBCB00C2BB8D /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				9A4BBA2A2731CEF000C2BB8D /* ViewControllerTwo .swift in Sources */,
 				9A4BB9FE2731BBCA00C2BB8D /* ViewController.swift in Sources */,
+				9AC651D727370E68004C6742 /* ViewControllerV.swift in Sources */,
 				9A4BB9FA2731BBCA00C2BB8D /* AppDelegate.swift in Sources */,
 				9A4BB9FC2731BBCA00C2BB8D /* SceneDelegate.swift in Sources */,
 			);
@@ -443,6 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WP483DP44T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjectAfrah/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WP483DP44T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjectAfrah/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
