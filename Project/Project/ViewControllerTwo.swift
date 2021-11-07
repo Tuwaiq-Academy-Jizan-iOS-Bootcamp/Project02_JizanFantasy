@@ -67,7 +67,7 @@ class ViewControllerTwo:UIViewController {
         = segue.destination as! ViewController
         saveName.imagePlayer2.image = imageView.image
         saveName.lPPlayer2.text = myTextLP.text
-        saveName.dFPlayer2.text = myTextDF.text
+        saveName.dfPlayer2.text = myTextDF.text
         saveName.pdPlayer2.text = myTextPD.text
         saveName.wdPlayer2.text = myTextWD.text
         saveName.scPlayer2.text = myTextSC.text
