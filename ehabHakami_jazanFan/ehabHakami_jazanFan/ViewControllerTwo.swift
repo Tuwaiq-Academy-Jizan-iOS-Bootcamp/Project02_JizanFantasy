@@ -11,12 +11,9 @@ class ViewControllerTwo: UIViewController {
     
     @IBOutlet weak var textFieldLp: UITextField!
    
-    
     @IBOutlet weak var textFieldDf: UITextField!
     
-    
     @IBOutlet weak var textFieldPd: UITextField!
-    
     
     @IBOutlet weak var textFieldLpWd: UITextField!
     
@@ -29,22 +26,26 @@ class ViewControllerTwo: UIViewController {
     @IBOutlet weak var nameHeroSSS: UILabel!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //delegate textfield
         textFieldLp.delegate = self
         textFieldDf.delegate = self
         textFieldPd.delegate = self
         textFieldLpWd.delegate = self
         cS.delegate = self
+        
+      //end viewDidLoad
     }
     
-
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // Send Value to luebel in ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         let rootVC = segue.destination as! ViewController
@@ -63,11 +64,13 @@ class ViewControllerTwo: UIViewController {
         rootVC.labelNameValue.text = nameHeroSSS.text
         
         rootVC.imageHero.image = imageChrcter.image
-        
-        
+                
         // Pass the selected object to the new view controller.
     }
     
+    
+    
+    /// Bottun knight add value
     @IBAction func knightAddValue(_ sender: Any) {
         textFieldLp.text = "\(60)"
         textFieldDf.text = "\(20)"
@@ -78,9 +81,11 @@ class ViewControllerTwo: UIViewController {
         nameHeroSSS.text = "knight"
         imageChrcter.image = UIImage(named: "ragner")
         
-        //imageDice.image = UIImage(named: ehab[rollingDice()])
+        
     }
     
+    
+    /// Bottun wizard add value
     @IBAction func wizardAddValue(_ sender: Any) {
         textFieldLp.text = "\(90)"
         textFieldDf.text = "\(15)"
@@ -93,7 +98,9 @@ class ViewControllerTwo: UIViewController {
     }
     
     
+    /// Bottun thif add value
     @IBAction func thifAddValue(_ sender: Any) {
+        
         textFieldLp.text = "\(65)"
         textFieldDf.text = "\(25)"
         textFieldPd.text = "\(15)"
@@ -106,6 +113,67 @@ class ViewControllerTwo: UIViewController {
         
     }
     
-    
+}
 
+
+extension ViewControllerTwo:UITextFieldDelegate{
+    
+    // Return keybord
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        
+        return true
+    }
+    
+    
+    
+    //// Func  max point chracter
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
+        ///Max knight
+        if nameHeroSSS.text == "knight" {
+            
+            if Int(textField.text!)! > 20{
+            textFieldDf.text = "\(Int(20))"
+            textFieldPd.text = "\(Int(30))"
+            textFieldLpWd.text = "\(Int(40))"
+            textFieldLp.text = "\(Int(60))"
+                cS.text = "\(Int(100))"
+            
+        }
+            //end if max value knight
+    }
+        ///Max wizard
+        if nameHeroSSS.text == "wizard" {
+            
+            if Int(textField.text!)! > 15{
+            textFieldDf.text = "\(Int(15))"
+            textFieldPd.text = "\(Int(70))"
+            textFieldLpWd.text = "\(Int(20))"
+            textFieldLp.text = "\(Int(90))"
+                cS.text = "\(Int(50))"
+            
+        }
+            //end if max value wizard
+    }
+        ///Max thif
+        if nameHeroSSS.text == "thif" {
+            
+            if Int(textField.text!)! > 15{
+            textFieldDf.text = "\(Int(25))"
+            textFieldPd.text = "\(Int(15))"
+            textFieldLpWd.text = "\(Int(30))"
+            textFieldLp.text = "\(Int(65))"
+                cS.text = "\(Int(55))"
+            
+         }
+       //end if max value thif
+     }
+        
+        //end func max Value
+ }
+    
+  //end class
 }
