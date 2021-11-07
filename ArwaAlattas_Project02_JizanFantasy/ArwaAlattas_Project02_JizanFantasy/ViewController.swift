@@ -135,8 +135,18 @@ specialCapacityOfBoss.text = String(boss1.specialCapacity)
 if dice >= 1 && dice <= 9{
     numberOfDice.text = String(dice)
     startLabel.text! = " The Boss is start with with face \(dice)\n then he use power damage "
+   // hero.livePoint -= (Int(powerDamageOfBoss.text!)! - Int(defanseOfHero.text!)!)
+    
+    if (Int(powerDamageOfBoss.text!)! - Int(defanseOfHero.text!)!) <= 0 {
+       print("no change")
+    }
+    else {
     hero.livePoint -= (Int(powerDamageOfBoss.text!)! - Int(defanseOfHero.text!)!)
-    restOfLife()
+        }
+//    if (Int(powerDamageOfBoss.text!)! - Int(defanseOfHero.text!)
+    if hero.livePoint < 0 {
+        hero.livePoint = 0
+    }
     LifePointOfHero.text = String(hero.livePoint)
     
     logicOfGame.text = " \n life Point of \(nameOfHero.text!)  :  \(hero.livePoint) \n life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!) "
@@ -149,8 +159,14 @@ if dice >= 1 && dice <= 9{
 }else if dice >= 10 && dice <= 19{
     startLabel.text = " The Boss is start with face \(dice) \n then he use weapon damage "
     numberOfDice.text = String(dice)
+    if (Int(weaponDamageOfBoss.text!)! - Int(defanseOfHero.text!)!) < 0 {
+        print("no change")
+    }else {
     hero.livePoint -= (Int(weaponDamageOfBoss.text!)! - Int(defanseOfHero.text!)!)
-    restOfLife()
+    }
+    if hero.livePoint < 0 {
+        hero.livePoint = 0
+    }
     LifePointOfHero.text = String(hero.livePoint)
     logicOfGame.text = " \n life Point of \(nameOfHero.text!)  :  \(hero.livePoint) \n life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)"
     if flagBoss1{
@@ -163,25 +179,25 @@ if dice >= 1 && dice <= 9{
     startLabel.text = "The Boss is start with  face \(dice)\n then he use special capacity "
   
     numberOfDice.text = String(dice)
+    if (Int(specialCapacityOfBoss.text!)! - Int(defanseOfHero.text!)!) <= 0 {
+       print("no change")
+    }
     hero.livePoint -= (Int(specialCapacityOfBoss.text!)! - Int(defanseOfHero.text!)!)
-    restOfLife()
+    if hero.livePoint < 0 {
+        hero.livePoint = 0
+    }
     if nameOfBoss.text == "Boss1"{
         boss1.livePoint += 5
-        restOfLife()
         lifePointOfBoss.text! = String(boss1.livePoint)
         flagBoss1 = true
     }else if nameOfBoss.text == "Boss2"{
         boss2.livePoint += 5
-        restOfLife()
         lifePointOfBoss.text! = String(boss2.livePoint)
         flagBoss2 = true
     }
     LifePointOfHero.text! = String(hero.livePoint)
-    restOfLife()
    
     logicOfGame.text = "\n life Point of \(nameOfHero.text!)  :  \(hero.livePoint) \n life point of \(nameOfBoss.text!)   :  \(lifePointOfBoss.text!)"
-    
-
 
 }
         theturn = false
@@ -220,13 +236,25 @@ if dice >= 1 && dice <= 9{
 numberOfDice.text = String(dice2)
        startLabel.text = " The Hero is start with face \(dice2) \n then he use power damage"
        if nameOfBoss.text! == "Boss1"{
+           if (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0 {
+              print("no things")
+           }else {
 boss1.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
-           restOfLife()
+           }
+           if boss1.livePoint < 0 {
+              boss1.livePoint = 0
+           }
     lifePointOfBoss.text! = String(boss1.livePoint)
            LifePointOfHero.text! = String(hero.livePoint)
        }else if nameOfBoss.text! == "Boss2"{
-boss2.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
-           restOfLife()
+           if (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0 {
+               print("no things")
+               
+           }else {
+               boss2.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!) }
+           if boss2.livePoint < 0 {
+              boss2.livePoint = 0
+           }
            lifePointOfBoss.text = String(boss2.livePoint)
            LifePointOfHero.text! = String(hero.livePoint)
        }
@@ -248,13 +276,27 @@ boss2.livePoint -= (Int(powerDamageOfHero.text!)! - Int(defanseOfBoss.text!)!)
        numberOfDice.text = String(dice2)
         startLabel.text = "  The Hero is start with face \(dice2) \n then he use weapon damage"
         if nameOfBoss.text! == "Boss1"{
-boss1.livePoint -= (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!)
-            restOfLife()
+            if (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0 {
+                print("nothing")
+            }else {
+                boss1.livePoint -= (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!)
+                
+            }
+            if boss1.livePoint < 0 {
+               boss1.livePoint = 0
+            }
 lifePointOfBoss.text! = String(boss1.livePoint)
             LifePointOfHero.text! = String(hero.livePoint)
         }else if nameOfBoss.text! == "Boss2"{
+            if (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0 {
+                
+                print("nothig change")
+            }else {
             boss2.livePoint -= (Int(weaponOfHero.text!)! - Int(defanseOfBoss.text!)!)
-            restOfLife()
+            }
+            if boss2.livePoint < 0 {
+               boss2.livePoint = 0
+            }
             lifePointOfBoss.text = String(boss2.livePoint)
             LifePointOfHero.text! = String(hero.livePoint)
         }
@@ -291,13 +333,27 @@ lifePointOfBoss.text! = String(boss1.livePoint)
      numberOfDice.text = String(dice2)
      startLabel.text = "The Hero is start with face \(dice2)\n then he use special capacity "
      if nameOfBoss.text! == "Boss1"{
+         if (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0 {
+             print("nothings change")
+         }else {
+         
 boss1.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!)
-         restOfLife()
+         }
+         if boss1.livePoint < 0 {
+            boss1.livePoint = 0
+         }
          hero.livePoint += 5
     lifePointOfBoss.text = String(boss1.livePoint)
     LifePointOfHero.text = String(hero.livePoint)
      }else if nameOfBoss.text! == "Boss2"{
+         if (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!) <= 0{
+             print("nothings change")
+         }else {
          boss2.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)!)
+         }
+         if boss2.livePoint < 0 {
+            boss2.livePoint = 0
+         }
          hero.livePoint += 5
     lifePointOfBoss.text = String(boss2.livePoint)
     LifePointOfHero.text = String(hero.livePoint)
@@ -315,22 +371,6 @@ boss1.livePoint -= (Int(specialCapacityOfHero.text!)! - Int(defanseOfBoss.text!)
  }
     theturn = true
  }
-        
-    
-    
-    // fu
-    func restOfLife() {
-        if hero.livePoint <= 0 {
-            hero.livePoint = 0
-        }else if boss1.livePoint <= 0{
-            boss1.livePoint = 0
-        }else if boss1.livePoint <= 0{
-            boss2.livePoint = 0
-        }
-    }
-    
-        
-        
     }
 
     

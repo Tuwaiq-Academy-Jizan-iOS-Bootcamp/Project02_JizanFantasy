@@ -94,7 +94,7 @@ VC2.imageHero.image = imageOfHero.image
 
           }
         
-        if sum > Int( pointOfHero.text!)! {
+        if sum != Int( pointOfHero.text!)! {
     
             self.present(alert2, animated: true, completion: nil)
         }
