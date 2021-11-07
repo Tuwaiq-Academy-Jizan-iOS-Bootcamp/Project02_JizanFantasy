@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var heroImage2: UIImageView!
     @IBOutlet weak var bossImage: UIImageView!
     @IBOutlet weak var descripationGame: UILabel!
+    @IBOutlet weak var turnButton: UILabel!
     
 var boss1 = Boss(name: "boos1", lifePoint: 250, defense: 30, powerDamage:20, weaponDamage: 45, spcialCapacity: 110, specialPd: 0, specialWd: 22, specialLp: 5)
 var boss2 = Boss(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, weaponDamage: 30, spcialCapacity: 75, specialPd: 32, specialWd: 0, specialLp: 5)
@@ -61,8 +62,7 @@ var boss2 = Boss(name: "boss2", lifePoint: 170, defense: 25, powerDamage: 15, we
 var hero = Hero(name: "" ,lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage: 0, specialCapacity: 0, specialPd: 0, specialWd: 0, specialLp: 0)
     
     var turn = 0
-    var nameOfHero = ""
-    var turnButton = false
+    var turnButtonn = false
     var extraPoint = 0
     var extraDamage = 0
     var specialCpacity = 0
@@ -168,7 +168,7 @@ func heroTurn() {
     default:
         ("game over")
     }
-    turnButton = true
+    turnButtonn = true
 }
         
 func bossTurn(){
@@ -189,11 +189,11 @@ func bossTurn(){
             bossPd += 32
             bossSc2 = false
         }
-        bossWd -= heroDf
-        if bossWd < 0 {
+        bossPd -= heroDf
+        if bossPd < 0 {
             bossWd = 0
         }else{
-            heroLp -= bossWd
+            heroLp -= bossPd
             if heroLp < 0 {
                 heroLp = 0
             }
@@ -238,7 +238,7 @@ func bossTurn(){
     default:
         print ("game over")
     }
-    turnButton = false
+    turnButtonn = false
 }
     
 
@@ -250,11 +250,12 @@ func bossTurn(){
         let random = Int.random(in:1...20)
          resultRollingDice.text = String (random)
         if labelHero1.text! > "0" && label1.text! > "0"{
-            if turnButton == true{
+             
+            if turnButtonn == true{
                 bossTurn()
             }else{
                 turn += 1
-                descripationGame.text = ("turn: \(turn)")
+            turnButton.text = ("turn: \(turn)")
                 heroTurn()
             }
     
@@ -272,12 +273,12 @@ func bossTurn(){
    }
     }
     func specialCapacity12(){
-        if nameOfHero == "Knight"{
+        if nameHero.text == "Knight"{
             specialCpacity = 100
             extraPoint = 5
             extraDamage = 10
             heroScp = true
-        }else if nameOfHero == "Wizerd"{
+        }else if nameHero.text == "Wizerd"{
             specialCpacity = 50
             extraPoint = 35
             extraDamage = 10
