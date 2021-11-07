@@ -8,36 +8,42 @@
 import Foundation
 import UIKit
 class ViewControllerTwo: UIViewController{
-
+    
+    @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var TextField1: UITextField!
     @IBOutlet weak var TextField2: UITextField!
     @IBOutlet weak var TextField3: UITextField!
     @IBOutlet weak var TextField4: UITextField!
     @IBOutlet weak var TextField5: UITextField!
     @IBOutlet weak var TextField6: UITextField!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-let sendBack1 = segue.destination as! ViewController
-sendBack1.labelLP2.text = TextField1.text
     
-    let sendBack2 = segue.destination as! ViewController
-    sendBack2.labelDF2.text = TextField2.text
+    @IBOutlet weak var Labe2: UILabel!
     
-    let sendBack3 = segue.destination as! ViewController
-    sendBack3.labelPD2.text = TextField2.text
-    let sendBack4 = segue.destination as! ViewController
-    sendBack4.labelSC2.text = TextField2.text
+override func viewDidLoad() {
+super.viewDidLoad()
+}
+    
+override func prepare(for segue:
+UIStoryboardSegue, sender: Any?) {
+let Abb = segue.destination as!ViewController
+Abb.labelName2.text = TextField1.text
+Abb.labelLP2.text = TextField2.text
+Abb.labelDF2.text = TextField3.text
+Abb.labelPD2.text = TextField4.text
+Abb.labelWD2.text = TextField5.text
+Abb.labelSC2.text = TextField6.text
+Abb.imageHero.image = imageHero.image
 }
 }
-
 extension ViewControllerTwo: UITextViewDelegate{
-    func textFieldShouldReturn( textField1: UITextField) -> Bool {
-        TextField1.resignFirstResponder()
-        return true
-    }
+func textFieldShouldReturn( textField: UITextField) -> Bool {
+textField.resignFirstResponder()
+return true
 }
+
+}
+    
+
+
+
 
