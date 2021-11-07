@@ -70,7 +70,32 @@ var hero = Hero(name: "" ,lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage
     var bossSc2 = false
     var heroScp = false
     
+    @IBAction func rollingDice(_ sender: Any) {
+      //  let random = Int.random(in:1...20)
+       //  resultRollingDice.text = String (random)
+        if labelHero1.text! > "0" && label1.text! > "0"{
+             
+            if turnButtonn == true{
+                bossTurn()
+            }else{
+                turn += 1
+            turnButton.text = ("turn: \(turn)")
+                heroTurn()
+            }
     
+        }else{
+            if label1.text! > "0"{
+                descripationGame.text = " winner is Boss"
+            }else {
+                
+        descripationGame.text = " winer is Hero"
+            
+        }
+     
+       
+//
+   }
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +144,7 @@ func heroTurn() {
     let heroRandomDice = Int.random(in:1...20)
     switch heroRandomDice {
     case 1...9:
+        resultRollingDice.text = "\(heroRandomDice)"
         if heroScp == true {
             bossPd += 32
             heroScp = false
@@ -134,7 +160,9 @@ func heroTurn() {
             label1.text = String (bossLp)
             descripationGame.text = " Hero use his power damage aginst Boss "
         }
+        descripationGame.text = " Boss use defenc "
     case 10...19:
+        resultRollingDice.text = "\(heroRandomDice)"
         if heroScp == true{
             heroWd += extraDamage
             heroScp = false
@@ -151,7 +179,9 @@ func heroTurn() {
             label1.text = String (bossLp)
             descripationGame.text = " Hero use his weapon damage aginst Boss "
         }
+        descripationGame.text = " Boss use defence "
     case 20:
+        resultRollingDice.text = "\(heroRandomDice)"
         specialCapacity12()
         specialCpacity -= bossDf
         if specialCpacity <= 0 {
@@ -164,7 +194,7 @@ func heroTurn() {
         label1.text! = String (bossLp)
         }
         labelHero1.text = String (heroLp + extraPoint)
-        
+        descripationGame.text = "Hero use special Cpacity"
     default:
         ("game over")
     }
@@ -185,6 +215,7 @@ func bossTurn(){
     let bossRandomDice =  Int.random(in:1...20)
     switch bossRandomDice {
     case 1...9:
+        resultRollingDice.text = "\(bossRandomDice)"
         if bossSc2 == true {
             bossPd += 32
             bossSc2 = false
@@ -200,7 +231,9 @@ func bossTurn(){
             labelHero1.text = String (heroLp)
             descripationGame.text = " Boss use his power damege aginst Hero"
         }
+        descripationGame.text = " Hero use defence "
     case 10...19:
+        resultRollingDice.text = "\(bossRandomDice)"
         if bossSc1 == true {
             bossWd += 22
             bossSc1 = false
@@ -210,14 +243,15 @@ func bossTurn(){
             bossWd = 0
         }else {
             heroLp -= bossWd
-            if heroLp < 0 {
-                heroLp = 0
+        if heroLp < 0 {
+            heroLp = 0
             }
             labelHero1.text = String (heroLp)
             descripationGame.text = "Boss use weapon damege aginst Hero "
         }
-        
+        descripationGame.text = "Hero use defence"
     case 20:
+        resultRollingDice.text = "\(bossRandomDice)"
         if nameBoss.text == "Boss1"{
             bossSc1 = true
         }else{
@@ -228,50 +262,46 @@ func bossTurn(){
             bossSc = 0
         }else{
             heroLp -= bossSc
-            if heroLp < 0{
-                heroLp = 0
+        if heroLp < 0{
+            heroLp = 0
             }
             labelHero1.text = String (heroLp)
         }
         label1.text = String (bossLp + 5)
-            
+        descripationGame.text = "Boss use special Cpacity"
     default:
-        print ("game over")
+        print ("Game Over")
     }
     turnButtonn = false
 }
     
-
     
-    
-    
-    
-    @IBAction func rollingDice(_ sender: Any) {
-        let random = Int.random(in:1...20)
-         resultRollingDice.text = String (random)
-        if labelHero1.text! > "0" && label1.text! > "0"{
-             
-            if turnButtonn == true{
-                bossTurn()
-            }else{
-                turn += 1
-            turnButton.text = ("turn: \(turn)")
-                heroTurn()
-            }
-    
-        }else{
-            if label1.text! > "0"{
-                descripationGame.text = " winner is Boss"
-            }else {
-                
-        descripationGame.text = " winer is Hero"
-            
-        }
-     
-       
+//    @IBAction func rollingDice(_ sender: Any) {
+//      //  let random = Int.random(in:1...20)
+//       //  resultRollingDice.text = String (random)
+//        if labelHero1.text! > "0" && label1.text! > "0"{
 //
-   }
-    }
+//            if turnButtonn == true{
+//                bossTurn()
+//            }else{
+//                turn += 1
+//            turnButton.text = ("turn: \(turn)")
+//                heroTurn()
+//            }
+//
+//        }else{
+//            if label1.text! > "0"{
+//                descripationGame.text = " winner is Boss"
+//            }else {
+//
+//        descripationGame.text = " winer is Hero"
+//
+//        }
+//
+//
+////
+//   }
+//    }
     func specialCapacity12(){
         if nameHero.text == "Knight"{
             specialCpacity = 100
