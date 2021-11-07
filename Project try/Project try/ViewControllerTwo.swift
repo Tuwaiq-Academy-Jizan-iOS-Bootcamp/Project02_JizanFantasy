@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 class ViewControllerTwo: UIViewController
 {
-    
-    
     @IBOutlet weak var playerK: UIButton!
     @IBOutlet weak var imagePlayers: UIImageView!
     
@@ -56,6 +54,7 @@ class ViewControllerTwo: UIViewController
     
     
     override func viewDidLoad() {
+        
         textFalidPD.delegate = self
         textFalidSE.delegate = self
         textFalidWD.delegate = self
@@ -64,8 +63,6 @@ class ViewControllerTwo: UIViewController
         
     super.viewDidLoad()
 }
-    
-    
     
     
     
@@ -105,7 +102,14 @@ extension ViewControllerTwo:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {    textField.resignFirstResponder()
         return true
     
+        
+        
+        
+        
 }
 
 }
+
+
+
 

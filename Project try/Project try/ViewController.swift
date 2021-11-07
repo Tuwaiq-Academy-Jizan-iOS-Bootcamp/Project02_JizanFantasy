@@ -48,9 +48,14 @@ var wizard = Wizard(Name: "wizard", LifePont: 90, Defense: 15, PowerDamage:70,We
 var thief=Thief(Name: "thif", LifePont: 65, Defense: 25, PowerDamage:15,WeaponDamage: 30,Specialcapacity: 75)
 var boss1=Boss(Name:"boss1", LifePoint:250,Defense: 30, PowerDamage:20,WeaponDamage:45 ,SpecialCapacity:110)
 var boss2 = Boss(Name: "boss2", LifePoint:170,Defense: 25, PowerDamage:15,WeaponDamage: 30 , SpecialCapacity:75)
-    
-@IBOutlet weak var DescraptionLabel: UILabel!
-@IBOutlet weak var NumberDice: UILabel!
+    var flagTurn = false
+    var turnNumber = 0
+  // @IBOutlet weak var Descraption: UITextView!
+
+    @IBOutlet weak var desc3: UILabel!
+    @IBOutlet weak var desc2: UILabel!
+    @IBOutlet weak var desc1: UILabel!
+    @IBOutlet weak var NumberDice: UILabel!
 @IBOutlet weak var imageBoss: UIImageView!
 @IBOutlet weak var LifePointBoss: UILabel!
 @IBOutlet weak var DfinseBoss: UILabel!
@@ -61,15 +66,11 @@ var boss2 = Boss(Name: "boss2", LifePoint:170,Defense: 25, PowerDamage:15,Weapon
     
 @IBOutlet weak var Lp: UILabel!
     
-    
 @IBOutlet weak var DF: UILabel!
     
+@IBOutlet weak var PD: UILabel!
     
-    
-    @IBOutlet weak var PD: UILabel!
-    
-    
-    @IBOutlet weak var WD: UILabel!
+@IBOutlet weak var WD: UILabel!
     
 @IBOutlet weak var SC: UILabel!
    
@@ -83,6 +84,7 @@ Dice()
 }
 override func  viewDidLoad() {
 super.viewDidLoad()
+    
 let Boss = Int.random(in: 1...2)
 if Boss == 1{
 imageBoss.image = UIImage(named:"boss1")
@@ -101,25 +103,183 @@ specialCapacityBoss.text = String(boss2.SpecialCapacity)
         }
     }
 func Dice(){
+   
+    var lph = Int(Lp.text!)!
+    var lpb = Int(LifePointBoss.text!)!
+    var dfh = Int(DF.text!)!
+    var dfb = Int(DfinseBoss.text!)!
+    var pdh = Int(PD.text!)!
+    var pdb = Int(powerDamgeBoss.text!)!
+    var wph = Int(WD.text!)!
+    var wpb = Int(weaponDamageBoss.text!)!
+    var sch = Int(SC.text!)!
+    var scb = Int(specialCapacityBoss.text!)!
+    if lph > 0 && lpb > 0 {
+        turnNumber += 1
+       desc1.text! = "turn \(turnNumber)\n "
+    if flagTurn == true {
+        
+        
+       
+       
+    // hero turn
 let value:Int = .random(in: 1...20)
+        
 switch value{
         case 1...9:
             NumberDice.text = String(value)
-            DescraptionLabel.text = "power Damag"
+    desc2.text = "The hero start with power damage  "
             print("power Damage")
-    
+    if pdh - dfb < 0{
+        pdh = 0
+        lpb -= pdh
+    }else{
+        lpb -= pdh - dfb
+    }
+   
+    restOfLife ()
+    LifePointBoss.text = String(lpb)
+    desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
+  //  Descraption.text +=  " life point of boss \(LifePointBoss.text!)\n "
         case 10...19:
             NumberDice.text = String(value)
-            DescraptionLabel.text = "weapon Demage"
+    desc2.text = "The hero start wit weapon damage  "
             print("weapon Damage")
+    print(Lp.text!)
+       print(LifePointBoss.text!)
+    if wph - dfb < 0 {
+        wph = 0
+        lpb -= wph
+    }else{
+        lpb -= wph - dfb
+    }
+    
+    restOfLife ()
+    LifePointBoss.text = String(lpb)
+    
+    desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
+    //Descraption.text +=  "life point of hero \(Lp.text!)\n "
+   // Descraption.text +=  " life point of boss \(LifePointBoss.text!) \n"
+  
         case 20:
             NumberDice.text = String(value)
-            DescraptionLabel.text = "special capacity"
+    desc2.text = "The hero start wit spceial capacity  "
+           // Descraption.text += "special capacity \n"
             print("special capacity")
+    if sch - dfb < 0 {
+        sch = 0
+        lpb -= sch
+    }else{
+        lpb -= sch - dfb
+    }
+   
+    restOfLife ()
+    LifePointBoss.text = String(lpb)
+//    Descraption.text +=  "life point of hero \(Lp.text!)\n "
+//    Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
+    
+    desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
         default:
             print(" the end")
     }
+      flagTurn = false
+        
     }
-@IBAction func unmindToRootViewController(segue:UIStoryboardSegue){
+        else if flagTurn == false{
+        
+            // boss turn
+    let dice2 :Int = .random(in: 1...20)
+    switch dice2 {
+    case 1...9 :
+       desc2.text = "the  boss start with power Damag "
+
+        NumberDice.text = String(dice2)
+       //Descraption.text += "power Damag\n"
+        print("power Damage")
+        if pdb - dfh < 0{
+         pdb = 0
+            lph -= pdb
+        }else{
+            lph -= pdb - dfh
+        }
+
+        
+        restOfLife ()
+        Lp.text = String(lph)
+//        Descraption.text +=  "life point of hero \(Lp.text!)\n "
+//        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
+        desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
+    case 10...19 :
+        desc2.text = " boss start with weapon Damag "
+
+        NumberDice.text = String(dice2)
+        //Descraption.text += "weapon Demage \n"
+        print("weapon Damage")
+        if wpb - dfh < 0 {
+            wpb = 0
+            lph -= wpb
+        }else{
+            lph -= wpb - dfh
+        }
+      
+        restOfLife ()
+        Lp.text = String(lph)
+//        Descraption.text +=  "life point of hero \(Lp.text!)\n "
+//        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
+        desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
+    case 20 :
+        desc2.text = " boss start with special "
+        NumberDice.text = String(dice2)
+        //Descraption.text += "special capacity \n"
+        print("special capacity")
+        if scb - dfh < 0 {
+            scb = 0
+            lph -=  scb
+        }else {
+            lph -=  scb - dfh
+        }
+        
+        restOfLife ()
+        Lp.text = String(lph)
+//        Descraption.text +=  "life point of hero \(Lp.text!)\n "
+//        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
+        desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
+    default:
+        print("the end")
+    }
+        flagTurn = true
+    }
+        
+    } else  if lph <= 0 {
+        
+        desc2.text = " The winner is Boss"
+        
+    }else if  lpb <= 0{
+        
+        desc2.text = " The winner is Hero "
+        
+    }
 }
+    
+@IBAction func unmindToRootViewController(segue:UIStoryboardSegue){
+    
+    
+}
+  func restOfLife ()
+    {
+        if Lp.text! <= String(0) {
+            Lp.text! = String(0)
+
+            
+        } else if LifePointBoss.text! <= "0" {
+            
+            LifePointBoss.text = "0"
+            
+        }
+        
+        
+    }
+    
+    
+    
 }
