@@ -101,7 +101,10 @@ class ViewController: UIViewController {
     var extraDamage = 0
     var useScBoss1 = false
     var useScBoss2 = false
-    var useScHero = false
+    var useScHero1 = false
+    var useScHero2 = false
+    var useScHero3 = false
+    
     var specialCapacity = 0
     
     
@@ -146,10 +149,10 @@ class ViewController: UIViewController {
         switch randomDiceHero{
         case 1...9:
             
-            if useScHero == true{
+            if useScHero1 == true{
               //  player.powerDamage! += extraDamage
                 powerDamage += extraDamage
-                useScHero = false
+                useScHero1 = false
             }
             
            // player.powerDamage! -= dFBoss
@@ -176,10 +179,15 @@ class ViewController: UIViewController {
             randomLabel.text = "Result of the Dice : \(randomDiceHero) 🎲"
         case 10...19:
             
-            if useScHero == true{
+            if useScHero2 == true{
                // player.weaponDamage! += extraDamage
                 weaponDamage += extraDamage
-                useScHero = false
+                useScHero2 = false
+            }
+            if useScHero3 == true{
+               // player.weaponDamage! += extraDamage
+                weaponDamage += extraDamage
+                useScHero3 = false
             }
             //player.weaponDamage! -= dFBoss
             whatHappening.text = "WD Hero: \(weaponDamage) - PD Hero: \(dFBoss) = \(weaponDamage - dFBoss)"
@@ -348,17 +356,17 @@ class ViewController: UIViewController {
             specialCapacity = 100
             extraPoints = 5
             extraDamage = 10
-            useScHero = true
+            useScHero1 = true
         }else if number == 2 {
             specialCapacity = 50
             extraPoints = 35
             extraDamage = 10
-            useScHero = true
+            useScHero2 = true
         }else{
             specialCapacity = 75
             extraPoints = 5
             extraDamage = 35
-            useScHero = true
+            useScHero3 = true
         }
     }
     
