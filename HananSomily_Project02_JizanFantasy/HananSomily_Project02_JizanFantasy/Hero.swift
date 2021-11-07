@@ -91,12 +91,12 @@ struct HeroPlayer{
      @IBAction func LifePointHeroStepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              lifePointHeroLabl.text = Int(sender.value).description
-             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
-pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+             pointOfHeroLabl.text = String( Int(changePoins.text!)! - Int( lifePointHeroLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+//pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
              
              LifePointHeroStepper.minimumValue = 0
          //lifePointHeroLabl.text = Int(sender.value).description
@@ -105,12 +105,12 @@ pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
      @IBAction func heroDFstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              inserDFLabl.text = Int(sender.value).description
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
-             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
- pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+            pointOfHeroLabl.text = String( Int(changePoins.text!)! - Int( lifePointHeroLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+ //pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
 
          //inserDFLabl.text = Int(sender.value).description
          }}
@@ -118,24 +118,24 @@ pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
      @IBAction func heroPDstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              insertPDLabl.text = Int(sender.value).description
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
-             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
-pointOfHeroLabl.text = String((Int(pointOfHeroLabl.text!)!)-1)
+             pointOfHeroLabl.text = String( Int(changePoins.text!)! - Int( lifePointHeroLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+//pointOfHeroLabl.text = String((Int(pointOfHeroLabl.text!)!)-1)
          //insertPDLabl.text = Int(sender.value).description
          }}
      
      @IBAction func heroWDstepper(_ sender: UIStepper) {
          if(( (Int(pointOfHeroLabl.text!)!) != 0 )){
              insertWDLabl.text = Int(sender.value).description
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( lifePointHeroLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
-             //pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
-//             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
-pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
+             pointOfHeroLabl.text = String( Int(changePoins.text!)! - Int( lifePointHeroLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( inserDFLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertPDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( insertWDLabl.text!)!)
+             pointOfHeroLabl.text = String( Int(pointOfHeroLabl.text!)! - Int( capacityPointLabl.text!)!)
+//pointOfHeroLabl.text =  String((Int(pointOfHeroLabl.text!)!)-1)
          //insertWDLabl.text = Int(sender.value).description
      }
      }}
