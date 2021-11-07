@@ -19,7 +19,7 @@ class ViewControllerFour : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txLft.text = "65"
+//        txLft.text = "65"
     
         txDft.delegate = self
         txPdt.delegate = self
@@ -47,4 +47,22 @@ extension ViewControllerFour: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if theThief.text == "Thief" {
+            if Int(textField.text!)! > 65 {
+                txLft.text = "\(Int(65))"
+            if Int(textField.text!)! > 25 {
+                txDft.text = "\(Int(25))"
+                if Int(textField.text!)! > 15 {
+                    txPdt.text = "\(Int(15))"
+                    if Int(textField.text!)! > 30 {
+                        txWdt.text = "\(Int(30))"
+                        }
+                        
+                    }
+                }
+            }
+        }
+    
+}
 }

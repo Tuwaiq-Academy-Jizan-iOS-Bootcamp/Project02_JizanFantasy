@@ -22,7 +22,7 @@ class ViewControllerTwo : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txLf.text = "60"
+//        txLf.text = "60"
         
         txDf.delegate = self
         txPd.delegate = self
@@ -52,11 +52,21 @@ extension ViewControllerTwo : UITextFieldDelegate {
         textField.resignFirstResponder()
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//
-//
-//
-//       return true
-//    }
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            if theKnight.text == "Knight" {
+                if Int(textField.text!)! > 60 {
+                    txLf.text = "\(Int(60))"
+                if Int(textField.text!)! > 20 {
+                    txDf.text = "\(Int(20))"
+                    if Int(textField.text!)! > 30 {
+                        txPd.text = "\(Int(30))"
+                        if Int(textField.text!)! > 40 {
+                            txWd.text = "\(Int(40))"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-}

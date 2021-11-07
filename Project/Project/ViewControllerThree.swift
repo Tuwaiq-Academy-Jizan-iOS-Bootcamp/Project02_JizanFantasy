@@ -20,7 +20,7 @@ class ViewControllerThree : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txLfW.text = "90"
+//        txLfW.text = "90"
         
         txDfW.delegate = self
         txPdW.delegate = self
@@ -49,5 +49,22 @@ class ViewControllerThree : UIViewController {
 extension ViewControllerThree : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if theWizard.text == "wizard" {
+            if Int(textField.text!)! > 90 {
+                txLfW.text = "\(Int(90))"
+            if Int(textField.text!)! > 15 {
+                txDfW.text = "\(Int(15))"
+                if Int(textField.text!)! > 70 {
+                    txPdW.text = "\(Int(70))"
+                    if Int(textField.text!)! > 20 {
+                        txWdW.text = "\(Int(20))"
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
 }

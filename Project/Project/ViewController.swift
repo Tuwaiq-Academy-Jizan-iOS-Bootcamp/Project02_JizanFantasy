@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// global Class for our Heros / Boss
 class Hero {
     var name:String
     var lifePoint:Int
@@ -22,15 +24,11 @@ class Hero {
         self.weaponDamage = weaponDamage
         self.specialCapacity = specialCapacity
     }
-    func ActionDescration(){
+    func ActionDescration(){ // declear for the round
         print("The \(name) take the action :and he is defense: \(defense) & life point \(lifePoint) !")
     }
-    func SC(){
+    func SC(){ // call for Special Capacity
         print("The \(name) get \(specialCapacity) ")
-    }
-    func LifePoint(){
-        print (lifePoint += lifePoint)
-        
     }
 }
 
@@ -52,16 +50,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var sc: UILabel!
     @IBOutlet weak var heroName: UILabel!
     
-    var player1 :Hero?
+    var player1 :Hero? // include ( Boss1 ,Boss2)
     
-    // declear ourChracters!
-//    var knight = Hero(name: "Knight", lifePoint: 60, defense: 20, poewrDamage: 30, weaponDamage: 40, specialCapacity: 100)
-//    var wizard = Hero(name: "wizard", lifePoint: 90, defense: 15, poewrDamage: 70, weaponDamage: 20, specialCapacity: 50)
+    // Our Chracters
     var player2 = Hero(name: "HERO", lifePoint: 0, defense: 0, poewrDamage: 0, weaponDamage: 0, specialCapacity: 0)
     var boss1 = Hero(name: "Boss1", lifePoint: 250, defense: 30, poewrDamage: 20, weaponDamage: 45, specialCapacity: 110)
     var boss2 = Hero(name: "Boss2", lifePoint: 170, defense: 25, poewrDamage: 15, weaponDamage: 30, specialCapacity: 75)
     
-    var turn = 0
+    var turn = 0 // Round Counter
     var winner = false
     
     @IBOutlet weak var uiRoll: UIButton!
@@ -70,7 +66,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        // random for Boss
         let player = Int.random(in: 0...1)
         
         if player == 0 {
@@ -92,18 +88,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // Roll Dice i make it inside spreat funcation
     func roll() -> Int {
         var dice : Int
         dice = Int.random(in: 0...20)
@@ -111,6 +96,8 @@ class ViewController: UIViewController {
         return dice
         
     }
+    
+    // the Scenario
     func logicTheGame(){
         
         player2.lifePoint = Int(lpHero.text!)!
@@ -195,12 +182,11 @@ class ViewController: UIViewController {
         lpDf.text = "\(player2.defense)"
         lpPd.text = "\(player2.poewrDamage)"
         lpWd.text = "\(player2.weaponDamage)"
-//        sc.text = "\(player2.specialCapacity)"
         
     }
     
     
-    
+    // To Find The Winner if Other Player = 0
     func Dead(){
         if player2.lifePoint < 0{
             player2.lifePoint = 0
