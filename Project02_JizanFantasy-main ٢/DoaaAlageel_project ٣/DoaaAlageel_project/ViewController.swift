@@ -173,7 +173,7 @@ class ViewController: UIViewController {
             lifp2 = (lifp2 - 0)
         }
             user2LP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use power damage : \(pow1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use wepon damage : \(weap1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
             
             //lableLP.text = String(lifp2)
             
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
                  }
                
             user2LP.text = String(checkZero(num:lifp2))
-            dscripGame.text += (" \(lableUserName.text!) use Special capacity : \(pow1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
+            dscripGame.text += (" \(lableUserName.text!) use Special capacity : \(SP1),,life point  \(labelUsername2.text!) is \(user2LP.text!)\n")
            
     }
     
@@ -232,7 +232,7 @@ class ViewController: UIViewController {
         lifp1 = (lifp1 + (def1 - SP2))
                  }
             lableLP.text = String(checkZero(num:lifp1))
-            print("\(labelUsername2.text!) use Special capacity  :\(weap2) life point :  is \(lableLP.text!)")
+            print("\(labelUsername2.text!) use Special capacity  :\(SP2) life point :  is \(lableLP.text!)")
             
         
     
