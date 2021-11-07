@@ -7,21 +7,8 @@
 
 import UIKit
 
-protocol rollGameBoss{
-    var name:String {get}
-    var points:Int {get set}
-    var lP:Int {get set}
-    var dF:Int {get set}
-    var pD:Int {get set}
-    var wD:Int {get set}
-    var sC:Int {get set}
-    var addLP:Int {get set}
-    var addPD:Int {get set}
-    var addWD:Int {get set}
 
-}
-
-class Boss:rollGameBoss{
+class Boss{
     var addLP: Int
     var addPD: Int
     var addWD: Int
@@ -96,12 +83,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var pdLp2: UILabel!
     @IBOutlet weak var wdLp2: UILabel!
     
-    //Temporary variables to save and delete values
-    var tempLP1 = 0
+    //Temporary variables to save and delete values   
     var tempPD1 = 0
     var tempWD1 = 0
  
-    var tempLP2 = 0
+    
     var tempPD2 = 0
     var tempWD2 = 0
     
@@ -117,6 +103,7 @@ class ViewController: UIViewController {
         
         // Variable "user1" to save a random value and choose the player
          user1Random = Int.random(in:1...2)
+        
          heroChoice(user1 : user1Random )
        
         desccriptionGame.textAlignment = .center
@@ -288,6 +275,7 @@ class ViewController: UIViewController {
         }
    
         // End of the game & print Winner
+        
         if(((Int(player2LabelLP.text!) == 0 || Int(bossLabelLP.text!) == 0)) && (player2LabelName.text != "Name Player 2")){
             if (Int(player2LabelLP.text!) == 0){
                 desccriptionGame.text += ("===================================\n")
@@ -306,6 +294,7 @@ class ViewController: UIViewController {
             }
             ButtonRollingOutlet.isEnabled = false
         }
+        
         //If-statment to Choose the player to start the game
         if (player2LabelName.text == "Name Player 2"){
             desccriptionGame.text += ("===================================\n")
@@ -333,6 +322,7 @@ class ViewController: UIViewController {
         
     }
     
+    //reset button to start new game
     @IBAction func restButton(_ sender: Any) {
         user1Random = Int.random(in:1...2)
         heroChoice(user1 : user1Random )
@@ -346,8 +336,21 @@ class ViewController: UIViewController {
         desccriptionGame.text = ""
         ButtonRollingOutlet.isEnabled = true
         
+        wdLp2.text = ""
+        pdLp2.text = ""
+        
+        wdLp1.text = ""
+        pdLp1.text = ""
+        
+        tempPD1 = 0
+        tempWD1 = 0
+
+        tempPD2 = 0
+        tempWD2 = 0
+        
         
     }
+    //function to choice player 1
     func heroChoice(user1 : Int){
         switch user1{
         case 1 :

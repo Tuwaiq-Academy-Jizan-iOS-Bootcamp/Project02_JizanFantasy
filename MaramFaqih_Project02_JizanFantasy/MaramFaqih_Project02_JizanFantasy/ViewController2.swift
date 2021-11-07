@@ -6,21 +6,8 @@
 //
 
 import UIKit
-protocol rollGameHero{
-    var name:String {get}
-    var points:Int {get set}
-    var lP:Int {get set}
-    var dF:Int {get set}
-    var pD:Int {get set}
-    var wD:Int {get set}
-    var sC:Int {get set}
-    var addLP:Int {get set}
-    var addPD:Int {get set}
-    var addWD:Int {get set}
-    
-    
-}
-class Hero:rollGameHero {
+
+class Hero {
   
     var name: String
     var points: Int
@@ -139,23 +126,7 @@ class ViewController2: UIViewController {
         
     }
     
- 
-      //Transfer data from VC2 to VC1
-            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                let rootVC = segue.destination as! ViewController
-                rootVC.imageViewPlayer2v1.image = imageViewPlayer2.image
-                rootVC.player2LabelName.text = namePlayer.text
-                rootVC.player2LabelLP.text = lPLabel.text
-                rootVC.player2LabelDF.text = dFLabel.text
-                rootVC.player2LabelPD.text = pDLabel.text
-                rootVC.player2LabelWD.text = wDLabel.text
-                rootVC.player2LabelSC.text = sCLabel.text
-                rootVC.addLPP2 = lPPlus.text!
-                rootVC.addPDP2 = pDPlus.text!
-                rootVC.addWDP2 = wDPlus.text!
-                
-        
-            }
+
 
  //Action UIStepper & Calculate the remaining points
     
@@ -230,6 +201,23 @@ class ViewController2: UIViewController {
             textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
+    
+         //Transfer data from VC2 to VC1
+               override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                   let rootVC = segue.destination as! ViewController
+                   rootVC.imageViewPlayer2v1.image = imageViewPlayer2.image
+                   rootVC.player2LabelName.text = namePlayer.text
+                   rootVC.player2LabelLP.text = lPLabel.text
+                   rootVC.player2LabelDF.text = dFLabel.text
+                   rootVC.player2LabelPD.text = pDLabel.text
+                   rootVC.player2LabelWD.text = wDLabel.text
+                   rootVC.player2LabelSC.text = sCLabel.text
+                   rootVC.addLPP2 = lPPlus.text!
+                   rootVC.addPDP2 = pDPlus.text!
+                   rootVC.addWDP2 = wDPlus.text!
+                   
+           
+               }
     
 }
     
