@@ -385,9 +385,8 @@ class ViewController: UIViewController {
         pDP.text = ""
         wDP.text = ""
         sCP.text = ""
+        whatNext.text = ""
+        whatHappening.text = ""
     }
-    
-    
-    
 }
 

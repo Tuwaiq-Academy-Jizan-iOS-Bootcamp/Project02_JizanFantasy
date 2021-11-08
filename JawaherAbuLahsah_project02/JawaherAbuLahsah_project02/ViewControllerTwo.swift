@@ -16,6 +16,7 @@ class ViewControllerTwo:UIViewController{
     @IBOutlet weak var fieldWD: UITextField!
     @IBOutlet weak var fieldSC: UITextField!
     
+    @IBOutlet weak var playerPickerView: UIPickerView!
     @IBOutlet weak var wDWarning: UILabel!
     @IBOutlet weak var pDWarning: UILabel!
     @IBOutlet weak var dFWarning: UILabel!
@@ -25,11 +26,11 @@ class ViewControllerTwo:UIViewController{
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var lPLabel: UILabel!
 
-    
+    var playerArray = ["Knight","Wizard","Thief"]
     
     //here to choose on of three players
     var num = 0
-    @IBAction func playerChoice(_ sender: UIButton) {
+  /*  @IBAction func playerChoice(_ sender: UIButton) {
         if sender.tag == 1 {
             lPLabel.text = "250"
             fieldLP.text = "60"
@@ -40,7 +41,7 @@ class ViewControllerTwo:UIViewController{
             fieldSC.isEnabled = false
             num = 1
             imageHero.image = UIImage(named: "hero1")
-            storyLabel.text = "Hello, I Knight. I will try not to disappoint you 🦹🏻‍♂️⚔️."
+            storyLabel.text = "Hello, I Knight. I will try not to disappoint you 🦹🏻‍♂️⚔️. + 5 LP & + 10 WD"
             pDWarning.text = "Max:30"
             wDWarning.text = "Max:40"
             dFWarning.text = "Max:20"
@@ -57,7 +58,7 @@ class ViewControllerTwo:UIViewController{
         fieldSC.isEnabled = false
             num = 2
             imageHero.image = UIImage(named: "hero2")
-            storyLabel.text = "Hello, I Wizard. I will fight with all my might 🦸🏻💪🏻."
+            storyLabel.text = "Hello, I Wizard. I will fight with all my might 🦸🏻💪🏻. + 35 LP  & + 10 PD "
         pDWarning.text = "Max:70"
         wDWarning.text = "Max:20"
         dFWarning.text = "Max:15"
@@ -74,7 +75,7 @@ class ViewControllerTwo:UIViewController{
             fieldSC.isEnabled = false
             num = 3
             imageHero.image = UIImage(named: "hero3")
-            storyLabel.text = "Hello, I a win Thief 🥷🏻💰."
+            storyLabel.text = "Hello, I a win Thief 🥷🏻💰. + 5 LP & + 35 WD"
             pDWarning.text = "Max:15"
             wDWarning.text = "Max:30"
             dFWarning.text = "Max:25"
@@ -82,7 +83,7 @@ class ViewControllerTwo:UIViewController{
             wDWarning.textColor = .purple
             dFWarning.textColor = .purple
         }
-    }
+    }*/
     //*************************
     
     
@@ -211,7 +212,7 @@ class ViewControllerTwo:UIViewController{
         var x = Int(lPLabel.text!) ?? 0
         x = a - b - c - d - f
         if Int(lPLabel.text!) ?? 0 < x {
-        storyLabel.text = "The total of the point inside the text field \(x) greater then the player's points \(lPLabel.text!) "
+        storyLabel.text = "The total of the point inside the text field \(x) is not equal the player's points \(lPLabel.text!) "
             fieldLP.text = ""
             fieldDF.text = ""
             fieldPD.text = ""
@@ -250,4 +251,72 @@ extension ViewControllerTwo:UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+}
+extension ViewControllerTwo:UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return playerArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       return playerArray[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let namePlayer = playerArray[pickerView.selectedRow(inComponent: 0)]
+        if namePlayer == "Knight" {
+            lPLabel.text = "250"
+            fieldLP.text = "60"
+            fieldDF.text = "20"
+            fieldPD.text = "30"
+            fieldWD.text = "40"
+            fieldSC.text = "100"
+            fieldSC.isEnabled = false
+            num = 1
+            imageHero.image = UIImage(named: "hero1")
+            storyLabel.text = "Hello, I Knight. I will try not to disappoint you 🦹🏻‍♂️⚔️. + 5 LP & + 10 WD"
+            pDWarning.text = "Max:30"
+            wDWarning.text = "Max:40"
+            dFWarning.text = "Max:20"
+            pDWarning.textColor = .purple
+            wDWarning.textColor = .purple
+            dFWarning.textColor = .purple
+    }else if namePlayer == "Wizard" {
+            lPLabel.text = "245"
+        fieldLP.text = "90"
+        fieldDF.text = "15"
+        fieldPD.text = "70"
+        fieldWD.text = "20"
+        fieldSC.text = "50"
+        fieldSC.isEnabled = false
+            num = 2
+            imageHero.image = UIImage(named: "hero2")
+            storyLabel.text = "Hello, I Wizard. I will fight with all my might 🦸🏻💪🏻. + 35 LP  & + 10 PD "
+        pDWarning.text = "Max:70"
+        wDWarning.text = "Max:20"
+        dFWarning.text = "Max:15"
+        pDWarning.textColor = .purple
+        wDWarning.textColor = .purple
+        dFWarning.textColor = .purple
+        }else{
+            lPLabel.text = "210"
+            fieldLP.text = "65"
+            fieldDF.text = "25"
+            fieldPD.text = "15"
+            fieldWD.text = "30"
+            fieldSC.text = "65"
+            fieldSC.isEnabled = false
+            num = 3
+            imageHero.image = UIImage(named: "hero3")
+            storyLabel.text = "Hello, I a win Thief 🥷🏻💰. + 5 LP & + 35 WD"
+            pDWarning.text = "Max:15"
+            wDWarning.text = "Max:30"
+            dFWarning.text = "Max:25"
+            pDWarning.textColor = .purple
+            wDWarning.textColor = .purple
+            dFWarning.textColor = .purple
+        }
+    }
+    
 }
