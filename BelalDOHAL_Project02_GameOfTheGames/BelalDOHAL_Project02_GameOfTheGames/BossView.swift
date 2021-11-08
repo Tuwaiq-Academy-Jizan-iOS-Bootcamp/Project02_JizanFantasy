@@ -31,7 +31,7 @@ class BossView: UIViewController {
     @IBOutlet weak var bossComment: UILabel!
     var randomBoss = Int.random(in: 1...2)
     var boss1 = Boss(name: "Ravana", weaponD: 45, PowerD: 20, specialDamage: 110, lifeP: 250, defense: 30, specialText: "1000 Blade", BSCBonusWD: 22, BSCBonusPD: 0, BSCBonusLP: 5)
-    var boss2 = Boss(name: "Dargon", weaponD: 30, PowerD: 15, specialDamage: 75, lifeP: 170, defense: 25, specialText: "Chaotic Fire", BSCBonusWD: 0, BSCBonusPD: 32, BSCBonusLP: 5)
+    var boss2 = Boss(name: "Dragon", weaponD: 30, PowerD: 15, specialDamage: 75, lifeP: 170, defense: 25, specialText: "Chaotic Fire", BSCBonusWD: 0, BSCBonusPD: 32, BSCBonusLP: 5)
     //Override//
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +39,15 @@ class BossView: UIViewController {
         if randomBoss == 1 {
             bossShow.image = UIImage(named: "Ravana")
             bossComment.text = """
-1000 Blade(Special Capacity)
-ravana charge his blades and delever a multible fast hits..
+1000 Blade (Special Capacity)
+Ravana charge his blades and delever a multible fast hits..
 you will not even know how many time he cut you
 """
         }else {
             bossShow.image = UIImage(named: "Dragon")
             bossComment.text = """
-Chaotic Fire(Special Capacity)
-charging a great fire ball that melt everything on her way
+Chaotic Fire (Special Capacity)
+Charging a great fire ball that melt everything on her way
 it's almost like standing on the sun
 """
         }

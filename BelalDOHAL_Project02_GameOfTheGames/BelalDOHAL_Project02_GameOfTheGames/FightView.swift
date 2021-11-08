@@ -151,8 +151,7 @@ class FightView: UIViewController {
                     sCDcal = 0
                 }
                 fightDescreption.text = """
-                \(playerNL) use his Special Capacity to hit \(bossName)
-                and do \(sCDcal) Damage to him also recover \(sCBonusLP) L.P and empower his W.D by \(sCBonusWD) and his P.D by \(sCBonusPD)
+                \(playerNL) use his Special Capacity to hit \(bossName) and do \(sCDcal) Damage to him also recover \(sCBonusLP) L.P and empower his W.D by \(sCBonusWD) and his P.D by \(sCBonusPD)
                 """
             default: print("ERROR")
             }
@@ -173,8 +172,7 @@ class FightView: UIViewController {
                     bPDCal = 0
                 }
                 fightDescreption.text = """
-                \(bossName) use his power to hit \(playerNL)
-                and do \(bPDCal) Damage to him
+                \(bossName) use his power to hit \(playerNL) and do \(bPDCal) Damage to you
                 """
             case 10...19:
                 turnHow = true
@@ -191,8 +189,7 @@ class FightView: UIViewController {
                     bWDCal = 0
                 }
                 fightDescreption.text = """
-                \(bossName) use his weapon to hit \(playerNL)
-                and do \(bWDCal) Damage to him
+                \(bossName) use his weapon to hit \(playerNL) and do \(bWDCal) Damage to you
                 """
             case 20:
                 turnHow = true
@@ -224,7 +221,7 @@ class FightView: UIViewController {
         if lifePValue <= 0 {
             lifePValue = 0
             rulleTheDice.isEnabled = false
-            diceLable.text = "YOU LOST !"
+            diceLable.text = "YOU LOST.."
         }else if bStateLP <= 0 {
             bStateLP = 0
             rulleTheDice.isEnabled = false

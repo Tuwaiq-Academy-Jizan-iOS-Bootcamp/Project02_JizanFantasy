@@ -221,7 +221,7 @@ class KnightView: UIViewController {
     }
     @IBAction func goPlayer(_ sender: Any) {
         if stateSP == 0 {
-        performSegue(withIdentifier: "goWarrior", sender: self)
+            performSegue(withIdentifier: "goWarrior", sender: self)
         }else {
             showAlert()
         }

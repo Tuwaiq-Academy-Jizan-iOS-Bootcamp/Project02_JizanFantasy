@@ -221,7 +221,7 @@ class WizardView: UIViewController {
     }
     @IBAction func goPlayer(_ sender: Any) {
         if stateSP == 0 {
-        performSegue(withIdentifier: "goMage", sender: self)
+            performSegue(withIdentifier: "goMage", sender: self)
         }else {
             showAlert()
         }

@@ -222,7 +222,7 @@ class ThiefView: UIViewController {
     }
     @IBAction func goPlayer(_ sender: Any) {
         if stateSP == 0 {
-        performSegue(withIdentifier: "goRouge", sender: self)
+            performSegue(withIdentifier: "goRouge", sender: self)
         }else {
             showAlert()
         }

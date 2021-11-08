@@ -17,66 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZO-pj-tjE">
-                                <rect key="frame" x="16" y="608" width="358" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.67198514932704212" blue="0.18167533030549576" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Warrior">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="sVv-Jx-V4U" kind="show" id="dEk-0r-OsA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOJ-Am-I70">
-                                <rect key="frame" x="16" y="491" width="358" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.57758112452232524" green="0.58304581747601447" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.48917544628575238" green="0.067865966332329178" blue="0.74230831185567014" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Mage">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="zzl-jw-g6U" kind="show" id="sRT-p0-IrZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldq-0I-fGs">
-                                <rect key="frame" x="16" y="722" width="358" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3650934278350515" green="0.10677013524748658" blue="0.12036078296139679" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Rouge">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Ntq-4t-gxS" kind="show" id="0UB-pp-VSo"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-ME-YWo">
                                 <rect key="frame" x="16" y="44" width="358" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -94,7 +34,7 @@
                                 <rect key="frame" x="16" y="108" width="358" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">All would seem lost, as a few adventurers watch the world burn around them. A seemingly indifferent meteor approaches, until they are saved by Louisoix, who is attempting to create a shield. Unfortunately, the shield cannot withstand Ravana and Dragon, who menacingly approaches Louisoix. In a last ditch effort, he attempts to recreate Dalamud to imprison Ravana and Dragon with the power of the Twelve. All is for naught, however, as Ravana and Dragon simply breaks free and continues his reign of fire. With his dying breath, the Archon calls upon the power of Althyk to transport the adventurers into a rift of time and space, where they will be untouched by Ravana and Dragon fury, until the time is safe for them to begin their struggle anew.</mutableString>
+                                <string key="text">All would seem lost, as a few adventurers watch the world burn around them. A seemingly indifferent meteor approaches, until they are saved by Louisoix, who is attempting to create a shield. Unfortunately, the shield cannot withstand Ravana and Dragon, who menacingly approaches Louisoix. In a last ditch effort, he attempts to recreate Dalamud to imprison Ravana and Dragon with the power of the Twelve. All is for naught, however, as Ravana and Dragon simply breaks free and continues his reign of fire. With his dying breath, the Archon calls upon the power of Althyk to transport the adventurers into a rift of time and space, where they will be untouched by Ravana and Dragon fury, until the time is safe for them to begin their struggle anew.</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -106,15 +46,20 @@
                                 <color key="textColor" red="0.55652225378787878" green="0.15737618745934534" blue="0.0041341765408860138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NhJ-qt-9Xy">
+                                <rect key="frame" x="16" y="491" width="358" height="319"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lNv-ez-Dcq"/>
                     <connections>
-                        <outlet property="mageButton" destination="jOJ-Am-I70" id="fWk-bZ-X3G"/>
-                        <outlet property="rougeButton" destination="Ldq-0I-fGs" id="weA-i0-Fl3"/>
-                        <outlet property="warriorButton" destination="lZO-pj-tjE" id="jvx-tl-pQ8"/>
+                        <outlet property="pickerClass" destination="NhJ-qt-9Xy" id="ukC-Hh-RFY"/>
+                        <segue destination="zzl-jw-g6U" kind="show" identifier="toMage" id="K42-JN-jrd"/>
+                        <segue destination="sVv-Jx-V4U" kind="show" identifier="toWarrior" id="RuR-Rq-t3v"/>
+                        <segue destination="Ntq-4t-gxS" kind="show" identifier="toRouge" id="EzO-dN-Pfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1120,7 +1065,7 @@ Cg
                                     <fragment content="VS">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="36" name="Papyrus"/>
+                                            <font key="NSFont" size="36" name="Zapfino"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -1436,7 +1381,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CK1-Ou-Jdq"/>
+        <segue reference="kQF-yo-7iA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Mage" width="400" height="400"/>
