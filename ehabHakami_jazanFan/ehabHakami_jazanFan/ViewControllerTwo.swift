@@ -77,8 +77,11 @@ class ViewControllerTwo: UIViewController {
         textFieldPd.text = "\(30)"
         textFieldLpWd.text = "\(40)"
         cS.text = "\(100)"
+        
         allPointHero.text = "250 points to dispatch "
+        
         nameHeroSSS.text = "knight"
+        
         imageChrcter.image = UIImage(named: "ragner")
         
         

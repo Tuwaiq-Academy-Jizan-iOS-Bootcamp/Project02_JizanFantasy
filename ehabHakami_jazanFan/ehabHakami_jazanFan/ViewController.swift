@@ -419,7 +419,9 @@ class ViewController: UIViewController {
     }
     
     
-    
+    @IBAction func goFightWithPage3(segue: UIStoryboardSegue){
+        
+    }
     
     
     
