@@ -74,4 +74,6 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     sendData.weaponDamge1.text = WDLable.text
     
  }
+    @IBAction func PlayTwo(segue: UIStoryboardSegue){
+    }
 }

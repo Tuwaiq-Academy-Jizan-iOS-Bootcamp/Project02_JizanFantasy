@@ -7,44 +7,58 @@
 
 import UIKit
 
-class ViewControllerPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewControllerPicker: UIViewController {
+    
+  
+    @IBOutlet weak var pickerPlayers: UIPickerView!
     
     var arrayPlayer = ["Wizard","Knight","Thife"]
+    @IBOutlet weak var lableName: UILabel!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        pickerPlayers.delegate = self
+        pickerPlayers.dataSource = self
+    }
+}
+
+extension ViewControllerPicker: UIPickerViewDelegate,UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return arrayPlayer.count
-        }else{
-            return arrayPlayer.count
-        }
-    }
-    
-
-    @IBOutlet weak var pickerPlayer: UIPickerView!
-    
-    @IBOutlet weak var lableName: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        pickerPlayer.delegate = self
-        pickerPlayer.dataSource = self
-        
+        return arrayPlayer.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return arrayPlayer[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let player1 = pickerView.selectedRow(inComponent: 0)
     }
     @IBAction func pickerActionOfPlayer(_ sender: UIButton) {
-        lableName.text = arrayPlayer[pickerPlayer.selectedRow(inComponent: 0)]
+        lableName.text = arrayPlayer[pickerPlayers.selectedRow(inComponent: 0)]
+ }
+}
         
         
-            
-        }
-    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      

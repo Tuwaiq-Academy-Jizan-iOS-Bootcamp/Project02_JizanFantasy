@@ -47,4 +47,6 @@ class ViewControllerNewPlayerThree: UIViewController {
         sendData.powerdamge1.text = PDLable.text
         sendData.weaponDamge1.text = WDLable.text
     }
+    @IBAction func PlayThree(segue: UIStoryboardSegue){
+    }
 }

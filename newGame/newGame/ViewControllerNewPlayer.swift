@@ -52,4 +52,6 @@ class ViewControllerNewPlayer: UIViewController {
         sendData.weaponDamge1.text = WDLable.text
         sendData.imageHero.image = knightImage.image
     }
+    @IBAction func PlayOne(segue: UIStoryboardSegue){
+    }
 }
