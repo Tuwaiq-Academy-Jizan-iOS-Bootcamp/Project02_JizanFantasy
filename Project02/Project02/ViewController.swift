@@ -118,7 +118,7 @@ class ViewController: UIViewController{
                 bossDM = 0
             }
             Description.text = " \(Player1.text!) use his power to damage \(player2.text!) by \(bossDM)"
-            print("power Damage")
+            print("power Damage🤏🏻")
         }
         }else if random >= 10 && random <= 19 && turnH == false {
             turnH = false
@@ -133,7 +133,7 @@ class ViewController: UIViewController{
                 bossDM = 0
             }
             Description.text = " \(player2.text!) use his weapon to damage \(player2.text!) by \(bossDM)"
-            print("weapon Damage")
+            print("weapon Damage⚔️")
             }
     }else  if random == 20 && turnH == false && random == 1 {
         turnH = true
@@ -167,12 +167,20 @@ class ViewController: UIViewController{
         PlayerLP1.text = "\(Int(PlayerLP1.text!)! + Int(boss2.specialLP)!)"
         PlayerPD1.text = "\(Int(PlayerPD1.text!)! + Int(boss2.specialPD)!)"
         PlayerWD1.text = "\(Int(PlayerWD1.text!)! + Int(boss2.specialWD)!)"
-        print("special Capacity")
+        print("special Capacity💣")
     }
 }
     // func Boss
     func roll() {
         let randomB = Int.random(in: 1...2)
+        if ImageP == 1 {
+                    imagePlayer2.image = UIImage(named: "knight")
+                }else if ImageP == 2{
+                    imagePlayer2.image = UIImage(named: "wizard")
+                }else{
+                    imagePlayer2.image = UIImage(named: "thief")
+                }
+                 if randomB == 1 {
                 switch randomB {
                 case 1:
                     ImageBoss.image = UIImage(named: "boss1")
@@ -194,6 +202,7 @@ class ViewController: UIViewController{
                     print("ERROR")
                 }
          }
+    }
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue){      print("Unwind to Root View Controller")
     }
 }

@@ -17,7 +17,10 @@ class TwoViewController: UIViewController {
     @IBOutlet weak var textWD: UITextField!
     @IBOutlet weak var textSC: UITextField!
     @IBOutlet weak var imagePlayer: UIImageView!
-    
+    // ربط pick
+    @IBOutlet weak var pickName: UIPickerView!
+    var arrayName = ["knight","wizard","thief"]
+    //
     @IBAction func stepperDF(_ sender: UIStepper) {
         textDF.text = String(sender.value)
     }
@@ -54,23 +57,25 @@ class TwoViewController: UIViewController {
     @IBAction func steepperSCT(_ sender: UIStepper) {
         textSC.text = String(sender.value)
     }
-    @IBAction func Name1(_ sender: Any) {
-        NameText.text = String("knight")
-        pointName.text = String(250)
-        imagePlayer.image = UIImage(named: "knight")
-    }
-    @IBAction func name2(_ sender: Any) {
-       NameText.text = String("wizard")
-        pointName2.text = String(245)
-        imagePlayer.image = UIImage(named: "wizard")
-    }
-    @IBAction func name3(_ sender: Any) {
-        NameText.text = String("thief")
-     pointName3.text = String(210)
-        imagePlayer.image = UIImage(named: "thief")
-    }
+//    @IBAction func Name1(_ sender: Any) {
+//        NameText.text = String("knight")
+//        pointName.text = String(250)
+//        imagePlayer.image = UIImage(named: "knight")
+//    }
+//    @IBAction func name2(_ sender: Any) {
+//       NameText.text = String("wizard")
+//        pointName2.text = String(245)
+//        imagePlayer.image = UIImage(named: "wizard")
+//    }
+//    @IBAction func name3(_ sender: Any) {
+//        NameText.text = String("thief")
+//     pointName3.text = String(210)
+//        imagePlayer.image = UIImage(named: "thief")
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickName.delegate = self
+        pickName.dataSource = self
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let image = segue.destination as! ViewController
@@ -94,4 +99,31 @@ extension TwoViewController: UITextFieldDelegate{
          textField.resignFirstResponder()
          return true
      }
+}
+extension TwoViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayName.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayName[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            NameText.text = String("knight")
+            pointName.text = String(250)
+            imagePlayer.image = UIImage(named: "knight")
+        }else if row == 1 {
+            NameText.text = String("wizard")
+             pointName2.text = String(245)
+             imagePlayer.image = UIImage(named: "wizard")
+        }else{
+            NameText.text = String("thief")
+         pointName3.text = String(210)
+            imagePlayer.image = UIImage(named: "thief")
+        }
+    }
 }
