@@ -11,7 +11,7 @@ import UIKit
 class ViewControllerManue : UIViewController {
     @IBOutlet var myPickerView: UIPickerView!
     
-    var fighter = ["Knight","wizard","Thief"]
+    var fighter = ["choose your Fighter","Knight","wizard","Thief"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +37,11 @@ extension ViewControllerManue: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if myPickerView.selectedRow(inComponent: 0) == 0 {
+        if myPickerView.selectedRow(inComponent: 0) == 1 {
             performSegue(withIdentifier: "FK", sender: self)
-        } else if myPickerView.selectedRow(inComponent: 0) == 1 {
-            performSegue(withIdentifier: "FW", sender: self)
         } else if myPickerView.selectedRow(inComponent: 0) == 2 {
+            performSegue(withIdentifier: "FW", sender: self)
+        } else if myPickerView.selectedRow(inComponent: 0) == 3 {
             performSegue(withIdentifier: "FT", sender: self)
         }
     }
