@@ -274,7 +274,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzV-hf-o0i">
-                                <rect key="frame" x="27" y="117" width="154" height="128"/>
+                                <rect key="frame" x="27" y="103" width="154" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Life Point (LP) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-I1-EV2">
@@ -345,33 +345,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-lI-CsI">
-                                <rect key="frame" x="218" y="117" width="160" height="64"/>
+                                <rect key="frame" x="218" y="117" width="160" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nde-XK-OvT">
-                                <rect key="frame" x="20" y="253" width="192" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="New Challenger"/>
-                                <connections>
-                                    <action selector="newChallengerButton:" destination="uI5-h8-wfD" eventType="touchUpInside" id="vbS-Ph-Xiy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Point you can distribute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-7K-FR3">
-                                <rect key="frame" x="208" y="189" width="186" height="21"/>
+                                <rect key="frame" x="208" y="170" width="186" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dk-dR-azu">
-                                <rect key="frame" x="258" y="232" width="83" height="37"/>
+                                <rect key="frame" x="265" y="249" width="83" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.86087566609999999" green="0.74777690029999999" blue="0.65877564759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -408,6 +397,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8U-YE-CNJ">
+                                <rect key="frame" x="5" y="203" width="252" height="83"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9fG-Ev-poX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -416,8 +409,8 @@
                     <connections>
                         <outlet property="heroStory" destination="cGi-nc-0Bc" id="NUF-x8-rYv"/>
                         <outlet property="newChallengeImage" destination="tzV-hf-o0i" id="sbS-F8-XAh"/>
-                        <outlet property="newChallenger" destination="nde-XK-OvT" id="QZX-WI-MQa"/>
                         <outlet property="newChallengerName" destination="qa4-lI-CsI" id="vYs-v9-03C"/>
+                        <outlet property="pikerOfNewChallenger" destination="l8U-YE-CNJ" id="zdR-Oh-G3b"/>
                         <outlet property="point" destination="4dk-dR-azu" id="sWH-Wa-JDL"/>
                         <outlet property="textFiled1" destination="huv-y7-R3j" id="lhX-eT-Qjf"/>
                         <outlet property="textFiled2" destination="Mws-UB-bSV" id="vGZ-14-ylG"/>

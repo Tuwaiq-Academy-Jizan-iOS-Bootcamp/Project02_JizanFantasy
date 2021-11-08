@@ -68,7 +68,9 @@ var hero = Hero(name: "" ,lifePoint: 0, defense: 0, powerDamage: 0, weaponDamage
     var specialCpacity = 0
     var bossSc1 = false
     var bossSc2 = false
-    var heroScp = false
+    var heroScp1 = false
+    var heroScp2 = false
+    var heroScp3 = false
     
     @IBAction func rollingDice(_ sender: Any) {
       //  let random = Int.random(in:1...20)
@@ -145,12 +147,12 @@ func heroTurn() {
     switch heroRandomDice {
     case 1...9:
         resultRollingDice.text = "\(heroRandomDice)"
-        if heroScp == true {
+        if heroScp1 == true {
             bossPd += 32
-            heroScp = false
+            heroScp1 = false
         }
         heroPd -= bossDf
-        if heroPd < 0{
+        if heroPd < 0 {
             heroPd = 0
         }else{
         bossLp -= heroPd
@@ -163,9 +165,13 @@ func heroTurn() {
         descripationGame.text = " Boss use defenc "
     case 10...19:
         resultRollingDice.text = "\(heroRandomDice)"
-        if heroScp == true{
+        if heroScp2 == true{
             heroWd += extraDamage
-            heroScp = false
+            heroScp2 = false
+        }
+        if heroScp3 == true{
+            heroWd += extraDamage
+            heroScp3 = false
         }
         heroWd -= bossDf
         if heroWd < 0 {
@@ -307,17 +313,17 @@ func bossTurn(){
             specialCpacity = 100
             extraPoint = 5
             extraDamage = 10
-            heroScp = true
+            heroScp1 = true
         }else if nameHero.text == "Wizerd"{
             specialCpacity = 50
             extraPoint = 35
             extraDamage = 10
-            heroScp = true
+            heroScp2 = true
         }else{
             specialCpacity = 75
             extraPoint = 5
             extraDamage = 35
-            heroScp = true
+            heroScp3 = true
         }
             
             
