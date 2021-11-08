@@ -148,163 +148,8 @@ class ViewSpaceOfPlay : UIViewController {
         }else{
             discriptionLabel.text = "have winner"
         }
-//        if var lphero = Int(lifePoint2.text!),var lpboss = Int(lifePoint1.text!),var dfhero = Int(defancd2.text!),var dfhero = Int(defancd2.text!),var dfboss = Int(defancd1.text!),var pdhero = Int(powerDamage2.text!), var pdboss = Int(powerDamage1.text!), var wphero = Int(weaponDamage2.text!), var wpboss = Int(weaponDamage1.text!),var schero = Int(specialEffect2.text!), var scboss = Int(specialEffect1.text!){
-//
-////            var flagTurn = false
-//            var turnNum = 0
-//            if lphero > 0 && lpboss > 0 {
-//                discriptionLabel.text = "trun \(turnNum)\n "
-//                if flagTurn == true {
-//                    turnNum += 1
-//                    discriptionLabel.text = "Hero Start \n"
-//                    //                HERO TURN
-//                    let value:Int = .random(in: 1...20)
-//
-//                    switch value{
-//                    case 1...9:
-//                        diceNum.text = String(value)
-//                        discriptionLabel.text = "power Damag \n"
-//                        print("power Damage")
-//
-//                        pdhero -= dfboss
-//                        if pdhero < 0 {
-//                            pdhero = 0
-//                        }
-//                        lpboss -= pdhero
-//                        restOfLife ()
-//                        lifePoint1.text = String(lpboss)
-//                        discriptionLabel.text =  " life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  " life point of boss \(lifePoint1.text!)\n "
-//                    case 10...19:
-//                        diceNum.text = String(value)
-//                        discriptionLabel.text = "weapon Demage \n"
-//                        print("weapon Damage")
-//                        print(lifePoint2.text!)
-//                        print(lifePoint1.text!)
-//                        wphero -= dfboss
-//                        if wphero < 0 {
-//                            wphero = 0
-//                        }
-//                        lpboss -= wphero
-//                        restOfLife ()
-//                        lifePoint1.text = String(lpboss)
-//                        discriptionLabel.text =  "life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  " life point of boss \(lifePoint1.text!) \n"
-//
-//                    case 20:
-//                        diceNum.text = String(value)
-//                        discriptionLabel.text = "special capacity \n"
-//                        print("special capacity")
-//                        schero -= dfboss
-//                        if schero < 0 {
-//                            schero = 0
-//                        }
-//                        lpboss -= schero
-//                        restOfLife ()
-//                        lifePoint1.text = String(lpboss)
-//                        discriptionLabel.text =  "life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  "life point of boss \(lifePoint1.text!)\n "
-//                    default:
-//                        print(" the end")
-//                    }
-//                    flagTurn = false
-//
-//                }
-//                else if flagTurn == false{
-//
-//                    // boss turn
-//                    let dice2 :Int = .random(in: 1...20)
-//
-//                    switch dice2 {
-//                    case 1...9 :
-//                        discriptionLabel.text = " boss start \n"
-//
-//                        diceNum.text = String(dice2)
-//                        discriptionLabel.text = "power Damag\n"
-//                        print("power Damage")
-//
-//                        pdboss -= dfhero
-//                        if pdboss < 0{
-//                            pdboss = 0
-//                        }
-//                        lphero -= pdboss
-//                        restOfLife ()
-//                        lifePoint2.text = String(lphero)
-//                        discriptionLabel.text =  "life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  "life point of boss \(lifePoint1.text!)\n "
-//                    case 10...19 :
-//                        discriptionLabel.text = " boss start"
-//
-//                        diceNum.text = String(dice2)
-//                        discriptionLabel.text = "weapon Demage \n"
-//                        print("weapon Damage")
-//
-//                        wpboss -= dfhero
-//                        if wpboss < 0 {
-//                            wpboss = 0
-//                        }
-//                        lphero -= wpboss
-//                        restOfLife ()
-//                        lifePoint2.text = String(lphero)
-//                        discriptionLabel.text =  "life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  "life point of boss \(lifePoint1.text!)\n "
-//                    case 20 :
-//                        discriptionLabel.text = " boss start"
-//                        diceNum.text = String(dice2)
-//                        discriptionLabel.text = "special capacity \n"
-//                        print("special capacity")
-//                        scboss -= dfhero
-//                        if scboss < 0 {
-//                            scboss = 0
-//                        }
-//                        lphero -= scboss
-//                        restOfLife ()
-//                        lifePoint2.text = String(lphero)
-//                        discriptionLabel.text =  "life point of hero \(lifePoint2.text!)\n "
-//                        discriptionLabel.text =  "life point of boss \(lifePoint1.text!)\n "
-//
-//                    default:
-//                        print("the end")
-//                    }
-//                    flagTurn = true
-//                }
-//            } else  if lphero <= 0 {
-//
-//                discriptionLabel.text = " The winner is Boss"
-//
-//            }else if  lpboss <= 0{
-//
-//                discriptionLabel.text = " The winner is Hero "
-//
-//            }
         }
-        //    FUNCTION FOR ROLLING THE DICE BY USE SWITCH
-//        func rollDice() {
-//            let _: Int = .random(in: 1...20)
-//        }
-    
-        //            THE BOSSES
-//        func choosePlayer() {
-//            let Boss = Int.random(in: 1...2)
-//            if Boss == 1 {
-//                imagePlayer1.image = UIImage(named:"bosse1")
-//
-//                lifePoint1.text = String(boss1.lifePoint)
-//                defancd1.text = String(boss1.defend)
-//                powerDamage1.text = String(boss1.powerDamage)
-//                weaponDamage1.text = String(boss1.weaponDamage)
-//                specialEffect1.text = String(boss1.specialDamage)
-//            }else{
-//                imagePlayer1.image = UIImage(named: "bosse2")
-//                lifePoint1.text = String(boss2.lifePoint)
-//                defancd1.text = String(boss2.defend)
-//                powerDamage1.text = String(boss2.powerDamage)
-//                weaponDamage1.text = String(boss2.weaponDamage)
-//                specialEffect1.text = String(boss2.specialDamage)
-//
-//            }
-//        }
-    
+        
     func bossturn(){
         var lphero = Int(lifePoint2.text!)!
         var lpboss = Int(lifePoint1.text!)!
@@ -402,7 +247,7 @@ func heroTurn(){
             pdhero = 0
         }
         lpboss -= pdhero
-       // restOfLife ()
+//        restOfLife ()
         lifePoint1.text = String(lpboss)
         discriptionLabel.text! +=  " life point of hero \(lifePoint2.text!)\n "
         discriptionLabel.text! +=  " life point of boss \(lifePoint1.text!)\n "
@@ -417,7 +262,7 @@ func heroTurn(){
             wphero = 0
         }
         lpboss -= wphero
-       // restOfLife ()
+//        restOfLife ()
         lifePoint1.text = String(lpboss)
         discriptionLabel.text! +=  "life point of hero \(lifePoint2.text!)\n "
         discriptionLabel.text! +=  " life point of boss \(lifePoint1.text!) \n"
@@ -431,24 +276,16 @@ func heroTurn(){
             schero = 0
         }
         lpboss -= schero
-       // restOfLife ()
+//        restOfLife ()
         lifePoint1.text = String(lpboss)
         discriptionLabel.text! +=  "life point of hero \(lifePoint2.text!)\n "
         discriptionLabel.text! +=  "life point of boss \(lifePoint1.text!)\n "
     default:
         print(" the end")
     }
-
     flagTurn = true
-    
 }
-    
-
-
-    
-    
-    
-    
+      
     @IBAction func rootViewController (segue: UIStoryboardSegue){
         print ("d")
         if segue.identifier == "moveToViewSpaceOfPlay" {

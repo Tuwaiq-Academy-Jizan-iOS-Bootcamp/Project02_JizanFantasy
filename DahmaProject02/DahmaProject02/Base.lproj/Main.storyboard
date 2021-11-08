@@ -16,30 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yun-pU-3ow">
-                                <rect key="frame" x="20" y="412" width="374" height="342"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to my game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yun-pU-3ow">
+                                <rect key="frame" x="20" y="554" width="374" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Welcome to my game">
-                                        <attributes>
-                                            <color key="NSColor" systemColor="systemRedColor"/>
-                                            <font key="NSFont" size="64" name="PartyLetPlain"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="31"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bosse1" translatesAutoresizingMaskIntoConstraints="NO" id="aIk-Qa-nJV">
-                                <rect key="frame" x="-33" y="-83" width="481" height="723"/>
+                                <rect key="frame" x="-33" y="-55" width="481" height="723"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqz-do-9ir">
-                                <rect key="frame" x="30" y="666" width="354" height="133"/>
+                                <rect key="frame" x="40" y="686" width="334" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.54573516280000001" green="0.82262840609999999" blue="0.92133218049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="    Please click here" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="PLESSE CLICK HERE" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="italicSystem" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -54,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2342" y="-344"/>
+            <point key="canvasLocation" x="-2342.0289855072465" y="-344.19642857142856"/>
         </scene>
         <!--View Space Of Play-->
         <scene sceneID="npS-Xj-DVe">
@@ -298,67 +291,30 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="chose your player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-Vd-sFZ">
                                 <rect key="frame" x="94" y="109" width="227" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.099226423440000003" green="0.92133218049999999" blue="0.75688671129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwC-8L-11G">
-                                <rect key="frame" x="152" y="283" width="109" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84379643959999995" green="0.94333755969999999" blue="0.91560727539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Knight" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="S70-jK-bEj" kind="show" id="q54-F8-0o9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGb-Ow-XDx">
-                                <rect key="frame" x="148" y="511" width="115" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84379643959999995" green="0.94333755969999999" blue="0.91560727539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Wizard" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="RdL-PO-IaQ" kind="show" id="Oun-PL-iQB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-kF-gIe">
-                                <rect key="frame" x="161" y="727" width="91" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84379643959999995" green="0.94333755969999999" blue="0.91560727539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Thief" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="6Ly-v2-bEp" kind="show" id="imO-WR-Riy"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="B0CA6771-0172-4E56-B8A5-AFD207A2733A" translatesAutoresizingMaskIntoConstraints="NO" id="Q7u-bV-AqC">
-                                <rect key="frame" x="84" y="153" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DA3CD151-5FB2-4743-96B0-F1D2952D91E8" translatesAutoresizingMaskIntoConstraints="NO" id="Vg8-Oj-ccc">
-                                <rect key="frame" x="91" y="375" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07E30F04-DCEB-408B-A892-B9DCB03B470F_4_5005_c" translatesAutoresizingMaskIntoConstraints="NO" id="iJt-52-w0a">
-                                <rect key="frame" x="84" y="591" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0I-gG-RKB">
+                                <rect key="frame" x="0.0" y="228" width="414" height="406"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7iY-Fn-F6Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Syo-nX-C6X"/>
+                    <connections>
+                        <outlet property="pickerForHero" destination="A0I-gG-RKB" id="Ml0-bf-EI8"/>
+                        <segue destination="S70-jK-bEj" kind="show" identifier="segKnight" id="n1c-FK-AnO"/>
+                        <segue destination="6Ly-v2-bEp" kind="show" id="RrI-qo-1DG"/>
+                        <segue destination="RdL-PO-IaQ" kind="show" id="QKT-Kl-rgU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQI-rp-ytI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1597" y="-344"/>
+            <point key="canvasLocation" x="-1597.1014492753625" y="-344.19642857142856"/>
         </scene>
         <!--View Wizard-->
         <scene sceneID="EzS-KD-byD">
@@ -481,7 +437,7 @@
                                     <segue destination="pqE-tk-aYd" kind="show" id="B40-CY-Og5"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="qxl-sO-EPV">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="15" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="qxl-sO-EPV">
                                 <rect key="frame" x="254" y="499" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -489,7 +445,7 @@
                                     <action selector="stepperDf:" destination="S70-jK-bEj" eventType="valueChanged" id="tgD-Ff-LiG"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="70" translatesAutoresizingMaskIntoConstraints="NO" id="0Lg-iI-R6I">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="70" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Lg-iI-R6I">
                                 <rect key="frame" x="254" y="558" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -497,7 +453,7 @@
                                     <action selector="stepperPd:" destination="RdL-PO-IaQ" eventType="valueChanged" id="Wum-bu-MQj"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="MXs-ss-F85">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" stepValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="MXs-ss-F85">
                                 <rect key="frame" x="254" y="624" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -505,7 +461,7 @@
                                     <action selector="stepperWd:" destination="RdL-PO-IaQ" eventType="valueChanged" id="AMU-vR-vB5"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="4PX-bG-iRg">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="50" stepValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="4PX-bG-iRg">
                                 <rect key="frame" x="254" y="683" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -513,7 +469,7 @@
                                     <action selector="stepperSc:" destination="RdL-PO-IaQ" eventType="valueChanged" id="qVX-JF-ceA"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-wM-2OZ">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="90" stepValue="45" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-wM-2OZ">
                                 <rect key="frame" x="254" y="436" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -652,35 +608,35 @@
                                     <segue destination="pqE-tk-aYd" kind="show" id="fdZ-Qn-f4H"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="boL-zl-dg1">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" stepValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="boL-zl-dg1">
                                 <rect key="frame" x="250" y="518" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperDf:" destination="S70-jK-bEj" eventType="valueChanged" id="VU6-yg-x5X"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-q1-doH">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-q1-doH">
                                 <rect key="frame" x="250" y="577" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperPd:" destination="S70-jK-bEj" eventType="valueChanged" id="EkU-xl-Ugc"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-t7-zWO">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="40" stepValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-t7-zWO">
                                 <rect key="frame" x="250" y="643" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperWd:" destination="S70-jK-bEj" eventType="valueChanged" id="Qfn-uz-gY2"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="krL-9V-ZLN">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="krL-9V-ZLN">
                                 <rect key="frame" x="250" y="702" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperSc:" destination="S70-jK-bEj" eventType="valueChanged" id="QCO-MG-3F4"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-za-Std">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" stepValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-za-Std">
                                 <rect key="frame" x="250" y="455" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -722,17 +678,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4k-Ow-LGJ">
-                                <rect key="frame" x="178" y="263" width="91" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84379643959999995" green="0.94333755969999999" blue="0.91560727539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Thief" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07E30F04-DCEB-408B-A892-B9DCB03B470F_4_5005_c" translatesAutoresizingMaskIntoConstraints="NO" id="gWS-pK-2jf">
-                                <rect key="frame" x="101" y="54" width="240" height="201"/>
+                                <rect key="frame" x="62" y="54" width="279" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   0   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxC-6V-2qz">
@@ -835,7 +782,7 @@
                                     <segue destination="pqE-tk-aYd" kind="show" id="ejp-Bs-6S2"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-rs-T2y">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="25" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-rs-T2y">
                                 <rect key="frame" x="261" y="522" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -843,7 +790,7 @@
                                     <action selector="stepperDf:" destination="S70-jK-bEj" eventType="valueChanged" id="vNV-wS-AnT"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="jcS-wa-sBM">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="15" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="jcS-wa-sBM">
                                 <rect key="frame" x="261" y="581" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -851,7 +798,7 @@
                                     <action selector="stepperPd:" destination="S70-jK-bEj" eventType="valueChanged" id="ffS-aY-YP7"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="HH3-FO-Xn8">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="HH3-FO-Xn8">
                                 <rect key="frame" x="261" y="647" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -859,7 +806,7 @@
                                     <action selector="stepperWd:" destination="6Ly-v2-bEp" eventType="valueChanged" id="vn8-m4-nLL"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="75" translatesAutoresizingMaskIntoConstraints="NO" id="pjs-PJ-a6z">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="75" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="pjs-PJ-a6z">
                                 <rect key="frame" x="261" y="706" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -867,7 +814,7 @@
                                     <action selector="stepperSc:" destination="S70-jK-bEj" eventType="valueChanged" id="SRQ-dY-16C"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="65" translatesAutoresizingMaskIntoConstraints="NO" id="Vu5-I1-iNP">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="65" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Vu5-I1-iNP">
                                 <rect key="frame" x="261" y="459" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -876,6 +823,15 @@
                                     <action selector="stepperLp:" destination="KWS-An-Ffr" eventType="valueChanged" id="iMQ-PT-ibe"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4k-Ow-LGJ">
+                                <rect key="frame" x="147" y="263" width="91" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84379643959999995" green="0.94333755969999999" blue="0.91560727539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Thief" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pW1-XP-W7Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -891,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7a-C2-O3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="13"/>
+            <point key="canvasLocation" x="-810.14492753623199" y="12.723214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9x-Tw-oxG">
@@ -913,7 +869,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B40-CY-Og5"/>
+        <segue reference="fdZ-Qn-f4H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="07E30F04-DCEB-408B-A892-B9DCB03B470F_4_5005_c" width="360" height="759"/>
