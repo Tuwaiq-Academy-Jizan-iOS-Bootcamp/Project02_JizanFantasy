@@ -54,15 +54,14 @@ extension ViewControllerTwo : UITextFieldDelegate {
     
         func textFieldDidEndEditing(_ textField: UITextField) {
             if theKnight.text == "Knight" {
-                if Int(textField.text!)! > 60 {
-                    txLf.text = "\(Int(60))"
+                
                 if Int(textField.text!)! > 20 {
                     txDf.text = "\(Int(20))"
                     if Int(textField.text!)! > 30 {
                         txPd.text = "\(Int(30))"
                         if Int(textField.text!)! > 40 {
                             txWd.text = "\(Int(40))"
-                            }
+                            
                         }
                     }
                 }

@@ -85,6 +85,8 @@ class ViewController: UIViewController {
             logicTheGame()
             duringGame.text += ("“This is the end of turn N°\(turn)“")
         }
+        let range = NSMakeRange(duringGame.text.count - 1, 0)
+            duringGame.scrollRangeToVisible(range)
     }
     
     
