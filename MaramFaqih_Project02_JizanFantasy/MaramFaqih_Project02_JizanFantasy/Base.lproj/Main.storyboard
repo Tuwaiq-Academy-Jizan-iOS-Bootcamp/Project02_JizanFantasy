@@ -339,10 +339,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-vV-2BU">
-                                <rect key="frame" x="171" y="182" width="63" height="34"/>
+                                <rect key="frame" x="176" y="168" width="63" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.4528787494" green="0.29783576" blue="0.46382715279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Point you can distribute " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-6j-DjT">
@@ -373,12 +373,6 @@
                                 <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHP-G6-NPJ">
-                                <rect key="frame" x="242" y="182" width="132" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-U4-eIB">
                                 <rect key="frame" x="197" y="291" width="79" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -423,13 +417,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-ba-tFA">
-                                <rect key="frame" x="242" y="135" width="132" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="270" translatesAutoresizingMaskIntoConstraints="NO" id="joV-IU-tZu">
@@ -509,6 +496,18 @@
                                 <color key="textColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xO-JX-K59">
+                                <rect key="frame" x="223" y="135" width="132" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.63525162530000001" green="0.28894993899999999" blue="0.34875975980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-ba-tFA">
+                                <rect key="frame" x="223" y="120" width="132" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TJe-G7-no4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -520,10 +519,10 @@
                         <outlet property="imageViewPlayer2" destination="iS5-4X-0ym" id="PAt-jn-3iQ"/>
                         <outlet property="lPLabel" destination="Wzp-U4-eIB" id="YYU-Gl-3nO"/>
                         <outlet property="lPPlus" destination="lRh-Nl-CJ1" id="KBv-pf-qtb"/>
-                        <outlet property="namePlayer" destination="oHP-G6-NPJ" id="HXP-Ud-Kg2"/>
                         <outlet property="namePlayer2" destination="wIU-ba-tFA" id="A4C-1I-jSr"/>
                         <outlet property="pDLabel" destination="Zqy-aN-Jos" id="o71-Sb-Vpn"/>
                         <outlet property="pDPlus" destination="24s-V7-Q3c" id="UPb-3F-4nR"/>
+                        <outlet property="pickerViewPlayers" destination="9xO-JX-K59" id="hhN-sA-agC"/>
                         <outlet property="pointLabelPlayer" destination="OfD-Da-cEK" id="VTg-7U-nfX"/>
                         <outlet property="pointPlayer2Label" destination="jCB-JH-RnB" id="eD7-zl-SbG"/>
                         <outlet property="sCLabel" destination="x11-uE-JKq" id="UYE-1d-cvp"/>
@@ -534,7 +533,6 @@
                         <outlet property="textViewStory" destination="uGV-6h-Mrd" id="eox-SS-CHN"/>
                         <outlet property="wDLabel" destination="QUb-V9-Rb0" id="8ut-MU-O7Z"/>
                         <outlet property="wDPlus" destination="uHD-N6-jxD" id="wUL-JU-kNl"/>
-                        <outletCollection property="textFieldSet" destination="oHP-G6-NPJ" collectionClass="NSMutableArray" id="JHS-Sm-G95"/>
                         <outletCollection property="textFieldSet" destination="Wzp-U4-eIB" collectionClass="NSMutableArray" id="gpZ-Dr-Vap"/>
                         <outletCollection property="textFieldSet" destination="wS6-uC-qH9" collectionClass="NSMutableArray" id="leM-yP-uSY"/>
                         <outletCollection property="textFieldSet" destination="Zqy-aN-Jos" collectionClass="NSMutableArray" id="Flh-j7-6Q6"/>

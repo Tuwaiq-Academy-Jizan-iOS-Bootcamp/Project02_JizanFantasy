@@ -48,7 +48,7 @@ class Hero {
 }
 
 
-class ViewController2: UIViewController {
+class ViewController2: UIViewController{
     //steper outlet
     @IBOutlet weak var stepLP: UIStepper!
     @IBOutlet weak var stepDF: UIStepper!
@@ -71,18 +71,20 @@ class ViewController2: UIViewController {
     @IBOutlet weak var wDLabel: UITextField!
     @IBOutlet weak var pDLabel: UITextField!
     @IBOutlet weak var dFLabel: UITextField!
-    @IBOutlet weak var namePlayer: UITextField!
+   // @IBOutlet weak var namePlayer: UITextField!
     
 
     @IBOutlet var textFieldSet: [UITextField]!
     @IBOutlet weak var imageViewPlayer2: UIImageView!
     @IBOutlet weak var textViewStory: UITextView!
     @IBOutlet weak var buttonOutlet: UIButton!
+    @IBOutlet weak var pickerViewPlayers: UIPickerView!
     
     //object from Hero class
     var knight = Hero(name:"Knight", points: 250, lP: 0, dF:0, pD:0, wD:0, sC:100,dFMax:20, pDMax:30, wDMax:40, addLP: 5,addPD: 0,addWD: 10)
     var wizard = Hero(name:"Wizard", points: 245, lP: 0, dF:0, pD:0, wD:0, sC:50, dFMax:15, pDMax:70, wDMax:20, addLP: 35 ,addPD: 10,addWD: 0)
     var thief = Hero(name:"Thief", points: 210,  lP: 0, dF:0, pD:0, wD:0, sC:75,dFMax:25, pDMax:15, wDMax:30, addLP: 5,addPD: 0,addWD: 35)
+    var arrayOfPlayers = ["knight","wizard","thief"]
     
    //Variables to save values ​​and transfer them to VC1
     var lPValue = 0
@@ -97,17 +99,19 @@ class ViewController2: UIViewController {
    // Do any additional setup after loading the view.
         
         
-        for i in textFieldSet{
-            i.delegate = self
-    }
-        namePlayer.delegate = self
-        let player2 = namePlayer.text
+//        for i in textFieldSet{
+//            i.delegate = self
+//    }
+       // namePlayer.delegate = self
+        pickerViewPlayers.delegate = self
+        pickerViewPlayers.dataSource = self
+        let player2 = namePlayer2.text
        
         stepLP.stepValue = 1
         stepDF.stepValue = 1
         stepPD.stepValue = 1
         stepWD.stepValue = 1
-        if player2 == "" {
+        if player2 == "Name Player 2" {
             stepLP.isUserInteractionEnabled = false
             stepDF.isUserInteractionEnabled = false
             stepPD.isUserInteractionEnabled = false
@@ -144,7 +148,7 @@ class ViewController2: UIViewController {
             
 //            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDValue) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
+            textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDValue) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
     
@@ -162,7 +166,7 @@ class ViewController2: UIViewController {
             
 //            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
+            textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
     
@@ -179,7 +183,7 @@ class ViewController2: UIViewController {
             pointPlayer2Label.text = String( Int(pointPlayer2Label.text!)! - Int( sCLabel.text!)!)
 
             
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
+            textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
     
@@ -198,7 +202,7 @@ class ViewController2: UIViewController {
             
 //            pointPlayer2Label.text =  String((Int(pointPlayer2Label.text!)!)-1)
             
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
+            textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points  ")
         }
     }
     
@@ -206,7 +210,7 @@ class ViewController2: UIViewController {
                override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                    let rootVC = segue.destination as! ViewController
                    rootVC.imageViewPlayer2v1.image = imageViewPlayer2.image
-                   rootVC.player2LabelName.text = namePlayer.text
+                   rootVC.player2LabelName.text = namePlayer2.text
                    rootVC.player2LabelLP.text = lPLabel.text
                    rootVC.player2LabelDF.text = dFLabel.text
                    rootVC.player2LabelPD.text = pDLabel.text
@@ -220,98 +224,113 @@ class ViewController2: UIViewController {
                }
     
 }
-    
-    
 
-extension ViewController2:UITextFieldDelegate{
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-    
-  
-       if namePlayer.text == "knight" {
-            imageViewPlayer2.image=UIImage(named: "Knight")
-           pointLabelPlayer.text = String(knight.points)
-            pointPlayer2Label.text = String(knight.points-100)
-            sCLabel.text = String(knight.sC)
-           
-           lPPlus.text = String(knight.addLP)
-           pDPlus.text = String(knight.addPD)
-           wDPlus.text = String(knight.addWD)
-           
-           //Check whether the label has the maximum value
-            stepDF.maximumValue = Double(knight.dFMax)
-            stepPD.maximumValue = Double(knight.pDMax)
-            stepWD.maximumValue = Double(knight.wDMax)
-           
-
-           stepLP.isUserInteractionEnabled = true
-           stepDF.isUserInteractionEnabled = true
-           stepPD.isUserInteractionEnabled = true
-           stepWD.isUserInteractionEnabled = true
-           buttonOutlet.isUserInteractionEnabled = true
-           
-           textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
-           
-        }
-        else if namePlayer.text == "wizard" {
-            imageViewPlayer2.image=UIImage(named: "Wizard")
-            pointLabelPlayer.text = String(wizard.points)
-            pointPlayer2Label.text = String(wizard.points-50)
-            sCLabel.text = String(wizard.sC)
-            
-            //Check whether the label has the maximum value
-            stepDF.maximumValue = Double(wizard.dFMax)
-            stepPD.maximumValue = Double(wizard.pDMax)
-            stepWD.maximumValue = Double(wizard.wDMax)
-            
-            lPPlus.text = String(wizard.addLP)
-            pDPlus.text = String(wizard.addPD)
-            wDPlus.text = String(wizard.addWD)
-           
-            
-            stepLP.isUserInteractionEnabled = true
-            stepDF.isUserInteractionEnabled = true
-            stepPD.isUserInteractionEnabled = true
-            stepWD.isUserInteractionEnabled = true
-            buttonOutlet.isUserInteractionEnabled = true
-            
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
-            
-        }
-        else if namePlayer.text == "thief" {
-            imageViewPlayer2.image=UIImage(named: "Thief")
-            pointLabelPlayer.text = String(thief.points)
-            pointPlayer2Label.text = String(thief.points-75)
-            sCLabel.text = String(thief.sC)
-            
-            //Check whether the label has the maximum value
-            stepDF.maximumValue = Double(thief.dFMax)
-            stepPD.maximumValue = Double(thief.pDMax)
-            stepWD.maximumValue = Double(thief.wDMax)
-            
-            lPPlus.text = String(thief.addLP)
-            pDPlus.text = String(thief.addPD)
-            wDPlus.text = String(thief.addWD)
-            
-           
-            
-            stepLP.isUserInteractionEnabled = true
-            stepDF.isUserInteractionEnabled = true
-            stepPD.isUserInteractionEnabled = true
-            stepWD.isUserInteractionEnabled = true
-            buttonOutlet.isUserInteractionEnabled = true
-            
-            textViewStory.text = ( "The Hero is \(namePlayer.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
-        }
-        
-      
-      
-        
-        namePlayer2.text = namePlayer.text
-        textField.resignFirstResponder()
-        return true
-        
+extension ViewController2: UIPickerViewDelegate, UIPickerViewDataSource {
+    //number of colume
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       
+        return 1
     }
     
+    //number of elments = array.count
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
+            return arrayOfPlayers.count
+    }
+    //write elment array on  pv
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       
+            return arrayOfPlayers[row]
+}
+            
+        
+    //print on label & do any thing when select row
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        namePlayer2.text = arrayOfPlayers[row]
+        
+             if namePlayer2.text == "knight" {
+                  imageViewPlayer2.image=UIImage(named: "Knight")
+                 pointLabelPlayer.text = String(knight.points)
+                  pointPlayer2Label.text = String(knight.points-100)
+                  sCLabel.text = String(knight.sC)
+                 
+                 lPPlus.text = String(knight.addLP)
+                 pDPlus.text = String(knight.addPD)
+                 wDPlus.text = String(knight.addWD)
+                 
+                 //Check whether the label has the maximum value
+                  stepDF.maximumValue = Double(knight.dFMax)
+                  stepPD.maximumValue = Double(knight.pDMax)
+                  stepWD.maximumValue = Double(knight.wDMax)
+                 
+
+                 stepLP.isUserInteractionEnabled = true
+                 stepDF.isUserInteractionEnabled = true
+                 stepPD.isUserInteractionEnabled = true
+                 stepWD.isUserInteractionEnabled = true
+                 buttonOutlet.isUserInteractionEnabled = true
+                 
+                 textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+                 
+              }
+              else if namePlayer2.text == "wizard" {
+                  imageViewPlayer2.image=UIImage(named: "Wizard")
+                  pointLabelPlayer.text = String(wizard.points)
+                  pointPlayer2Label.text = String(wizard.points-50)
+                  sCLabel.text = String(wizard.sC)
+                  
+                  //Check whether the label has the maximum value
+                  stepDF.maximumValue = Double(wizard.dFMax)
+                  stepPD.maximumValue = Double(wizard.pDMax)
+                  stepWD.maximumValue = Double(wizard.wDMax)
+                  
+                  lPPlus.text = String(wizard.addLP)
+                  pDPlus.text = String(wizard.addPD)
+                  wDPlus.text = String(wizard.addWD)
+                 
+                  
+                  stepLP.isUserInteractionEnabled = true
+                  stepDF.isUserInteractionEnabled = true
+                  stepPD.isUserInteractionEnabled = true
+                  stepWD.isUserInteractionEnabled = true
+                  buttonOutlet.isUserInteractionEnabled = true
+                  
+                  textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+                  
+              }
+              else if namePlayer2.text == "thief" {
+                  imageViewPlayer2.image=UIImage(named: "Thief")
+                  pointLabelPlayer.text = String(thief.points)
+                  pointPlayer2Label.text = String(thief.points-75)
+                  sCLabel.text = String(thief.sC)
+                  
+                  //Check whether the label has the maximum value
+                  stepDF.maximumValue = Double(thief.dFMax)
+                  stepPD.maximumValue = Double(thief.pDMax)
+                  stepWD.maximumValue = Double(thief.wDMax)
+                  
+                  lPPlus.text = String(thief.addLP)
+                  pDPlus.text = String(thief.addPD)
+                  wDPlus.text = String(thief.addWD)
+                  
+                 
+                  
+                  stepLP.isUserInteractionEnabled = true
+                  stepDF.isUserInteractionEnabled = true
+                  stepPD.isUserInteractionEnabled = true
+                  stepWD.isUserInteractionEnabled = true
+                  buttonOutlet.isUserInteractionEnabled = true
+                  
+                  textViewStory.text = ( "The Hero is \(namePlayer2.text!) \n and have points : \(lPLabel.text!)  \n - Defense (DF) : \(dFLabel.text!)\n - Power Damage (PD) :\(pDLabel.text!)\n - Weapon damage(WD): \( wDLabel.text!) \n - Special capacity (SC): \(sCLabel.text!) \n with +\(wDPlus.text!) Weapon damage(WD) , +\(pDPlus.text!) Power Damage (PD) => for the next time he use it \n || +\(lPPlus.text!) Extra life points")
+              }
+              
+            
+            
+              
+           
+        
+    
+    }
+
+
 }
