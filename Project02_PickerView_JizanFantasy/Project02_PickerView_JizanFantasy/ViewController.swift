@@ -88,7 +88,6 @@ struct Power
 class ViewController: UIViewController
 {
     
-    @IBOutlet var playerNameLabel: UILabel!
     @IBOutlet var vsLabel: UILabel!
     @IBOutlet var lpHeroLabel: UILabel!
     @IBOutlet var dfHeroLabel: UILabel!
