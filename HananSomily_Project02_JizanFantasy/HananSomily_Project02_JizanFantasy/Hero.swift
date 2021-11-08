@@ -23,6 +23,7 @@ struct HeroPlayer{
 
  class Hero: UIViewController {
      
+     @IBOutlet weak var nameOfHeroPickerView: UIPickerView!
      @IBOutlet weak var plusSCHero: UILabel!
      @IBOutlet weak var changePoins: UILabel!
      @IBOutlet weak var descriptionOfHero: UITextView!
@@ -40,6 +41,7 @@ struct HeroPlayer{
      @IBOutlet weak var insertPDstepper: UIStepper!
      @IBOutlet weak var insertWDLabl: UILabel!
      @IBOutlet weak var insertinsertWDStepper: UIStepper!
+     var heroName = ["Knight","Wizard", "Thief",]
      var knight = HeroPlayer(points:250 ,name: "Knight", lifePoint: 60, defense: 20, powerDamage: 30, weaponDamage: 40, specialCapacity: 100, specialLP: 5, specialWD: 10, specialPD: 0)
      var wizard = HeroPlayer(points:245 ,name: "Wizard", lifePoint: 90, defense: 15, powerDamage: 70, weaponDamage: 20, specialCapacity: 50, specialLP: 35, specialWD: 0, specialPD: 10)
      var thief = HeroPlayer(points:210,name: "Thief", lifePoint: 65, defense: 25, powerDamage: 15, weaponDamage: 30, specialCapacity: 75, specialLP: 5, specialWD: 35, specialPD: 0)
@@ -59,8 +61,10 @@ struct HeroPlayer{
          insertPDstepper.stepValue = 1.0
          insertWDLabl.text = "0"
          insertinsertWDStepper.stepValue = 1.0
-         insertNameOfHeroTF.delegate = self
+         //insertNameOfHeroTF.delegate = self
          pointOfHeroLabl.text = "0"
+         nameOfHeroPickerView.dataSource = self
+         nameOfHeroPickerView.delegate = self
         // inserDFtextField.delegate = self
         // lifePointHeroTextField.delegate = self
         // insertPDtextField.delegate = self
@@ -72,7 +76,7 @@ struct HeroPlayer{
          var sender = segue.destination as! ViewController
          sender.imagePlayer2.image = imageHero.image
          sender.nameOfPlayr2labl.text =
-         insertNameOfHeroTF.text
+         nameOfHeroLabl.text
          sender.lpOfPlayer2Labl.text =
          lifePointHeroLabl.text
          sender.dfOfPlayr2labl.text =
@@ -139,13 +143,30 @@ struct HeroPlayer{
          //insertWDLabl.text = Int(sender.value).description
      }
      }}
-extension Hero:UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+extension Hero:UIPickerViewDelegate , UIPickerViewDataSource
+//extension Hero:UITextFieldDelegate
+{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return heroName.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return heroName[row]
+    }
+    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
        //nameOfHeroLabl.text = insertNameOfHeroTF.text
-        var heroName = insertNameOfHeroTF.text
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var heroName = heroName[nameOfHeroPickerView.selectedRow(inComponent: 0)]
+
+    
+        //var heroName = insertNameOfHeroTF.text
         switch heroName {
-        case "knight" :
+        case "Knight" :
             imageHero.image = UIImage(named: "knight")
             changePoins.text = String(knight.points)
             pointOfHeroLabl.text = String("150")
@@ -160,7 +181,7 @@ extension Hero:UITextFieldDelegate{
             insertDFStepper.maximumValue = Double(knight.defense)
             insertPDstepper.maximumValue = Double(knight.powerDamage)
             insertinsertWDStepper.maximumValue = Double(knight.weaponDamage)
-        case "wizard" :
+        case "Wizard" :
             imageHero.image = UIImage(named: "wizard")
             changePoins.text = String(wizard.points)
             pointOfHeroLabl.text = String("195")
@@ -175,7 +196,7 @@ extension Hero:UITextFieldDelegate{
             insertDFStepper.maximumValue = Double(wizard.defense)
             insertPDstepper.maximumValue = Double(wizard.powerDamage)
             insertinsertWDStepper.maximumValue = Double(wizard.weaponDamage)
-        case "thief" :
+        case "Thief" :
             imageHero.image = UIImage(named: "thief")
             changePoins.text = String(thief.points)
             pointOfHeroLabl.text = String("135")
@@ -193,6 +214,6 @@ extension Hero:UITextFieldDelegate{
         default:
             print("error")
         }
-        return true
-    }
-}
+       // return true
+    }}
+
