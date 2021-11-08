@@ -19,6 +19,7 @@ class ViewControllerTwo: UIViewController
     
     @IBOutlet weak var textFalidLD: UITextField!
     
+    @IBOutlet weak var pickerHero: UIPickerView!
     
     @IBOutlet weak var textFalidDF: UITextField!
     
@@ -30,28 +31,28 @@ class ViewControllerTwo: UIViewController
     @IBOutlet weak var textFalidSE: UITextField!
     
     @IBOutlet weak var namelabel: UILabel!
-    
-    @IBAction func ActionKnight(_ sender: Any) {
-        imagePlayers.image = UIImage(named:"Knight")
-        namelabel.text = "Knight"
-    }
-    
-    @IBAction func ActionWizard(_ sender: Any) {
-        imagePlayers.image = UIImage(named:"wizard-1")
-        namelabel.text = "wizard-1"
-        
-    }
-    
-    
-    @IBAction func ActionThif(_ sender: Any) {
-        
-        
-        imagePlayers.image = UIImage(named:"Thief")
-        namelabel.text = "Thief"
-    }
-    
-    
-    
+    var arrayHero = ["Knight","Wizard","Thief"]
+//    @IBAction func ActionKnight(_ sender: Any) {
+//        imagePlayers.image = UIImage(named:"Knight")
+//        namelabel.text = "Knight"
+//    }
+//    
+//    @IBAction func ActionWizard(_ sender: Any) {
+//        imagePlayers.image = UIImage(named:"wizard-1")
+//        namelabel.text = "wizard-1"
+//        
+//    }
+//    
+//    
+//    @IBAction func ActionThif(_ sender: Any) {
+//        
+//        
+//        imagePlayers.image = UIImage(named:"Thief")
+//        namelabel.text = "Thief"
+//    }
+//    
+//    
+//    
     
     override func viewDidLoad() {
         
@@ -60,6 +61,9 @@ class ViewControllerTwo: UIViewController
         textFalidWD.delegate = self
         textFalidDF.delegate = self
         textFalidLD.delegate = self
+        
+        pickerHero.delegate = self
+        pickerHero.dataSource = self
         
     super.viewDidLoad()
 }
@@ -109,7 +113,34 @@ extension ViewControllerTwo:UITextFieldDelegate {
 }
 
 }
-
+extension ViewControllerTwo: UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayHero.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayHero[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            imagePlayers.image = UIImage(named:"Knight")
+            namelabel.text = "Knight"
+        }else if row == 1{
+            imagePlayers.image = UIImage(named:"wizard-1")
+            namelabel.text = "wizard-1"
+        }else {
+            
+            
+            imagePlayers.image = UIImage(named:"Thief")
+            namelabel.text = "Thief"
+        }
+    }
+    
+}
 
 
 

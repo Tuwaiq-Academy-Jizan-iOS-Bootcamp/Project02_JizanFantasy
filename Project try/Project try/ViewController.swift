@@ -131,13 +131,14 @@ switch value{
     desc2.text = "The hero start with power damage  "
             print("power Damage")
     if pdh - dfb < 0{
-        pdh = 0
-        lpb -= pdh
+      print("nothings")
     }else{
         lpb -= pdh - dfb
     }
    
-    restOfLife ()
+    if lpb <= 0 {
+        lpb = 0
+    }
     LifePointBoss.text = String(lpb)
     desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
   //  Descraption.text +=  " life point of boss \(LifePointBoss.text!)\n "
@@ -148,13 +149,14 @@ switch value{
     print(Lp.text!)
        print(LifePointBoss.text!)
     if wph - dfb < 0 {
-        wph = 0
-        lpb -= wph
+        print("nothings")
     }else{
         lpb -= wph - dfb
     }
-    
-    restOfLife ()
+    if lpb <= 0 {
+        lpb = 0
+    }
+   
     LifePointBoss.text = String(lpb)
     
     desc3.text =  " life point of hero \(Lp.text!) \n life point of boss \(LifePointBoss.text!) "
@@ -167,13 +169,14 @@ switch value{
            // Descraption.text += "special capacity \n"
             print("special capacity")
     if sch - dfb < 0 {
-        sch = 0
-        lpb -= sch
+        print("nothings")
     }else{
         lpb -= sch - dfb
     }
    
-    restOfLife ()
+    if lpb <= 0 {
+        lpb = 0
+    }
     LifePointBoss.text = String(lpb)
 //    Descraption.text +=  "life point of hero \(Lp.text!)\n "
 //    Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
@@ -197,14 +200,15 @@ switch value{
        //Descraption.text += "power Damag\n"
         print("power Damage")
         if pdb - dfh < 0{
-         pdb = 0
-            lph -= pdb
+        print("nothings")
         }else{
             lph -= pdb - dfh
         }
 
         
-        restOfLife ()
+        if lph <= 0 {
+            lph = 0
+        }
         Lp.text = String(lph)
 //        Descraption.text +=  "life point of hero \(Lp.text!)\n "
 //        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
@@ -216,13 +220,14 @@ switch value{
         //Descraption.text += "weapon Demage \n"
         print("weapon Damage")
         if wpb - dfh < 0 {
-            wpb = 0
-            lph -= wpb
+            print("nothings")
         }else{
             lph -= wpb - dfh
         }
       
-        restOfLife ()
+        if lph <= 0 {
+            lph = 0
+        }
         Lp.text = String(lph)
 //        Descraption.text +=  "life point of hero \(Lp.text!)\n "
 //        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
@@ -233,13 +238,13 @@ switch value{
         //Descraption.text += "special capacity \n"
         print("special capacity")
         if scb - dfh < 0 {
-            scb = 0
-            lph -=  scb
+            print("nothings")
         }else {
             lph -=  scb - dfh
         }
-        
-        restOfLife ()
+        if lph <= 0 {
+            lph = 0
+        }
         Lp.text = String(lph)
 //        Descraption.text +=  "life point of hero \(Lp.text!)\n "
 //        Descraption.text +=  "life point of boss \(LifePointBoss.text!)\n "
