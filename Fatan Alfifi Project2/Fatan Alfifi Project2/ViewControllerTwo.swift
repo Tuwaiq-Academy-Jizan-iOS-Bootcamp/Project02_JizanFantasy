@@ -16,11 +16,17 @@ class ViewControllerTwo: UIViewController{
     @IBOutlet weak var TextField4: UITextField!
     @IBOutlet weak var TextField5: UITextField!
     @IBOutlet weak var TextField6: UITextField!
-    
     @IBOutlet weak var Labe2: UILabel!
+    
+@IBOutlet weak var pickHero: UIPickerView!
+var arrayName = ["Knight","wizard","thief"]
+    
+    
     
 override func viewDidLoad() {
 super.viewDidLoad()
+pickHero.delegate = self
+pickHero.dataSource = self
 }
     
 override func prepare(for segue:
@@ -40,10 +46,23 @@ func textFieldShouldReturn( textField: UITextField) -> Bool {
 textField.resignFirstResponder()
 return true
 }
-
 }
     
-
-
+extension ViewControllerTwo: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return arrayName.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayName[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("\(arrayName[row])")
+        TextField1.text = arrayName[row]
+    }
+}
 
 
