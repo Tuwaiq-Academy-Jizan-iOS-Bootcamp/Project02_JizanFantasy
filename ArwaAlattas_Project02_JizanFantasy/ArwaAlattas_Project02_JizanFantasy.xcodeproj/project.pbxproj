@@ -24,6 +24,7 @@
 		AFBB7D77273285740061CF81 /* Thief.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBB7D72273285740061CF81 /* Thief.jpg */; };
 		AFBB7D79273570670061CF81 /* ViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7D78273570670061CF81 /* ViewControllerThree.swift */; };
 		AFBB7D7B273570AE0061CF81 /* ViewControllerFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */; };
+		AFBB7DBE273949660061CF81 /* viewControllerChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB7DBD273949660061CF81 /* viewControllerChoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		AFBB7D72273285740061CF81 /* Thief.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Thief.jpg; path = ../../../../Thief.jpg; sourceTree = "<group>"; };
 		AFBB7D78273570670061CF81 /* ViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerThree.swift; sourceTree = "<group>"; };
 		AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFour.swift; sourceTree = "<group>"; };
+		AFBB7DBD273949660061CF81 /* viewControllerChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllerChoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				AFBB7D40273172480061CF81 /* ViewController.swift */,
 				AFBB7D6C273172C30061CF81 /* ViewControllerTwo.swift */,
 				AFBB7D42273172480061CF81 /* Main.storyboard */,
+				AFBB7DBD273949660061CF81 /* viewControllerChoice.swift */,
 				AFBB7D78273570670061CF81 /* ViewControllerThree.swift */,
 				AFBB7D7A273570AE0061CF81 /* ViewControllerFour.swift */,
 				AFBB7D45273172490061CF81 /* Assets.xcassets */,
@@ -291,6 +294,7 @@
 				AFBB7D41273172480061CF81 /* ViewController.swift in Sources */,
 				AFBB7D7B273570AE0061CF81 /* ViewControllerFour.swift in Sources */,
 				AFBB7D3D273172480061CF81 /* AppDelegate.swift in Sources */,
+				AFBB7DBE273949660061CF81 /* viewControllerChoice.swift in Sources */,
 				AFBB7D3F273172480061CF81 /* SceneDelegate.swift in Sources */,
 				AFBB7D6D273172C30061CF81 /* ViewControllerTwo.swift in Sources */,
 			);
