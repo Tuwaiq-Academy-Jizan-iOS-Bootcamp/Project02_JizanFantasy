@@ -61,7 +61,7 @@ override func viewDidLoad() {
 }
 
 @IBAction func WDAction(_ sender: UIStepper) {
-//    WDLable.text = (Int(sender.value))
+
     WDLable.text =  "\(Int(sender.value))"
 }
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -21,6 +21,7 @@
 		BA9320E22732C28D0041D651 /* newGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9320E12732C28D0041D651 /* newGameUITestsLaunchTests.swift */; };
 		BA9748872735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */; };
 		BA9748892735D90300F24A13 /* ViewControllerNewPlayerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */; };
+		BAB7FD2D2739834C00D1D05E /* ViewControllerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7FD2C2739834C00D1D05E /* ViewControllerPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BA9320E12732C28D0041D651 /* newGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewPlayerTwo.swift; sourceTree = "<group>"; };
 		BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNewPlayerThree.swift; sourceTree = "<group>"; };
+		BAB7FD2C2739834C00D1D05E /* ViewControllerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				BA9320C02732C28C0041D651 /* SceneDelegate.swift */,
 				BA9320C22732C28C0041D651 /* ViewController.swift */,
 				BA9320C42732C28C0041D651 /* Main.storyboard */,
+				BAB7FD2C2739834C00D1D05E /* ViewControllerPicker.swift */,
 				BA9748882735D90300F24A13 /* ViewControllerNewPlayerThree.swift */,
 				BA9748862735D8F400F24A13 /* ViewControllerNewPlayerTwo.swift */,
 				BA6481FF2733BB1600AA7D52 /* ViewControllerNewPlayer.swift */,
@@ -281,6 +284,7 @@
 				BA6482002733BB1600AA7D52 /* ViewControllerNewPlayer.swift in Sources */,
 				BA9320C12732C28C0041D651 /* SceneDelegate.swift in Sources */,
 				BA9748892735D90300F24A13 /* ViewControllerNewPlayerThree.swift in Sources */,
+				BAB7FD2D2739834C00D1D05E /* ViewControllerPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,11 +60,9 @@ class ViewControllerMatch: UIViewController {
     @IBOutlet weak var powerdamageB: UILabel!
     @IBOutlet weak var nameBoosLabel: UILabel!
     @IBOutlet weak var weaponDamge1: UILabel!
+    @IBOutlet weak var rollDice1: UIButton!
     @IBOutlet weak var weaponDamageB: UILabel!
-    //    @IBOutlet weak var sepicalCapsity: UILabel!
-    //    @IBOutlet weak var spicalCapsityB: UILabel!
     @IBOutlet weak var theRollDice: UILabel!
-    //    @IBOutlet weak var selected: UIButton!
     @IBOutlet weak var textMatch: UITextView!
     @IBOutlet weak var resultDice: UILabel!
     @IBOutlet weak var ImageBoos: UIImageView!
@@ -93,9 +91,9 @@ class ViewControllerMatch: UIViewController {
             defenseB.text = " \(defenseBoos)"
             powerdamageB.text = " \(powerDamageB)"
             weaponDamageB.text = " \(weaponDamageBoos)"
-        }else {
+        }else if randomBoss == 2 {
             ImageBoos.image = UIImage(named: "boos2")
-            nameBoosLabel.text = nameBoos
+            nameBoosLabel.text = nameBoos2
             lifepointB.text = " \(lifePointBoos2) "
             defenseB.text = " \(defenseBoos2)"
             weaponDamageB.text = " \(powerDamageB2)"
@@ -115,6 +113,10 @@ class ViewControllerMatch: UIViewController {
         trun += 1
         if winner {
             print("Game Over!!!")
+            if warriorOne.lifePoint <= 0 || warriorTwo!.lifePoint <= 0{
+                rollDice1.isEnabled = false
+                print("hello outlet")
+            }
         }else {
             print("===This is the trun \(trun)===")
             seinarioGame()
@@ -135,23 +137,27 @@ class ViewControllerMatch: UIViewController {
             warriorOne.matches()
             warriorTwo?.lifePoint -= warriorOne.powerDamage
             warriorTwo?.lifePoint += warriorTwo!.defenseDamage
+            Dead()
             textMatch.text += "the life point: \(warriorTwo?.lifePoint ?? 0)"
             print(warriorTwo!.lifePoint)
         case 5...9:
             warriorTwo?.matches()
             warriorOne.lifePoint -= warriorTwo!.powerDamage
             warriorOne.lifePoint += warriorOne.defenseDamage
+            Dead()
             textMatch.text += "the life point: \(warriorTwo!.lifePoint)"
             print(warriorOne.lifePoint)
         case 10...14:
             warriorOne.matches()
             warriorTwo?.lifePoint -= warriorOne.WeaponDamage
             warriorTwo?.lifePoint += warriorTwo!.defenseDamage
+            Dead()
             textMatch.text += "the life point: \(warriorTwo?.lifePoint ?? 0)"
         case 15...19:
             warriorTwo?.matches()
             warriorOne.lifePoint -= warriorTwo!.WeaponDamage
             warriorOne.lifePoint += warriorOne.defenseDamage
+            Dead()
             textMatch.text += "the life point: \(warriorOne.lifePoint)"
             print(warriorOne.lifePoint)
         case 20:
@@ -164,9 +170,7 @@ class ViewControllerMatch: UIViewController {
                 warriorOne.WeaponDamage += 10
                 textMatch.text = ("the lifepoint hero\(warriorOne.lifePoint)")
             }else {
-                //player1.lifePoint += 5
-                warriorOne.lifePoint += 150
-                
+                warriorOne.lifePoint += 5
                 warriorOne.WeaponDamage += 35
             }
             if warriorTwo?.name == "Boos1" {
@@ -178,9 +182,12 @@ class ViewControllerMatch: UIViewController {
             }
             print("the hero\(warriorOne.lifePoint)")
             print("the boos \(warriorTwo!.lifePoint)")
+            Dead()
         default:
             print("ERROR")
+            theWinnerIs(wizard: warriorOne, boosOwn: warriorTwo!)
         }
+        
         //the function who is winner
         func theWinnerIs(wizard: Hero, boosOwn: Hero) {
             
@@ -201,11 +208,13 @@ class ViewControllerMatch: UIViewController {
             return dice
         }
     }
-//    func stopDice() {
-//        if warriorOne ==  {
-//            
-//        }
-//    }
+    func Dead(){
+        if warriorOne.lifePoint < 0 {
+            warriorOne.lifePoint = 0
+        } else if warriorTwo!.lifePoint < 0 {
+            warriorTwo!.lifePoint = 0
+        }
+    }
     @IBAction func wined(segue: UIStoryboardSegue){
     }
 }

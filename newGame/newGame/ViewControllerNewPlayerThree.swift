@@ -41,7 +41,7 @@ class ViewControllerNewPlayerThree: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendData = segue.destination as! ViewControllerMatch
         sendData.imageHero.image = thiefImage.image
-        sendData.textName1.text = nameOfPlayer.text
+        sendData.textName1.text = playerName.text
         sendData.lifepoint1.text = LPLable.text
         sendData.defense1.text = DFLable.text
         sendData.powerdamge1.text = PDLable.text

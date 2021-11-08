@@ -21,6 +21,7 @@
 //@IBOutlet weak var imageNewPlayer: UIImageView!
 //@IBOutlet weak var namePlayerA: UILabel!
 //override func viewDidLoad() {
+
 //    viewDidLoad()
 //    LPLable.text = String(describing: LPValue)
 //    DFLable.text = String(describing: DFValue)
