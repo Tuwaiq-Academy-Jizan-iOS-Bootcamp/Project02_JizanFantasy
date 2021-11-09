@@ -14,10 +14,6 @@
 		036055BE2732622D00116A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036055BD2732622D00116A12 /* Assets.xcassets */; };
 		036055C12732622D00116A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036055BF2732622D00116A12 /* LaunchScreen.storyboard */; };
 		036055C927326BE300116A12 /* ViewControllerTow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036055C827326BE300116A12 /* ViewControllerTow.swift */; };
-		036055CB273277E300116A12 /* KnightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036055CA273277E300116A12 /* KnightViewController.swift */; };
-		036055CD2732811200116A12 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036055CC2732811200116A12 /* WizardViewController.swift */; };
-		036055CF2732814500116A12 /* ThefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036055CE2732814500116A12 /* ThefViewController.swift */; };
-		037565BD2732FE1C0073C631 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037565BC2732FE1C0073C631 /* StartGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +26,6 @@
 		036055C02732622D00116A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		036055C22732622D00116A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036055C827326BE300116A12 /* ViewControllerTow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTow.swift; sourceTree = "<group>"; };
-		036055CA273277E300116A12 /* KnightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightViewController.swift; sourceTree = "<group>"; };
-		036055CC2732811200116A12 /* WizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
-		036055CE2732814500116A12 /* ThefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThefViewController.swift; sourceTree = "<group>"; };
-		037565BC2732FE1C0073C631 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +62,6 @@
 				036055B62732622B00116A12 /* SceneDelegate.swift */,
 				036055B82732622B00116A12 /* ViewController.swift */,
 				036055BA2732622B00116A12 /* Main.storyboard */,
-				037565BC2732FE1C0073C631 /* StartGameViewController.swift */,
-				036055CE2732814500116A12 /* ThefViewController.swift */,
-				036055CC2732811200116A12 /* WizardViewController.swift */,
-				036055CA273277E300116A12 /* KnightViewController.swift */,
 				036055C827326BE300116A12 /* ViewControllerTow.swift */,
 				036055BD2732622D00116A12 /* Assets.xcassets */,
 				036055BF2732622D00116A12 /* LaunchScreen.storyboard */,
@@ -153,14 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				036055CB273277E300116A12 /* KnightViewController.swift in Sources */,
 				036055B92732622B00116A12 /* ViewController.swift in Sources */,
 				036055B52732622B00116A12 /* AppDelegate.swift in Sources */,
-				036055CF2732814500116A12 /* ThefViewController.swift in Sources */,
-				036055CD2732811200116A12 /* WizardViewController.swift in Sources */,
 				036055B72732622B00116A12 /* SceneDelegate.swift in Sources */,
 				036055C927326BE300116A12 /* ViewControllerTow.swift in Sources */,
-				037565BD2732FE1C0073C631 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
