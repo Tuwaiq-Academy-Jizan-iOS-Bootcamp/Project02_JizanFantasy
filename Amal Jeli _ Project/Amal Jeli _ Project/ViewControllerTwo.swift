@@ -38,6 +38,8 @@ import UIKit
 //
 class ViewControllerTwo:UIViewController {
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelText: UITextField!
     @IBOutlet weak var labelNumber: UILabel!
@@ -48,7 +50,12 @@ class ViewControllerTwo:UIViewController {
     @IBOutlet weak var labelSC: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-
+    @IBOutlet weak var labalPicker: UILabel!
+    var player1 = "knight"
+    var player2 = "wizard"
+    var player3 = "Thief"
+    
+    var arrayOfPlayers = ["knight","wizard","Thief"]
     
     
     override func viewDidLoad() {
@@ -58,10 +65,13 @@ class ViewControllerTwo:UIViewController {
         textFiled2.delegate = self
         textField3.delegate = self
         textField4.delegate = self
-        
         super.viewDidLoad()
         
-
+//        namePlayer1.text = player1
+//        namePlayer2.text = player2
+//        namePlayer3.text = player3
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -143,4 +153,54 @@ func textFieldShouldReturn(_ TextLabal: UITextField) -> Bool {
 
     
 }
+}
+extension ViewControllerTwo:
+    UIPickerViewDelegate,UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayOfPlayers.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayOfPlayers[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let Players = pickerView.selectedRow(inComponent: 0)
+        if Players == 0 {
+            labelText.text = "knight"
+            textField1.text = "\(60)"
+            textFiled2.text = "\(20)"
+            textField3.text = "\(30)"
+            textField4.text = "\(40)"
+            labelSC.text = "\(100)"
+          labelNumber.text = " 250 points to dispatch "
+
+        labelName.text = "knight"
+        } else if Players == 1 {
+            labelText.text = "wizard"
+              textField1.text = "\(90)"
+              textFiled2.text = "\(15)"
+              textField3.text = "\(70)"
+              textField4.text = "\(20)"
+            labelSC.text = "\(50)"
+            labelNumber.text =  " 245 points to dispatch "
+            labelName.text = "wizard"
+        labelName.text = "wizard"
+        }else{
+            labelText.text = "Thief"
+            textField1.text = "\(65)"
+            textFiled2.text = "\(25)"
+            textField3.text = "\(15)"
+            textField4.text = "\(30)"
+            labelSC.text = "\(55)"
+          labelNumber.text = " 212 points to dispatch "
+        labelName.text = "Thief"
+            
+        }
+    }
+
 }
