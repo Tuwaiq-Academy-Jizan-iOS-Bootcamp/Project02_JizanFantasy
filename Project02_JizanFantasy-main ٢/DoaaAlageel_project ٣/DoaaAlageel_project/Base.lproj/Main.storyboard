@@ -411,6 +411,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-oa-fmy">
+                                <rect key="frame" x="20" y="256" width="244" height="71"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PzJ-fi-Zzd"/>
                         <color key="backgroundColor" red="1" green="0.97536182890000001" blue="0.86801263689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -422,6 +426,7 @@
                         <outlet property="defend1" destination="vFA-5u-6mk" id="cyC-SA-3G6"/>
                         <outlet property="gamestory" destination="tJv-d2-WQK" id="5aD-8h-PCv"/>
                         <outlet property="lifepoint1" destination="gqz-0c-ATE" id="ehf-Of-GBM"/>
+                        <outlet property="myPickerView" destination="qMj-oa-fmy" id="TEu-FN-GzG"/>
                         <outlet property="nameplyer" destination="qMl-W2-FEo" id="0eE-XW-U1T"/>
                         <outlet property="pointss" destination="HtO-tz-MbN" id="l0N-sH-fAt"/>
                         <outlet property="powerdamage1" destination="kS5-KX-RFI" id="4WJ-Fl-CZ1"/>

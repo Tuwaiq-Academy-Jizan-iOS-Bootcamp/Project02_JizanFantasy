@@ -95,6 +95,11 @@ class ViewControllerTwo: UIViewController{
     
     @IBOutlet weak var gamestory: UITextView!
     
+    
+    
+    @IBOutlet weak var myPickerView: UIPickerView!
+    var arrayMyhero = ["Knight","Wizard","Thief"]
+
     var knight = Knight(name:"Knight", points: 250, lifepoint: nil, defend:nil, powerdamage:nil, weapondamage:nil, specialeffect:100,dFMax:20, pDMax:30, wDMax:40)
     
     var wizard = Wizard(name:"Wizard", points: 245, lifepoint: nil, defend:nil, powerdamage:nil, weapondamage:nil, specialeffect:50, dFMax:15, pDMax:70, wDMax:20)
@@ -107,6 +112,10 @@ class ViewControllerTwo: UIViewController{
     @IBOutlet var TextFName: [UITextField]!
     
     override func viewDidLoad() {
+        
+        myPickerView.delegate = self
+        myPickerView.dataSource = self
+        
         super.viewDidLoad()
         
         
@@ -245,10 +254,64 @@ weapondamage1.text = String(knight.weapondamage ?? 40)
             }
         }
     
-
+extension ViewControllerTwo: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       return arrayMyhero.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayMyhero[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0{
+            nameplyer.text = "knight"
+                pointss.text = String(knight.points)
+                SClable1.text = String(knight.specialeffect)
+               
+                stepDF.maximumValue = Double(knight.dFMax)
+                stepPD.maximumValue = Double(knight.pDMax)
+                stepWD.maximumValue = Double(knight.wDMax)
+                gamestory.text += "--💥Hi I am knight💥--\n"
+                gamestory.text += "I use(DF)🛡 Max:20\n"
+                gamestory.text += "I use(PD)☄️ Max : 30\n"
+                gamestory.text += "I use(WD)⚔️ Max : 40\n"
+            }
+        else if row == 1{
+            nameplyer.text = "wizard"
+               pointss.text = String(wizard.points)
+               SClable1.text = String(wizard.specialeffect)
+               
+               stepDF.maximumValue = Double(wizard.dFMax)
+               stepPD.maximumValue = Double(wizard.pDMax)
+               stepWD.maximumValue = Double(wizard.wDMax)
+               gamestory.text += "--💥Hi I am wizard💥--\n"
+               gamestory.text += "I use(DF)🛡 Max:15\n"
+               gamestory.text += "I use(PD)☄️ Max : 70\n"
+               gamestory.text += "I use(WD)⚔️ Max : 20\n"
+            
+       }
+        else{
+            nameplyer.text = "thief" 
+            pointss.text = String(thief.points)
+            SClable1.text = String(thief.specialeffect)
+            
+            stepDF.maximumValue = Double(thief.dFMax)
+            stepPD.maximumValue = Double(thief.pDMax)
+            stepWD.maximumValue = Double(thief.wDMax)
+            
+            gamestory.text += "--💥Hi I am thief💥--\n"
+            gamestory.text += "I use(DF)🛡 Max:25\n"
+            gamestory.text += "I use(PD)☄️ Max : 15\n"
+            gamestory.text += "I use(WD)⚔️ Max : 30\n"
             
             
+        }
+    }
             
+}
             
             
             
