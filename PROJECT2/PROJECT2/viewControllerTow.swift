@@ -17,6 +17,7 @@ class viewControllerTow: UIViewController{
     @IBOutlet weak var textField2: UITextField!
     
     @IBOutlet weak var viewplayer: UIImageView!
+    @IBOutlet weak var PickerView: UIPickerView!
     @IBOutlet weak var textField3: UITextField!
     @IBOutlet weak var Named: UILabel!
     
@@ -26,9 +27,13 @@ class viewControllerTow: UIViewController{
     
     @IBOutlet weak var textField6: UITextField!
     
+    var arrayOfString = ["Knight","Wizard","Thief"]
+    override func viewDidLoad() {
     
-  
+        PickerView.delegate = self
+        PickerView.dataSource = self
     
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendBack = segue.destination as!ViewController
         sendBack.label1.text = textField2.text
@@ -39,11 +44,11 @@ class viewControllerTow: UIViewController{
         sendBack.Playerimage.image = viewplayer.image
     }
 
-    @IBAction func imageChanges(_ sender: Any) {
+   
        
-        Heros += 1
+   /*     Heros = 1
         switch Heros {
-        case 1 : viewplayer.image = UIImage(named: "image1")
+        case Knight : viewplayer.image = UIImage(named: "image1")
             Named.text = "Knight"
             labelPoint.text = "250"
         case 2 : viewplayer.image = UIImage(named: "image2")
@@ -57,17 +62,46 @@ class viewControllerTow: UIViewController{
         default:
             print ("no Hero")
        
-    }
+    }*/
 }
-}
+
 extension viewControllerTow: UITextFieldDelegate{
       func textFieldShoulderReturn(_ textField: UITextField)-> Bool {
           textField.resignFirstResponder()
           return true
       }
 }
-
+extension viewControllerTow: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView:UIPickerView) -> Int{
+            return 1
+        }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayOfString.count
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrayOfString[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      
+        let playerName = arrayOfString[pickerView.selectedRow(inComponent: 0)]
+        switch playerName {
+        case "Knight" : viewplayer.image = UIImage(named: "image1")
+            Named.text = "Knight"
+            labelPoint.text = "250"
+        case "Wizard" : viewplayer.image = UIImage(named: "image2")
+            Named.text = "Wizard"
+            labelPoint.text = "245"
+        case "Thief" :viewplayer.image = UIImage(named: "image3")
+            Named.text = "Thief"
+            labelPoint.text = "210"
+        default:
+            print ("no Hero")
+       
+    }
+
+    }
+}
 
 
  
