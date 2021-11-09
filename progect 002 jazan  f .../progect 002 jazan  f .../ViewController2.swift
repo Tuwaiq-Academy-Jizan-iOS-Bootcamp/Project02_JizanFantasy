@@ -11,6 +11,7 @@ class ViewController2: UIViewController {
     @IBOutlet weak var pPDValue: UITextField!
     @IBOutlet weak var pWDValue: UITextField!
     @IBOutlet weak var specialCapacity: UILabel!
+    let classArray = ["wizard","knghit","thief"]
     var playerSC = ""
     var playerSCBonusPD = ""
     var playerSCBonusWD = ""
@@ -19,8 +20,10 @@ class ViewController2: UIViewController {
     //Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-        self.view.addGestureRecognizer(tap)
+        pickerview.delegate = self
+        pickerview.dataSource = self
+        // let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+     //   self.view.addGestureRecognizer(tap)
     }
     @IBAction func knight(_ sender: Any) {
         playerImage.image = UIImage(named: "knight")
@@ -57,23 +60,38 @@ class ViewController2: UIViewController {
         points.text = playerPoints
         fighterDescreption.text = "When Thief use his SC he will delever a 75 Damage to his opponent and recover a small of life points +5LP and greatly increas his power damage by +35PD"
     }
-    //Player Info........ (((SEGUE)))//
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {     let playerData = segue.destination as? ViewController
-        playerData?.pImage = pImage
-        playerData?.playerName.text = PlayerNameTF.text!
-        playerData?.pWDLable.text = pWDValue.text!
-        playerData?.pDFLable.text = pDFValue.text!
-        playerData?.pPDLable.text = pPDValue.text
-        playerData?.pLPLable.text = pLPValue.text!
-        playerData?.pSCLable.text = specialCapacity.text
-        playerData?.pSCDamage = playerSC
-        playerData?.pSCBonusLP = playerSCBonusLP
-        playerData?.pSCBonusPD = playerSCBonusPD
-        playerData?.pSCBonusWD = playerSCBonusWD
-    }
-    
-    //Fonction To Close The Daim Keyboard
-    @objc func closeKeyboard() {
-        self.view.endEditing(true)
+    @IBOutlet weak var pickerview: UIPickerView!
+    @IBAction func button(_ sender: Any) {
     }
 }
+
+extension ViewController2: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return classArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return classArray[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        
+        
+        
+        
+        
+//        if selectPlayer.selectedRow(inComponent: 0) == 0 {
+//            knight()
+//        }else if selectPlayer.selectedRow(inComponent: 0) == 1 {
+//            wizard()
+//        }else {
+//            thief()
+        }
+    }
+
+
+
